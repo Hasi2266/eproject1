@@ -242,10 +242,18 @@
 									
 							<li class="list-group-item   mt-2  " >
 
-							<div class="card card-hover card-project-two">
+							<div class=" card-hover card-project-two">
 								<div class="card-header bg-transparent">
+									
 									<div>
-										<h6 class="mg-b-5"><?php echo $item->name?></h6>
+									<div class="media">
+									<div class="project-logo bg-green tx-white"><i data-feather="music"></i></div>
+													<div class="media-body mg-l-10 mg-sm-l-15">
+														<!-- <p class="tx-13 tx-color-04 mg-b-5"><?php echo $item->company_name?></p> -->
+														<h5 class="tx-color-01 mg-b-0"><?php echo $item->name?></h5>
+													</div><!-- media-body -->
+												</div>
+									<!-- <div class="project-logo bg-green tx-white"><i data-feather="music"></i></div><h6 class="mg-b-5"><?php echo $item->name?></h6> -->
 										<!-- <span>Last updated: Yesterday 10:15am</span> -->
 									</div>
 									<!-- <nav class="nav nav-card-icon">
@@ -357,7 +365,7 @@
 										if(($months <= 1 && $days <= 29)){ ?>
 											<!-- echo $item->project_id; -->
 
-											<li class="list-group-item   mt-2 mb-2" >
+											<li class="list-group-item  card-hove mt-2 mb-2" >
 												<nav class="nav nav-card-icon">
 													<a href=""><i data-feather="activity" class="svg-16"></i></a>
 													<a href=""><i data-feather="bar-chart-2" class="svg-16"></i></a>
