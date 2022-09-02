@@ -1,0 +1,320 @@
+<!-- data-spy="scroll" data-target="#navSection" data-offset="100" -->
+<div class="content-body" >
+	<body onload="loadImage()">
+    <!-- header -->
+    <div class="content-header">
+        <div>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">UI Library</a></li>
+                    <li class="breadcrumb-item"><a href="#">Components</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Project (DataTable)</li>
+                </ol>
+            </nav>
+
+        </div>
+    </div><!-- content-header -->
+	<?php foreach ($projects as $project){?>
+	<form action="<?php echo base_url();?>index.php/AdminProject/saveMilestone/<?php echo $project->project_id ?>" method="post" enctype="multipart/form-data">
+    
+	<div class="pd-x-65 pd-b-15">
+		
+			<div class="component-section px-5 shadow" style="border-radius: 13px;">
+
+				<h3 class="text-dark text-uppercase mb-4">Project</h3>
+		<input type="hidden" name="project_id" value="<?php echo $project->project_id?>">
+				
+					<div class="form-group">
+						<label for="exampleInputEmail1">Name</label>
+						<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+							name="name" placeholder="Enter Name" style="border-radius:10px" value="<?php echo $project->name ?>" disabled>
+					</div>
+
+					<div class="form-group">
+						<label for="exampleFormControlTextarea1">Requirement</label>
+						<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+							placeholder="Enter Requirement" style="border-radius:10px" disabled name="requirement"><?php echo $project->requirement?></textarea>
+					</div>
+
+					<div class="row">
+						<div class="col-md-4">
+							<div class="form-group ">
+								<label for="exampleFormControlTextarea1">Estimated Budget(optional)</label>
+								<textarea class="form-control " disabled id="exampleFormControlTextarea1" rows="3"
+									placeholder="Enter Budget" style="border-radius:10px"
+									name="estimated_budget"><?php echo $project->estimated_budget?></textarea>
+							</div>
+						</div>
+						<div class="col-md-3 px-5 mx-0">
+							<label for="exampleInputEmail1">End date</label>
+							
+							<div class="form-check">
+
+								<label class="form-check-label">
+
+									<input type="radio" disabled class="form-check-input" name="due_date_type" <?php if(($project->end_date)=='To be decided') {echo "checked";}?> value="To be decided" onclick="check1()">To be
+									decided
+								</label>
+							</div>
+							<div class="form-check">
+								<label class="form-check-label">
+									<input type="radio" disabled class="form-check-input" name="due_date_type"  <?php if(($project->end_date)=="Specific Date") {echo "checked";}?> onclick="check()"
+										value="Specific Date"  id="sepcic_data">Specific Date
+								</label>
+								
+							</div>
+							
+							<div class=" mt-1">
+								<input type="text" disabled class="form-control" placeholder="Choose date" id="datepicker5" 
+									name="specific_date_value" style="border-radius:10px;display:none;" value="<?php echo $project->date?>">
+							</div>
+
+						</div>
+						<div class="col-md-3">
+							<label for="exampleInputEmail1">Type</label>
+							<div class="form-check">
+								<label class="form-check-label">
+									<input type="radio" disabled class="form-check-input" name="type" <?php if(($project->type)=='Recurring Project') {echo "checked";}?>
+										value="Recurring Project">Recurring Project
+								</label>
+							</div>
+							<div class="form-check">
+								<label class="form-check-label">
+									<input type="radio" disabled class="form-check-input" name="type" value="Not Sure" <?php if(($project->type)=='Not Sure') {echo "checked";}?>>Not Sure
+								</label>
+							</div>
+							<div class="form-check">
+								<label class="form-check-label">
+									<input type="radio" disabled class="form-check-input" name="type" value="On Going" <?php if(($project->type)=='On Going') {echo "checked";}?>>On Going 
+								</label>
+							</div>
+						</div>
+					</div>
+					<p class="mt-3">Category</p>
+					<div class="row mt-2 mb-5">
+						<?php foreach ($items as $item){?>
+
+						<div class="col-md-2">
+							<div class="form-check">
+
+								<input type="radio" disabled class="form-check-input" name="category_id" <?php if(($project->category_id) == $item->name) {echo "checked";}?> value="<?php echo $item->name?>"><?php echo $item->name?>
+
+							</div>
+						</div>
+						<?php } ?>
+
+					</div>
+					</div>
+					<div class=" px-5 shadow pt-5 pb-5 mt-5" style="border-radius: 13px;" >
+        <div class=" mt-2 w-100">
+          <h5 id="section2" class="mb-4">Skills</h5>
+		  <?php echo $project->required_skills.'<br/>'?>
+         </div>
+      </div>
+					<div class=" px-5 shadow pt-5 pb-5 mt-5" style="border-radius: 13px;" >
+        <div class=" mt-2 w-100">
+          <h5 id="section2" class="mb-4">Services</h5>
+		  <!-- <?php echo $project->services?> -->
+			<?php foreach($service as $key => $value){
+		
+					echo $value.'<br/>';
+					
+			} ?>
+         </div>
+      </div>
+
+	  <div class=" px-5 shadow pt-5 pb-5 mt-5" style="border-radius: 13px;" >
+        <div class=" mt-2 w-100">
+          <h5 id="section2" class="mb-4">Packages</h5>
+					<?php foreach($package as $key => $value){
+						echo $value.'<br/>';
+						
+					}?>
+		  <!-- <?php echo $project->packages?> -->
+         </div>
+      </div>
+		
+				
+				
+				
+				
+
+
+	  <div class=" px-5 shadow pt-5 pb-5 mt-5" style="border-radius: 13px;">
+						<!-- <form action="" method="post" enctype="multipart/form-data" class="form-horizontal"> -->
+						<div class="row form-group">
+							<div class="col-12 col-md-12">
+								<div class="control-group" id="fields">
+									<h5 id="section2" class="mb-4">Mieloston</h5>
+									<div class="controls">
+										<div class="entry input-group upload-input-group">
+											<!-- <form name="add_name" id="add_name"> -->
+												<div class="table-responsive">
+													<table class="table" id="dynamic_field2">
+														<tbody>
+															<tr name="milestone_tr[]">
+																<td> <input type="text" name="milestone_name[]" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name" style="border-radius:10px"></td>
+																<td><input type="text" name="milestone_weight[]" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Weight" style="border-radius:10px"></td>
+																<td><input type="text" name="milestone_progress[]" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Progress" style="border-radius:10px"></td>
+																<td><input type="text" name="milestone_description[]" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Description" style="border-radius:10px"></td>
+                              									<td><input type="text" name="start_date[]" class="form-control" placeholder="Start date" id="datepicker6"  style="border-radius:10px;"></td>
+																<td><input type="text" name="end_date[]" class="form-control" placeholder="End date" id="datepicker7"  style="border-radius:10px;"></td>
+																<td><input type="text" name="amount[]" class="form-control calc" id="milestone_amount" aria-describedby="emailHelp" placeholder="Amount" style="border-radius:10px"></td>
+																<td><button type="button" name="add" id="add3" class="btn btn-success"><i class="fa fa-plus"></button></td>
+															</tr>
+														<tbody>
+													</table>
+													<!-- <input type="submit" name="submit" id="submit" class="btn btn-info" value="Submit" /> -->
+												</div>
+											<!-- </form> -->
+										</div>
+
+									</div>
+									<!-- 
+										<button class="btn btn-primary mt-2" style="border-radius:10px">Upload</button> -->
+
+								</div>
+
+
+							</div>
+
+						</div>
+
+						<!-- </form>Attachment -->
+					</div>
+
+					<div class=" px-5 shadow pt-5 pb-5 mt-5" style="border-radius: 13px;" >
+        <table id="example1" class="table ">
+          <thead>
+            <tr>
+              <th class="wd-9p"><div class="custom-control custom-checkbox" style="border-radius: 8px;">
+                <input type="checkbox" class="custom-control-input" id="customCheck1" >
+                <label class="custom-control-label" for="customCheck1"></label>
+              </div></th>
+              <th class="wd-15p">Name </th>
+              <th class="wd-15p">Weight</th>
+              <th class="wd-15p">Progress</th>
+              <th class="wd-15p">Description</th>
+              <th class="wd-15p">Start Date</th>
+              <th class="wd-15p">End Date</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+           <?php  foreach($milestones as $item){?>
+            <tr >
+              <td><div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                <label class="custom-control-label" for="customCheck1"></label>
+              </div></td>
+              <td><?php echo $item->milestone_name?></td>
+              <td><?php echo $item->milestone_weight?></td>
+							<td><div class="progress" style="width:100px;">
+                <div class="progress-bar" role="progressbar" style="width:<?php echo $item->milestone_progress?>px;" aria-valuenow="<?php echo $item->milestone_progress?>" aria-valuemin="0" aria-valuemax="100"><?php echo $item->milestone_progress?>%</div>
+              </div></td>
+							<td><?php echo $item->milestone_description?></td>
+              <td><?php echo $item->start_date?></td>
+              <td><?php echo $item->end_date?></td>
+             
+              <!-- <td><span class="badge badge-pill badge-primary"><?php echo $initial ?></span></td>
+              <td>$90,560</td> -->
+              
+            </tr>
+			<?php } ?>
+          
+           
+           
+            
+          </tbody>
+        </table>
+      </div>
+	
+
+					<div class=" px-5 shadow pt-5 pb-5 mt-5" style="border-radius: 13px;">
+						<!-- <form action="" method="post" enctype="multipart/form-data" class="form-horizontal"> -->
+						<div class="row form-group">
+							<div class="col-12 col-md-12">
+								<div class="control-group" id="fields">
+									<h5 id="section2" class="mb-4">Attachment</h5>
+									<div class="controls1">
+										<div class="entry1 input-group upload-input-group">
+											
+										
+												
+										<div class="card-deck">
+												<?php
+													$i= 1;
+													foreach($images as $key => $value){?>
+													<div class="card-deck ">
+														<div class="card" style="width:15rem;height:15rem;margin-right:20px">
+															<a href="<?php echo base_url();?>/uploads/<?php echo $value;?>" download="<?php echo $project->name.'_'.$i;?>">
+																		<img class="card-img-top " src="<?php echo base_url();?>/uploads/<?php echo $value;?>" alt="Card image cap" style="width:15rem;height:15rem;">
+															</a>
+														
+														</div>
+													</div>
+													</div>		
+												<?php 	$i++; ?>
+												<?php }?>
+												
+											<!-- <button class="btn btn-upload btn-success btn-add1 " style="margin-left: 24px;"
+													type="button">
+													<i class="fa fa-plus"></i>
+												</button> -->
+										
+
+									</div>
+									<!-- <button class="btn btn-primary mt-2" style="border-radius:10px">Upload</button> -->
+
+								</div>
+
+
+							</div>
+
+						</div>
+
+						<!-- </form>Attachment -->
+					</div>
+					
+				
+			<!-- Submit -->
+
+			
+			
+			<?php if (($project->add_proposal)== 1) { ?>
+
+				<a href="<?php echo base_url();?>index.php/AdminProject"><button class="btn btn-primary">Save</button></a>
+			<?php } else { ?>
+				<button type="submit" class="btn btn-primary mt-5">Submit Proposal</button>
+
+
+			<?php } ?>
+		</form>
+
+    </div>
+	
+	
+	<!-- content-body -->
+<?php } ?>
+
+    <div class="content-footer">
+        &copy; 2019. All Rights Reserved. Created by <a href="http://themepixels.me" target="_blank">ThemePixels</a>
+    </div><!-- content-footer -->
+</div><!-- content -->
+
+<script>
+function loadImage() {
+//   alert("Image is loaded");
+	if(document.getElementById('sepcic_data').checked == true) {   
+		var y = document.getElementById("datepicker5");
+		if(y.style.display === "none"){
+			y.style.display = "block";
+		}
+		else{
+			y.style.display = "none";
+		}
+	} 
+	// var x = document.getElementById('sepcic_data').value;
+	
+}
+</script>
