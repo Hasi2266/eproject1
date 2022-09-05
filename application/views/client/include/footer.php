@@ -885,10 +885,11 @@ $(document).ready(function(){
                	// alert(html);
 
 										var err = html;
-										// alert(err.length);
+										alert(err.length);
 										if(err.length === 0){
 											
 											$('#errorService').html(err);
+
 											document.getElementById("btnAddService").disabled = false;
 										}
 										else{
@@ -937,15 +938,16 @@ $(document).ready(function(){
 	});
 </script>
 
-<script>
+<!-- <script>
 $(document).ready(function(){
 	
 
 	$("#check3").bind('keyup change', function(){
 			const span = document.getElementById('check3');
+			// alert(span);
 			alert(span.childNodes.length);
 								if (span.childNodes.length === 0) {
-									document.getElementById("btn-addto").disabled = false;
+									document.getElementById("btn-addto").disabled = true;
 								}
 								// if((document.getElementById("check3").value)==""){
 									
@@ -955,7 +957,7 @@ $(document).ready(function(){
 						}
 					});
 				});
-</script>
+</script> -->
 <script>
 
 
