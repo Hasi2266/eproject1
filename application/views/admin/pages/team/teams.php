@@ -15,12 +15,12 @@
         <div class="pd-x-65 pd-b-15">
 
             <div class="row">
-                <div class="px-3 " style="margin-left:53.6rem;">
-                    <button type="button" class="btn btn-primary text-right text-uppercase py-2 " style="border-radius: 8px;">New project</button>
+                <div class="px-3 " style="margin-left:60rem;">
+                    <a href="<?php echo base_url();?>index.php/AdminTeam/addTeam"><button type="submit" class="btn btn-primary text-right text-uppercase py-2 " style="border-radius: 8px;">Add New Team</button></a>
                 </div>
-                <div class="">
+                <!-- <div class="">
                     <button type="button" class="btn btn-primary text-right text-uppercase  py-2" style="border-radius: 8px;">Add to project</button>
-                </div>
+                </div> -->
 
 
                 <!-- my -->
@@ -31,7 +31,7 @@
 
             <div class="component-section px-5 shadow" style="border-radius: 13px;">
                 <!--btn-->
-                <h3 class="text-dark text-uppercase mb-4">Service</h3>
+                <h3 class="text-dark text-uppercase mb-4">Team</h3>
 
                 <table id="example1" class="table1 table-hover">
                     <thead>
