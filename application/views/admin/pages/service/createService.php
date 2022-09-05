@@ -51,7 +51,7 @@
                             <div class="col-sm-5 mg-t-30 " style="padding-right: 120px; ">
 								<select class="form-control shadow select2-no-search service-input-box" style="height:3rem;" name="currency">
 									<option class="text-light">--Choose Currency--</option>
-									<option value="1" >Rupee</option>
+									<option value="1" >LKR</option>
 									<option value="2" >USD</option>	
 								</select>  
                             </div>
@@ -67,7 +67,7 @@
                 </div>
                 <div class="col-md-3">
 					<div class="custom-file">
-							<input type="file" class="custom-file-input " id="customFile" name="img">
+							<input type="file" class="custom-file-input " id="customFile" name="img" required>
 						<label class="custom-file-label" for="customFile" style="margin-top:150px;">Choose file</label>
 					</div>
                     <!-- <div class="card rounded px-5 bg-light shadow border " style="margin:65px 0 0 0px;width: 10rem;height: 11rem;">

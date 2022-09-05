@@ -2,13 +2,13 @@
     <!-- header -->
     <div class="content-header">
         <div>
-            <nav aria-label="breadcrumb">
+            <!-- <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#">Pages</a></li>
                     <li class="breadcrumb-item"><a href="#">Services</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Create Service</li>
                 </ol>
-            </nav>
+            </nav> -->
             <!-- <h4 class="content-title content-title-sm">Create Service</h4> -->
         </div>
     </div>

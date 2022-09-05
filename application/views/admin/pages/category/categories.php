@@ -63,9 +63,9 @@
                             <td><?php echo $item->name?></td>
                            
 							<td>
-                    <button class="save"> Save </button>
+                    <!-- <button class="save"> Save </button>
                     <button class="edit"> Edit </button>
-                    <button class="delete"> Delete </button>
+                    <button class="delete"> Delete </button> -->
                 </td>
                            
 
