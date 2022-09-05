@@ -121,25 +121,27 @@
 		  <li class="breadcrumb-item active" aria-current="page">Projects &amp; Web Services</li>
 		</ol>
 	  </nav> -->
-	  <div class="row">
+	  <div class="row mt-1" style="margin-left:5px;">
 		
-	  <h4 class="content-title content-title-xs px-3">Welcome to Dashboard</h4>
-	  <div class=" "  style="margin-left:71.5rem;margin-top:-1.5rem" >
-		<a href="<?php echo base_url();?>index.php/ClientProject/cerateProject"><button type="button" class="btn btn-primary text-right  py-2"style="border-radius: 8px;">New Project</button></a>
-	  </div>
+	
+	  	<h4 class="content-title content-title-xs" style="margin-bottom:-50px">Welcome to Dashboard</h4>
+		<a  style="margin-left:71rem" href="<?php echo base_url();?>index.php/ClientProject/cerateProject"><button type="button" class="btn btn-primary"style="border-radius: 8px;padding-top:-35px">New Project</button></a>
+		
+		
+		
 	</div>
 	</div>
   </div>
   
-<div class="content-body">
+<div class="content-body mt-1">
 	
-        <div class="card card-hover card-task-one dashCardHover mb-5" style="border-radius: 10px;">
+        <div class="card card-hover card-task-one dashCardHover" style="border-radius: 10px;">
           <div class="card-body">
             <div class="row">
               <div class="col-sm-6 col-md-3">
                 <h6 class="card-title">Projects</h6>
                 <div class="d-flex align-items-center justify-content-between mg-b-10">
-                  <h1 class="card-value"><?php echo $noProjects?><span class="tx-success"><i class="icon ion-android-arrow-up"></i></span></h1>
+                  <h1 class="card-value"><?php echo $noProjects?><span class="tx-success"></span></h1>
                   <div class="chart-wrapper">
                     <!-- <div id="flotChart1" class="flot-chart"></div> -->
                   </div>
@@ -181,9 +183,9 @@
         </div><!-- card -->
 
         
-        <div class="row row-sm mg-t-15 mg-sm-t-20">
+        <div class="row row-sm mg-t-15 mg-sm-t-20" style="margin-top:2rem">
           <div class="col-sm-6 col-xl-5">
-            <div class="card card-hover card-todo dashCardHover mb-5 " style="border-radius:10px ;margin-right: 15px;">
+            <div class="card card-hover card-todo dashCardHover mb-5" style="border-radius:10px ;margin-right: 12px;">
               <div class="card-header bg-transparent pd-y-15 pd-l-15 pd-r-10">
                 <h6 class="card-title mg-b-0">Project Status</h6>
                 <nav class="nav">
@@ -198,7 +200,15 @@
 
 
 							
-							<?php foreach($items as $item){?>
+							<?php
+							if(empty($items)){ ?>
+								<img src="<?php echo base_url();?>/assets/img/nodata.jpg" class="mt-5" style="height:12rem;width:14rem;margin-left:8rem" >
+								<?php echo "<p style='text-align:center'>No Data Available</p>";?>
+						<?php	}
+							else{
+
+							
+							foreach($items as $item){?>
 
 								<?php 
 
@@ -319,7 +329,7 @@
 										</div>
 									</div> -->
                 </li>
-							<?php } ?>
+							<?php } } ?>
                
               </ul>
               </div>
@@ -330,7 +340,7 @@
           
 
           <!-- Recent Projects -->
-          <div class="col-xl-7 mg-t-15 mg-sm-t-20 mg-xl-t-0">
+          <div class="col-xl-7 mg-t-15 mg-sm-t-20 mg-xl-t-0" >
             <div class="card card-hover card-projects  dashCardHover" style="border-radius:10px;">
               <div class="card-header bg-transparent pd-y-15 pd-l-15 pd-r-10">
                 <h6 class="card-title mg-b-0">Recent Projects</h6>
@@ -346,6 +356,17 @@
 				
 									$date_now =  date("Y-m-d");
 
+									if(empty($items)){?>
+
+								<img src="<?php echo base_url();?>/assets/img/no2.jpg" class="mt-5" style="height:12rem;width:14rem;margin-left:15rem" >
+								<?php echo "<p style='text-align:center'>No Data Available</p>";?>
+
+								<?php 	} else{
+
+									
+
+								}
+									
 									foreach($items as $item){
 
 										if(($item->project_status) == 1){
@@ -394,12 +415,21 @@
                     </div>
           </div><!-- col -->
 
-					<div class="card card-hover card-task-one dashCardHover mb-5" style="border-radius: 10px;margin-left: 10px;margin-right: 10px;width:80rem;">
+		  <div class="row row-sm" style="margin-right-15px;width:95rem;margin-top:-18px">
+			<div class="col-xl-12 mg-t-15 mg-sm-t-20 mg-xl-t-0" >
+
+			<div class="card card-hover card-projects card-task-one dashCardHover mb-2" style="border-radius: 10px; ">
+				<div class="card-header bg-transparent pd-y-15 pd-l-15 pd-r-10">
+									<h6 class="card-title mg-b-0" style="margin-top:1px;margin-bottom:-6px">Projects</h6>
+									<nav class="nav">
+									<a href="" class="link-gray-500"><i data-feather="help-circle" class="svg-16"></i></a>
+									<a href="" class="link-gray-500"><i data-feather="more-vertical" class="svg-16"></i></a>
+									</nav>
+              					</div><!-- card-header -->
 						<div class="card-body">
 							<div class="row">
 								<div class="col-md-12 col-md-3">
-									<h4 class="text-dark  mb-3 mt-3 px-3">Projects</h4>
-										<div id="scroll3" class="pos-relative" style="height: 310px;">
+									<div id="scroll3" class="pos-relative" style="height: 310px;">
 										<table id="example1" class="table " style="border-radius:10px ;font-size:14px">
 											<thead>
 												<tr>
@@ -466,7 +496,11 @@
 								</div>
 							</div>
 						
-						</div><!-- card-body -->
+						</div>
+		</div>
+		 
+		  </div>
+					
         	</div>
 
 					

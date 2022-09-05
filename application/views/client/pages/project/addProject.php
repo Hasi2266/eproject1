@@ -63,7 +63,7 @@
 							
 							<div class=" mt-1">
 								<input type="text" class="form-control" placeholder="Choose date" id="datepicker5" 
-									name="specific_date_value" style="border-radius:10px;display:none">
+									name="specific_date_value" style="border-radius:10px;display:none;">
 							</div>
 
 						</div>
@@ -110,7 +110,7 @@
 						</div>
 
 
-						<input id="input2" type="text" class="form-control" value="HTML,CSS" style="border-radius:10px"
+						<input id="input2" type="text" class="form-control" value="HTML,CSS" 
 							data-role="tagsinput" name="required_skills[]" >
 
 
@@ -163,7 +163,7 @@
 																<select class="custom-select m-input mb-2"
 																		style="border-radius:10px ;width:26rem;"
 																		name="services" id="category">
-																		<option  selected>-- Choose Category --</option>
+																		<option selected>-- Choose Category --</option>
 																		<?php foreach ($teams as $item){?>
 																		<option value="<?php echo $item->team_id?>">
 																			<?php echo $item->name?>
@@ -176,7 +176,7 @@
 																<td>
 																	
 																<?php if($no == 2){ foreach($service_name as $key => $value){ ?>
-																	<select class=" custom-select m-input px-5 mx-4 mb-2"
+																	<select class=" custom-select m-input  mx-4 mb-2"
 																		style="border-radius:10px;width:26rem;background-color:yellow;" 
 																		name="service_id[]">
 
@@ -192,11 +192,11 @@
 
 																<?php } } if($no==3 || $select_non==2){ ?>
 																
-																<select class=" custom-select m-input px-5 mx-4"
+																<select class=" custom-select m-input  mx-4"
 																		style="border-radius:10px;width:26rem;" id="service"
 																		name="service_id[]">
 
-																		<option disabled  selected>-- Choose Services --</option>
+																		<option  style="margin-left:-100px!important;" disabled  selected>-- Choose Services --</option>
 
 																	</select>
 																
@@ -276,7 +276,7 @@
 																	</td>
 																<td>
 																<?php if($no == 1){ foreach($package_name as $key => $value){ ?>
-																	<select class=" custom-select m-input px-5 mx-4"
+																	<select class=" custom-select m-input mx-4"
 																		style="border-radius:10px;width:26rem;background-color:yellow;" 
 																		name="package_id[]">
 
@@ -291,7 +291,7 @@
 																		
 
 																<?php } } if($no==3 || $select_non==1){ ?>
-																	<select class=" custom-select m-input px-5 mx-4"
+																	<select class=" custom-select m-input mx-4"
 																		style="border-radius:10px;width:26rem;" id="package"
 																		name="package_id[]">
 
@@ -384,7 +384,7 @@
 									<h5 id="section2" class="mb-4">Attachment</h5>
 									<div class="controls1">
 										<div class="entry1 input-group upload-input-group">
-											<input class="form-control" name="images[]" type="file" style="border-radius:10px;" multiple="">
+											<input class="form-control" name="images[]" type="file" style="border-radius:10px;margin-bottom:10px" multiple="">
 											<!-- <button class="btn btn-upload btn-success btn-add1 " style="margin-left: 24px;"
 													type="button">
 													<i class="fa fa-plus"></i>

@@ -48,20 +48,20 @@
                     <div class="row row-sm">
                       <div class="col-md-6">
                         <label class="form-control-label">First Name: <span class="tx-danger">*</span></label>
-                        <input id="firstname" class="form-control" name="firstname" placeholder="Enter firstname" type="text" required>
+                        <input id="firstname" class="form-control text-border" name="firstname" placeholder="Enter firstname" type="text" required>
 												<span id = "fmsg" style="color:red"> </span>
 
 											</div><!-- col -->
                       <div class="col-md-6 mg-t-20 mg-md-t-0">
                         <label class="form-control-label">Last Name: <span class="tx-danger">*</span></label>
-                        <input id="lastname" class="form-control" name="lastname" placeholder="Enter lastname" type="text" required>
+                        <input id="lastname" class="form-control text-border" name="lastname" placeholder="Enter lastname" type="text" required>
 												<span id = "lmsg" style="color:red"> </span>
 											</div><!-- col -->
                     </div><!-- row -->
                     <div class="form-group mt-3">
                       <label class="form-control-label">Email: <span class="tx-danger">*</span></label>
 											
-                      <input id="email1" class="form-control" name="email" placeholder="Enter email address" type="text" required autofocus="" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$" >
+                      <input id="email1" class="form-control text-border" name="email" placeholder="Enter email address" type="text" required autofocus="" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$" >
 											<span id = "message1" style="color:red"> </span>
 											<span id = "msg" style="color:red"> </span>
                     </div><!-- form-group -->
@@ -79,26 +79,26 @@
                     <div class="row row-sm ">
                       <div class="col-md-6">
                         <label class="form-control-label">Company name : <span class="tx-danger">*</span></label>
-                        <input id="company" class="form-control" name="company_name" placeholder="Enter Company name" type="text" required>
+                        <input id="company" class="form-control text-border" name="company_name " placeholder="Enter Company name" type="text" required>
 												<span id="Cmsg" style="color:red"> </span>
 											</div><!-- col -->
                       <div class="col-md-6 mg-t-20 mg-md-t-0">
                         <label class="form-control-label">industry : <span class="tx-danger">*</span></label>
-                        <input id="industry" class="form-control" name="industry" placeholder="Enter industry" type="text" required>
+                        <input id="industry" class="form-control text-border" name="industry" placeholder="Enter industry" type="text" required>
 												<span id = "Imsg" style="color:red"> </span>
 											</div><!-- col -->
                     </div><!-- row -->
                     <div class="row row-sm mt-3">
                       <div class="col-md-6">
                         <label class="form-control-label">number of employees : <span class="tx-danger">*</span></label>
-                        <input id="noEmp" class="form-control" name="no_of_emp" placeholder="Enter number of employees " type="text" required>
+                        <input id="noEmp" class="form-control text-border" name="no_of_emp" placeholder="Enter number of employees " type="text" required>
 												<span id = "Emsg" style="color:red"> </span>
 											</div><!-- col -->
                       <div class="col-md-6 mg-t-20 mg-md-t-0">
                         <label class="form-control-label">country : <span class="tx-danger">*</span></label>
                         
 
-												<select class="form-control m-input px-5" style="border-radius:10px;" name="country" id="country">
+												<select class="form-control m-input text-border" style="border-radius:10px;" name="country" id="country">
 																				<option value = "0">-- Select Project --</option>
 
 														<?php  foreach($countires as $country){?>
@@ -113,7 +113,7 @@
                     </div><!-- row -->
                     <div class="row row-sm mt-3">
                       <div class="col-md-6">
-                        <label class="form-control-label">phone number : <span class="tx-danger">*</span></label>
+                        <label class="form-control-label text-border">phone number : <span class="tx-danger">*</span></label>
                         <input id="mobile-client" class="form-control" name="contact" placeholder="Enter phone number " type="number" required>
 												<span id = "message3" style="color:red"> </span>
 											</div><!-- col -->

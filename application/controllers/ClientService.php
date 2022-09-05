@@ -23,6 +23,7 @@ Class ClientService extends CI_Controller{
 
 		$data["items"] = $clientservice->getTeams();
 		$data["services"] = $clientservice->getServices();
+		$data["items1"] = $clientservice->getFirstrow();
 		$data["projects"] = $projectservice->allProjects($this->session->userdata('CLIENT_ID'));
 
 		$partial = array('content' => 'client/pages/services/addService');

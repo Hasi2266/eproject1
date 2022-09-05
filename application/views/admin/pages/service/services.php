@@ -49,7 +49,7 @@
 
 				<?php foreach($items as $item1){?>
 
-				<div class="tab-pane fade show <?php if(($item1->team_id)==1) {echo "active";}?>" id="<?php echo $item1->name?>" role="tabpanel" aria-labelledby="<?php echo $item1->name?>-tab">
+				<div class="tab-pane fade show <?php if(($items1->team_id) == ($item1->team_id)) {echo "active";}?>" id="<?php echo $item1->name?>" role="tabpanel" aria-labelledby="<?php echo $item1->name?>-tab">
 					
 							<div class="pricing-wrapper mg-lg-b-40">
 								
@@ -59,7 +59,7 @@
 												<div class="col-sm-6 col-md-4 ">
 													<div class="card card-pricing shadow" style="border-radius: 8px; height: 23rem;">
 														<div class="card-header">
-															<div class="custom-control custom-checkbox checkbox-xl "style="margin-left:15.5rem ;margin-top:-8px ;margin-bottom:-20px">
+															<div class="custom-control custom-checkbox checkbox-xl "style="margin-left:12rem ;margin-top:-8px ;margin-bottom:-20px">
 																<input type="checkbox" class="custom-control-input" id="checkbox-1" checked="">
 																<label class="custom-control-label" for="checkbox-1"></label>
 																</div>

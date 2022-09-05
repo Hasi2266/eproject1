@@ -22,6 +22,7 @@ Class ClientPackage extends CI_Controller{
 		$projectservice = new ProjectService();
 
 		$data["items"] = $packageservice->getTeams();
+		$data["items1"] = $packageservice->getFirstrow();
 		$data["packages"] = $packageservice->getPackages();
 
 		$data["projects"] = $projectservice->allProjects($this->session->userdata('CLIENT_ID'));

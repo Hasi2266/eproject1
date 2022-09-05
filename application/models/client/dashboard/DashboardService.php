@@ -49,5 +49,15 @@ Class DashboardService extends CI_Model{
 		$query = $this->db->get();
 		return $query->result();
 	}
+
+	function getClientInfo($id){
+			$this->db->select('*');
+			$this->db->from('user-login');
+			$this->db->where('client_id='.$id);
+			$query = $this->db->get();
+			return $query->result();
+		
+	
+	}
 }
 ?>

@@ -7,7 +7,6 @@
   border-radius: 50%;
   overflow: hidden;
   position: relative;
-  -webkit-transition: border 0.15s ease-in;
   transition: border 0.15s ease-in;
 }
 .profilePhoto:hover {
@@ -36,7 +35,6 @@
   font-weight: bold;
   color: white;
   background-color: rgba(10, 175, 241, 0.781);
-  -webkit-transition: all 1s;
   transition: all 1s;
   padding-top: 0px;
   text-align: center;

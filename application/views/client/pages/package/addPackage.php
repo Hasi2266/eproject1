@@ -10,11 +10,9 @@
 
 				<?php foreach($items as $item){?>
 
-				
 					<li class="nav-item">
-						<a class="nav-link  <?php if(($item->team_id)==1) {echo "active";}?>"  data-toggle="pill" href="#<?php echo $item->name?>" role="tab" aria-controls="pills-<?php echo $item->name?>" aria-selected="true"><?php echo $item->name?></a>
+						<a class="nav-link  <?php if(($items1->team_id) == ($item->team_id)) {echo "active";}?>"  data-toggle="pill" href="#<?php echo $item->name?>" role="tab" aria-controls="pills-<?php echo $item->name?>" aria-selected="true"><?php echo $item->name?></a>
 					</li>
-
 
 				<?php } ?> 
 
@@ -117,7 +115,7 @@
 
 							<?php foreach($items as $item1){?>
 
-							<div class="tab-pane fade show <?php if(($item1->team_id)==1) {echo "active";}?>" id="<?php echo $item1->name?>" role="tabpanel" aria-labelledby="<?php echo $item1->name?>-tab">
+							<div class="tab-pane fade show <?php if(($items1->team_id) == ($item1->team_id)) {echo "active";}?>" id="<?php echo $item1->name?>" role="tabpanel" aria-labelledby="<?php echo $item1->name?>-tab">
 				
 								<div class="pricing-wrapper mg-lg-b-40">
 						

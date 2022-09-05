@@ -43682,7 +43682,9 @@ a.bg-twitter:hover, a.bg-twitter:focus, button.bg-twitter:hover, button.bg-twitt
 
   transition: all 1.25s;
 
-  box-shadow:  2px 2px 5px #dce0e6;}
+  box-shadow:  2px #dce0e6;
+	/* border-color: #dce0e6; */
+}
 
 
 
@@ -43694,9 +43696,10 @@ a.bg-twitter:hover, a.bg-twitter:focus, button.bg-twitter:hover, button.bg-twitt
 
   .dashCardHover:hover, .dashCardHover:focus {
 
-    box-shadow:  2px 3px  3px 3px #dce0e6;;
 
-    border-color: gainsboro; }
+    box-shadow:  3px  ;;
+
+    border-color: #D5CEC8; }
 
 		.searchbtnDash{
 
@@ -43704,7 +43707,12 @@ a.bg-twitter:hover, a.bg-twitter:focus, button.bg-twitter:hover, button.bg-twitt
 		
 		}
 
+		@media (max-width: 576px){
 
+			.project-dash{
+				width: 150rem !important;
+			}
+		}
 	
 .middle {
   transition: .5s ease;
@@ -43828,3 +43836,34 @@ input#pwd {
 }
 
 
+calendar td a {
+	padding: 10px !important;
+	
+}
+
+.bootstrap-tagsinput {
+	border-radius:10px;
+
+}
+
+.bootstrap-tagsinput .tag [data-role="remove"] {
+	padding-right: 15px;
+}
+
+.bootstrap-tagsinput .tag{
+	margin-right: 8px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	font-size: 12px;
+	border-radius: 5px;
+
+}
+
+/* input[type="file" i] {
+	margin-top: 50px;
+} */
+
+
+.text-border{
+	border-radius: 10px;
+}

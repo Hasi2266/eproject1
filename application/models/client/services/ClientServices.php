@@ -10,6 +10,11 @@ Class ClientServices extends CI_Model{
 		return $query->result();
 
 	}
+	function getFirstrow(){
+		$this->db->limit(1);
+		$query = $this->db->get('teams');
+		return $query->row();
+	}
 	
 	function getServices(){
 

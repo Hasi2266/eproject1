@@ -3,7 +3,7 @@
     <div class="sidebar">
         <div class="sidebar-header">
             <div>
-                <a href="../index.html" class="sidebar-logo"><span>Sprout Seven </span></a>
+                <a href="<?php echo base_url();?>index.php/AdminDashboard" class="sidebar-logo"><span>Sprout Seven </span></a>
                 <!-- <small class="sidebar-logo-headline">Responsive Dashboard Template</small> -->
             </div>
         </div>

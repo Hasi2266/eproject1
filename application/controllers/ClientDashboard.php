@@ -37,10 +37,11 @@ Class ClientDashboard extends CI_Controller{
 		$data["noProjects"] = $dashboardservice->countProjects($this->session->userdata('CLIENT_ID'));
 		$data["noProposals"] = $dashboardservice->countProposal($this->session->userdata('CLIENT_ID'));
 
-		$items= $dashboardservice->allProjects($this->session->userdata('CLIENT_ID'));
-
-		$data["items"] = $dashboardservice->allProjects($this->session->userdata('CLIENT_ID'));
+		$items = $dashboardservice->allProjects($this->session->userdata('CLIENT_ID'));
 		
+		
+		$data["items"] = $dashboardservice->allProjects($this->session->userdata('CLIENT_ID'));
+		// print_r($data["items"]);die;
 		// print_r($items);die;
 
 		// foreach($items as $key => $value){
@@ -61,6 +62,12 @@ Class ClientDashboard extends CI_Controller{
 		// $date2 = "2009-06-26";
 
 		// print_r($dashboardservice->allProjects($this->session->userdata('CLIENT_ID')));
+
+		$data["items2"] = $dashboardservice->getClientInfo($this->session->userdata('CLIENT_ID'));
+			
+		// echo substr("Hello world",0,1);
+		// print_r($items->fname) ;die;
+		// echo $items2->fname;die; 
 		
 		$partial = array('content' => 'client/pages/dashboard');
 		$this->template->load('client/mainpage',$partial,$data);
