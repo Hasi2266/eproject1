@@ -22,6 +22,7 @@ Class AdminPackage extends CI_Controller{
 		$data['packages'] = $packageservice->allPackages();
 		$data["items"] = $packageservice->allTeams();
 		$data["packages"] = $packageservice->getPackages();
+		$data["items1"] = $packageservice->getFirstrow();
 		
 		// $item = $packageservice->getPackages();
 		// $package_list = json_decode("[".$item->flieds."]");

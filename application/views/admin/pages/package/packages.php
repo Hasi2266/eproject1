@@ -12,7 +12,7 @@
 
 				
 					<li class="nav-item">
-						<a class="nav-link text-uppercase <?php if(($item->team_id)==1) {echo "active";}?>" data-toggle="pill" href="#<?php echo $item->name?>" role="tab" aria-controls="pills-<?php echo $item->name?>" aria-selected="true"><?php echo $item->name?></a>
+						<a class="nav-link text-uppercase <?php if(($items1->team_id)== ($item->team_id)) {echo "active";}?>" data-toggle="pill" href="#<?php echo $item->name?>" role="tab" aria-controls="pills-<?php echo $item->name?>" aria-selected="true"><?php echo $item->name?></a>
 					</li>
 
 

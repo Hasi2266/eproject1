@@ -20,9 +20,12 @@ Class AdminService extends CI_Controller{
 		$servicesService = new ServicesService();
 
 		$data["active"] = 5;
-	
+		// $x = $servicesService->getFirstrow();
+		// echo $x->team_id;die;
+		// print_r($x);die;
 		// $data['items'] = $servicesService->allServices();
 		$data["items"] = $servicesService->getTeams();
+		$data["items1"] = $servicesService->getFirstrow();
 		$data["services"] = $servicesService->getServices();
 
 		$partial = array('content' => 'admin/pages/service/services');
