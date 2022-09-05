@@ -67,7 +67,9 @@ Class ClientPackage extends CI_Controller{
 					// echo 'taken'.$selectPackage.$name[0]->name.$pname;
 				}
 				
-				
+				else{
+					echo 'no';
+				}
 				
 
 			}

@@ -792,13 +792,13 @@ $(document).ready(function(){
 							},
 							
 							success: function(html) {
-               	// alert(html);
+               	// alert(html.length);
 
 										var err = html;
-										// alert(err.length);
-										if(err.length === 0){
-											
-											$('#check3').html(err);
+										
+										if (err.length == 2){
+											// alert(err.length);
+											$('#check3').html("");
 											document.getElementById("btnAdd").disabled = false;
 										}
 										else{
@@ -885,10 +885,10 @@ $(document).ready(function(){
                	// alert(html);
 
 										var err = html;
-										alert(err.length);
-										if(err.length === 0){
+										// alert(err.length);
+										if(err.length == 2){
 											
-											$('#errorService').html(err);
+											$('#errorService').html("");
 
 											document.getElementById("btnAddService").disabled = false;
 										}
