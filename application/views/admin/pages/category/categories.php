@@ -50,7 +50,8 @@
                     </thead>
                     <tbody>
 				<?php foreach($items as $item){?>
-                        <tr data-url="<?php echo base_url()?>index.php/AdminService/displayService/<?php echo $item->category_id ?>" style="cursor:pointer;">
+					<!-- data-url="<?php echo base_url()?>index.php/AdminService/displayService/<?php echo $item->category_id ?>" -->
+                        <tr  style="cursor:pointer;">
 
 						
                             <td>
