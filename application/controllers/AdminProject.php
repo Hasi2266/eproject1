@@ -8,10 +8,10 @@ Class AdminProject extends CI_Controller{
 		if(!$this->session->userdata('ADMIN_ID')){
 			redirect('/Admin/');
 		}else{
-			$this->load->model("Admin/project/ProjectService");
-			$this->load->model("Admin/project/ProjectModel");
-			$this->load->model("Admin/project/MilestoneModel");
-			$this->load->model("Admin/project/ProposalModel");
+			$this->load->model("Admin/Project/ProjectService");
+			$this->load->model("Admin/Project/ProjectModel");
+			$this->load->model("Admin/Project/MilestoneModel");
+			$this->load->model("Admin/Project/ProposalModel");
 		}
 		
 	}
