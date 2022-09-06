@@ -1,12 +1,12 @@
-<div class="content-header">
+<div class="content-header content-card-body">
         <div>
-          <nav aria-label="breadcrumb">
+          <!-- <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="#">UI Library</a></li>
               <li class="breadcrumb-item"><a href="#">Components</a></li>
               <li class="breadcrumb-item active" aria-current="page">Table (DataTable)</li>
             </ol>
-          </nav>
+          </nav> -->
          
         </div>
       </div><!-- content-header -->
@@ -28,7 +28,7 @@
 
       </div>
 
-      <div class="component-section px-5 shadow" style="border-radius: 13px;" >
+      <div class="component-section px-5 shadow content-card-body" style="border-radius: 13px;padding-bottom:3rem;" >
         <!--btn-->
        <h3 class="text-dark  mb-4">Proposal</h3>
        

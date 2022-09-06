@@ -1,4 +1,4 @@
-<div class="content-body pd-t-30 d-flex flex-column ">
+<div class="content-body pd-t-30 d-flex flex-column  content-card-body">
         <!-- <div class="pricing-header mg-b-25 mg-md-b-35 mg-lg-b-45">
           <label class="content-label content-label-lg tx-10 tx-sm-11 tx-md-12 tx-primary mg-b-2 tx-spacing-2">Simple Pricing That Fit For Your Needs</label>
           <h1 class="tx-24 tx-md-32 tx-xl-36 tx-normal tx-color-01">Choose the right plans for your business</h1>
@@ -11,7 +11,7 @@
 				<?php foreach($teams as $item){?>
 
 					<li class="nav-item">
-						<a class="nav-link  <?php if(($items1->team_id) == ($item->team_id)) {echo "active";}?>"  data-toggle="pill" href="#<?php echo $item->name?>" role="tab" aria-controls="pills-<?php echo $item->name?>" aria-selected="true"><?php echo $item->name?></a>
+						<a class="nav-link btn-team <?php if(($items1->team_id) == ($item->team_id)) {echo "active";}?>"  data-toggle="pill" href="#<?php echo $item->name?>" role="tab" aria-controls="pills-<?php echo $item->name?>" aria-selected="true"><?php echo $item->name?></a>
 					</li>
 
 				<?php } ?> 
@@ -122,10 +122,10 @@
 									<div class="row row-xs mt-5">
 										<?php  foreach($packages as $package){?>
 											<?php if(($package->team) == ($item1->team_id)){?>
-												<div class="col-sm-6 col-md-4 " >
-												<div class="card card-pricing shadow" style="border-radius: 8px; height: 30rem;"  id="tblFruits">
+												<div class="col-sm-6 col-md-4" >
+												<div class="card card-pricing shadow cardBody" style=""  id="tblFruits">
 																	<div class="card-header">
-																			<div class="custom-control custom-checkbox checkbox-xl "style="margin-left:15.5rem ;margin-top:-8px ;margin-bottom:-20px">
+																			<div class="custom-control custom-checkbox checkbox-xl card_checkbox "style="">
 																					<input type="checkbox" class="custom-control-input check1" name="check[]" id="<?php echo $package->package_id ?>" value="<?php echo $package->package_id ?>" >
 																					<!-- <input type="text" value="<?php echo $package->package_id ?>" name="check_id"> -->
 																					<label class="custom-control-label check1" for="<?php echo $package->package_id ?>"></label>

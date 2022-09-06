@@ -2,9 +2,9 @@
 <?php include 'include/header.php'?>
 
 <div class="sidebar">
-  <div class="sidebar-header">
+  <div class="sidebar-header sidebar-color" style="border-radius: 0px 20px 0px 0px;">
 	<div>
-	  <a href="<?php echo base_url();?>index.php/ClientDashboard" class="sidebar-logo"><span>Sprout Seven</span></a>
+	  <a href="<?php echo base_url();?>index.php/ClientDashboard" class="sidebar-logo" ><span style="color:white;margin-top:20px">Sprout Seven</span></a>
 	  <!-- <small class="sidebar-logo-headline">Responsive Dashboard Template</small> -->
 	</div>
   </div>
@@ -16,8 +16,8 @@
 </div><!-- sidebar -->
 
 <div class="content content-page">
-  <div class="header">
-	<div class="header-left">
+  <div class="header" style="margin-right:25px">
+	<div class="header-left" style="margin-left:1.5rem" >
 	  <a href="" class="burger-menu"><i data-feather="menu"></i></a>
 
 	  <div class="header-search searchbtnDash">
@@ -78,10 +78,10 @@
 		$items2 = $dashboardservice->getClientInfo($this->session->userdata('CLIENT_ID'));
 	 
 	 ?>
-	  <div class="dropdown dropdown-loggeduser" style="margin-left:-45px;">
+	  <div class="dropdown dropdown-loggeduser">
 		<a href="" class="dropdown-link" data-toggle="dropdown">
 		  <div class="avatar avatar-sm">
-		  <div class="rounded-circle" style="background-color: #4d4d4d;border-radius:50%;display: inline-block;height: 35px;width:35px;margin: auto;"><h6 style="color:white;font-size:12px;text-align:center;margin: 10px auto;" ><?php echo substr($items2[0]->firstname,0,1). substr($items2[0]->lastname,0,1);?></h6></div>
+		  <div class="rounded-circle" style="background-color: #404040;border-radius:50%;display: inline-block;height: 35px;width:35px;margin: auto;"><h6 style="color:white;font-size:12px;text-align:center;margin: 10px auto;" ><?php echo substr($items2[0]->firstname,0,1). substr($items2[0]->lastname,0,1);?></h6></div>
 			<!-- <img src="https://via.placeholder.com/500/637382/fff" class="rounded-circle" alt=""> -->
 		  </div><!-- avatar -->
 		</a>
@@ -89,7 +89,7 @@
 		  <div class="dropdown-menu-header">
 			<div class="media align-items-center">
 			  <div class="avatar">
-			  <div class="rounded-circle" style="background-color: #4d4d4d;border-radius:50%;display: inline-block;height: 39px;width:39px;"><h6 style="color:white;font-size:12px;text-align:center;margin: 12px auto;" ><?php echo substr($items2[0]->firstname,0,1). substr($items2[0]->lastname,0,1);?></h6></div>
+			  <div class="rounded-circle" style="background-color: #404040;border-radius:50%;display: inline-block;height: 39px;width:39px;"><h6 style="color:white;font-size:12px;text-align:center;margin: 12px auto;" ><?php echo substr($items2[0]->firstname,0,1). substr($items2[0]->lastname,0,1);?></h6></div>
 				<!-- <img src="https://via.placeholder.com/500/637382/fff" class="rounded-circle" alt=""> -->
 			  </div><!-- avatar -->
 			  <div class="media-body mg-l-10">
@@ -102,7 +102,7 @@
 			<a href="<?php echo base_url();?>index.php/ClientInfo" class="dropdown-item"><i data-feather="user"></i> View Profile</a>
 			<a href="<?php echo base_url();?>index.php/ClientInfo" class="dropdown-item"><i data-feather="edit-2"></i> Edit Profile</a>
 			<a href="<?php echo base_url();?>index.php/ClientInfo" class="dropdown-item"><i data-feather="briefcase"></i> Account Settings</a>
-			<a href="" class="dropdown-item"><i data-feather="shield"></i> Privacy Settings</a>
+			<!-- <a href="" class="dropdown-item"><i data-feather="shield"></i> Privacy Settings</a> -->
 			<a href="<?php echo base_url();?>index.php/Client/Logout" class="dropdown-item"><i data-feather="log-out"></i> Sign Out</a>
 		  </div>
 		</div><!-- dropdown-menu -->

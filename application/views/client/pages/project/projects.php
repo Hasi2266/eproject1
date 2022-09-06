@@ -1,4 +1,4 @@
-<div class="content-header">
+<div class="content-header content-card-body" >
         <div>
           <!-- <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -13,20 +13,20 @@
      
       <div class="pd-x-20 pd-b-15" >
       
-        <div class="row">
-          <div class="px-3"style="margin-left:62.5rem;margin-top:0rem;" >
+        <div class="row ">
+          <div class="px-3"style="margin-left:70rem;margin-top:0rem;" >
             <a href="<?php echo base_url();?>index.php/ClientProject/cerateProject"><button type="button" class="btn btn-primary text-right  py-2 "style="border-radius: 8px;">New project</button></a>
           </div>
-            <div class="" style="msrgin-top:-1rem">
+            <!-- <div class="" style="msrgin-top:-1rem">
               <button type="button" class="btn btn-primary text-right py-2"style="border-radius: 8px;">Add to project</button>
-            </div>
+            </div> -->
           
         
 <!-- my -->
 
       </div>
 
-      <div class="component-section px-5 shadow" style="border-radius: 13px;" >
+      <div class="component-section px-5 shadow content-card-body" style="border-radius: 13px;margin-bottom:2rem !important;padding-bottom:3rem;" >
         <!--btn-->
        <h3 class="text-dark  mb-4">Projects</h3>
        

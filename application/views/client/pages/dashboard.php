@@ -112,8 +112,8 @@
 </style> -->
 
 
-<div class="content-header justify-content-between" >
-	<div>
+<div class="content-header " >
+	
 	  <!-- <nav aria-label="breadcrumb">
 		<ol class="breadcrumb">
 		  <li class="breadcrumb-item"><a href="#">Pages</a></li>
@@ -121,19 +121,54 @@
 		  <li class="breadcrumb-item active" aria-current="page">Projects &amp; Web Services</li>
 		</ol>
 	  </nav> -->
-	  <div class="row mt-1" style="margin-left:5px;">
+
+	  <?php 
+	  
+	  	$day =  date("l");
+		$month =  date("F d");
 		
+		$date = new DateTime("now", new DateTimeZone('GMT+5:30') );
+		// echo $date->format('H');
+		
+		$hr = $date->format('H');
+
+		$greeting ; 
+
+		if ($hr < "12") {
+			$greeting =  "Good morning";
+		} else
+		/* If the time is grater than or equal to 1200 hours, but less than 1700 hours, so good afternoon */
+		if ($hr >= "12" && $hr < "17") {
+			$greeting =  "Good afternoon";
+		} else
+		/* Should the time be between or equal to 1700 and 1900 hours, show good evening */
+		if ($hr >= "17" && $hr < "19") {
+			$greeting =  "Good evening";
+		} else
+		/* Finally, show good night if the time is greater than or equal to 1900 hours */
+		if ($hr >= "19") {
+			$greeting =  "Good night";
+		}
+	 
+	 
+	 ?>
+
+		<div style="margin: auto; ">
+				<h6 class="content-title content-title-xs" style="text-align:center;font-size:16px;line-height: 20px;"><?php echo $day ." , " . $month;?></h6>
+				<h2 class="content-title content-title-xs" style="font-size:32px;line-height: 40px;margin-bottom:8rem"><?php echo $greeting." , " . $items2[0]->firstname?></h2>
+		</div>
+				
+	 
+		
+		<div class="row" style="margin-left:5px;">
+
+			<a  style="" href="<?php echo base_url();?>index.php/ClientProject/cerateProject"><i class="text-dark" data-feather="plus" style="border-style: dashed;height:3rem;width:3rem"></i><button type="button" class="btn btn-dark"style="border-radius: 8px;margin-right:40px">Create Project</button></a>
+		
+		</div>
 	
-	  	<h4 class="content-title content-title-xs" style="margin-bottom:-50px">Welcome to Dashboard</h4>
-		<a  style="margin-left:71rem" href="<?php echo base_url();?>index.php/ClientProject/cerateProject"><button type="button" class="btn btn-primary"style="border-radius: 8px;padding-top:-35px">New Project</button></a>
-		
-		
-		
-	</div>
-	</div>
   </div>
   
-<div class="content-body mt-1">
+<div class="content-body" style="margin-left:1.5rem;margin-right:1.5rem;margin-top:-4.7rem;">
 	
         <div class="card card-hover card-task-one dashCardHover" style="border-radius: 10px;">
           <div class="card-body">
@@ -183,15 +218,15 @@
         </div><!-- card -->
 
         
-        <div class="row row-sm mg-t-15 mg-sm-t-20" style="margin-top:2rem">
+        <div class="row row-sm mg-t-15 mg-sm-t-20" >
           <div class="col-sm-6 col-xl-5">
-            <div class="card card-hover card-todo dashCardHover mb-5" style="border-radius:10px ;margin-right: 12px;">
+            <div class="card card-hover card-todo dashCardHover mb-5" style="border-radius:10px ;margin-right: -0.5rem;">
               <div class="card-header bg-transparent pd-y-15 pd-l-15 pd-r-10">
                 <h6 class="card-title mg-b-0">Project Status</h6>
-                <nav class="nav">
+                <!-- <nav class="nav">
                   <a href="" class="link-gray-500"><i data-feather="help-circle" class="svg-16"></i></a>
                   <a href="" class="link-gray-500"><i data-feather="more-vertical" class="svg-16"></i></a>
-                </nav>
+                </nav> -->
               </div><!-- card-header -->
               <div id="scroll1" class="pos-relative mb-2" style="height: 310px;">
 
@@ -340,14 +375,14 @@
           
 
           <!-- Recent Projects -->
-          <div class="col-xl-7 mg-t-15 mg-sm-t-20 mg-xl-t-0" >
+          <div class="col-xl-7 mg-t-15 mg-sm-t-20 mg-xl-t-0">
             <div class="card card-hover card-projects  dashCardHover" style="border-radius:10px;">
               <div class="card-header bg-transparent pd-y-15 pd-l-15 pd-r-10">
                 <h6 class="card-title mg-b-0">Recent Projects</h6>
-                <nav class="nav">
+                <!-- <nav class="nav">
                   <a href="" class="link-gray-500"><i data-feather="help-circle" class="svg-16"></i></a>
                   <a href="" class="link-gray-500"><i data-feather="more-vertical" class="svg-16"></i></a>
-                </nav>
+                </nav> -->
               </div><!-- card-header -->
               <div id="scroll2" class="pos-relative  mb-2" style="height: 310px;">
               <ul class="list-group list-group-flush" >
@@ -415,16 +450,16 @@
                     </div>
           </div><!-- col -->
 
-		  <div class="row row-sm" style="margin-right-15px;width:95rem;margin-top:-18px">
+		  <div class="row row-sm" style="margin-right-15px;width:95rem;margin-top:-30px;margin-bottom:1rem;">
 			<div class="col-xl-12 mg-t-15 mg-sm-t-20 mg-xl-t-0" >
 
 			<div class="card card-hover card-projects card-task-one dashCardHover mb-2" style="border-radius: 10px; ">
 				<div class="card-header bg-transparent pd-y-15 pd-l-15 pd-r-10">
 									<h6 class="card-title mg-b-0" style="margin-top:1px;margin-bottom:-6px">Projects</h6>
-									<nav class="nav">
+									<!-- <nav class="nav">
 									<a href="" class="link-gray-500"><i data-feather="help-circle" class="svg-16"></i></a>
 									<a href="" class="link-gray-500"><i data-feather="more-vertical" class="svg-16"></i></a>
-									</nav>
+									</nav> -->
               					</div><!-- card-header -->
 						<div class="card-body">
 							<div class="row">

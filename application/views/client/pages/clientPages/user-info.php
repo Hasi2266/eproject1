@@ -167,7 +167,7 @@ margin: 80px 0px 0 90px;
 }
 </style>
 
-<div class="content-header">
+<div class="content-header content-card-body">
             <div>
                 <nav aria-label="breadcrumb">
                     <!-- <ol class="breadcrumb">
@@ -182,7 +182,7 @@ margin: 80px 0px 0 90px;
         <!-- content-header -->
 
 		
-        <div class="content-body">
+        <div class="content-body content-card-body">
 		<?php foreach($items as $item){ ?>
             <div class="dashCardHover border mb-5 mt-3" style="border-radius: 13px;">
                 <div class="row">
@@ -215,21 +215,21 @@ margin: 80px 0px 0 90px;
 						</div>-->
 						<!-- mage -->
 
-						<div class="media-container">
+						<div class="media-container mt-3 mx-3">
 						<form action="<?php echo base_url();?>index.php/ClientInfo/updateImage" method="post" enctype="multipart/form-data">
-              <span class="media-overlay">
+              <span class="media-overlay"  style="padding:10px;">
 
                 <input type="file" name="img" id="media-input" accept="image/*">
 
                
 				
-                <img src="<?php echo base_url();?>/assets/img/edit.png " width="1" alt="" class="media-icon text-white">
+                <img src="<?php echo base_url();?>/assets/img/edit.png " width="1" alt="" class="media-icon text-white" >
 
               </span>
 
-              <figure class="media-object">
+              <figure class="media-object" >
 
-                <img class="img-object" src="<?php echo base_url();?><?php echo $img;?>">
+                <img class="img-object" src="<?php echo base_url();?><?php echo $img;?>" >
 
               </figure>
 
@@ -275,7 +275,7 @@ margin: 80px 0px 0 90px;
                         <p class=" text-secondary"><i class="fa fa-map-marker " aria-hidden="true"></i> <?php echo $item->country;?></p>
                     </div>
                     <div class="col-md-4">
-                        <h5 class="font-weight-normal"><i class="fa fa-phone  p-1 text-white " style="background:blue;margin-right:5px;margin-top: 5rem;border-radius: 4px;" aria-hidden="true"></i> <?php echo $item->contact;?></h5>
+                        <h5 class="font-weight-normal"><i class="fa fa-phone  p-1 text-white " style="background:blue;margin-right:5px;margin-top:3rem;border-radius: 4px;" aria-hidden="true"></i> <?php echo $item->contact;?></h5>
 
                         <h5 class="font-weight-normal"><i class="fa fa-envelope p-1 text-white  " style="background:blue;margin-right:5px;border-radius: 4px;" aria-hidden="true"></i> <?php echo $item->email;?></h5>
                     </div>

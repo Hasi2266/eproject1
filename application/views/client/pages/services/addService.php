@@ -1,10 +1,10 @@
-<div class="content-body pd-t-30 d-flex flex-column ">
+<div class="content-body pd-t-30 d-flex flex-column content-card-body ">
         <!-- <div class="pricing-header mg-b-25 mg-md-b-35 mg-lg-b-45">
           <label class="content-label content-label-lg tx-10 tx-sm-11 tx-md-12 tx-primary mg-b-2 tx-spacing-2">Simple Pricing That Fit For Your Needs</label>
           <h1 class="tx-24 tx-md-32 tx-xl-36 tx-normal tx-color-01">Choose the right plans for your business</h1>
           <p class="tx-md-16 tx-color-03 mg-b-0">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi.</p>
         </div> -->
-        <div class="" style="margin-left:10px;">
+        <div class="row">
           
           <ul class="nav nav-pillsService">
 
@@ -12,37 +12,23 @@
 
 				
 				<li class="nav-item">
-					<a class="nav-link  <?php if(($items1->team_id) == ($item->team_id)) {echo "active";}?>" data-toggle="pill" href="#<?php echo $item->name?>" role="tab" aria-controls="pills-<?php echo $item->name?>" aria-selected="true"><?php echo $item->name?></a>
+					<a class="nav-link  btn-team <?php if(($items1->team_id) == ($item->team_id)) {echo "active";}?>" data-toggle="pill" href="#<?php echo $item->name?>" role="tab" aria-controls="pills-<?php echo $item->name?>" aria-selected="true"><?php echo $item->name?></a>
 				</li>
 
 
 			<?php } ?> 
 
-            <!-- <li class="nav-item ">
-              <a class="nav-link active text-uppercase" data-toggle="pill" href="#flamingo" role="tab" aria-controls="pills-flamingo" aria-selected="true">Digital</a>
-            </li> -->
-            <!-- <li class="nav-item mx-2">
-              <a class="nav-link text-uppercase" data-toggle="pill" href="#cuckoo" role="tab" aria-controls="pills-cuckoo" aria-selected="false">lab</a>
-            </li> -->
-            <!-- <li class="nav-item">
-              <a class="nav-link text-uppercase" data-toggle="pill" href="#ostrich" role="tab" aria-controls="pills-ostrich" aria-selected="false">Studio</a>
-            </li>
-            <li class="nav-item mx-2">
-              <a class="nav-link text-uppercase" data-toggle="pill" href="#tropicbird" role="tab" aria-controls="pills-ostrich" aria-selected="false">Commerce</a>
-            </li> -->
-            <!-- <li class="nav-item">
-              <a class="nav-link text-uppercase" data-toggle="pill" href="#tropicbird" role="tab" aria-controls="pills-ostrich" aria-selected="false">Ostrich</a>
-            </li> -->
-			<div class="px-3 " style="margin-left:42rem;">
-				  <!-- <a href="javascript: void(0)" id="newbtn" class="btn btn-primary text-right " style="border-radius: 8px;" data-toggle="modal" data-animation="effect-scale"><button ><a href="#model6">new project</button></a> -->
-				  <a href="javascript: void(0)" data-toggle="modal" data-animation="effect-scale" class="text-white" id="my"><button id="btnCheck" style="border-radius: 8px;"  class="btn btn-primary text-right  py-2">New Project</button></a>
-                  </div>
-                    <div class="">
-					<a href=""  data-toggle="modal" data-animation="effect-scale" class="text-white" id="link2"><button id="btnCheck1" style="border-radius: 8px;"  class="btn btn-primary text-right  py-2">Add to project</button></a>
-                    </div>
+           
+			
           </ul>
                 
-                  
+		  <div class="px-3" style="margin-left:45rem;">
+				  <!-- <a href="javascript: void(0)" id="newbtn" class="btn btn-primary text-right " style="border-radius: 8px;" data-toggle="modal" data-animation="effect-scale"><button ><a href="#model6">new project</button></a> -->
+				  <a href="javascript: void(0)" data-toggle="modal" data-animation="effect-scale" class="text-white" id="my"><button id="btnCheck" style="border-radius: 8px;"  class="btn btn-all text-white  py-2">New Project</button></a>
+                  </div>
+                    <div class="">
+					<a href=""  data-toggle="modal" data-animation="effect-scale" class="text-white" id="link2"><button id="btnCheck1" style="border-radius: 8px;"  class="btn btn-all text-white  py-2">Add to project</button></a>
+                    </div>  
 
 		  <form action="<?php echo base_url();?>index.php/ClientService/addNewProj" method="post">
 
@@ -127,9 +113,9 @@
 										<?php  foreach($services as $service){?>
 											<?php if(($service->category_id) == ($item1->team_id)){?>
 												<div class="col-sm-6 col-md-4 ">
-													<div class="card card-pricing shadow" style="border-radius: 8px; height: 23rem;" id="servicecard">
+													<div class="card card-pricing shadow cardBody" id="servicecard">
 														<div class="card-header">
-															<div class="custom-control custom-checkbox checkbox-xl "style="margin-left:15.5rem ;margin-top:-8px ;margin-bottom:-20px">
+															<div class="custom-control custom-checkbox checkbox-xl card_checkbox ">
 																<input type="checkbox" class="custom-control-input check1" name="check[]" id="<?php echo $service->service_id ?>" value="<?php echo $service->service_id ?>">
 																<label class="custom-control-label check1" for="<?php echo $service->service_id ?>"></label>
 																</div>

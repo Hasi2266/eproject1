@@ -1,5 +1,5 @@
 <!-- data-spy="scroll" data-target="#navSection" data-offset="100" -->
-<div class="content-body">
+<div class="content-body content-card-body">
     <!-- header -->
     <div class="content-header">
         <div>
@@ -203,7 +203,7 @@
 																	<?php } ?>
 																</td>
 																<td><button type="button" name="add" id="add"
-																		class="btn btn-success"><i class="fa fa-plus"></button></td>
+																		class="btn btn-success btn-all"><i class="fa fa-plus"></button></td>
 															</tr>
 														<tbody>
 													</table>
@@ -301,7 +301,7 @@
 																<?php } ?>
 																</td>
 																<td><button type="button" name="add" id="add1"
-																		class="btn btn-success"><i class="fa fa-plus"></button></td>
+																		class="btn btn-success btn-all"><i class="fa fa-plus"></button></td>
 															</tr>
 														<tbody>
 													</table>
@@ -407,7 +407,7 @@
 			<!-- Submit -->
 
 
-			<button type="submit" class="btn btn-primary mt-5 mb-5">Submit Project</button>
+			<button type="submit" class="btn btn-primary mt-5 mb-5 btn-submit">Submit Project</button>
 		</form>
 
     </div><!-- content-body -->

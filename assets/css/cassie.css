@@ -11633,7 +11633,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.1s; }
+    transition: all 20s; }
     @media (prefers-reduced-motion: reduce) {
       .header-left .burger-menu {
         transition: none; } }
@@ -43683,7 +43683,7 @@ a.bg-twitter:hover, a.bg-twitter:focus, button.bg-twitter:hover, button.bg-twitt
   transition: all 1.25s;
 
   box-shadow:  2px #dce0e6;
-	/* border-color: #dce0e6; */
+	border-color: #dce0e6;
 }
 
 
@@ -43866,4 +43866,126 @@ calendar td a {
 
 .text-border{
 	border-radius: 10px;
+}
+
+
+.sidebar-color{
+	background-color: #404040;
+	color:white;
+	border-bottom:none !important;
+	
+	/* padding-left: 50px; */
+	/* border-radius:20px; */
+}
+
+.header{
+	border-bottom:none !important;
+}
+
+.nav-sidebar .nav-link {
+	color: white !important;
+	padding-left: 20px;
+	
+}
+
+.nav-sidebar .nav-link.active{
+	background-color: #666666 !important;
+	
+}
+
+.sidebar-body {
+	padding: 0px 0px !important;
+}
+
+.sidebar {
+	border-right: none !important ;
+}
+.nav-sidebar .nav-sub-link{
+	color: white;
+	/* background-color: #808080; */
+}
+.nav-sidebar .nav-link:hover {
+	background-color: rgba(255,255,255,.08) !important;
+	color:white !important;
+}
+
+.nav-sidebar .nav-sub-link:hover, .nav-sidebar .nav-sub-link:focus{
+	background-color:rgba(255,255,255,.08) !important ;
+	color:white !important;
+}
+.btn-signout{
+	padding-right: 0;
+	text-align: center;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled{
+	border-radius: 8px !important;
+	margin-top: 1rem !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button{
+	border-radius: 6px !important;
+	margin-top: 1rem !important;
+}
+
+/* .dataTables_wrapper .dataTables_paginate .paginate_button.previous{
+	margin-right: 10px !important;
+} */
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.previous{
+	margin-left: 15px !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current{
+	margin-left: 6px !important;
+	margin-right: 6px !important;
+	background-color: #404040;
+}
+
+.content-card-body
+{
+	margin-left:1.5rem;
+	margin-right:1.5rem;
+}
+
+.btn-all{
+	border-radius: 8px !important;
+	background-color: #404040 !important;
+}
+.btn_remove{
+	border-radius: 8px !important;
+}
+
+.btn-submit{
+	border-radius: 8px !important;
+	background-color: #4573d2 !important;
+}
+
+.cardBody{
+	border-radius: 8px;
+	 height: 26rem;
+	 width:19rem;
+	 margin-right: 2rem !important;
+	 
+}
+
+.card_checkbox{
+	margin-left:15rem ;
+	margin-top:-8px ;
+	margin-bottom:-20px
+}
+
+.btn-team{
+	background-color: #404040 ;
+	color: white !important;
+	margin-right: 10px;
+	border-radius: 8px;
+
+}
+.btn-team :active{
+	background-color: red;
+}
+.btn-team :hover{
+	background-color: rgba(255,255,255,.08) !important;
+	color: whitesmoke;
 }

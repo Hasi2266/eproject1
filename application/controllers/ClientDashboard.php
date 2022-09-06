@@ -16,6 +16,9 @@ Class ClientDashboard extends CI_Controller{
 
 	public function index(){
 
+		
+		
+
 		$date1 = "2007-03-24";
 		$date2 = "2009-06-26";
 		$data["active"] = 1;
@@ -29,7 +32,12 @@ Class ClientDashboard extends CI_Controller{
 		// printf("%d years, %d months, %d days\n", $years, $months, $days);
 		// 		$data["title"] = "dashboard";
 				
+
+		
+		
 		$date_now = date("Y-m-d");
+		
+	
 		// echo $date_now;
 		$dashboardservice = new DashboardService();
 

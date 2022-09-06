@@ -1,5 +1,5 @@
-<div id="dpSidebarBody" class="sidebar-body">
-        <ul class="nav nav-sidebar">
+<div id="dpSidebarBody" class="sidebar-body sidebar-color" style="border-radius: 0px 0px 20px 0px;">
+        <ul class="nav nav-sidebar " style="margin-top:1rem">
           <!-- <li class="nav-label"><label class="content-label">Template Pages</label></li> -->
           <li class="nav-item show">
             <a href="<?php echo base_url();?>index.php/ClientDashboard" class="nav-link <?php if($active == 1){ echo 'active';}else{ echo 'no';}?>"><i data-feather="box"></i> Dashboard</a>
@@ -41,6 +41,10 @@
               <a href="<?php echo base_url();?>index.php/ClientInfo" class="nav-sub-link  ">Company Info</a>
               <!-- <a href="invoice-table.html" class="nav-sub-link">Billing Info</a> -->
             </nav>
+					</li>
+					<li class="nav-item " style="position: absolute;bottom:0;background-color:none;">
+						<a href="<?php echo base_url();?>index.php/Client/Logout" class="nav-link with-sub btn-signout"><i data-feather="book"></i> <button type="button" class="btn  bg-transparent text-white" style="color:white;">Sign out</button></a>
+						
 					</li>
 
       </div>
