@@ -793,7 +793,7 @@ $(document).ready(function(){
 							},
 							
 							success: function(html) {
-               	alert(html.length);
+               	// alert(html.length);
 										var err = html;
 										
 										if (err.length < 10){
@@ -855,7 +855,7 @@ $(document).ready(function(){
 						var project_id = $(this).val();
 						// alert(project_id);
 
-						var selected = new Array();
+						var selected = [];
 						var tblFruits = document.getElementById("servicecard");
 						var chks = document.getElementsByTagName("INPUT");
 						// let no = chks.length;
@@ -886,10 +886,9 @@ $(document).ready(function(){
 
 										var err = html;
 										// alert(err.length);
-										if(err.length == 2){
+										if(err.length < 10){
 											
 											$('#errorService').html("");
-
 											document.getElementById("btnAddService").disabled = false;
 										}
 										else{

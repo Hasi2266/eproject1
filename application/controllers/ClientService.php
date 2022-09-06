@@ -52,36 +52,69 @@ Class ClientService extends CI_Controller{
 		// $result=array_diff($package_list,$selected);
 		// print_r($result) ;
 
-		if(!empty($select_list)){
+		$result=array_diff($selected,$select_list);//24
+		$result1 = array_diff($selected,$result);
 
-			foreach($select_list as $key => $exitingService){
 
-				foreach($selected  as $key => $selectService){
-	
-					
-					if($exitingService == $selectService) {
-	
-						$name = $projectservice->getServiceName($selectService);
-						$pname = $project[0]->name;
-						echo 'Service '.$name[0]->service_name.' is already exiting in '.$pname.' project.<br/>';
-						
-						// echo 'taken'.$selectPackage.$name[0]->name.$pname;
-					}
-					
-					else{
-						echo 'no';
-					}
-					
-					
-					
-	
-				}
-				// echo "<option value=".$items->cities_id.">".$items->city_name."</option>";
-				// echo $item;
-				// print_r($package_list);
-				
+		if ((empty($result)) && (!empty($result1)) ){
+
+			foreach($result1 as $key => $exitingService){
+
+				$name = $projectservice->getServiceName($exitingService);
+				$servicename = $name[0]->service_name;
+				$pname = $project[0]->name;
+
+				echo 'Service '.$servicename.' is already exiting in '.$pname.' project.<br/>';
+
 			}
+			
 		}
+		else if ((!empty($result)) && (!empty($result1)) ){
+
+			foreach($result1 as $key => $exitingService){
+
+				$name = $projectservice->getServiceName($exitingService);
+				$servicename = $name[0]->service_name;
+				$pname = $project[0]->name;
+
+				echo 'Service '.$servicename.' is already exiting in '.$pname.' project.<br/>';
+
+			}
+			
+		}
+		else{
+			echo '';
+		}
+		// if(!empty($select_list)){
+
+		// 	foreach($select_list as $key => $exitingService){
+
+		// 		foreach($selected  as $key => $selectService){
+	
+					
+		// 			if($exitingService == $selectService) {
+	
+		// 				$name = $projectservice->getServiceName($selectService);
+		// 				$pname = $project[0]->name;
+		// 				echo 'Service '.$name[0]->service_name.' is already exiting in '.$pname.' project.<br/>';
+						
+		// 				// echo 'taken'.$selectPackage.$name[0]->name.$pname;
+		// 			}
+					
+		// 			else{
+		// 				echo 'no';
+		// 			}
+					
+					
+					
+	
+		// 		}
+		// 		// echo "<option value=".$items->cities_id.">".$items->city_name."</option>";
+		// 		// echo $item;
+		// 		// print_r($package_list);
+				
+		// 	}
+		// }
 		
 		
 		
@@ -103,7 +136,7 @@ Class ClientService extends CI_Controller{
 		$checkes1 = $this->input->post("check");
 		
 
-		if($btn == 'addTo'){
+		if(($btn == 'AddTo') && (!empty($checkes1))){
 			$this->addtoProj($checkes1);
 		}
 		else{

@@ -55,39 +55,93 @@ Class ClientPackage extends CI_Controller{
 		// $result=array_diff($package_list,$selected);
 		// print_r($result) ;
 
-		foreach($package_list as $key => $exitingPackage){
 
-			foreach($selected  as $key => $selectPackage){
-				
-				if($exitingPackage == $selectPackage) {
-					// echo $exitingPackage;
-					$name = $projectservice->getpackageName($selectPackage);
-					
-					$packagename = $name[0]->name;
+		// print_r($package_list);//4,14
+		// print_r($selected);//14 24
+
+		$result=array_diff($selected,$package_list);//24
+		$result1 = array_diff($selected,$result);//14
+
+// print_r($result1);
+
+		if ((empty($result)) && (!empty($result1)) ){
+
+			foreach($result1 as $key => $exitingPackage){
+
+				$name = $projectservice->getpackageName($exitingPackage);
+				$packagename = $name[0]->name;
 					// echo $packagename;
-					$pname = $project[0]->name;
+				$pname = $project[0]->name;
 
-					echo 'Package '.$packagename.' is already exiting in '.$pname.' project.<br/>';
-					
-					// echo 'taken'.$selectPackage.$name[0]->name.$pname;
-				}
-				
-				else{
-					echo '';
-				}
-				
+				echo 'Package '.$packagename.' is already exiting in '.$pname.' project.<br/>';
 
 			}
-			die;
+			
+		}
+		else if ((!empty($result)) && (!empty($result1))){
+
+			foreach($result1 as $key => $exitingPackage){
+
+				$name = $projectservice->getpackageName($exitingPackage);
+				$packagename = $name[0]->name;
+					// echo $packagename;
+				$pname = $project[0]->name;
+
+				echo 'Package '.$packagename.' is already exiting in '.$pname.' project.<br/>';
+
+			}
+			
+		}
+		else{
+			echo '';
+		}
+		// print_r($result);
+
+
+
+		// if (in_array("Glenn", $people))
+		// 	{
+		// 	echo "Match found";
+		// 	}
+		// 	else
+		// 	{
+		// 	echo "Match not found";
+		// 	}
+
+		// die;
+		// foreach($package_list as $key => $exitingPackage){
+
+		// 	foreach($selected  as $key => $selectPackage){
+				
+		// 		if($exitingPackage == $selectPackage) {
+		// 			// echo $exitingPackage;
+		// 			$name = $projectservice->getpackageName($selectPackage);
+					
+		// 			$packagename = $name[0]->name;
+		// 			// echo $packagename;
+		// 			$pname = $project[0]->name;
+
+		// 			echo 'Package '.$packagename.' is already exiting in '.$pname.' project.<br/>';
+					
+		// 			// echo 'taken'.$selectPackage.$name[0]->name.$pname;
+		// 		}
+				
+		// 		else{
+		// 			echo '';
+		// 		}
+				
+
+		// 	}
+			// die;
 			// echo "<option value=".$items->cities_id.">".$items->city_name."</option>";
 			// echo $item;
 			// print_r($package_list);
 			
-		}
+		
 		
 		
 
-		
+	
 
 		
 	}
