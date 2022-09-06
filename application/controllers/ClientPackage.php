@@ -105,7 +105,7 @@ Class ClientPackage extends CI_Controller{
 		// print_r($checkes);die;
 		$checkes1 = $checkes;
 
-		if(($btn == 'addTo') && (!empty($checkes))){
+		if(($btn == 'AddTo') && (!empty($checkes))){
 			$this->addtoProj($checkes);
 		}
 		else if((!empty($checkes))){
