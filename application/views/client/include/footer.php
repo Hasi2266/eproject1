@@ -938,7 +938,7 @@ $(document).ready(function(){
 	});
 </script>
 
-<script>
+<!-- <script>
 $(document).ready(function(){
 	
 
@@ -957,7 +957,7 @@ $(document).ready(function(){
 						}
 					});
 				});
-</script>
+</script> -->
 <script>
 
 
