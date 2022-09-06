@@ -60,10 +60,14 @@ Class ClientPackage extends CI_Controller{
 			foreach($selected  as $key => $selectPackage){
 				
 				if($exitingPackage == $selectPackage) {
-
+					// echo $exitingPackage;
 					$name = $projectservice->getpackageName($selectPackage);
+					
+					$packagename = $name[0]->name;
+					// echo $packagename;
 					$pname = $project[0]->name;
-					echo 'Package '.$name[0]->name.' is already exiting in '.$pname.' project.<br/>';
+
+					echo 'Package '.$packagename.' is already exiting in '.$pname.' project.<br/>';
 					
 					// echo 'taken'.$selectPackage.$name[0]->name.$pname;
 				}

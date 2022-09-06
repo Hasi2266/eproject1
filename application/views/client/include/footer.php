@@ -793,8 +793,7 @@ $(document).ready(function(){
 							},
 							
 							success: function(html) {
-               	// alert(html.length);
-
+               	alert(html.length);
 										var err = html;
 										
 										if (err.length < 10){
