@@ -17,7 +17,7 @@
 	<form action="<?php echo base_url();?>index.php/ClientProject/save" method="post" enctype="multipart/form-data">
     <div class="pd-x-5 pd-b-15">
 		
-			<div class="component-section px-5 shadow" style="border-radius: 13px;">
+			<div class="component-section px-5 shadow" style="border-radius: 13px; margin-top:-1rem">
 
 				<h3 class="text-dark mb-4">Project</h3>
 
@@ -295,7 +295,7 @@
 																		style="border-radius:10px;width:26rem;" id="package"
 																		name="package_id[]">
 
-																		<option disabled selected>-- Choose Packages --</option>
+																		<option disabled selected style="margin-top:5rem">-- Choose Packages --</option>
 
 																	</select>
 																<?php } ?>

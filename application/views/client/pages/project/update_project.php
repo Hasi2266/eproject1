@@ -156,7 +156,7 @@
       
 
       
-        <a href="<?php echo base_url();?>index.php/ClientProject"><button type="submit" class="btn btn-primary mt-5 mb-5" style="border-radius:10px">Back</button></a>
+        <a href="<?php echo base_url();?>index.php/ClientProject"><button type="submit" class="btn btn-submit mt-5 mb-5" style="border-radius:10px">Back</button></a>
 		
       <!-- Submit -->
 
