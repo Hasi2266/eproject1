@@ -85,6 +85,8 @@ Class ClientService extends CI_Controller{
 		else{
 			echo '';
 		}
+
+		die;
 		// if(!empty($select_list)){
 
 		// 	foreach($select_list as $key => $exitingService){
