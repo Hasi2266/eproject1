@@ -95,6 +95,8 @@ Class ClientPackage extends CI_Controller{
 		else{
 			echo '';
 		}
+
+		die;
 		// print_r($result);
 
 
