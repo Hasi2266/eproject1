@@ -8,7 +8,7 @@
           
                 <ul class="nav nav-pillsService">
 
-				<?php foreach($items as $item){?>
+				<?php foreach($teams as $item){?>
 
 					<li class="nav-item">
 						<a class="nav-link  <?php if(($items1->team_id) == ($item->team_id)) {echo "active";}?>"  data-toggle="pill" href="#<?php echo $item->name?>" role="tab" aria-controls="pills-<?php echo $item->name?>" aria-selected="true"><?php echo $item->name?></a>
@@ -113,7 +113,7 @@
                   
 						<div class="tab-content mt-3">
 
-							<?php foreach($items as $item1){?>
+							<?php foreach($teams as $item1){?>
 
 							<div class="tab-pane fade show <?php if(($items1->team_id) == ($item1->team_id)) {echo "active";}?>" id="<?php echo $item1->name?>" role="tabpanel" aria-labelledby="<?php echo $item1->name?>-tab">
 				

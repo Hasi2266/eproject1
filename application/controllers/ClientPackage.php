@@ -21,7 +21,7 @@ Class ClientPackage extends CI_Controller{
 		$packageservice = new PackageServices();
 		$projectservice = new ProjectService();
 
-		$data["items"] = $packageservice->getTeams();
+		$data["teams"] = $packageservice->getTeams();
 		$data["items1"] = $packageservice->getFirstrow();
 		$data["packages"] = $packageservice->getPackages();
 
