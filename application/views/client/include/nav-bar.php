@@ -1,5 +1,5 @@
-<div id="dpSidebarBody" class="sidebar-body" style="background-color:black;color:white;">
-        <ul class="nav nav-sidebar" style="color:white;">
+<div id="dpSidebarBody" class="sidebar-body">
+        <ul class="nav nav-sidebar">
           <!-- <li class="nav-label"><label class="content-label">Template Pages</label></li> -->
           <li class="nav-item show">
             <a href="<?php echo base_url();?>index.php/ClientDashboard" class="nav-link <?php if($active == 1){ echo 'active';}else{ echo 'no';}?>"><i data-feather="box"></i> Dashboard</a>

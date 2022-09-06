@@ -21,10 +21,11 @@ Class ClientService extends CI_Controller{
 		$clientservice = new ClientServices();
 		$projectservice = new ProjectService();
 
-		$data["items"] = $clientservice->getTeams();
+		$data["teams"] = $clientservice->getTeams();
 		$data["services"] = $clientservice->getServices();
 		$data["items1"] = $clientservice->getFirstrow();
 		$data["projects"] = $projectservice->allProjects($this->session->userdata('CLIENT_ID'));
+		
 
 		$partial = array('content' => 'client/pages/services/addService');
 		$this->template->load('client/mainpage',$partial,$data);

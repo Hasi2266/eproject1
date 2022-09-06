@@ -1310,6 +1310,8 @@ $('#row'+button_id+'').remove();
 
 <script>
 $(document).ready(function(){
+
+	
 	var i=1;
 	$('#add1').click(function(){
 	i++;

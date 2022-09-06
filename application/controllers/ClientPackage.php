@@ -56,7 +56,6 @@ Class ClientPackage extends CI_Controller{
 		foreach($package_list as $key => $exitingPackage){
 
 			foreach($selected  as $key => $selectPackage){
-
 				
 				if($exitingPackage == $selectPackage) {
 
