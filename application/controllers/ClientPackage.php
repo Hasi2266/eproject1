@@ -78,6 +78,7 @@ Class ClientPackage extends CI_Controller{
 				
 
 			}
+			die;
 			// echo "<option value=".$items->cities_id.">".$items->city_name."</option>";
 			// echo $item;
 			// print_r($package_list);
