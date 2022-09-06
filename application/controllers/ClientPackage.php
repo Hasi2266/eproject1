@@ -38,6 +38,8 @@ Class ClientPackage extends CI_Controller{
 		$project_id = $this->input->post('project_id');
 		$selected = $this->input->post('selected');
 
+		// echo $selected;die;
+
 		$projectservice = new ProjectService();
 
 		$project = $projectservice->checkPackage($project_id);
@@ -67,7 +69,7 @@ Class ClientPackage extends CI_Controller{
 				}
 				
 				else{
-					echo 'no';
+					echo '';
 				}
 				
 
@@ -98,15 +100,15 @@ Class ClientPackage extends CI_Controller{
 		// print_r($checkes);die;
 		$checkes1 = $checkes;
 
-		if($btn == 'addTo' && (!empty($checkes))){
-			// echo 'hi';die;
+		if($btn == 'addTo' && (!empty($checkes1))){
 			$this->addtoProj($checkes);
 		}
-		else if((!empty($checkes))){
-
-			foreach($checkes as $key => $value){
+		else if((!empty($checkes1))){
+			// print_r($checkes);die;
+			foreach($checkes1 as $key => $value){
 				// echo $value;die;
 				
+				// print_r($checkes1);
 				$item1 = $packageservice->getPackageName($value);
 	
 				foreach($item1 as $key => $item3){
@@ -118,11 +120,10 @@ Class ClientPackage extends CI_Controller{
 					
 				}
 				
-				// die;
 				
 			}
-
-			
+			// print_r($package_name);
+			// die;
 			
 			// die;
 			

@@ -102,7 +102,7 @@
 													</div>
 													<div class="modal-footer">
 														<button type="button" class="btn btn-secondary" data-dismiss="modal" id="btnClear">Close</button>
-														<input type="submit" class="btn btn-dark" name="btn_addtoproj" value="AddTo" id="btnAdd" ></button></a>
+														<input type="submit" class="btn btn-dark" name="btn_addtoproj" value="AddTo" id="btnAdd" disabled ></button></a>
 													</div>
 												
 										</div>

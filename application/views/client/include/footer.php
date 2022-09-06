@@ -765,9 +765,10 @@ $(document).ready(function(){
 						var project_id = $(this).val();
 						// alert(project_id);
 
-						var selected = new Array();
+						var selected = [];
 						var tblFruits = document.getElementById("tblFruits");
 						var chks = document.getElementsByTagName("INPUT");
+						// alert(chks);
 						// let no = chks.length;
 						// alert(no);
 
@@ -796,7 +797,7 @@ $(document).ready(function(){
 
 										var err = html;
 										
-										if (err.length == 2){
+										if (err.length < 10){
 											// alert(err.length);
 											$('#check3').html("");
 											document.getElementById("btnAdd").disabled = false;
@@ -938,7 +939,7 @@ $(document).ready(function(){
 	});
 </script>
 
-<!-- <script>
+<script>
 $(document).ready(function(){
 	
 
@@ -957,7 +958,7 @@ $(document).ready(function(){
 						}
 					});
 				});
-</script> -->
+</script>
 <script>
 
 
