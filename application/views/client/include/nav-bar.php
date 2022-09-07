@@ -26,13 +26,13 @@
               <!-- <a href="packages-page.html" class="nav-sub-link">Packages</a> -->
             </nav>
           </li>
-					<li class="nav-item ">
+					<!-- <li class="nav-item ">
             <a href="packages-page.html" class="nav-link with-sub"><i data-feather="user"></i> Invoice</a>
             <nav class="nav nav-sub">
               <a href="Inoice-pageM.html" class="nav-sub-link  ">Invoice</a>
               <a href="invoice-table.html" class="nav-sub-link">Invoice List</a>
             </nav>
-          </li>
+          </li> -->
 					<li class="nav-item ">
             <a href="packages-page.html" class="nav-link with-sub <?php if($active == 5){ echo 'active';}else{ echo 'no';}?>  "><i data-feather="book"></i> User Info</a>
             <nav class="nav nav-sub">

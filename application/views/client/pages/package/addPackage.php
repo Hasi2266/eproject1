@@ -8,13 +8,13 @@
           
                 <ul class="nav nav-pillsService">
 
-				<?php foreach($teams as $item){?>
+						<?php foreach($teams as $item){?>
 
-					<li class="nav-item">
-						<a class="nav-link btn-team <?php if(($items1->team_id) == ($item->team_id)) {echo "active";}?>"  data-toggle="pill" href="#<?php echo $item->name?>" role="tab" aria-controls="pills-<?php echo $item->name?>" aria-selected="true"><?php echo $item->name?></a>
-					</li>
+							<li class="nav-item">
+								<a class="nav-link btn-team <?php if(($items1->team_id) == ($item->team_id)) {echo "active";}?>"  data-toggle="pill" href="#<?php echo $item->name?>" role="tab" aria-controls="pills-<?php echo $item->name?>" aria-selected="true"><?php echo $item->name?></a>
+							</li>
 
-				<?php } ?> 
+						<?php } ?> 
 
                   <!-- <li class="nav-item ">
                     <a class="nav-link active text-uppercase" data-toggle="pill" href="#flamingo" role="tab" aria-controls="pills-flamingo" aria-selected="true">Digital</a>

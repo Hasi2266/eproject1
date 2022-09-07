@@ -43712,6 +43712,9 @@ a.bg-twitter:hover, a.bg-twitter:focus, button.bg-twitter:hover, button.bg-twitt
 			.project-dash{
 				width: 150rem !important;
 			}
+			.btn-med{
+				width: 10rem !important;
+			}
 		}
 	
 .middle {
@@ -43870,7 +43873,7 @@ calendar td a {
 
 
 .sidebar-color{
-	background-color: #404040;
+	background-color: #333333;
 	color:white;
 	border-bottom:none !important;
 	
@@ -43902,6 +43905,7 @@ calendar td a {
 }
 .nav-sidebar .nav-sub-link{
 	color: white;
+	padding-left: 2.7rem;
 	/* background-color: #808080; */
 }
 .nav-sidebar .nav-link:hover {
@@ -43921,6 +43925,7 @@ calendar td a {
 .dataTables_wrapper .dataTables_paginate .paginate_button.disabled{
 	border-radius: 8px !important;
 	margin-top: 1rem !important;
+	font-size: 13px;
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button{
@@ -43937,8 +43942,8 @@ calendar td a {
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button.current{
-	margin-left: 6px !important;
-	margin-right: 6px !important;
+	margin-left: 10px !important;
+	margin-right: 10px !important;
 	background-color: #404040;
 }
 
@@ -43963,7 +43968,7 @@ calendar td a {
 
 .cardBody{
 	border-radius: 8px;
-	 height: 26rem;
+	 height: 24rem;
 	 width:19rem;
 	 margin-right: 2rem !important;
 	 
@@ -43989,3 +43994,55 @@ calendar td a {
 	background-color: rgba(255,255,255,.08) !important;
 	color: whitesmoke;
 }
+
+/* .nav-line{
+	border-bottom: none !important;
+} */
+
+.statusCrd{
+	/* border: none !important; */
+	border-left: none !important;
+}
+/* 
+.nav-line{
+	border-bottom: 5px solid !important;
+} */
+
+[type="search"] {
+
+	border-radius: 8px !important;
+
+}
+
+.select2-container--default .select2-selection--single
+{
+	border-radius: 8px !important;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow b
+{
+	margin-left: 2px !important;
+	margin-right: 5px !important;
+}
+
+.dataTables_wrapper .dataTables_info{
+	font-size: 14px;
+}
+
+
+.table5 th, .table5 td{
+	border-top: none !important;
+}
+
+.fileAttach{
+	padding: 10px;
+	background: red; 
+	display: table;
+	color: #fff;
+	 }
+
+
+
+input[type="file"] {
+	display: none;
+}
+

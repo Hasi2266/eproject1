@@ -229,16 +229,42 @@ Class ClientProject extends CI_Controller{
 		if(($item[0]->project_status) == 1){
 			$data['initial'] = 'Submitted';
 		}
+
+		// print_r($item[0]->required_skills);die;
 		// print_r($item);die;
+
 		$select_list = json_decode("[".$item[0]->services."]");
 		$package_list = json_decode("[".$item[0]->packages."]");
+		
+		// print_r($package_list);die;
 
 		$service = array();
 		$package = array();
+
+		$skills = $item[0]->required_skills;
+		$skill_list = explode(',',$skills);
 		
+		// print_r($skill_list);die;
+
 		// if (($select_list == 0) ){
 		// 	echo '5';die;
 		// }
+		// if(!empty($skill_list)){
+
+		// 	foreach($skill_list as $key => $value){
+		// 		echo $value;die;
+		// 		$item1 = $projectservice->serviceName1($value);
+				
+		// 		foreach($item1 as $item2){
+	
+		// 			$item3 = $item2->service_name;
+		// 			$service[] = $item3;
+					
+		// 		}
+		// 	}
+	
+		// }
+
 		if(!empty($select_list)){
 
 			foreach($select_list as $key => $value){
@@ -278,6 +304,7 @@ Class ClientProject extends CI_Controller{
 		
 		$data['service'] = $service;
 		$data['package'] = $package;
+		$data['skills'] = $skill_list;
  		$data["projects"] = $projectservice->getProject($project_id);
 		$data['milestones'] = $projectservice->getMilestone($project_id);
 

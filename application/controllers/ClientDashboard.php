@@ -18,6 +18,7 @@ Class ClientDashboard extends CI_Controller{
 
 		
 		
+		
 
 		$date1 = "2007-03-24";
 		$date2 = "2009-06-26";
@@ -48,6 +49,7 @@ Class ClientDashboard extends CI_Controller{
 		$items = $dashboardservice->allProjects($this->session->userdata('CLIENT_ID'));
 		
 		
+
 		$data["items"] = $dashboardservice->allProjects($this->session->userdata('CLIENT_ID'));
 		// print_r($data["items"]);die;
 		// print_r($items);die;

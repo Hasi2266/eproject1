@@ -112,7 +112,7 @@
 </style> -->
 
 
-<div class="content-header " >
+<div class="content-header content-card-body justify-content-center" >
 	
 	  <!-- <nav aria-label="breadcrumb">
 		<ol class="breadcrumb">
@@ -153,18 +153,16 @@
 	 
 	 ?>
 
-		<div style="margin: auto; ">
-				<h6 class="content-title content-title-xs" style="text-align:center;font-size:16px;line-height: 20px;"><?php echo $day ." , " . $month;?></h6>
+		<div style="text-align:center;">
+			
+				<h6 class="content-title content-title-xs" style="font-size:16px;line-height: 20px;"><?php echo $day ." , " . $month;?></h6>
 				<h2 class="content-title content-title-xs" style="font-size:32px;line-height: 40px;margin-bottom:8rem"><?php echo $greeting." , " . $items2[0]->firstname?></h2>
+			
 		</div>
 				
 	 
 		
-		<div class="row" style="margin-left:5px;">
-
-			<a  style="" href="<?php echo base_url();?>index.php/ClientProject/cerateProject"><i class="text-dark" data-feather="plus" style="border-style: dashed;height:3rem;width:3rem"></i><button type="button" class="btn btn-dark"style="border-radius: 8px;margin-right:40px">Create Project</button></a>
 		
-		</div>
 	
   </div>
   
@@ -222,7 +220,7 @@
           <div class="col-sm-6 col-xl-5">
             <div class="card card-hover card-todo dashCardHover mb-5" style="border-radius:10px ;margin-right: -0.5rem;">
               <div class="card-header bg-transparent pd-y-15 pd-l-15 pd-r-10">
-                <h6 class="card-title mg-b-0">Project Status</h6>
+                <h6 class="card-title mg-b-0 mx-1">Project Status</h6>
                 <!-- <nav class="nav">
                   <a href="" class="link-gray-500"><i data-feather="help-circle" class="svg-16"></i></a>
                   <a href="" class="link-gray-500"><i data-feather="more-vertical" class="svg-16"></i></a>
@@ -285,26 +283,30 @@
 
 									?>
 									
-							<li class="list-group-item   mt-2  " >
+							<li class="list-group-itemmt-2" >
 
-							<div class=" card-hover card-project-two">
+							<div class="card statusCrd card-project-two" style="margin-left:0.1rem;">
 								<div class="card-header bg-transparent">
-									
+								<div style="margin-top:-0.4rem;">
+									<h6 class="mg-b-5"><?php echo $item->name?></h6>
+									<span>Last updated: Yesterday 10:15am</span>
+                				</div>		
 									<div>
-									<div class="media">
+									<!-- <div class="media">
 									<div class="project-logo bg-green tx-white"><i data-feather="music"></i></div>
 													<div class="media-body mg-l-10 mg-sm-l-15">
-														<!-- <p class="tx-13 tx-color-04 mg-b-5"><?php echo $item->company_name?></p> -->
+														<p class="tx-13 tx-color-04 mg-b-5"><?php echo $item->company_name?></p>
 														<h5 class="tx-color-01 mg-b-0"><?php echo $item->name?></h5>
-													</div><!-- media-body -->
+													</div>
 												</div>
-									<!-- <div class="project-logo bg-green tx-white"><i data-feather="music"></i></div><h6 class="mg-b-5"><?php echo $item->name?></h6> -->
-										<!-- <span>Last updated: Yesterday 10:15am</span> -->
-									</div>
+									<div class="project-logo bg-green tx-white"><i data-feather="music"></i></div><h6 class="mg-b-5"><?php echo $item->name?></h6>
+										<span>Last updated: Yesterday 10:15am</span>
+									</div> -->
 									<!-- <nav class="nav nav-card-icon">
 										<a href=""><i data-feather="check-square" class="svg-14"></i> 21</a>
 										<a href=""><i data-feather="message-square" class="svg-14"></i> 85</a>
 									</nav> -->
+								</div>
 								</div><!-- card-header -->
 								<div class="card-body">
 									<!-- <p class="tx-13 tx-gray-700">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deser.</p> -->
@@ -317,8 +319,8 @@
 									</div>
 								</div>
 								<div class="card-footer bg-transparent">
-									<div class="badge bg-blue tx-white"><?php echo $item->type?></div>
-									<div class="project-date-end">End: Aug 15, 2019</div>
+									<div class="badge bg-blue tx-white" style="border-radius:6px"><?php echo $item->type?></div>
+									<div class="project-date-end mx-2" style="border-radius:6px">End: Aug 15, 2019</div>
 									<!-- <div class="avatar-group">
 										<div class="avatar avatar-xxs"><img src="https://via.placeholder.com/300/637382/fff" class="rounded-circle" alt=""></div>
 										<div class="avatar avatar-xxs"><img src="https://via.placeholder.com/300/637382/fff" class="rounded-circle" alt=""></div>
@@ -376,16 +378,20 @@
 
           <!-- Recent Projects -->
           <div class="col-xl-7 mg-t-15 mg-sm-t-20 mg-xl-t-0">
-            <div class="card card-hover card-projects  dashCardHover" style="border-radius:10px;">
+            <div class="card card-hover card-projects  dashCardHover" style="border-radius:10px;padding-left:0.3rem">
               <div class="card-header bg-transparent pd-y-15 pd-l-15 pd-r-10">
-                <h6 class="card-title mg-b-0">Recent Projects</h6>
+                <h6 class="card-title mg-b-0">Project Summary</h6>
+				
                 <!-- <nav class="nav">
                   <a href="" class="link-gray-500"><i data-feather="help-circle" class="svg-16"></i></a>
                   <a href="" class="link-gray-500"><i data-feather="more-vertical" class="svg-16"></i></a>
                 </nav> -->
               </div><!-- card-header -->
               <div id="scroll2" class="pos-relative  mb-2" style="height: 310px;">
+			 
               <ul class="list-group list-group-flush" >
+
+			  
 								 
 							<?php 
 				
@@ -398,11 +404,37 @@
 
 								<?php 	} else{
 
-									
+								?>
 
-								}
-									
-									foreach($items as $item){
+							
+							<ul class="nav nav-line" id="myTab5" role="tablist" style="margin-left:1rem; border-bottom:none !important;font-size:13px;margin-top:0.2rem">
+								<li class="nav-item">
+								<a class="nav-link active" id="home-tab5" data-toggle="tab" href="#home5" role="tab" aria-controls="home" aria-selected="true">Recent Project</a>
+								</li>
+								<li class="nav-item">
+								<a class="nav-link" id="profile-tab5" data-toggle="tab" href="#profile5" role="tab" aria-controls="profile" aria-selected="false">Ongoing Project</a>
+								</li>
+								<li class="nav-item">
+								<a class="nav-link" id="contact-tab5" data-toggle="tab" href="#contact5" role="tab" aria-controls="contact" aria-selected="false">Completed Project</a>
+								</li>
+							</ul>
+			
+							<div class="tab-content mg-t-20" id="myTabContent5">
+								
+								<div class="tab-pane fade" id="profile5" role="tabpanel" aria-labelledby="profile-tab5">
+									<!-- <h6>Profile</h6>
+									<p class="mg-b-0">Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non irure adipisicing aliqua ullamco irure incididunt irure non esse consectetur nostrud minim non minim occaecat.</p> -->
+								</div>
+								<div class="tab-pane fade" id="contact5" role="tabpanel" aria-labelledby="contact-tab5">
+								
+							
+								</div>
+								
+								<!-- <h6>Home</h6> -->
+								
+								
+								<div class="tab-pane fade show active" id="home5" role="tabpanel" aria-labelledby="home-tab5" style="margin-top:-1rem;">
+									<?php foreach($items as $item){
 
 										if(($item->project_status) == 1){
 											$status = 'Submitted';
@@ -420,37 +452,55 @@
 
 										if(($months <= 1 && $days <= 29)){ ?>
 											<!-- echo $item->project_id; -->
-
-											<li class="list-group-item  card-hove mt-2 mb-2" >
-												<nav class="nav nav-card-icon">
+											
+												
+								
+								
+											<li class="list-group-item  card-hove mb-2" >
+												<!-- <nav class="nav nav-card-icon">
 													<a href=""><i data-feather="activity" class="svg-16"></i></a>
 													<a href=""><i data-feather="bar-chart-2" class="svg-16"></i></a>
 													<a href=""><i data-feather="chevron-down" class="svg-16"></i></a>
-												</nav>
-												<div class="media">
-													<div class="project-logo bg-primary tx-white"><i data-feather="aperture"></i></div>
+												</nav> -->
+												<div class="media" style="margin-left:-0.2rem;">
+													<div class="project-logo bg-primary tx-white mt-1"><i style="font-size:11px" data-feather="aperture"></i></div>
 													<div class="media-body mg-l-10 mg-sm-l-15">
-														<p class="tx-13 tx-color-04 mg-b-5"><?php echo $item->company_name?></p>
-														<h5 class="tx-color-01 mg-b-0"><?php echo $item->name?></h5>
+														<span class=" tx-color-04"><?php echo $item->company_name?></span>
+														<!-- <p class="tx-13 tx-color-04 mg-b-5"><?php echo $item->company_name?></p> -->
+														<h6 class="mg-b-5"><?php echo $item->name?></h6>
+
+														<?php $req = $item->requirement;
+														$y = implode(' ', array_slice(explode(' ', $req), 0, 14))."\n";?>
+
+														<p class="project-desc">
+														
+														<?php echo $y;?></p>
 													</div><!-- media-body -->
 												</div><!-- media -->
-												<p class="project-desc"><?php echo $item->requirement?></p>
-												<small class="project-deadline">Start Date: <?php echo $item->project_created_date?></small>
-												<small class="project-deadline">End Date: <?php echo $item->project_created_date?></small>
+												<div style="margin-top:-14px;">
+												<div class="badge bg-blue tx-white" style="border-radius:6px;padding:6px">Start Date: <?php echo $item->project_created_date?></div>
+												<small class="project-deadline  mx-2 py-1" style="border-radius:6px">End Date: <?php echo $item->project_created_date?></small>
+												</div>
+												
 											</li>
-								
+											
 										<?php } ?>
 								
 
 
-										<?php } ?>
-								
+										<?php } }?>
+										</div>
+											
               </ul>
+			 
+
+								
+          					
             </div>
                     </div>
           </div><!-- col -->
 
-		  <div class="row row-sm" style="margin-right-15px;width:95rem;margin-top:-30px;margin-bottom:1rem;">
+		  <div class="row row-sm" style="margin-right-15px;width:95rem;margin-top:-34px;margin-bottom:1rem;">
 			<div class="col-xl-12 mg-t-15 mg-sm-t-20 mg-xl-t-0" >
 
 			<div class="card card-hover card-projects card-task-one dashCardHover mb-2" style="border-radius: 10px; ">
@@ -465,18 +515,18 @@
 							<div class="row">
 								<div class="col-md-12 col-md-3">
 									<div id="scroll3" class="pos-relative" style="height: 310px;">
-										<table id="example1" class="table " style="border-radius:10px ;font-size:14px">
+										<table id="example1" class="table " style="border-radius:10px ;font-size:13px">
 											<thead>
 												<tr>
-													<th class="wd-9p">
-														<!-- <div class="custom-control custom-checkbox" style="border-radius: 8px;">
+													<!-- <th class="wd-9p">
+														<div class="custom-control custom-checkbox" style="border-radius: 8px;">
 														<input type="checkbox" class="custom-control-input" id="customCheck1" >
 														<label class="custom-control-label" for="customCheck1"></label>
-													</div> -->
-												</th>
+													</div>
+												</th> -->
 													<!-- <th class="wd-15p">logo</th> -->
-													<th class="wd-15p">Company</th>
-													<th class="wd-10p">Project</th>
+													<!-- <th class="wd-9p">Company</th> -->
+													<th class="wd-20p">Project</th>
 													<th class="wd-15p">Update Date</th>
 													<th class="wd-15p">Status</th>
 													<th class="wd-12p">Progress</th>
@@ -503,18 +553,18 @@
 
 									?>
 										<tr >
-											<td><div class="custom-control custom-checkbox">
+											<!-- <td><div class="custom-control custom-checkbox">
 												<input type="checkbox" class="custom-control-input" id="<?php echo $item->project_id?>">
 												<label class="custom-control-label" for="<?php echo $item->project_id?>"></label>
-											</div></td>
+											</div></td> -->
 											<!-- <td><img src="<?php echo base_url();?>/assets/img/favicon.png" alt="..." class="img-thumbnail" width="50"></td> -->
-											<td><?php echo $item->company_name?></td>
+											<!-- <td><?php echo $item->company_name?></td> -->
 											<td><?php echo $item->name?></td>
 											<td><?php echo $item->project_created_date?></td>
 											
 							
 
-									<td><span class="badge badge-pill badge-primary"><?php echo $status?></span></td>
+									<td><span class="badge badge-pill badge-info"><?php echo $status?></span></td>
 										
 			
 												<td><?php echo $item->project_progress?> %</td>

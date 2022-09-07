@@ -1,4 +1,4 @@
-<div class="content-header">
+<div class="content-body ">
         <div>
           <!-- <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -10,16 +10,29 @@
          
         </div>
       </div><!-- content-header -->
+			<div class="" style="margin-left:1.5rem;margin-right:1.5rem;">
+			<div class="card card-hover card-projects card-task-one dashCardHover content-card-body mt-4" style="border-radius: 10px;margin-bottom:2rem !important;padding-bottom:3rem; " >
+        <!--btn-->
+				<div class="card-header bg-transparent pd-y-15 pd-l-15 " style="margin-bottom:-0.1rem;">
+									<h6 class="card-title mg-b-0 px-1" style="margin-top:1px;margin-bottom:-6px">Projects Details</h6>
+									<!-- <nav class="nav">
+									<a href="" class="link-gray-500"><i data-feather="help-circle" class="svg-16"></i></a>
+									<a href="" class="link-gray-500"><i data-feather="more-vertical" class="svg-16"></i></a>
+									</nav> -->
+              	
+								</div>
+       
+								<div class="card-body" style="padding:none !important;">
 	  <?php foreach ($projects as $project){?>
-      <div class="pd-x-65 pd-b-15" >
+     
       
-      <div class="row px-3">
+      <!-- <div class="row px-3">
      <div class="col-md-3  shadow" style="border-radius: 13px;" >
       <h5>Project Name : <?php echo $project->name ?></h5>
       <p>Date : 25 May 2022</p> 
                   <p>Due Date : 25 May 2022</p>
-      </div>
-      <div class="col-md-3  shadow" style="border-radius: 13px;" >
+      </div> -->
+      <!-- <div class="col-md-3  shadow" style="border-radius: 13px;" >
         <h5>Project Status : <?php echo $initial ?></h5>
         <p>Date : 25 May 2022</p> 
                   <p>Due Date : 25 May 2022</p>
@@ -34,9 +47,9 @@
                 <p>Date : 25 May 2022</p> 
                   <p>Due Date : 25 May 2022</p> 
                   </div>
-      </div>
+      </div> -->
 
-      <div class="row px-3 mt-5">
+      <!-- <div class="row px-3 mt-5">
         <div class="col-md-3  shadow" style="border-radius: 13px;" >
        <h5>Proposal</h5>
        <p>Date : 25 May 2022</p> 
@@ -57,13 +70,23 @@
                   <p>Date : 25 May 2022</p> 
                   <p>Due Date : 25 May 2022</p>
                      </div>
-         </div>
+         </div> -->
       
       
     
-    <div class=" px-5 pt-5 pb-5 mt-5 shadow" style="border-radius: 13px;" >
-      <div class=" mt-2 w-100">
-	  <h5 id="section2" class="mb-4">Requirement </h5>
+				 <div class=" mt-5 card card-projects card-task-one dashCardHover " style="border-radius: 8px;margin-bottom:2rem !important;padding-bottom:-3rem;" >
+						<!-- <form action="" method="post" enctype="multipart/form-data" class="form-horizontal"> -->
+						
+						<div class="card-header mb-3 bg-transparent pd-l-15 pd-r-0" style="margin-bottom:-0.1rem;">
+									<h6 class="card-title mg-b-0" style="margin-top:1px;margin-bottom:-6px;">Project Requirements</h6>
+									<!-- <nav class="nav">
+									<a href="" class="link-gray-500"><i data-feather="help-circle" class="svg-16"></i></a>
+									<a href="" class="link-gray-500"><i data-feather="more-vertical" class="svg-16"></i></a>
+									</nav> -->
+              	
+								</div>
+								<div class="card-body px-3 mb-5">
+
 		  <?php echo $project->requirement?>
      
      </div>
@@ -74,47 +97,89 @@
 
 			
 
-		<div class=" px-5 shadow pt-5 pb-5 mt-5" style="border-radius: 13px;" >
-        <div class=" mt-2 w-100">
-          <h5 id="section2" class="mb-4">Skills</h5>
-		  <?php echo $project->required_skills?>
+		<div class=" mt-5 card card-projects card-task-one dashCardHover " style="border-radius: 8px;margin-bottom:2rem !important;padding-bottom:-3rem;" >
+						<!-- <form action="" method="post" enctype="multipart/form-data" class="form-horizontal"> -->
+						
+						<div class="card-header mb-3 bg-transparent pd-l-15 pd-r-0" style="margin-bottom:-0.1rem;">
+									<h6 class="card-title mg-b-0" style="margin-top:1px;margin-bottom:-6px;">Required Skills</h6>
+									<!-- <nav class="nav">
+									<a href="" class="link-gray-500"><i data-feather="help-circle" class="svg-16"></i></a>
+									<a href="" class="link-gray-500"><i data-feather="more-vertical" class="svg-16"></i></a>
+									</nav> -->
+              	
+								</div>
+								<div class="card-body px-3 mb-5">
+
+									<?php foreach($skills as $key => $value){?>
+
+										<span class="badge badge-pill badge-info py-2 " style="background-color:#36b8b;font-size:12px;margin-right:0.2rem;"><?php echo $value?></span>
+									
+						<?php	} ?>
+		  <!-- <?php echo $project->required_skills?> -->
          </div>
       </div>
 
 		
-      <div class=" px-5 shadow pt-5 pb-5 mt-5" style="border-radius: 13px;" >
-        <div class=" mt-2 w-100">
-          <h5 id="section2" class="mb-4">Services</h5>
-		  <!-- <?php echo $project->services?> -->
-			<?php foreach($service as $key => $value){
-		
-					echo $value.'<br/>';
-					// echo '&nbsp; ';
-			} ?>
+      <div class=" mt-5 card card-projects card-task-one dashCardHover " style="border-radius: 8px;margin-bottom:2rem !important;padding-bottom:-3rem;" >
+						<!-- <form action="" method="post" enctype="multipart/form-data" class="form-horizontal"> -->
+						
+						<div class="card-header mb-3 bg-transparent pd-l-15 pd-r-0" style="margin-bottom:-0.1rem;">
+									<h6 class="card-title mg-b-0" style="margin-top:1px;margin-bottom:-6px;">Services</h6>
+									<!-- <nav class="nav">
+									<a href="" class="link-gray-500"><i data-feather="help-circle" class="svg-16"></i></a>
+									<a href="" class="link-gray-500"><i data-feather="more-vertical" class="svg-16"></i></a>
+									</nav> -->
+              	
+								</div>
+		 
+			<div class="card-body px-3 mb-5">
+				<?php foreach($service as $key => $value){?>
+			
+					<span class="badge badge-pill badge-secondary py-2 " style="background-color:#36b8b;font-size:12px;margin-right:0.2rem;"><?php echo $value?></span>
+		<?php 		} ?>
          </div>
       </div>
 			
 
      
-      <div class=" px-5 shadow pt-5 pb-5 mt-5" style="border-radius: 13px;" >
-        <div class=" mt-2 w-100">
-          <h5 id="section2" class="mb-4">Packages</h5>
-					<?php foreach($package as $key => $value){
-						echo $value.'<br/>';
-						// echo '  &nbsp; ';
-					}?>
+      <div class=" mt-5 card card-projects card-task-one dashCardHover " style="border-radius: 8px;margin-bottom:2rem !important;padding-bottom:-3rem;" >
+						<!-- <form action="" method="post" enctype="multipart/form-data" class="form-horizontal"> -->
+						
+						<div class="card-header mb-3 bg-transparent pd-l-15 pd-r-0" style="margin-bottom:-0.1rem;">
+									<h6 class="card-title mg-b-0" style="margin-top:1px;margin-bottom:-6px;">Packages</h6>
+									<!-- <nav class="nav">
+									<a href="" class="link-gray-500"><i data-feather="help-circle" class="svg-16"></i></a>
+									<a href="" class="link-gray-500"><i data-feather="more-vertical" class="svg-16"></i></a>
+									</nav> -->
+              	
+								</div>
+								<div class="card-body px-3 mb-5">
+					<?php foreach($package as $key => $value){ ?>
+						<span class="badge badge-pill badge-dark py-2 " style="background-color:#36b8b;font-size:12px;margin-right:0.2rem;"><?php echo $value?></span>
+				<?php 	}?>
 		  <!-- <?php echo $project->packages?> -->
          </div>
       </div>
 
-      <div class=" px-5 shadow pt-5 pb-5 mt-5" style="border-radius: 13px;" >
-        <table id="example1" class="table ">
+      <div class=" mt-5 card card-projects card-task-one dashCardHover " style="border-radius: 8px;margin-bottom:2rem !important;padding-bottom:-3rem;" >
+						<!-- <form action="" method="post" enctype="multipart/form-data" class="form-horizontal"> -->
+						
+						<div class="card-header bg-transparent pd-l-15 pd-r-0" style="margin-bottom:-0.1rem;">
+									<h6 class="card-title mg-b-0" style="margin-top:1px;margin-bottom:-6px;">Milestones</h6>
+									<!-- <nav class="nav">
+									<a href="" class="link-gray-500"><i data-feather="help-circle" class="svg-16"></i></a>
+									<a href="" class="link-gray-500"><i data-feather="more-vertical" class="svg-16"></i></a>
+									</nav> -->
+              	
+								</div>
+								<div class="card-body  mb-5">
+        <table id="example1" class="table table5">
           <thead>
             <tr>
-              <th class="wd-9p"><div class="custom-control custom-checkbox" style="border-radius: 8px;">
+              <!-- <th class="wd-9p"><div class="custom-control custom-checkbox" style="border-radius: 8px;">
                 <input type="checkbox" class="custom-control-input" id="customCheck1" >
                 <label class="custom-control-label" for="customCheck1"></label>
-              </div></th>
+              </div></th> -->
               <th class="wd-15p">Name </th>
               <th class="wd-15p">Weight</th>
               <th class="wd-15p">Progress</th>
@@ -127,10 +192,10 @@
           <tbody>
            <?php  foreach($milestones as $item){?>
             <tr >
-              <td><div class="custom-control custom-checkbox">
+              <!-- <td><div class="custom-control custom-checkbox">
                 <input type="checkbox" class="custom-control-input" id="customCheck1">
                 <label class="custom-control-label" for="customCheck1"></label>
-              </div></td>
+              </div></td> -->
               <td><?php echo $item->milestone_name?></td>
               <td><?php echo $item->milestone_weight?></td>
 							<td><div class="progress" style="width:100px;">
@@ -151,15 +216,27 @@
             
           </tbody>
         </table>
+					 
       </div>
 
       
 
       
-        <a href="<?php echo base_url();?>index.php/ClientProject"><button type="submit" class="btn btn-submit mt-5 mb-5" style="border-radius:10px">Back</button></a>
+        
 		
       <!-- Submit -->
-
-
-      </div><!-- content-body -->
+					 </div>
+					 <a href="<?php echo base_url();?>index.php/ClientProject"><button type="submit" class="btn btn-submit btn-med" style="border-radius:10px;margin-bottom:-50px;margin-top:-20px;">All Projects</button></a><!-- content-body -->
+      </div>
+			
 	  <?php } ?>
+		
+
+      
+
+      
+					 </div>
+		
+<!-- Submit -->
+		 </div>
+		 
