@@ -145,8 +145,8 @@
 
 																			
 																		?>
-																								<div class="pricing-price ">
-																		<h1><span><?php echo $currency?></span><?php echo $package->price?><small><?php if(($package->pduration) == 1){echo '/Anually';} else { echo '/Monthly';}?></small></h1>
+																								<div class="pricing-price mt-4" style="margin-left:1rem">
+																		<h1 ><span><?php echo $currency?></span><?php echo $package->price?><small style="margin-left:-0.1rem;margin-top:1rem!important"><?php if(($package->pduration) == 1){echo '/Anually';} else { echo '/Monthly';}?></small></h1>
 																	</div><!-- pricing-price -->
 																	<div class="card-body " style="padding-top:12px ;padding-bottom:1px">
 																		<ul class="list-unstyled">

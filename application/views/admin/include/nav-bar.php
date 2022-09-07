@@ -1,6 +1,6 @@
 
 
-<div id="dpSidebarBody" class="sidebar-body">
+<div id="dpSidebarBody" class="sidebar-body ">
         <ul class="nav nav-sidebar myDIV">
           <!-- <li class="nav-label"><label class="content-label">Template Pages</label></li> -->
           <li class="nav-item show">

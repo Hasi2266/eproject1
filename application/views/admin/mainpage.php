@@ -1,9 +1,9 @@
 <?php include 'include/header.php'?>
 
-    <div class="sidebar">
-        <div class="sidebar-header">
+    <div class="sidebar sidebar-color">
+        <div class="sidebar-header ">
             <div>
-                <a href="<?php echo base_url();?>index.php/AdminDashboard" class="sidebar-logo"><span>Sprout Seven </span></a>
+                <a href="<?php echo base_url();?>index.php/AdminDashboard" class="sidebar-logo"><span class="text-white">Sprout Seven </span></a>
                 <!-- <small class="sidebar-logo-headline">Responsive Dashboard Template</small> -->
             </div>
         </div>

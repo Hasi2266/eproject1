@@ -13897,8 +13897,8 @@ body {
 .pricing-price {
   height: 100px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: left;
+  justify-content: left;
   border-bottom: 1px solid rgba(230, 231, 239, 0.85); }
   .pricing-price h1 {
     margin-bottom: 0;
@@ -13912,11 +13912,12 @@ body {
       font-size: 24px;
       font-family: "Roboto", sans-serif;
       color: #575d78;
-      align-self: flex-start; }
+      /* align-self: flex-start; */
+		 }
     .pricing-price h1 small {
       font-size: 20px;
       font-family: "Roboto", sans-serif;
-      align-self: flex-end; }
+      /* align-self: flex-end; } */}
 
 .card-analytics-one .card-body .row > div:first-child > label {
   position: relative;

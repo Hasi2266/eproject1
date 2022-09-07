@@ -135,8 +135,8 @@
 																$currency = 'Rs.';
 															}
 														?>
-														<div class="pricing-price" >
-															<h1><span><?php echo $currency?></span><?php echo $service->price?><small>/month</small></h1>
+														<div class="pricing-price mt-4" style="margin-left:1rem">
+															<h1><span><?php echo $currency?></span><?php echo $service->price?><small style="margin-left:-0.1rem;margin-top:1rem!important">/month</small></h1>
 														</div><!-- pricing-price -->
 													
 														<!-- <div class="card-footer mt-4">
