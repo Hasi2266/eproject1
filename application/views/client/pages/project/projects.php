@@ -38,7 +38,8 @@
 								</div>
        
 								<div class="card-body">
-        <table id="example1" class="table1 table-hover " style="border-radius:10px ;font-size:13px;">
+
+        <table id="example1" class="table1 table table-hover " style="border-radius:10px ;font-size:13px;">
           <thead>
             <tr>
               <!-- <th class="wd-12p"><div class="custom-control custom-checkbox" style="border-radius: 8px;">
@@ -60,7 +61,19 @@
 									if(($item->project_status) == 1){
 										$status = 'Submitted';
 									}
-				
+									else if(($item->project_status) == 2){
+										$status = 'Confirmed ';
+									}
+									else if(($item->project_status) == 3){
+										$status = 'In Progress ';
+									}	
+									else if(($item->project_status) == 4){
+										$status = 'Hold ';
+									}
+									else{
+										$status = 'Completed';
+									}	
+
 									if(($item->end_date)== 'Specific Date'){
 										$due_date = $item->date;
 									}

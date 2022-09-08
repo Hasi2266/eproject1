@@ -1,4 +1,35 @@
-<div class="content-header justify-content-between">
+<div class="content-header content-card-body justify-content-between">
+
+<?php 
+	  
+	  $day =  date("l");
+	$month =  date("F d");
+	
+	$date = new DateTime("now", new DateTimeZone('GMT+5:30') );
+	// echo $date->format('H');
+	
+	$hr = $date->format('H');
+
+	$greeting ; 
+
+	if ($hr < "12") {
+		$greeting =  "Good morning";
+	} else
+	/* If the time is grater than or equal to 1200 hours, but less than 1700 hours, so good afternoon */
+	if ($hr >= "12" && $hr < "17") {
+		$greeting =  "Good afternoon";
+	} else
+	/* Should the time be between or equal to 1700 and 1900 hours, show good evening */
+	if ($hr >= "17" && $hr < "19") {
+		$greeting =  "Good evening";
+	} else
+	/* Finally, show good night if the time is greater than or equal to 1900 hours */
+	if ($hr >= "19") {
+		$greeting =  "Good evening";
+	}
+ 
+ 
+ ?>
         <div>
                 <!-- <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
@@ -7,10 +38,18 @@
                         <li class="breadcrumb-item active" aria-current="page">Projects &amp; Web Services</li>
                     </ol>
                 </nav> -->
+				<div style="text-align:center;">
+			
+				<h6 class="content-title content-title-xs" style="font-size:16px;line-height: 20px;"><?php echo $day ." , " . $month;?></h6>
+				<h2 class="content-title content-title-xs" style="font-size:32px;line-height: 40px;margin-bottom:2rem"><?php echo $greeting." , " . $items2[0]->firstname?></h2>
+			
+		</div>
+				
+	 
                 <div class="row">
 
                     <h4 class="content-title content-title-xs px-3">Welcome to Dashboard</h4>
-                    <div class=" " style="margin-left:72rem;margin-top:-1.5rem">
+                    <div class=" " style="margin-left:69rem;margin-top:-1.5rem">
                         <button type="button" class="btn btn-primary text-right  py-2 " style="border-radius: 8px;"> New Project</button>
                     </div>
                 </div>
@@ -18,7 +57,7 @@
         </div>
 		
         <!-- content-header -->
-        <div class="content-body">
+        <div class="content-body content-card-body" >
             <div class="card card-hover card-task-one shadow mb-5" style="border-radius: 10px;">
                 <div class="card-body">
                     <div class="row">

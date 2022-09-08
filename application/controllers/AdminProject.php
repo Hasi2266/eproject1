@@ -78,6 +78,12 @@ Class AdminProject extends CI_Controller{
 		
 		$service = array();
 		$package = array();
+
+		$skills = $item[0]->required_skills;
+		$skill_list = explode(',',$skills);
+
+		$service = array();
+		$package = array();
 		
 		foreach($select_list as $key => $value){
 			
@@ -102,6 +108,7 @@ Class AdminProject extends CI_Controller{
 		$data['service'] = $service;
 		$data['package'] = $package;
 		$data['images'] =  $ids_image;
+		$data['skills'] = $skill_list;
  		$data["projects"] = $projectservice->getProject($project_id);
 		$data["milestones"] = $projectservice->getMilestone($project_id);
 	
@@ -351,6 +358,38 @@ Class AdminProject extends CI_Controller{
 	
 		$partial = array('content' => 'admin/pages/proposal/proposals');
 		$this->template->load('admin/mainpage',$partial,$data);
+	}
+
+	public function startProject($project_id){
+
+		$projectservice = new ProjectService();
+		$projectservice->startProject($project_id);
+
+		redirect('/AdminProject/');
+
+	}
+
+	public function endProject($project_id){
+
+		$projectservice = new ProjectService();
+		$projectservice->endProject($project_id);
+
+		redirect('/AdminProject/');
+	}
+	public function holdProject($project_id){
+
+		$projectservice = new ProjectService();
+		$projectservice->holdProject($project_id);
+
+		redirect('/AdminProject/');
+	}
+	
+	public function startAgainProject($project_id){
+
+		$projectservice = new ProjectService();
+		$projectservice->startAgainProject($project_id);
+
+		redirect('/AdminProject/');
 	}
 }
 

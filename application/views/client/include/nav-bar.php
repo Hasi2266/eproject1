@@ -2,7 +2,7 @@
         <ul class="nav nav-sidebar " style="margin-top:1rem">
           <!-- <li class="nav-label"><label class="content-label">Template Pages</label></li> -->
           <li class="nav-item show">
-            <a href="<?php echo base_url();?>index.php/ClientDashboard" class="nav-link <?php if($active == 1){ echo 'active';}else{ echo 'no';}?>"><i data-feather="box"></i> Dashboard</a>
+            <a href="<?php echo base_url();?>index.php/ClientDashboard" class="nav-link   <?php if($active == 1){ echo 'active';}else{ echo 'no';}?>"><i data-feather="box"></i> Dashboard</a>
           </li>
 					<li class="nav-item">
             <a href="Project-page.html" class="nav-link with-sub <?php if($active == 2){ echo 'active';}else{ echo 'no';}?>"><i data-feather="file-text"></i> Poject</a>

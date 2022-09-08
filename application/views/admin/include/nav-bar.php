@@ -37,7 +37,7 @@
             <a href="services-page.html" class="nav-link with-sub <?php if($active == 5){ echo 'active';}else{ echo 'no';}?>"><i data-feather="layout"></i> Services</a>
             <nav class="nav nav-sub">
 							<a href="<?php echo base_url();?>index.php/AdminService/createService" class="nav-sub-link">Create Services</a>
-              <a href="<?php echo base_url();?>index.php/AdminService/" class="nav-sub-link">Services</a>
+              <!-- <a href="<?php echo base_url();?>index.php/AdminService/" class="nav-sub-link">Services</a> -->
               <a href="<?php echo base_url();?>index.php/AdminService/allServices" class="nav-sub-link">View Services</a>
             </nav>
           </li>
@@ -45,7 +45,7 @@
             <a href="packages-page.html" class="nav-link with-sub <?php if($active == 6){ echo 'active';}else{ echo 'no';}?>" ><i data-feather="lock"></i> Packages</a>
             <nav class="nav nav-sub">
 							<a href="<?php echo base_url();?>index.php/AdminPackage/addPackage" class="nav-sub-link">Create Package</a>
-              <a href="<?php echo base_url();?>index.php/AdminPackage/" class="nav-sub-link  ">Packages</a>
+              <!-- <a href="<?php echo base_url();?>index.php/AdminPackage/" class="nav-sub-link  ">Packages</a> -->
               <a href="<?php echo base_url();?>index.php/AdminPackage/allPackages" class="nav-sub-link">View Packages</a>
             </nav>
           </li>

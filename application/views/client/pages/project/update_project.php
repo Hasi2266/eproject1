@@ -11,10 +11,11 @@
         </div>
       </div><!-- content-header -->
 			<div class="" style="margin-left:1.5rem;margin-right:1.5rem;">
+			<?php foreach ($projects as $project){?>
 			<div class="card card-hover card-projects card-task-one dashCardHover content-card-body mt-4" style="border-radius: 10px;margin-bottom:2rem !important;padding-bottom:3rem; " >
         <!--btn-->
 				<div class="card-header bg-transparent pd-y-15 pd-l-15 " style="margin-bottom:-0.1rem;">
-									<h6 class="card-title mg-b-0 px-1" style="margin-top:1px;margin-bottom:-6px">Projects Details</h6>
+									<h6 class="card-title mg-b-0 px-1" style="margin-top:1px;margin-bottom:-6px"><?php echo $project->name ?></h6>
 									<!-- <nav class="nav">
 									<a href="" class="link-gray-500"><i data-feather="help-circle" class="svg-16"></i></a>
 									<a href="" class="link-gray-500"><i data-feather="more-vertical" class="svg-16"></i></a>
@@ -23,7 +24,7 @@
 								</div>
        
 								<div class="card-body" style="padding:none !important;">
-	  <?php foreach ($projects as $project){?>
+	 
      
       
       <!-- <div class="row px-3">
@@ -226,7 +227,10 @@
 		
       <!-- Submit -->
 					 </div>
-					 <a href="<?php echo base_url();?>index.php/ClientProject"><button type="submit" class="btn btn-submit btn-med" style="border-radius:10px;margin-bottom:-50px;margin-top:-20px;">All Projects</button></a><!-- content-body -->
+					 <div class="row" style="display:flex;align-items:center;justify-content:center" >
+					 <a href="<?php echo base_url();?>index.php/ClientProject"><button type="submit" class="btn btn-submit btn-med text-center" style="border-radius:10px;margin-bottom:-50px;margin-top:-20px;">Back to Projects</button></a><!-- content-body -->
+					 </div>
+					
       </div>
 			
 	  <?php } ?>

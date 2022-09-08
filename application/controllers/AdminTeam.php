@@ -56,6 +56,46 @@ Class AdminTeam extends CI_Controller{
 		redirect('/AdminTeam/');
 	}
 
+	function editTeam($team_id){
+
+		$teamservice = new TeamService();
+		$data["title"] = "test";
+		$data['active'] = 3;
+
+		$data["teams"] = $teamservice->editTeam($team_id);
+
+		$partial = array('content' => 'admin/pages/team/editTeam');
+		$this->template->load('admin/mainpage',$partial,$data);	 
+	}
+
+	function updateTeam(){
+
+		$teammodel = new TeamModel();
+		$teamservice = new TeamService();
+
+		$date_now = date("Y-m-d");
+
+		$teammodel->setTeam_id($this->input->post('team_id'));
+		$teammodel->setName($this->input->post('name'));
+		$teammodel->setParent_category($this->input->post('parent_category'));
+		$teammodel->setCreated_date($date_now);
+
+		$teamservice->updateTeam($teammodel);
+
+		redirect('/AdminTeam/');
+
+	}
+
+	function deleteTeam($id){
+
+		$teamservice = new TeamService();
+
+		$teamservice->deleteTeam($id);
+
+		redirect('/AdminTeam/');
+
+	}
+
 }
 
 ?>

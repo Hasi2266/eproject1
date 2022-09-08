@@ -120,7 +120,13 @@
                       <h5 id="section2" class="mb-4">Attachment</h5>
                         <div class="controls1">
                             <div class="entry1 input-group upload-input-group">
-														<input class="form-control" name="images[]" type="file" style="border-radius:10px;" multiple=""> 
+														<div class="wd-md-100p">
+											<div class="custom-file">
+												<input type="file" name="images[]" class="custom-file-input" id="customFile"  multiple="">
+												<label class="custom-file-label" for="customFile" style="border-radius:10px;margin-bottom:10px">Choose file</label>
+											</div>
+										</div>
+															<!-- <input class="form-control" name="images[]" type="file" style="border-radius:10px;" multiple="">  -->
                             </div>
     
                         </div>

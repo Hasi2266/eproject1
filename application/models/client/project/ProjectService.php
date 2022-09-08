@@ -237,8 +237,9 @@ function getService_id(){
 
 	function getProposal($proposal_id){
 
-		$this->db->select('*');
+		$this->db->select('*,name');
 		$this->db->from('proposal');
+		$this->db->join('project','project.project_id = proposal.project_id','left',false);
 		$this->db->where('proposal_id='.$proposal_id);
 		$query = $this->db->get();
 		return $query->result();
@@ -367,6 +368,37 @@ function getService_id(){
 
 	}
 	
+	function giveApprove($id){
+
+
+		$data = array(
+
+			'approve_project' => '1',
+			'project_status' => '2',
+
+		);
+
+		$this->db->where('project_id='.$id);
+	   	return $this->db->update('project',$data);
+
+	}
+
+	function approveProposal($id){
+
+
+		$data = array(
+
+			'approve_proposal' => '1',
+			'proposal_status' => '2',
+
+		);
+
+		$this->db->where('project_id='.$id);
+	   	return $this->db->update('proposal',$data);
+
+	}
+
+	
 	function ProjectImages2($id){
 		
 		
@@ -401,5 +433,13 @@ function getService_id(){
 		$query = $this->db->get();
 		return $query->result();
 	}
+	// function getProjectName($id){
+
+	// 	$this->db->select('name');
+	// 	$this->db->from('project');
+	// 	$this->db->where('project_id='.$id);
+	// 	$query = $this->db->get();
+	// 	return $query->result();
+	// }
 }
 ?>

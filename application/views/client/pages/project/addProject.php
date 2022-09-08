@@ -230,7 +230,7 @@
 																	<?php } ?>
 																</td>
 																<td><button type="button" name="add" id="add"
-																		class="btn btn-success btn-all"><i class="fa fa-plus"></button></td>
+																		class="btn  btn-all"><i class="fa fa-plus"></button></td>
 															</tr>
 														<tbody>
 													</table>
@@ -338,7 +338,7 @@
 																<?php } ?>
 																</td>
 																<td><button type="button" name="add" id="add1"
-																		class="btn btn-success btn-all"><i class="fa fa-plus"></button></td>
+																		class="btn  btn-all"><i class="fa fa-plus"></button></td>
 															</tr>
 														<tbody>
 													</table>
@@ -459,8 +459,13 @@
 				
 			<!-- Submit -->
 
+			<div class="row" style="display:flex;align-items:center;justify-content:center" >
+				<button type="submit" class="btn btn-primary mt-5 mb-5 btn-submit" >Submit Project</button>
+				<button type="button" class="btn btn-primary mt-5 mb-5 btn-submit mx-2">Save As Draft</button>
+				<button type="button" class="btn btn-primary mt-5 mb-5 btn-submit">Cancel Project</button>
+			</div>
 
-			<button type="submit" class="btn btn-primary mt-5 mb-5 btn-submit mx-4">Submit Project</button>
+			
 		</form>
 
     </div><!-- content-body -->

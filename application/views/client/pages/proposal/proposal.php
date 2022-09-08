@@ -40,7 +40,7 @@
 								</div>
        <!-- <h3 class="text-dark  mb-4">Proposal</h3> -->
        <div class="card-body">
-        <table id="example1" class="table1 table-hover" style="border-radius:10px ;font-size:13px;">
+        <table id="example1" class="table1 table table-hover" style="border-radius:10px ;font-size:13px;">
           <thead>
             <tr>
 			<!-- <th class="wd-9p"><div class="custom-control custom-checkbox" style="border-radius: 8px;">
@@ -73,8 +73,8 @@
 
 							<td><span class="badge badge-pill badge-info" style="background-color:#36b8b;">Submitted</span></td>
 								
-					<?php } else { ?>
-						<td><span class="badge badge-pill badge-info">Pending</span></td>
+					<?php } else if(($proposal->proposal_status) == 2){ ?>
+						<td><span class="badge badge-pill badge-info">Confirmed </span></td>
 					<?php } ?>
 					<td>Admin</td>
 					

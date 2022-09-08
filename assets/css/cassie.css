@@ -9950,7 +9950,7 @@ table.dataTable {
   table.dataTable thead .sorting_asc,
   table.dataTable thead .sorting_desc {
     background-image: none;
-    background-color: #f2f4f7;
+    background-color: white;
     position: relative; }
     table.dataTable thead .sorting_asc::after,
     table.dataTable thead .sorting_desc::after {
@@ -9980,7 +9980,7 @@ table.dataTable {
       content: '\f3d0';
       top: 60%; }
   table.dataTable tbody td.sorting_1 {
-    background-color: #f9f9fb; }
+    background-color: white; }
   table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > td:first-child::before, table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > td:first-child::before {
     top: 9.5px;
     left: 7px;
@@ -10015,11 +10015,17 @@ table.dataTable {
       border-color: rgba(230, 231, 239, 0.85);
       border-radius: 0; }
       .dataTables_wrapper .dataTables_length .select2-container--default .select2-selection--single .select2-selection__rendered {
-        line-height: 32px; }
+        line-height: 32px;
+				/* margin-right: 5px !important; */
+				margin-left:-5px ;
+			 }
       .dataTables_wrapper .dataTables_length .select2-container--default .select2-selection--single .select2-selection__arrow {
         height: 30px; }
         .dataTables_wrapper .dataTables_length .select2-container--default .select2-selection--single .select2-selection__arrow b {
-          border-top-color: #919fac; }
+          border-top-color: #919fac; 
+					margin-right: 10px !important;
+				
+				}
 
 .dataTables_wrapper .dataTables_filter {
   text-align: left; }
@@ -11062,7 +11068,9 @@ textarea.parsley-success:focus {
   background-color: white; }
 
 .select2-container--default .select2-results__option--highlighted[aria-selected] {
-  background-color: #5556fd; }
+  background-color: #33ccff; 
+	border-radius: 8px;
+}
 
 .select2-container--default .select2-results > .select2-results__options {
   margin: 4px; }
@@ -11093,12 +11101,15 @@ textarea.parsley-success:focus {
     background-color: #fff;
     border-color: #d9dfe7; }
   .select2-container--open .select2-dropdown--above {
-    border-top-left-radius: 0;
-    border-top-right-radius: 0; }
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px; }
   .select2-container--open .select2-dropdown--below {
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-    top: 0; }
+    /* border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+		border-top-left-radius: 8px; */
+		border-radius: 8px;
+		margin-top: 5px;
+    top: 2; }
 
 .select2-dropdown {
   border-color: #d9dfe7;
@@ -11415,8 +11426,8 @@ body {
       top: 50%;
       right: 12px;
       margin-top: -3px;
-      border-top: 1px solid rgba(55, 56, 87, 0.6);
-      border-right: 1px solid rgba(55, 56, 87, 0.6);
+      border-top: 1px solid white ;
+      border-right: 1px solid white;
       width: 6px;
       height: 6px;
       transform: rotate(45deg); }
@@ -43874,7 +43885,7 @@ calendar td a {
 
 
 .sidebar-color{
-	background-color: #333333;
+	background-color: #262626 !important;
 	color:white;
 	border-bottom:none !important;
 	
@@ -43957,6 +43968,8 @@ calendar td a {
 .btn-all{
 	border-radius: 8px !important;
 	background-color: #404040 !important;
+	border-color: none !important;
+	color:white;
 }
 .btn_remove{
 	border-radius: 8px !important;
@@ -44021,8 +44034,8 @@ calendar td a {
 }
 .select2-container--default .select2-selection--single .select2-selection__arrow b
 {
-	margin-left: 2px !important;
-	margin-right: 5px !important;
+	margin-left: 4px !important;
+	margin-right: 10px !important;
 }
 
 .dataTables_wrapper .dataTables_info{
@@ -44045,5 +44058,23 @@ calendar td a {
 
 input[type="file"] {
 	display: none;
+}
+
+
+
+
+/* .nav-sidebar .nav-link.with-sub::after {
+	
+	border-top: 1px solid white !important;
+	border-right: 1px solid white !important;
+} */
+
+.select2-results{
+	border-bottom-right-radius: 8px !important;
+	border-bottom-left-radius: 8px !important;
+}
+
+.borderRa{
+	border-radius:8px !important;
 }
 

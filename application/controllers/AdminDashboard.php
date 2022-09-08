@@ -8,15 +8,17 @@ Class AdminDashboard extends CI_Controller{
 		if(!$this->session->userdata('ADMIN_ID')){
 			redirect('/Admin/');
 		}else{
-			// $this->load->model('client/dashboard/DashboardService');
+			$this->load->model('Admin/dashboard/DashboardService');
 		}
 	}
 
 	public function index(){
 
 		$data["title"] = "dashboard";
+		$dashboardservice = new DashboardService();
 
 		$data["active"] = 1;
+		$data["items2"] = $dashboardservice->getClientInfo($this->session->userdata('ADMIN_ID'));
 
 		$partial = array('content' => 'admin/pages/dashboard');
 		$this->template->load('admin/mainpage',$partial,$data);

@@ -305,5 +305,65 @@ function getService_id(){
 		$query = $this->db->get();
 		return $query->result();
 	}
+
+	function startProject($id){
+
+		$data = array(
+
+			'start_project' => '1',
+			'project_status' => '3',
+
+		);
+
+		$this->db->where('project_id='.$id);
+		return $this->db->update('project',$data);
+
+
+	}
+	function holdProject($id){
+
+		$data = array(
+
+			'hold_project' => '1',
+			'project_status' => '4',
+
+		);
+
+		$this->db->where('project_id='.$id);
+		return $this->db->update('project',$data);
+
+
+	}
+
+	function endProject($id){
+
+		$data = array(
+
+			'end_project' => '1',
+			'project_status' => '5',
+			'project_del_ind' => '2',
+			'start_project' => '0',
+
+		);
+
+		$this->db->where('project_id='.$id);
+		return $this->db->update('project',$data);
+
+	}
+	
+	function startAgainProject($id){
+
+		$data = array(
+
+			'hold_project' => '0',
+			'project_status' => '3',
+
+		);
+
+		$this->db->where('project_id='.$id);
+		return $this->db->update('project',$data);
+
+
+	}
 }
 ?>

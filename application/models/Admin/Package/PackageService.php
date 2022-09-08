@@ -66,6 +66,64 @@ Class PackageService extends CI_Model{
 	}
 
 
+	function editItem($id){
+		$this->db->select('*');
+		$this->db->from('package');
+		$this->db->where('package_id='.$id);
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	function updateItem($packagemodel){
+
+		$array = $packagemodel->getFlieds();
+
+		$ids = array();
+		
+		foreach($array as $key => $value){
+		
+			if(!empty($value)){
+				$ids[]= $value;
+			}
+			
+		}
+
+		$ids = implode(',',$ids);
+		// print_r($ids);die;
+
+		$data = array(
+
+			'name' => $packagemodel->getName(),
+			'team' => $packagemodel->getTeam(),
+			'date' => $packagemodel->getDate(),
+			'created_by' => $packagemodel->getCreated_by(),
+			'flieds' => $ids,
+			'description' => $packagemodel->getDescription(),
+			'currency' => $packagemodel->getCurrency(),
+			'pduration' => $packagemodel->getDuration(),
+			'price' => $packagemodel->getPrice(),
+			'package_created_date' => $packagemodel->getCreated_date(),
+			'package_del_ind' => '1',
+
+		);
+
+		// print_r($packagemodel->getPackage_id());die;
+
+		$this->db->where('package_id='.$packagemodel->getPackage_id());
+	   	return $this->db->update('package',$data);
+
+	}
+
+	function deleteItem($id){
+
+		// $data = array(
+		// 	'service_del_ind' => 0,
+		//    );
+
+
+	   $this->db->where('package_id=' . $id);
+	   return  $this->db->delete('package');
+	}
 
 }
 ?>

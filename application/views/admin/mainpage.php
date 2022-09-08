@@ -1,7 +1,7 @@
 <?php include 'include/header.php'?>
 
     <div class="sidebar sidebar-color">
-        <div class="sidebar-header ">
+        <div class="sidebar-header sidebar-color ">
             <div>
                 <a href="<?php echo base_url();?>index.php/AdminDashboard" class="sidebar-logo"><span class="text-white">Sprout Seven </span></a>
                 <!-- <small class="sidebar-logo-headline">Responsive Dashboard Template</small> -->
@@ -13,9 +13,9 @@
     </div>
     <!-- sidebar -->
 
-    <div class="content content-page">
-        <div class="header">
-            <div class="header-left">
+    <div class="content content-page ">
+        <div class="header" style="margin-right:25px;">
+            <div class="header-left" style="margin-left:1.5rem">
                 <a href="" class="burger-menu"><i data-feather="menu"></i></a>
 
                 <div class="header-search">

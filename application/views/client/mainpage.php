@@ -15,7 +15,7 @@
   <!-- sidebar-body -->
 </div><!-- sidebar -->
 
-<div class="content content-page" style="margin-top:20px">
+<div class="content content-page" style="margin-top:20px;">
   <div class="header" style="margin-right:25px;">
 	<div class="header-left" style="margin-left:1.5rem" >
 	  <a href="" class="burger-menu"><i data-feather="menu"></i></a>

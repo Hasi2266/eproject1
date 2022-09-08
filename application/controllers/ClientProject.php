@@ -214,6 +214,7 @@ Class ClientProject extends CI_Controller{
 		$projectmodel->setCreated_date($date_now);
 		
 		$projectservice->createProject($projectmodel);
+		// $projectservice->pendingProposal($projectmodel);
 		// print_r($projectmodel);die;
 
 		redirect('/ClientProject/');
@@ -334,7 +335,11 @@ Class ClientProject extends CI_Controller{
 		$id = $projectservice->getProposal($porposal_id);
 		
 		$data["item"] = $projectservice->getProposal($porposal_id);
+		
+		// $data["name"] = $projectservice->getProjectName($x[0]->project_id);
+
 		$data["milestones"] = $projectservice->getMilestone($id[0]->project_id);
+
 		$images = $projectservice->ProjectImages($porposal_id);
 		// print_r($images);die;
 
@@ -504,6 +509,16 @@ Class ClientProject extends CI_Controller{
 		$projectservice->updateProject($projectmodel);
 		
 		redirect('/ClientProject/');
+
+	}
+
+	function giveApprove($project_id){
+
+		$projectservice =  new ProjectService();
+		$projectservice->giveApprove($project_id);
+		$projectservice->approveProposal($project_id);
+
+		redirect('/ClientProject/Proposal/');
 
 	}
 }

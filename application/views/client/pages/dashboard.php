@@ -147,7 +147,7 @@
 		} else
 		/* Finally, show good night if the time is greater than or equal to 1900 hours */
 		if ($hr >= "19") {
-			$greeting =  "Good night";
+			$greeting =  "Good evening";
 		}
 	 
 	 
@@ -319,8 +319,8 @@
 									</div>
 								</div>
 								<div class="card-footer bg-transparent">
-									<div class="badge bg-blue tx-white" style="border-radius:6px"><?php echo $item->type?></div>
-									<div class="project-date-end mx-2" style="border-radius:6px">End: Aug 15, 2019</div>
+									<div class="badge bg-blue tx-white" style="border-radius:6px;padding-bottom:-5px;"><?php echo $item->type?></div>
+									<div class="project-date-end mx-2" style="border-radius:6px ;padding-top:5px">End: Aug 15, 2019</div>
 									<!-- <div class="avatar-group">
 										<div class="avatar avatar-xxs"><img src="https://via.placeholder.com/300/637382/fff" class="rounded-circle" alt=""></div>
 										<div class="avatar avatar-xxs"><img src="https://via.placeholder.com/300/637382/fff" class="rounded-circle" alt=""></div>
@@ -407,14 +407,14 @@
 								?>
 
 							
-							<ul class="nav nav-line" id="myTab5" role="tablist" style="margin-left:1rem; border-bottom:none !important;font-size:13px;margin-top:0.2rem">
+							<ul class="nav nav-line" id="myTab5" role="tablist" style="margin-left:1rem; border-bottom:none !important;font-size:13px;margin-top:0.2rem;">
 								<li class="nav-item">
 								<a class="nav-link active" id="home-tab5" data-toggle="tab" href="#home5" role="tab" aria-controls="home" aria-selected="true">Recent Project</a>
 								</li>
-								<li class="nav-item">
+								<li class="nav-item" >
 								<a class="nav-link" id="profile-tab5" data-toggle="tab" href="#profile5" role="tab" aria-controls="profile" aria-selected="false">Ongoing Project</a>
 								</li>
-								<li class="nav-item">
+								<li class="nav-item" >
 								<a class="nav-link" id="contact-tab5" data-toggle="tab" href="#contact5" role="tab" aria-controls="contact" aria-selected="false">Completed Project</a>
 								</li>
 							</ul>
@@ -422,11 +422,80 @@
 							<div class="tab-content mg-t-20" id="myTabContent5">
 								
 								<div class="tab-pane fade" id="profile5" role="tabpanel" aria-labelledby="profile-tab5">
-									<!-- <h6>Profile</h6>
-									<p class="mg-b-0">Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non irure adipisicing aliqua ullamco irure incididunt irure non esse consectetur nostrud minim non minim occaecat.</p> -->
+									
+								<?php foreach($items as $item){ ?>
+
+									<?php if(($item->start_project) == 1){?>
+
+										<li class="list-group-item  card-hove mb-2" >
+												<!-- <nav class="nav nav-card-icon">
+													<a href=""><i data-feather="activity" class="svg-16"></i></a>
+													<a href=""><i data-feather="bar-chart-2" class="svg-16"></i></a>
+													<a href=""><i data-feather="chevron-down" class="svg-16"></i></a>
+												</nav> -->
+												<div class="media" style="margin-left:-0.2rem;">
+													<div class="project-logo bg-primary tx-white mt-1"><i style="font-size:11px" data-feather="aperture"></i></div>
+													<div class="media-body mg-l-10 mg-sm-l-15">
+														<span class=" tx-color-04"><?php echo $item->company_name?></span>
+														<!-- <p class="tx-13 tx-color-04 mg-b-5"><?php echo $item->company_name?></p> -->
+														<h6 class="mg-b-5"><?php echo $item->name?></h6>
+
+														<?php $req = $item->requirement;
+														$y = implode(' ', array_slice(explode(' ', $req), 0, 14))."\n";?>
+
+														<p class="project-desc">
+														
+														<?php echo $y;?></p>
+													</div><!-- media-body -->
+												</div><!-- media -->
+												<div style="margin-top:-14px;">
+												<div class="badge bg-blue tx-white" style="border-radius:6px;padding:6px">Start Date: <?php echo $item->project_created_date?></div>
+												<small class="project-deadline  mx-2 py-1" style="border-radius:6px">End Date: <?php echo $item->project_created_date?></small>
+												</div>
+												
+											</li>
+
+										<?php } ?>
+
+								<?php } ?>
+
 								</div>
 								<div class="tab-pane fade" id="contact5" role="tabpanel" aria-labelledby="contact-tab5">
 								
+								<?php foreach($items as $item){ ?>
+
+									<?php if(($item->end_project) == 1){?>
+
+										<li class="list-group-item  card-hove mb-2" >
+												<!-- <nav class="nav nav-card-icon">
+													<a href=""><i data-feather="activity" class="svg-16"></i></a>
+													<a href=""><i data-feather="bar-chart-2" class="svg-16"></i></a>
+													<a href=""><i data-feather="chevron-down" class="svg-16"></i></a>
+												</nav> -->
+												<div class="media" style="margin-left:-0.2rem;">
+													<div class="project-logo bg-primary tx-white mt-1"><i style="font-size:11px" data-feather="aperture"></i></div>
+													<div class="media-body mg-l-10 mg-sm-l-15">
+														<span class=" tx-color-04"><?php echo $item->company_name?></span>
+														<!-- <p class="tx-13 tx-color-04 mg-b-5"><?php echo $item->company_name?></p> -->
+														<h6 class="mg-b-5"><?php echo $item->name?></h6>
+
+														<?php $req = $item->requirement;
+														$y = implode(' ', array_slice(explode(' ', $req), 0, 14))."\n";?>
+
+														<p class="project-desc">
+														
+														<?php echo $y;?></p>
+													</div><!-- media-body -->
+												</div><!-- media -->
+												<div style="margin-top:-14px;">
+												<div class="badge bg-blue tx-white" style="border-radius:6px;padding:6px">Start Date: <?php echo $item->project_created_date?></div>
+												<small class="project-deadline  mx-2 py-1" style="border-radius:6px">End Date: <?php echo $item->project_created_date?></small>
+												</div>
+												
+											</li>
+									<?php } ?>
+
+								<?php } ?>
 							
 								</div>
 								
@@ -434,6 +503,7 @@
 								
 								
 								<div class="tab-pane fade show active" id="home5" role="tabpanel" aria-labelledby="home-tab5" style="margin-top:-1rem;">
+
 									<?php foreach($items as $item){
 
 										if(($item->project_status) == 1){
@@ -501,7 +571,7 @@
           </div><!-- col -->
 
 		  <div class="row row-sm" style="margin-right-15px;width:95rem;margin-top:-34px;margin-bottom:1rem;">
-			<div class="col-xl-12 mg-t-15 mg-sm-t-20 mg-xl-t-0" >
+			<div class="col-xl-12 mg-t-15 mg-sm-t-20 mg-xl-t-0">
 
 			<div class="card card-hover card-projects card-task-one dashCardHover mb-2" style="border-radius: 10px; ">
 				<div class="card-header bg-transparent pd-y-15 pd-l-15 pd-r-10">
@@ -537,12 +607,24 @@
 											<tbody>
 											
 
-											<?php foreach($items as $item){?>
+									<?php foreach($items as $item){?>
 
 												<?php 
 										if(($item->project_status) == 1){
 											$status = 'Submitted';
 										}
+										else if(($item->project_status) == 2){
+											$status = 'Confirmed ';
+										}
+										else if(($item->project_status) == 3){
+											$status = 'In Progress ';
+										}	
+										else if(($item->project_status) == 4){
+											$status = 'Hold ';
+										}
+										else{
+											$status = 'Completed';
+										}	
 					
 										if(($item->end_date)== 'Specific Date'){
 											$due_date = $item->date;
