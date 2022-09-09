@@ -27,8 +27,30 @@
 		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
 		
 
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
 
-		
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyC2UeAkWponwGldkcV9BP24ljl2v81Zvos",
+    authDomain: "delnix-eproject.firebaseapp.com",
+    projectId: "delnix-eproject",
+    storageBucket: "delnix-eproject.appspot.com",
+    messagingSenderId: "1091007505591",
+    appId: "1:1091007505591:web:f1493697965fd101345932",
+    measurementId: "G-BT9K9NYTQH"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+
 		
 		
 		<script>
