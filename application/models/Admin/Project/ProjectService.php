@@ -255,13 +255,14 @@ function getService_id(){
 
 	}
 
-	function updateAddProposalStatus($id){
+	function updateAddProposalStatus($projectmodel){
 
 		$data = array(
 			'add_proposal' => '1',
+			'update_date' => $projectmodel->getUpdate_date(),
 		);
 
-		$this->db->where('project_id='.$id);
+		$this->db->where('project_id='.$projectmodel->getProject_id());
 		return $this->db->update('project',$data);
 	}
 
@@ -306,36 +307,38 @@ function getService_id(){
 		return $query->result();
 	}
 
-	function startProject($id){
+	function startProject($projectmodel){
 
 		$data = array(
 
 			'start_project' => '1',
 			'project_status' => '3',
+			'update_date' => $projectmodel->getUpdate_date(),
 
 		);
 
-		$this->db->where('project_id='.$id);
-		return $this->db->update('project',$data);
+		$this->db->where('project_id='.$projectmodel->getProject_id());
+	   	return $this->db->update('project',$data);
 
 
 	}
-	function holdProject($id){
+	function holdProject($projectmodel){
 
 		$data = array(
 
 			'hold_project' => '1',
 			'project_status' => '4',
+			'update_date' => $projectmodel->getUpdate_date(),
 
 		);
 
-		$this->db->where('project_id='.$id);
-		return $this->db->update('project',$data);
+		$this->db->where('project_id='.$projectmodel->getProject_id());
+	   	return $this->db->update('project',$data);
 
 
 	}
 
-	function endProject($id){
+	function endProject($projectmodel){
 
 		$data = array(
 
@@ -343,25 +346,27 @@ function getService_id(){
 			'project_status' => '5',
 			'project_del_ind' => '2',
 			'start_project' => '0',
+			'update_date' => $projectmodel->getUpdate_date(),
 
 		);
 
-		$this->db->where('project_id='.$id);
-		return $this->db->update('project',$data);
+		$this->db->where('project_id='.$projectmodel->getProject_id());
+	   	return $this->db->update('project',$data);
 
 	}
 	
-	function startAgainProject($id){
+	function startAgainProject($projectmodel){
 
 		$data = array(
 
 			'hold_project' => '0',
 			'project_status' => '3',
+			'update_date' => $projectmodel->getUpdate_date(),
 
 		);
 
-		$this->db->where('project_id='.$id);
-		return $this->db->update('project',$data);
+		$this->db->where('project_id='.$projectmodel->getProject_id());
+	   	return $this->db->update('project',$data);
 
 
 	}

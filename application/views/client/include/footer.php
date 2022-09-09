@@ -28,6 +28,9 @@
     <script src="<?php echo base_url();?>/lib/datatables.net-responsive-dt/js/responsive.dataTables.min.js"></script>
 		
 
+
+
+	
 		<script>
 			$(function () {
     $('table.table1 tr').click(function () {

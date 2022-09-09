@@ -600,7 +600,7 @@
 													<th class="wd-15p">Update Date</th>
 													<th class="wd-15p">Status</th>
 													<th class="wd-12p">Progress</th>
-													<th class="wd-15p">invoice</th>
+													<th class="wd-12p">invoice</th>
 													<th class="wd-15p">Due date</th>
 												</tr>
 											</thead>
@@ -642,7 +642,7 @@
 											<!-- <td><img src="<?php echo base_url();?>/assets/img/favicon.png" alt="..." class="img-thumbnail" width="50"></td> -->
 											<!-- <td><?php echo $item->company_name?></td> -->
 											<td><?php echo $item->name?></td>
-											<td><?php echo $item->project_created_date?></td>
+											<td><?php echo $item->update_date?></td>
 											
 							
 

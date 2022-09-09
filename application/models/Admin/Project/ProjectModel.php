@@ -21,7 +21,7 @@ Class ProjectModel extends CI_Model{
 	var $milestone_description;
 	var $start_date;
 	var $milestone_end_date;
-	
+	var $update_date;
 	
 	
 
@@ -281,6 +281,26 @@ Class ProjectModel extends CI_Model{
 	public function setPackages($packages)
 	{
 		$this->packages = $packages;
+
+		return $this;
+	}
+
+	/**
+	 * Get the value of update_date
+	 */ 
+	public function getUpdate_date()
+	{
+		return $this->update_date;
+	}
+
+	/**
+	 * Set the value of update_date
+	 *
+	 * @return  self
+	 */ 
+	public function setUpdate_date($update_date)
+	{
+		$this->update_date = $update_date;
 
 		return $this;
 	}

@@ -89,7 +89,10 @@ Class AdminService extends CI_Controller{
 				}
 				$servicesmodel->setImg($image);
 		}
+		// print_r($servicesmodel);die;
+
 		$servicesService->saveService( $servicesmodel );
+
 		redirect('/AdminService/allServices/');
 	}
 

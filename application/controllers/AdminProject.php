@@ -343,7 +343,14 @@ Class AdminProject extends CI_Controller{
 		$proposalmodel->setCreated_date($date_now);
 
 		$projectservice->createProposal($proposalmodel);
-		$projectservice->updateAddProposalStatus($id);
+
+		$projectmodel = new ProjectModel();
+
+		$projectmodel->setProject_id($id);
+		$projectmodel->setUpdate_date($date_now);
+
+		$projectservice->updateAddProposalStatus($projectmodel);
+
 		redirect('/AdminProject/');
 
 	}
@@ -363,7 +370,13 @@ Class AdminProject extends CI_Controller{
 	public function startProject($project_id){
 
 		$projectservice = new ProjectService();
-		$projectservice->startProject($project_id);
+		$projectmodel = new ProjectModel();
+		$date_now = date("Y-m-d");
+
+		$projectmodel->setProject_id($project_id);
+		$projectmodel->setUpdate_date($date_now);
+
+		$projectservice->startProject($projectmodel);
 
 		redirect('/AdminProject/');
 
@@ -372,14 +385,26 @@ Class AdminProject extends CI_Controller{
 	public function endProject($project_id){
 
 		$projectservice = new ProjectService();
-		$projectservice->endProject($project_id);
+		$projectmodel = new ProjectModel();
+		$date_now = date("Y-m-d");
+
+		$projectmodel->setProject_id($project_id);
+		$projectmodel->setUpdate_date($date_now);
+
+		$projectservice->endProject($projectmodel);
 
 		redirect('/AdminProject/');
 	}
 	public function holdProject($project_id){
 
 		$projectservice = new ProjectService();
-		$projectservice->holdProject($project_id);
+		$projectmodel = new ProjectModel();
+		$date_now = date("Y-m-d");
+
+		$projectmodel->setProject_id($project_id);
+		$projectmodel->setUpdate_date($date_now);
+
+		$projectservice->holdProject($projectmodel);
 
 		redirect('/AdminProject/');
 	}
@@ -387,7 +412,13 @@ Class AdminProject extends CI_Controller{
 	public function startAgainProject($project_id){
 
 		$projectservice = new ProjectService();
-		$projectservice->startAgainProject($project_id);
+		$projectmodel = new ProjectModel();
+		$date_now = date("Y-m-d");
+
+		$projectmodel->setProject_id($project_id);
+		$projectmodel->setUpdate_date($date_now);
+		
+		$projectservice->startAgainProject($projectmodel);
 
 		redirect('/AdminProject/');
 	}

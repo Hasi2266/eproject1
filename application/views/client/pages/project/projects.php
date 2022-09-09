@@ -59,19 +59,19 @@
 
 						<?php 
 									if(($item->project_status) == 1){
-										$status = 'Submitted';
+										$status = 'Project Submitted ';
 									}
 									else if(($item->project_status) == 2){
-										$status = 'Confirmed ';
+										$status = 'Project Approved';
 									}
 									else if(($item->project_status) == 3){
 										$status = 'In Progress ';
 									}	
 									else if(($item->project_status) == 4){
-										$status = 'Hold ';
+										$status = 'Project Hold';
 									}
 									else{
-										$status = 'Completed';
+										$status = 'Project Completed';
 									}	
 
 									if(($item->end_date)== 'Specific Date'){
@@ -91,7 +91,7 @@
 				</div></td> -->
 				
 				<td><?php echo $item->name?></td>
-				<td><?php echo $item->project_created_date?></td>
+				<td><?php echo $item->update_date?></td>
 				<td><span class="badge badge-pill badge-info" style="background-color:#36b8b;"><?php echo $status?></span></td>
 				<td><?php echo $item->project_progress?> %</td>			
 				<td><?php echo $due_date?></td>

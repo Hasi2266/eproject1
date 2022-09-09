@@ -20,7 +20,7 @@ Class ClientProject extends CI_Controller{
 
 		$data["title"] = "client Project";
 		$data["active"] = 2;
-		$data["items"] = $projectservice->allProjects($this->session->userdata('CLIENT_ID'));
+		$data["items"] = $projectservice->allProjects2($this->session->userdata('CLIENT_ID'));
 		// $data["items1"] = $projectservice->allServices();
 		
 // 		$data["items"] = $projectservice->allProjects();
@@ -212,7 +212,8 @@ Class ClientProject extends CI_Controller{
 		// print_r($img);die;
 		
 		$projectmodel->setCreated_date($date_now);
-		
+		$projectmodel->setUpdate_date($date_now);
+
 		$projectservice->createProject($projectmodel);
 		// $projectservice->pendingProposal($projectmodel);
 		// print_r($projectmodel);die;
@@ -515,7 +516,13 @@ Class ClientProject extends CI_Controller{
 	function giveApprove($project_id){
 
 		$projectservice =  new ProjectService();
-		$projectservice->giveApprove($project_id);
+		$projectmodel =  new ProjectModel();
+		$date_now = date("Y-m-d");
+
+		$projectmodel->setProject_id($project_id);
+		$projectmodel->setUpdate_date($date_now);
+
+		$projectservice->giveApprove($projectmodel);
 		$projectservice->approveProposal($project_id);
 
 		redirect('/ClientProject/Proposal/');

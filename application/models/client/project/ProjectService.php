@@ -125,6 +125,8 @@ Class ProjectService extends CI_Model{
 			'project_progress' => '0%',
 			'project_created_date' => $projectmodel->getCreated_date(),
 			'project_del_ind' => '1',
+			'update_date' => $projectmodel->getUpdate_date(),
+
 
 		);
 		
@@ -150,12 +152,26 @@ function getService_id(){
 		$this->db->from('project');
 		$this->db->join('service','service.service_id = project.services','left',false);
 		$this->db->where('project.client_id='.$id);
+		$this->db->where('project.approve_project=0');
 		$this->db->order_by("project.project_created_date", "desc");
 		// $this->db->where('service.service_id='.$service_id);
 
 		$query = $this->db->get();
 		return $query->result();
 	}
+
+	function allProjects2($id){
+		$this->db->select('*,service.service_name');
+		$this->db->from('project');
+		$this->db->order_by("project.project_created_date", "desc");
+		$this->db->join('service','service.service_id = project.services','left',false);
+		$this->db->where('project.client_id='.$id);
+		// $this->db->where('service.service_id='.$service_id);
+
+		$query = $this->db->get();
+		return $query->result();
+	}
+
 
 	function allProjects1($service_id){
 		$this->db->select('*,service.service_name');
@@ -355,7 +371,7 @@ function getService_id(){
 			'images' => $ids_image,
 			'project_status' => '1',
 			'project_progress' => '0%',
-			'project_created_date' => $projectmodel->getCreated_date(),
+			// 'project_created_date' => $projectmodel->getCreated_date(),
 			'project_del_ind' => '1',
 
 		);
@@ -368,17 +384,18 @@ function getService_id(){
 
 	}
 	
-	function giveApprove($id){
+	function giveApprove($projectmodel){
 
 
 		$data = array(
 
 			'approve_project' => '1',
 			'project_status' => '2',
+			'update_date' => $projectmodel->getUpdate_date(),
 
 		);
 
-		$this->db->where('project_id='.$id);
+		$this->db->where('project_id='.$projectmodel->getProject_id());
 	   	return $this->db->update('project',$data);
 
 	}

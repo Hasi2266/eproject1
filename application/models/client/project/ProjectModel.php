@@ -16,7 +16,7 @@ Class ProjectModel extends CI_Model{
 	var $images;
 	var $services;
 	var $packages;
-	
+	var $update_date;
 
 	/**
 	 * Get the value of project_id
@@ -294,6 +294,26 @@ Class ProjectModel extends CI_Model{
 	public function setClient_id($client_id)
 	{
 		$this->client_id = $client_id;
+
+		return $this;
+	}
+
+	/**
+	 * Get the value of update_date
+	 */ 
+	public function getUpdate_date()
+	{
+		return $this->update_date;
+	}
+
+	/**
+	 * Set the value of update_date
+	 *
+	 * @return  self
+	 */ 
+	public function setUpdate_date($update_date)
+	{
+		$this->update_date = $update_date;
 
 		return $this;
 	}

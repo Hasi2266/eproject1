@@ -7586,7 +7586,10 @@ a.badge-danger-light {
 .custom-checkbox .custom-control-input:disabled:checked ~ .custom-control-label::before,
 .custom-radio .custom-control-input:disabled:checked ~ .custom-control-label::before,
 .custom-switch .custom-control-input:disabled:checked ~ .custom-control-label::before {
-  border-color: rgba(85, 86, 253, 0.2); }
+  border-color: rgba(85, 86, 253, 0.2); 
+	border-radius: 4px !important;
+
+}
 
 .custom-checkbox .custom-control-label::before, .custom-checkbox .custom-control-label::after,
 .custom-radio .custom-control-label::before,
@@ -7594,18 +7597,30 @@ a.badge-danger-light {
 .custom-switch .custom-control-label::before,
 .custom-switch .custom-control-label::after {
   top: 50%;
-  transform: translateY(-50%); }
+  transform: translateY(-50%);
+	border-radius: 4px !important;
+	border-color: #4573d2 !important; 
+ }
+
 
 .custom-checkbox .custom-control-label:empty,
 .custom-radio .custom-control-label:empty,
 .custom-switch .custom-control-label:empty {
-  height: 20px; }
+  height: 20px; 
+	border-radius: 4px !important;
+	border-color: #4573d2 !important; 
+	/* color: #4573d2 !important; */
+}
   .custom-checkbox .custom-control-label:empty::before, .custom-checkbox .custom-control-label:empty::after,
   .custom-radio .custom-control-label:empty::before,
   .custom-radio .custom-control-label:empty::after,
   .custom-switch .custom-control-label:empty::before,
   .custom-switch .custom-control-label:empty::after {
-    left: -16px; }
+    left: -16px;
+		border-radius: 4px !important;
+		color: #4573d2 !important;
+		border-color: #4573d2 !important; 
+	 }
 
 .custom-switch .custom-control-input:checked ~ .custom-control-label::after {
   transform: translate(0.75rem, -50%); }
@@ -13910,19 +13925,19 @@ body {
   display: flex;
   align-items: left;
   justify-content: left;
-  border-bottom: 1px solid rgba(230, 231, 239, 0.85); }
+  border-bottom: 1px solid #4573d2 !important; }
   .pricing-price h1 {
     margin-bottom: 0;
     color: #06072d;
-    font-size: 56px;
-    font-weight: 300;
-    font-family: "Oswald", sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    font-family: "Roboto", sans-serif;
     line-height: .6;
     display: flex; }
     .pricing-price h1 span {
-      font-size: 24px;
+      font-size: 25px;
       font-family: "Roboto", sans-serif;
-      color: #575d78;
+      color: #06072d;
       /* align-self: flex-start; */
 		 }
     .pricing-price h1 small {
@@ -43964,6 +43979,10 @@ calendar td a {
 	margin-left:1.5rem;
 	margin-right:1.5rem;
 }
+.card-para{
+	margin-top: -8px;
+	justify-content:justify;
+}
 
 .btn-all{
 	border-radius: 8px !important;
@@ -43981,19 +44000,26 @@ calendar td a {
 }
 
 .cardBody{
-	border-radius: 8px;
-	 height: 24rem;
-	 width:19rem;
+
+	 border-radius: 8px;
+	 height: 21.5rem;
+	 width:15.5rem;
 	 margin-right: 2rem !important;
+	 /* border-color: #666666; */
 	 
 }
 
 .card_checkbox{
-	margin-left:15rem ;
+	margin-left:11.5rem ;
 	margin-top:-8px ;
-	margin-bottom:-20px
+	margin-bottom:-20px;
+	
 }
 
+.check1{
+
+	border-radius: 8px !important;
+}
 .btn-team{
 	background-color: #404040 ;
 	color: white !important;
@@ -44078,3 +44104,8 @@ input[type="file"] {
 	border-radius:8px !important;
 }
 
+
+.pricing-price{
+	border-bottom-color:  #4573d2 !important  ;
+	border-top-color: #4573d2 !important ;
+}

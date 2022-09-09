@@ -107,7 +107,7 @@
 									<!-- <td><img src="../assets/img/favicon.png" alt="..." class="img-thumbnail" width="50"></td> -->
 									<td class="data"><?php echo $item->company_name?></td>
 									<td class="data"><?php echo $item->name?></td>
-									<td class="data"><?php echo $item->project_created_date?></td>
+									<td class="data"><?php echo $item->update_date?></td>
 									<td><span class="badge badge-pill badge-info"><?php echo $status?></span></td>
 									<td class="data">005</td>
 									<td class="data"><?php echo $item->project_progress?> %</td>

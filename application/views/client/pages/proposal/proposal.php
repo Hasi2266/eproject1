@@ -69,13 +69,19 @@
 				<td><?php echo $proposal->name?></td>
 				<td><?php echo $proposal->proposal_created_date?></td>
 				<?php 
-						if(($proposal->proposal_status) == 1){?>
+				
+						if(($proposal->proposal_status) == 1){
+							
+								$status = "Proposal Submitted";
 
-							<td><span class="badge badge-pill badge-info" style="background-color:#36b8b;">Submitted</span></td>
+						}else if(($proposal->proposal_status) == 2){
+							$status = "Proposal Approved";
+						}
+							?>
+
+							<td><span class="badge badge-pill badge-info" style="background-color:#36b8b;"><?php echo $status;?></span></td>
 								
-					<?php } else if(($proposal->proposal_status) == 2){ ?>
-						<td><span class="badge badge-pill badge-info">Confirmed </span></td>
-					<?php } ?>
+					
 					<td>Admin</td>
 					
 					<td><?php echo $proposal->proposal_created_date?></td>

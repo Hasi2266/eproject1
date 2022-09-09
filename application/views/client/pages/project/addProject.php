@@ -87,12 +87,12 @@
 							</div>
 							<div class="form-check">
 								<label class="form-check-label">
-									<input type="radio" class="form-check-input" name="type" value="Not Sure">Not Sure
+									<input type="radio" class="form-check-input" name="type" value="Not Sure">One time project
 								</label>
 							</div>
 							<div class="form-check">
 								<label class="form-check-label">
-									<input type="radio" class="form-check-input" name="type" value="On Going">On Going
+									<input type="radio" class="form-check-input" name="type" value="On Going">On Going project
 								</label>
 							</div>
 						</div>
@@ -119,7 +119,7 @@
 						<!-- <form action="" method="post" enctype="multipart/form-data" class="form-horizontal"> -->
 						
 						<div class="card-header mb-3  bg-transparent pd-l-15 pd-r-0" style="margin-bottom:-0.1rem;">
-									<h6 class="card-title mg-b-0" style="margin-top:1px;margin-bottom:-6px;margin-left:-12px">Required Skills</h6>
+									<h6 class="card-title mg-b-0 mx-1" style="margin-top:1px;margin-bottom:-6px;margin-left:-12px">Required Skills</h6>
 									<!-- <nav class="nav">
 									<a href="" class="link-gray-500"><i data-feather="help-circle" class="svg-16"></i></a>
 									<a href="" class="link-gray-500"><i data-feather="more-vertical" class="svg-16"></i></a>
@@ -150,7 +150,7 @@
 						<!-- <form action="" method="post" enctype="multipart/form-data" class="form-horizontal"> -->
 						
 						<div class="card-header mb-4 bg-transparent pd-l-15 pd-r-10" style="margin-bottom:-0.1rem;">
-									<h6 class="card-title mg-b-0 " style="margin-top:1px;margin-bottom:-6px;margin-left:-12px">Add Services</h6>
+									<h6 class="card-title mg-b-0 mx-1" style="margin-top:1px;margin-bottom:-6px;margin-left:-12px">Add Services</h6>
 									<!-- <nav class="nav">
 									<a href="" class="link-gray-500"><i data-feather="help-circle" class="svg-16"></i></a>
 									<a href="" class="link-gray-500"><i data-feather="more-vertical" class="svg-16"></i></a>
@@ -230,7 +230,7 @@
 																	<?php } ?>
 																</td>
 																<td><button type="button" name="add" id="add"
-																		class="btn  btn-all"><i class="fa fa-plus"></button></td>
+																		class="btn  btn-all text-white"><i class="fa fa-plus"></button></td>
 															</tr>
 														<tbody>
 													</table>
@@ -257,7 +257,7 @@
 						<!-- <form action="" method="post" enctype="multipart/form-data" class="form-horizontal"> -->
 						
 						<div class="card-header mb-4 bg-transparent pd-l-15 pd-r-10" style="margin-bottom:-0.1rem;">
-									<h6 class="card-title mg-b-0 " style="margin-top:1px;margin-bottom:-6px;margin-left:-12px">Add Packages</h6>
+									<h6 class="card-title mg-b-0 mx-1" style="margin-top:1px;margin-bottom:-6px;margin-left:-12px">Add Packages</h6>
 									<!-- <nav class="nav">
 									<a href="" class="link-gray-500"><i data-feather="help-circle" class="svg-16"></i></a>
 									<a href="" class="link-gray-500"><i data-feather="more-vertical" class="svg-16"></i></a>
@@ -338,7 +338,7 @@
 																<?php } ?>
 																</td>
 																<td><button type="button" name="add" id="add1"
-																		class="btn  btn-all"><i class="fa fa-plus"></button></td>
+																		class="btn  btn-all text-white"><i class="fa fa-plus"></button></td>
 															</tr>
 														<tbody>
 													</table>
@@ -417,7 +417,7 @@
 						<!-- <form action="" method="post" enctype="multipart/form-data" class="form-horizontal"> -->
 						
 						<div class="card-header mb-4 bg-transparent pd-l-15 pd-r-10" style="margin-bottom:-0.1rem;">
-									<h6 class="card-title mg-b-0 " style="margin-top:1px;margin-bottom:-6px;margin-left:-12px">Attachment</h6>
+									<h6 class="card-title mg-b-0 mx-1" style="margin-top:1px;margin-bottom:-6px;margin-left:-12px">Attachment</h6>
 									<!-- <nav class="nav">
 									<a href="" class="link-gray-500"><i data-feather="help-circle" class="svg-16"></i></a>
 									<a href="" class="link-gray-500"><i data-feather="more-vertical" class="svg-16"></i></a>
@@ -459,10 +459,10 @@
 				
 			<!-- Submit -->
 
-			<div class="row" style="display:flex;align-items:center;justify-content:center" >
-				<button type="submit" class="btn btn-primary mt-5 mb-5 btn-submit" >Submit Project</button>
-				<button type="button" class="btn btn-primary mt-5 mb-5 btn-submit mx-2">Save As Draft</button>
-				<button type="button" class="btn btn-primary mt-5 mb-5 btn-submit">Cancel Project</button>
+			<div class="row" style="display:flex;align-items:left;justify-content:left" >
+				<button type="submit" class="btn btn-primary mt-5 mb-5 btn-submit mx-5" >Submit Project</button>
+				<!-- <button type="button" class="btn btn-primary mt-5 mb-5 btn-submit mx-2">Save As Draft</button> -->
+				<a href="<?php echo base_url();?>index.php/ClientDashboard"><button type="button" class="btn btn-primary mt-5 mb-5 btn-submit">Cancel Project</button></a>
 			</div>
 
 			
