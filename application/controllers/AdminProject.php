@@ -341,16 +341,16 @@ Class AdminProject extends CI_Controller{
 		
 		$proposalmodel->setImages($img);
 		$proposalmodel->setCreated_date($date_now);
-
-		$projectservice->createProposal($proposalmodel);
-
 		$projectmodel = new ProjectModel();
 
 		$projectmodel->setProject_id($id);
+		// echo $id;die;
 		$projectmodel->setUpdate_date($date_now);
 
-		$projectservice->updateAddProposalStatus($projectmodel);
-
+		$projectservice->createProposal($proposalmodel);
+		// $projectservice->updateAddProposalStatus($id);
+		
+		
 		redirect('/AdminProject/');
 
 	}
@@ -395,6 +395,7 @@ Class AdminProject extends CI_Controller{
 
 		redirect('/AdminProject/');
 	}
+
 	public function holdProject($project_id){
 
 		$projectservice = new ProjectService();

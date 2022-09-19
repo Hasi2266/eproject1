@@ -252,17 +252,19 @@ function getService_id(){
 		);
 		
 		return $this->db->insert('proposal',$data);
+		updateAddProposalStatus($proposalmodel->getProject_id());
 
 	}
 
-	function updateAddProposalStatus($projectmodel){
+	function updateAddProposalStatus($id){
 
+		$date_now = date("Y-m-d");
 		$data = array(
 			'add_proposal' => '1',
-			'update_date' => $projectmodel->getUpdate_date(),
+			'update_date' => $date_now,
 		);
-
-		$this->db->where('project_id='.$projectmodel->getProject_id());
+	
+		$this->db->where('project_id='.$id);
 		return $this->db->update('project',$data);
 	}
 
