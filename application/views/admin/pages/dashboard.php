@@ -41,7 +41,7 @@
 				<div style="text-align:center;">
 			
 				<h6 class="content-title content-title-xs" style="font-size:16px;line-height: 20px;"><?php echo $day ." , " . $month;?></h6>
-				<h2 class="content-title content-title-xs" style="font-size:32px;line-height: 40px;margin-bottom:2rem"><?php echo $greeting." , " . $items2[0]->firstname?></h2>
+				<h2 class="content-title content-title-xs" style="font-size:32px;line-height: 40px;margin-bottom:2rem"><?php echo $greeting." , " . $items2[0]->username?></h2>
 			
 		</div>
 				

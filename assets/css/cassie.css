@@ -11245,8 +11245,11 @@ svg-to-inline {
   .bootstrap-tagsinput .tag {
     display: inline-flex;
     align-items: center;
-    background-color: #5556fd;
-    color: #fff;
+    background-color: #17a2b8;
+    font-size:12px;
+    font-weight: 500;
+    color: white;
+    opacity: 1;
     padding: 2px 7px;
     border-radius: 1px; }
     .bootstrap-tagsinput .tag [data-role="remove"] {
@@ -43997,6 +44000,7 @@ calendar td a {
 .btn-submit{
 	border-radius: 8px !important;
 	background-color: #4573d2 !important;
+  color : white;
 }
 
 .cardBody{

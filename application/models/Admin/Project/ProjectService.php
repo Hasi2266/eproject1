@@ -370,5 +370,21 @@ function getService_id(){
 
 
 	}
+
+	function updateItem($projectmodel){
+
+		$data = array(
+
+			
+			'project_progress' => $projectmodel->getProgress(),
+			'update_date' => $projectmodel->getUpdate_date(),
+
+		);
+
+		$this->db->where('project_id='.$projectmodel->getProject_id());
+	   	return $this->db->update('project',$data);
+	}
+
+	
 }
 ?>

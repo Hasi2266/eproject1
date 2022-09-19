@@ -1,5 +1,5 @@
 <!-- data-spy="scroll" data-target="#navSection" data-offset="100" -->
-<div class="content-body" >
+<div class="content-body content-card-body" >
 	<body onload="loadImage()">
     <!-- header -->
     <div class="content-header">
@@ -17,21 +17,31 @@
 	<?php foreach ($projects as $project){?>
 	<form action="<?php echo base_url();?>index.php/ClientProject/update/<?php echo $project->project_id ?>" method="post" enctype="multipart/form-data">
     
-	<div class="pd-x-65 pd-b-15">
+	<div class="pd-x-5 pd-b-15">
 		
-			<div class="component-section px-5 shadow" style="border-radius: 13px;">
+	<div class="card card-hover card-projects  card-task-one dashCardHover  mt-4" style="border-radius: 10px;margin-bottom:2rem !important;padding-bottom:3rem; " >
 
-				<h3 class="text-dark text-uppercase mb-4">Project</h3>
+	<div class="card-header bg-transparent pd-y-15 pd-l-15 pd-r-10" style="margin-bottom:-0.1rem;">
+									<h6 class="card-title mg-b-0 px-1" style="margin-top:1px;margin-bottom:-6px">Create New Project</h6>
+									<!-- <nav class="nav">
+									<a href="" class="link-gray-500"><i data-feather="help-circle" class="svg-16"></i></a>
+									<a href="" class="link-gray-500"><i data-feather="more-vertical" class="svg-16"></i></a>
+									</nav> -->
+              	
+								</div>
+
+								<div class="card-body">
+
 		<input type="hidden" name="project_id" value="<?php echo $project->project_id?>">
 				
 					<div class="form-group">
-						<label for="exampleInputEmail1">Name</label>
+					<label for="exampleInputEmail1"><h6 class="card-title mg-b-1" style="margin-top:1px;">Project Name</h6></label>
 						<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
 							name="name" placeholder="Enter Name" style="border-radius:10px" value="<?php echo $project->name ?>" >
 					</div>
 
 					<div class="form-group">
-						<label for="exampleFormControlTextarea1">Requirement</label>
+					<label for="exampleFormControlTextarea1"><h6 class="card-title mg-b-1" style="margin-top:1px;">Requirement</h6></label>
 						<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
 							placeholder="Enter Requirement" style="border-radius:10px"  name="requirement"><?php echo $project->requirement?></textarea>
 					</div>
@@ -39,14 +49,14 @@
 					<div class="row">
 						<div class="col-md-4">
 							<div class="form-group ">
-								<label for="exampleFormControlTextarea1">Estimated Budget(optional)</label>
+							<label for="exampleFormControlTextarea1"><h6 class="card-title mg-b-1" style="margin-top:1px;">Estimated Budget(optional)</h6></label>
 								<textarea class="form-control "  id="exampleFormControlTextarea1" rows="3"
 									placeholder="Enter Budget" style="border-radius:10px"
 									name="estimated_budget"><?php echo $project->estimated_budget?></textarea>
 							</div>
 						</div>
 						<div class="col-md-3 px-5 mx-0">
-							<label for="exampleInputEmail1">End date</label>
+						<label for="exampleInputEmail1"><h6 class="card-title mg-b-1" style="margin-top:1px;">End date</h6></label>
 							
 							<div class="form-check">
 
@@ -71,7 +81,7 @@
 
 						</div>
 						<div class="col-md-3">
-							<label for="exampleInputEmail1">Type</label>
+						<label for="exampleInputEmail1"><h6 class="card-title mg-b-1" style="margin-top:1px;">Type</h6></label>
 							<div class="form-check">
 								<label class="form-check-label">
 									<input type="radio"  class="form-check-input" name="type" <?php if(($project->type)=='Recurring Project') {echo "checked";}?>
@@ -80,17 +90,17 @@
 							</div>
 							<div class="form-check">
 								<label class="form-check-label">
-									<input type="radio"  class="form-check-input" name="type" value="Not Sure" <?php if(($project->type)=='Not Sure') {echo "checked";}?>>Not Sure
+									<input type="radio"  class="form-check-input" name="type" value="Not Sure" <?php if(($project->type)=='Not Sure') {echo "checked";}?>>One time project
 								</label>
 							</div>
 							<div class="form-check">
 								<label class="form-check-label">
-									<input type="radio"  class="form-check-input" name="type" value="On Going" <?php if(($project->type)=='On Going') {echo "checked";}?>>On Going 
+									<input type="radio"  class="form-check-input" name="type" value="On Going" <?php if(($project->type)=='On Going') {echo "checked";}?>>On Going project
 								</label>
 							</div>
 						</div>
 					</div>
-					<p class="mt-3">Category</p>
+					<h6 class="card-title mg-b-1" style="margin-top:1px;">Category</h6>
 					<div class="row mt-2 mb-5">
 						<?php foreach ($items as $item){?>
 
@@ -105,16 +115,24 @@
 
 					</div>
 					</div>
-					<div class=" px-5 pt-5 pb-5 mt-5 shadow" style="border-radius: 13px;">
-						<div class=" mt-2 w-100">
-							<h5 id="section2" class="mb-4">Required Skills</h5>
+					<div class=" mt-5 card card-projects card-task-one dashCardHover content-card-body" style="border-radius: 8px;margin-bottom:2rem !important;padding-bottom:-3rem;" >
+						<!-- <form action="" method="post" enctype="multipart/form-data" class="form-horizontal"> -->
+						
+						<div class="card-header mb-3  bg-transparent pd-l-15 pd-r-0" style="margin-bottom:-0.1rem;">
+									<h6 class="card-title mg-b-0 mx-1" style="margin-top:1px;margin-bottom:-6px;margin-left:-12px">Required Skills</h6>
+									<!-- <nav class="nav">
+									<a href="" class="link-gray-500"><i data-feather="help-circle" class="svg-16"></i></a>
+									<a href="" class="link-gray-500"><i data-feather="more-vertical" class="svg-16"></i></a>
+									</nav> -->
+              	
+								</div>
+
+								<div class="card-body px-3">
+								
+							<input id="input2" type="text" class="form-control badge badge-pill badge-info py-2" value="<?php echo $project->required_skills?>" style="border-radius:10px"
+							data-role="tagsinput" name="required_skills[]" style="background-color:#17a2b8;font-size:12px;margin-right:0.2rem;">
+
 						</div>
-
-
-						<input id="input2" type="text" class="form-control" value="<?php echo $project->required_skills?>" style="border-radius:10px"
-							data-role="tagsinput" name="required_skills[]">
-
-
 
 						<!-- <input class="form-control" name="images[]" type="file" style="border-radius:10px;" multiple="">  -->
 
@@ -130,12 +148,22 @@
 					</div>
 					
 
-	  <div class=" px-5 shadow pt-5 pb-5 mt-5" style="border-radius: 13px;">
+					<div class=" mt-5  card card-projects card-task-one dashCardHover content-card-body" style="border-radius: 8px;margin-bottom:2rem !important;padding-bottom:3rem; " >
+						<!-- <form action="" method="post" enctype="multipart/form-data" class="form-horizontal"> -->
+						
+						<div class="card-header mb-4 bg-transparent pd-l-15 pd-r-10" style="margin-bottom:-0.1rem;">
+									<h6 class="card-title mg-b-0 mx-1" style="margin-top:1px;margin-bottom:-6px;margin-left:-12px">Add Services</h6>
+									<!-- <nav class="nav">
+									<a href="" class="link-gray-500"><i data-feather="help-circle" class="svg-16"></i></a>
+									<a href="" class="link-gray-500"><i data-feather="more-vertical" class="svg-16"></i></a>
+									</nav> -->
+              	
+								</div>
 						<!-- <form action="" method="post" enctype="multipart/form-data" class="form-horizontal"> -->
 						<div class="row form-group">
 							<div class="col-12 col-md-12">
 								<div class="control-group" id="fields">
-									<h5 id="section2" class="mb-4">Services</h5>
+									
 									<div class="controls">
 										<div class="entry input-group upload-input-group">
 											<form name="add_name" id="add_name">
@@ -148,7 +176,7 @@
 																<?php if($no == 2){ foreach($team_name as $key => $value){   ?>
 																	
 																	<select class="custom-select m-input mb-2"
-																		style="border-radius:10px ;width:26rem;background-color:yellow;"
+																		style="border-radius:10px ;width:26rem;background-color:#17a2b8;color:white"
 																		name="services">
 																		<!-- <option selected>-- Choose Team --</option> -->
 																		
@@ -183,7 +211,7 @@
 																foreach($team_name2 as $key => $value){   ?>
 																	
 																	<select class="custom-select m-input mb-2"
-																		style="border-radius:10px ;width:26rem;background-color:pink;"
+																		style="border-radius:10px ;width:26rem;background-color:#637382;color:white"
 																		name="services">
 																		<!-- <option selected>-- Choose Team --</option> -->
 																		
@@ -213,7 +241,7 @@
 																	
 																<?php if($no == 2){ foreach($service_name as $key => $value){ ?>
 																	<select class=" custom-select m-input px-5 mx-4 mb-2"
-																		style="border-radius:10px;width:26rem;background-color:yellow;" 
+																		style="border-radius:10px;width:26rem;background-color:#17a2b8;color:white" 
 																		name="service_id[]">
 
 																						<option value="<?php echo $key?>">
@@ -245,7 +273,7 @@
 																foreach($service as $key => $value){ ?>
 																	
 																	<select class="custom-select m-input mx-4 mb-2"
-																		style="border-radius:10px ;width:26rem;background-color:pink;"
+																		style="border-radius:10px ;width:26rem;background-color:#637382;color:white;"
 																		name="service_id[]">
 																		<!-- <option selected>-- Choose Team --</option> -->
 																		
@@ -266,7 +294,7 @@
 																	
 																</td>
 																<td><button type="button" name="add" id="add"
-																		class="btn btn-success"><i class="fa fa-plus"></button></td>
+																		class="btn btn-all text-white"><i class="fa fa-plus"></button></td>
 															</tr>
 														<tbody>
 													</table>
@@ -290,12 +318,22 @@
 					</div>
 		
 
-	  <div class=" px-5 shadow pt-5 pb-5 mt-5" style="border-radius: 13px;">
+					<div class=" mt-5  card card-projects card-task-one dashCardHover content-card-body" style="border-radius: 8px;margin-bottom:2rem !important;padding-bottom:3rem; " >
+						<!-- <form action="" method="post" enctype="multipart/form-data" class="form-horizontal"> -->
+						
+						<div class="card-header mb-4 bg-transparent pd-l-15 pd-r-10" style="margin-bottom:-0.1rem;">
+									<h6 class="card-title mg-b-0 mx-1" style="margin-top:1px;margin-bottom:-6px;margin-left:-12px">Add Packages</h6>
+									<!-- <nav class="nav">
+									<a href="" class="link-gray-500"><i data-feather="help-circle" class="svg-16"></i></a>
+									<a href="" class="link-gray-500"><i data-feather="more-vertical" class="svg-16"></i></a>
+									</nav> -->
+              	
+								</div>
 						<!-- <form action="" method="post" enctype="multipart/form-data" class="form-horizontal"> -->
 						<div class="row form-group">
 							<div class="col-12 col-md-12">
 								<div class="control-group" id="fields">
-									<h5 id="section2" class="mb-4">Packages</h5>
+									<!-- <h5 id="section2" class="mb-4">Packages</h5> -->
 									<div class="controls">
 										<div class="entry input-group upload-input-group">
 											<!-- <form name="add_name" id="add_name"> -->
@@ -416,7 +454,7 @@
 															
 																</td>
 																<td><button type="button" name="add" id="add1"
-																		class="btn btn-success"><i class="fa fa-plus"></button></td>
+																		class="btn btn-all text-white"><i class="fa fa-plus"></button></td>
 															</tr>
 														<tbody>
 													</table>
@@ -439,12 +477,22 @@
 						<!-- </form>Attachment -->
 					</div>
 				
-					<div class=" px-5 shadow pt-5 pb-5 mt-5" style="border-radius: 13px;">
+					<div class=" mt-5  card card-projects card-task-one dashCardHover content-card-body" style="border-radius: 8px;margin-bottom:2rem !important; " >
+						<!-- <form action="" method="post" enctype="multipart/form-data" class="form-horizontal"> -->
+						
+						<div class="card-header mb-4 bg-transparent pd-l-15 pd-r-10" style="margin-bottom:-0.1rem;">
+									<h6 class="card-title mg-b-0 mx-1" style="margin-top:1px;margin-bottom:-6px;margin-left:-12px">Attachment</h6>
+									<!-- <nav class="nav">
+									<a href="" class="link-gray-500"><i data-feather="help-circle" class="svg-16"></i></a>
+									<a href="" class="link-gray-500"><i data-feather="more-vertical" class="svg-16"></i></a>
+									</nav> -->
+              	
+								</div>
 						<!-- <form action="" method="post" enctype="multipart/form-data" class="form-horizontal"> -->
 						<div class="row form-group">
 							<div class="col-12 col-md-12">
-								<div class="control-group" id="fields">
-									<h5 id="section2" class="mb-4">Attachment</h5>
+								<div class="control-group  px-3" id="fields">
+									<!-- <h5 id="section2" class="mb-4">Attachment</h5> -->
 									<div class="controls1">
 										<div class="entry1 input-group upload-input-group">
 											
@@ -487,7 +535,7 @@
 														
 														<!-- <label class="label" for="upload1" ><i class="fas fa-edit"></i><?php echo $value;?></label> -->
 														<br/>
-														<input type="text" name="images1[]" value="<?php echo $value;?>" style="margin-top:40px;">
+														<input type="hidden" name="images1[]" value="<?php echo $value;?>" style="margin-top:40px;">
 														<!-- <input type="file" id="upload" name="img" hidden>
 								<label class="label" for="upload"><i class="fas fa-edit"></i></label> -->
 													</div>
@@ -527,12 +575,13 @@
 							</div>
 
 						</div>
-						<input type="submit" name="submit" id="submit" class="btn btn-info" value="Update" style="margin-top:50px;" />
+						
 
 						<!-- </form>Attachment -->
 					</div>
 					
-				
+													</div>
+													 <a ><button type ="submit" class="btn btn-submit mt-4 mx-4">Update Project</button></a>
 			<!-- Submit -->
 
 			
@@ -553,9 +602,7 @@
 	<!-- content-body -->
 <?php } ?>
 
-    <div class="content-footer">
-        &copy; 2019. All Rights Reserved. Created by <a href="http://themepixels.me" target="_blank">ThemePixels</a>
-    </div><!-- content-footer -->
+   <!-- content-footer -->
 </div><!-- content -->
 
 <script>

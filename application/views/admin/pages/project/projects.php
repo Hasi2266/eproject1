@@ -59,11 +59,12 @@
                             <!-- <th class="wd-12p">logo </th> -->
                             <th class="wd-9p">Company</th>
                             <th class="wd-12p">Project</th>
-                            <th class="wd-12p">update</th>
-                            <th class="wd-12p">status</th>
-                            <th class="wd-12p">invoice</th>
+                            <th class="wd-12p">Update Date</th>
+                            <th class="wd-12p">Status</th>
+                            <th class="wd-12p">Invoice</th>
                             <th class="wd-12p">Progress</th>
-                            <th class="wd-12p">due date</th>
+                            <th class="wd-12p">Due date</th>
+							<th class="wd-12p">Action</th>
 							
 							
                         </tr>
@@ -123,6 +124,11 @@
 											</div> -->
 										</div>
 										
+									</td>
+									<td>
+										<a href="<?php echo base_url();?>index.php/AdminProject/editItem/<?php echo $item->project_id?>"><button type="submit" class="btn btn-submit py-1 px-2">Add Progress</button></a>
+										<!-- <a href="<?php echo base_url();?>index.php/AdminProject/deleteItem/<?php echo $item->project_id?>"><button type="submit" class="btn btn-submit py-1 px-2 mx-1" data-toggle="modal" data-animation="effect-just-me" >Delete</button></a> -->
+										<!-- <a href="#modal6" class="btn btn-dark btn-block" data-toggle="modal" data-animation="effect-just-me">Just Me</a> -->
 									</td>
 									
 									

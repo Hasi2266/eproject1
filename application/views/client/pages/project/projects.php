@@ -93,7 +93,9 @@
 				<td><?php echo $item->name?></td>
 				<td><?php echo $item->update_date?></td>
 				<td><span class="badge badge-pill badge-info" style="background-color:#36b8b;"><?php echo $status?></span></td>
-				<td><?php echo $item->project_progress?> %</td>			
+				<td><div class="progress" style="height:0.75rem;">
+											<div class="progress-bar bg-<?php if($item->project_progress >= 50){echo "green";}else{echo "danger";} ?> wd-<?php echo $item->project_progress?>p" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+										</div>		</td>
 				<td><?php echo $due_date?></td>
 					
 					

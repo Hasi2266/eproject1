@@ -22,6 +22,7 @@ Class ProjectModel extends CI_Model{
 	var $start_date;
 	var $milestone_end_date;
 	var $update_date;
+	var $progress;
 	
 	
 
@@ -301,6 +302,26 @@ Class ProjectModel extends CI_Model{
 	public function setUpdate_date($update_date)
 	{
 		$this->update_date = $update_date;
+
+		return $this;
+	}
+
+	/**
+	 * Get the value of progress
+	 */ 
+	public function getProgress()
+	{
+		return $this->progress;
+	}
+
+	/**
+	 * Set the value of progress
+	 *
+	 * @return  self
+	 */ 
+	public function setProgress($progress)
+	{
+		$this->progress = $progress;
 
 		return $this;
 	}

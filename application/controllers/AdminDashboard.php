@@ -18,7 +18,7 @@ Class AdminDashboard extends CI_Controller{
 		$dashboardservice = new DashboardService();
 
 		$data["active"] = 1;
-		$data["items2"] = $dashboardservice->getClientInfo($this->session->userdata('ADMIN_ID'));
+		$data["items2"] = $dashboardservice->getAdminInfo($this->session->userdata('ADMIN_ID'));
 
 		$partial = array('content' => 'admin/pages/dashboard');
 		$this->template->load('admin/mainpage',$partial,$data);

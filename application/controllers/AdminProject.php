@@ -422,6 +422,93 @@ Class AdminProject extends CI_Controller{
 
 		redirect('/AdminProject/');
 	}
+
+	
+	function editItem($project_id){
+
+		$projectservice = new ProjectService();
+		$projectmodel = new ProjectModel();
+
+		$data["title"] = "test";
+		$data["active"] = 2;
+		$data["no"] = 1;
+		$data['item3'] = $projectservice->allTeams();
+		$data["projects"] = $projectservice->getProject($project_id);
+		$data["items"] = $projectservice->allCategories();
+		$item = $projectservice->service($project_id);
+
+		$select_list = json_decode("[".$item[0]->services."]");
+		$package_list = json_decode("[".$item[0]->packages."]");
+
+		$service = array();
+		$package = array();
+
+		$skills = $item[0]->required_skills;
+		$skill_list = explode(',',$skills);
+		$data['skills'] = $skill_list;
+
+		if(!empty($select_list)){
+			foreach($select_list as $key => $value){
+			
+				$item1 = $projectservice->serviceName1($value);
+				
+				foreach($item1 as $item2){
+	
+					$item3 = $item2->service_name;
+					$service[] = $item3;
+					
+				}
+			}
+	
+		}
+
+		if(!empty($package_list)){
+			foreach($package_list as $key => $value){
+
+				$item2 =  $projectservice->packagename($value);
+				foreach($item2 as $item3){
+					$package[] = $item3->name;
+				}
+			}
+		}
+
+		
+
+		$data['service'] = $service;
+		$data['package'] = $package;
+
+		$partial = array('content' => 'admin/pages/project/editProject');
+		$this->template->load('admin/mainpage',$partial,$data);
+
+	}
+
+	function updateProject(){
+
+		$projectservice = new ProjectService();
+		$projectmodel = new ProjectModel();
+		$date_now = date("Y-m-d");
+
+		$projectmodel->setProgress($this->input->post("progress"));
+		$projectmodel->setProject_id($this->input->post("project_id"));
+		$projectmodel->setUpdate_date($date_now);
+
+		$projectservice->updateItem($projectmodel);
+
+		redirect('/AdminProject/');
+
+	}
+	
+
+	function deleteItem($id){
+
+		$projectservice = new ProjectService();
+		$projectmodel = new ProjectModel();
+
+		$projectservice->deleteItem($id);
+
+		redirect('/AdminProject/');
+
+	}
 }
 
 

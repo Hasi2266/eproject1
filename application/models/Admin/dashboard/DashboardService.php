@@ -50,10 +50,10 @@ Class DashboardService extends CI_Model{
 		return $query->result();
 	}
 
-	function getClientInfo($id){
+	function getAdminInfo($id){
 			$this->db->select('*');
-			$this->db->from('user-login');
-			$this->db->where('client_id='.$id);
+			$this->db->from('admin-login');
+			$this->db->where('admin_id='.$id);
 			$query = $this->db->get();
 			return $query->result();
 		
