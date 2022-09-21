@@ -149,7 +149,7 @@
 										<?php  foreach($services as $service){?>
 											<?php if(($service->category_id) == ($item1->team_id)){?>
 												<div class="col-sm-6 col-md-3" style="margin-bottom:2rem;" >
-													<div class="card card-pricing shadow cardBody" id="servicecard">
+													<div class="card card-pricing  cardBody" id="servicecard">
 														<div class="card-header">
 															<div class="custom-control custom-checkbox checkbox-xl card_checkbox ">
 																<input type="checkbox" class="custom-control-input check1" name="check[]" id="<?php echo $service->service_id ?>" value="<?php echo $service->service_id ?>">

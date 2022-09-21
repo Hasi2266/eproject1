@@ -147,10 +147,10 @@
 									<div class="row row-xs mt-5" style="display:flex;align-items:left;justify-content:left;margin-left:1.5rem">
 										<?php  foreach($packages as $package){?>
 											<?php if(($package->team) == ($item1->team_id)){?>
-												<div class="col-sm-6 col-md-3" style="margin-bottom:2rem;" >
-													<div class="card card-pricing shadow cardBody" id="servicecard">
+												<div class="col-sm-6 col-md-3" style="margin-bottom:2rem; margin-right:1.5rem;" >
+													<div class="card card-pricing  cardBody" id="servicecard" style="height:26rem;width:17rem;">
 														<div class="card-header">
-															<div class="custom-control custom-checkbox checkbox-xl card_checkbox ">
+															<div class="custom-control custom-checkbox checkbox-xl card_checkbox " style="margin-left: 13rem;">
 																<input type="checkbox" class="custom-control-input check1" name="check[]" id="<?php echo $package->package_id ?>" value="<?php echo $package->package_id ?>">
 																<label class="custom-control-label check1" for="<?php echo $package->package_id ?>"></label>
 																</div>
@@ -160,12 +160,39 @@
 															
 															<!-- <p ><?php echo $service->description?></p> -->
 														</div><!-- card-header -->
-														<div class="card-body  mt-1" style="height:3rem;">
-
+														<div class="card-body bg-white  mt-1" style="height:3rem;">
+<div style="height:12rem;line-height:0.7rem">
 														<?php $req = $package->description;
-														$y = implode(' ', array_slice(explode(' ', $req), 0, 10))."\n";?>
+														$y = implode(' ', array_slice(explode(' ', $req), 0, 10))."\n";
 														
-														<p class="card-para" style="height:1.5rem;"><?php echo $y?></p>
+														$flield = $package->flieds;
+														
+														// print_r($flield) ; die;
+																						$array1 = explode(',', $flield);
+																						// echo count($array1);die;
+
+																						
+																						// print_r($array1) ; die;
+																						for($i= 0 ; $i <= 7; ++$i){
+
+																							
+																						}
+																						foreach($array1 as $key => $value){
+																							if($key < 7 ){
+
+																							
+																							
+																							// echo $value;
+
+																							?>
+														
+																							
+																								<li><i data-feather="check"></i> <?php echo $value?></li></br>
+
+																		<?php } }?>
+																
+																						</div>
+														<!-- <p class="card-para" style="height:1.5rem;"><?php echo $y?></p> -->
 
 														<?php 
 															if(($package->currency)==1){
@@ -176,8 +203,8 @@
 															}
 														?>
 
-														<div class="pricing-price" style="background-color:white;margin-top:3rem" >
-															<h1 ><span><?php echo $currency?></span><?php echo $package->price?><small >/month</small></h1>
+														<div class="pricing-price" style="margin-top:1.5rem;margin-bottom:-5rem;height:35px" >
+															<h1 style=""><span><?php echo $currency?></span><?php echo $package->price?><small >/month</small></h1>
 														</div>
 														<!-- pricing-price -->
 														</div>

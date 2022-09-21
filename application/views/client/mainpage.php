@@ -81,7 +81,7 @@
 	  <div class="dropdown dropdown-loggeduser">
 		<a href="" class="dropdown-link" data-toggle="dropdown">
 		  <div class="avatar avatar-sm">
-		  <div class="rounded-circle" style="background-color: #404040;border-radius:50%;display: inline-block;height: 35px;width:35px;margin: auto;"><h6 style="color:white;font-size:12px;text-align:center;margin: 10px auto;" ><?php echo substr($items2[0]->firstname,0,1). substr($items2[0]->lastname,0,1);?></h6></div>
+		  <div class="rounded-circle" style="background-color: yellow;border-radius:50%;display: inline-block;height: 35px;width:35px;margin: auto;"><h6 style="color:black;font-size:12px;text-align:center;margin: 10px auto;" ><?php echo substr($items2[0]->firstname,0,1). substr($items2[0]->lastname,0,1);?></h6></div>
 			<!-- <img src="https://via.placeholder.com/500/637382/fff" class="rounded-circle" alt=""> -->
 		  </div><!-- avatar -->
 		</a>
@@ -89,7 +89,7 @@
 		  <div class="dropdown-menu-header">
 			<div class="media align-items-center">
 			  <div class="avatar">
-			  <div class="rounded-circle" style="background-color: #404040;border-radius:50%;display: inline-block;height: 39px;width:39px;"><h6 style="color:white;font-size:12px;text-align:center;margin: 12px auto;" ><?php echo substr($items2[0]->firstname,0,1). substr($items2[0]->lastname,0,1);?></h6></div>
+			  <div class="rounded-circle" style="background-color: yellow;border-radius:50%;display: inline-block;height: 39px;width:39px;"><h6 style="color:black;font-size:12px;text-align:center;margin: 12px auto;" ><?php echo substr($items2[0]->firstname,0,1). substr($items2[0]->lastname,0,1);?></h6></div>
 				<!-- <img src="https://via.placeholder.com/500/637382/fff" class="rounded-circle" alt=""> -->
 			  </div><!-- avatar -->
 			  <div class="media-body mg-l-10">

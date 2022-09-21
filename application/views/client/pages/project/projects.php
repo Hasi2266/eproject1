@@ -15,7 +15,7 @@
       
         <div class="row ">
           <div class="px-3"style="margin-left:69rem;margin-top:0rem;" >
-            <a href="<?php echo base_url();?>index.php/ClientProject/cerateProject"><button type="button" class="btn btn-all text-white  py-2 "style="border-radius: 8px;">New project</button></a>
+            <a href="<?php echo base_url();?>index.php/ClientProject/cerateProject"><button type="button" class="btn btn-danger text-white  py-2 "style="border-radius: 8px;">New project</button></a>
           </div>
             <!-- <div class="" style="msrgin-top:-1rem">
               <button type="button" class="btn btn-primary text-right py-2"style="border-radius: 8px;">Add to project</button>
@@ -58,8 +58,11 @@
 					<?php foreach($items as $item){ ?>
 
 						<?php 
-									if(($item->project_status) == 1){
+									if((($item->project_status) == 1)){
 										$status = 'Project Submitted ';
+									}
+									else if(($item->project_status) == 5){
+										$status = 'Prooposal Submitted';
 									}
 									else if(($item->project_status) == 2){
 										$status = 'Project Approved';
@@ -93,7 +96,7 @@
 				<td><?php echo $item->name?></td>
 				<td><?php echo $item->update_date?></td>
 				<td><span class="badge badge-pill badge-info" style="background-color:#36b8b;"><?php echo $status?></span></td>
-				<td><div class="progress" style="height:0.75rem;">
+				<td><div class="progress mt-2" style="height:0.65rem;border-radius:10px">
 											<div class="progress-bar bg-<?php if($item->project_progress >= 50){echo "green";}else{echo "danger";} ?> wd-<?php echo $item->project_progress?>p" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
 										</div>		</td>
 				<td><?php echo $due_date?></td>

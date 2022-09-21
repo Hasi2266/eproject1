@@ -11257,13 +11257,15 @@ svg-to-inline {
       height: 16px;
       width: 10px;
       position: relative;
-      opacity: .5; }
+    
+      opacity: .7; }
       .bootstrap-tagsinput .tag [data-role="remove"]::after {
         content: '\f406';
         font-family: 'Ionicons';
         font-size: 18px;
         position: absolute;
         top: calc(50% + .5px);
+       
         line-height: 0; }
       .bootstrap-tagsinput .tag [data-role="remove"]:hover, .bootstrap-tagsinput .tag [data-role="remove"]:focus {
         opacity: 1;
@@ -43999,7 +44001,7 @@ calendar td a {
 
 .btn-submit{
 	border-radius: 8px !important;
-	background-color: #4573d2 !important;
+	background-color: #dc3545 !important;
   color : white;
 }
 
@@ -44112,4 +44114,14 @@ input[type="file"] {
 .pricing-price{
 	border-bottom-color:  #4573d2 !important  ;
 	border-top-color: #4573d2 !important ;
+}
+
+.btn-new{
+ padding: 5px 12px 5px 12px !important;
+ 
+
+}
+
+.nav-icon-color{
+  color:purple !important;
 }

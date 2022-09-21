@@ -14,8 +14,9 @@
       <div class="pd-x-20 pd-b-15" >
       
         <div class="row">
-					<div class="px-3"style="margin-left:70rem;margin-top:0rem;" >
-            <a href="<?php echo base_url();?>index.php/ClientProject/cerateProject"><button type="button" class="btn btn-all text-white  py-2 "style="border-radius: 8px;">New project</button></a>
+					<div class="px-3"style="margin-left:69rem;margin-top:0rem;" >
+          <!-- btn-all -->
+            <a href="<?php echo base_url();?>index.php/ClientProject/cerateProject"><button type="button" class="btn btn-danger text-white  py-2 "style="border-radius: 8px;">New project</button></a>
           </div>
             <!-- <div class="">
               <button type="button" class="btn btn-primary text-right  py-2"style="border-radius: 8px;">Add to project</button>
@@ -48,7 +49,7 @@
                 <label class="custom-control-label" for="customCheck1"></label>
               </div></th> -->
               <th class="wd-20p">Project</th>
-              <th class="wd-12p">Update</th>
+              <th class="wd-12p">Update Date</th>
               <th class="wd-12p">Status</th>
               <th class="wd-12p">Created By</th>
               <th class="wd-12p">Created date</th>

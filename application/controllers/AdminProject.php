@@ -264,11 +264,13 @@ Class AdminProject extends CI_Controller{
 		// $end_date =  $this->input->post('end_date');
 		// $amount = $this->input->post('amount');
 		
-		$count = count($name);
+		// $count = count($name);
 		$id = $this->input->post('project_id');
+		
 
-		// echo $i;die;
+
 		for($i=0;$i<$count;$i++){
+			
 			
 			$col1 = $name[$i];
 			$col2 = $weight[$i];
@@ -278,18 +280,30 @@ Class AdminProject extends CI_Controller{
 			$col6 = $end_date[$i];
 			$col7 = $amount[$i];
 
-	
-			$milestonemodel->setProject_id($this->input->post('project_id'));
-			$milestonemodel->setMilestone_name($col1);
-			$milestonemodel->setMilestone_weight($col2);
-			$milestonemodel->setMilestone_progress($col3);
-			$milestonemodel->setMilestone_description($col4);
-			$milestonemodel->setStart_date($col5);
-			$milestonemodel->setEnd_date($col6);
-			$milestonemodel->setAmount($col7);
-			$milestonemodel->setCreated_date($date_now);
+			// echo $col1;
+			
+			if(!empty($col1) && !empty($col2)  && !empty($col3)  && !empty($col4)  && !empty($col5)  && !empty($col6)  && !empty($col7)){
 
-			$projectservice->saveMilestone($milestonemodel);
+				$milestonemodel->setProject_id($this->input->post('project_id'));
+				$milestonemodel->setMilestone_name($col1);
+				$milestonemodel->setMilestone_weight($col2);
+				$milestonemodel->setMilestone_progress($col3);
+				$milestonemodel->setMilestone_description($col4);
+				$milestonemodel->setStart_date($col5);
+				$milestonemodel->setEnd_date($col6);
+				$milestonemodel->setAmount($col7);
+				$milestonemodel->setCreated_date($date_now);
+
+				$projectservice->saveMilestone($milestonemodel);
+			}
+
+			// $miles_data = array($col1,$col2,$col3,$col4,$col5,$col6,$col7);
+			// print_r($miles_data);
+			// if(empty($miles_data)){
+			// 	echo "s";
+			// }
+	
+			
 		
 			// echo $col1 . '<br/>';
 			// echo $col2 . '<br/>';
@@ -299,9 +313,12 @@ Class AdminProject extends CI_Controller{
 			// echo $col6;
 			// echo $col7;
 			// echo '<br/>';
-			
+		
 		}
-		// die;
+		
+		
+		// print_r($milestonemodel);die;
+		// // die;
 
 		$count = count($_FILES['images']['name']);
 		$img = array();

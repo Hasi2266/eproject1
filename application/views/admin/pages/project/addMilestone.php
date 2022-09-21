@@ -422,7 +422,7 @@
 <a href="<?php echo base_url();?>index.php/AdminProject/"><button type ="button" class="btn btn-submit">Back</button></a>
 
 <?php } else { ?>
-<button type="submit" class="btn btn-submit mt-4">Submit Proposal</button>
+<button type="submit" class="btn btn-submit mt-4">Create Proposal</button>
 <a href="<?php echo base_url();?>index.php/AdminProject/"></a><button type="submit" class="btn btn-submit mt-4 mx-2">Cancel</button>
 </div>
 	  <?php } ?>

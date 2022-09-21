@@ -160,13 +160,20 @@
 			
 		</div>
 				
-	 
-		
+	
 		
 	
   </div>
+ 
+
+  
+
   
 <div class="content-body" style="margin-left:1.5rem;margin-right:1.5rem;margin-top:-4.7rem;">
+
+<div class="row mb-3" style="margin-left:67rem; ">
+			<a href="<?php echo base_url();?>index.php/ClientProject/cerateProject"><button type="submit" name="btnsubmit" class="btn btn-danger btn-new" style="border-radius:10px;"><span style="font-size:15px !important;">+ Add Project</span></button></a>
+  		</div>
 	
         <div class="card card-hover card-task-one dashCardHover" style="border-radius: 10px;">
           <div class="card-body">
@@ -585,7 +592,7 @@
 							<div class="row">
 								<div class="col-md-12 col-md-3">
 									<div id="scroll3" class="pos-relative" style="height: 310px;">
-										<table id="example1" class="table " style="border-radius:10px ;font-size:13px">
+										<table id="example1" class="table table1" style="border-radius:10px ;font-size:13px">
 											<thead>
 												<tr>
 													<!-- <th class="wd-9p">
@@ -609,32 +616,35 @@
 
 									<?php foreach($items as $item){?>
 
-												<?php 
-										if(($item->project_status) == 1){
-											$status = 'Submitted';
-										}
-										else if(($item->project_status) == 2){
-											$status = 'Confirmed ';
-										}
-										else if(($item->project_status) == 3){
-											$status = 'In Progress ';
-										}	
-										else if(($item->project_status) == 4){
-											$status = 'Hold ';
-										}
-										else{
-											$status = 'Completed';
-										}	
-					
-										if(($item->end_date)== 'Specific Date'){
-											$due_date = $item->date;
-										}
-										else{
-											$due_date = $item->end_date;
-										}
+										<?php 
+									if(($item->project_status) == 1){
+										$status = 'Project Submitted ';
+									}
+									else if(($item->project_status) == 5){
+										$status = 'Prooposal Submitted';
+									}
+									else if(($item->project_status) == 2){
+										$status = 'Project Approved';
+									}
+									else if(($item->project_status) == 3){
+										$status = 'In Progress ';
+									}	
+									else if(($item->project_status) == 4){
+										$status = 'Project Hold';
+									}
+									else{
+										$status = 'Project Completed';
+									}	
 
-									?>
-										<tr >
+									if(($item->end_date)== 'Specific Date'){
+										$due_date = $item->date;
+									}
+									else{
+										$due_date = $item->end_date;
+									}
+
+								?>
+										<tr data-url="<?php echo base_url()?>index.php/ClientProject/updateProject/<?php echo $item->project_id ?>" style="cursor:pointer;">
 											<!-- <td><div class="custom-control custom-checkbox">
 												<input type="checkbox" class="custom-control-input" id="<?php echo $item->project_id?>">
 												<label class="custom-control-label" for="<?php echo $item->project_id?>"></label>
@@ -649,7 +659,11 @@
 									<td><span class="badge badge-pill badge-info"><?php echo $status?></span></td>
 										
 			
-												<td><?php echo $item->project_progress?> %</td>
+									<td><div class="progress mt-2" style="height:0.65rem;border-radius:10px">
+											<div class="progress-bar bg-<?php if($item->project_progress >= 50){echo "green";}else{echo "danger";} ?> wd-<?php echo $item->project_progress?>p" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+										</div>		</td>
+
+												<!-- <td><?php echo $item->project_progress?> %</td> -->
 												<td></td>
 												<td><?php echo $due_date?></td>
 											</tr>

@@ -60,14 +60,13 @@
 							<div class="form-check">
 
 								<label class="form-check-label">
-									<input type="radio" class="form-check-input" name="due_date_type" value="To be decided" onclick="check1()"  >To be
-									decided
+									<input type="radio" class="form-check-input" name="due_date_type" value="To be decided" onclick="check1()"  >TO BE DECIDED
 								</label>
 							</div>
 							<div class="form-check">
 								<label class="form-check-label">
 									<input type="radio" class="form-check-input" name="due_date_type" onclick="check()"
-										value="Specific Date">Specific Date
+										value="Specific Date">SPECIFIC DATE
 								</label>
 							</div>
 							
@@ -82,17 +81,17 @@
 							<div class="form-check">
 								<label class="form-check-label">
 									<input type="radio" class="form-check-input" name="type"
-										value="Recurring Project">Recurring Project
+										value="Recurring Project">RECCURING PROJECT
 								</label>
 							</div>
 							<div class="form-check">
 								<label class="form-check-label">
-									<input type="radio" class="form-check-input" name="type" value="Not Sure">One time project
+									<input type="radio" class="form-check-input" name="type" value="Not Sure">ONE TIME PROJECT
 								</label>
 							</div>
 							<div class="form-check">
 								<label class="form-check-label">
-									<input type="radio" class="form-check-input" name="type" value="On Going">On Going project
+									<input type="radio" class="form-check-input" name="type" value="On Going">ON GOING PROJECT
 								</label>
 							</div>
 						</div>
@@ -460,9 +459,9 @@
 			<!-- Submit -->
 
 			<div class="row" style="display:flex;align-items:left;justify-content:left" >
-				<button type="submit" class="btn btn-primary mt-5 mb-5 btn-submit mx-5" >Submit Project</button>
+				<button type="submit" class="btn  mt-5 mb-5 btn-submit ml-5" >Submit Project</button>
 				<!-- <button type="button" class="btn btn-primary mt-5 mb-5 btn-submit mx-2">Save As Draft</button> -->
-				<a href="<?php echo base_url();?>index.php/ClientDashboard"><button type="button" class="btn btn-primary mt-5 mb-5 btn-submit">Cancel Project</button></a>
+				<a href="<?php echo base_url();?>index.php/ClientDashboard"><button type="button" class="btn  mx-3 mt-5 mb-5 btn-submit">Cancel Project</button></a>
 			</div>
 
 			

@@ -198,6 +198,7 @@ function getService_id(){
 
 	function saveMilestone($milestonemodel){
 
+		
 		$data = array(
 
 			'project_id' => $milestonemodel->getProject_id(),
@@ -251,13 +252,16 @@ function getService_id(){
 			
 		);
 		
+		$this->updateAddProposalStatus($proposalmodel->getProject_id());
 		return $this->db->insert('proposal',$data);
-		updateAddProposalStatus($proposalmodel->getProject_id());
+		
+
 
 	}
 
 	function updateAddProposalStatus($id){
 
+		// echo $id ;die;
 		$date_now = date("Y-m-d");
 		$data = array(
 			'add_proposal' => '1',
