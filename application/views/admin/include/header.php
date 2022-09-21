@@ -13,7 +13,7 @@
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url();?>/assets/img/favicon.png">
 
-    <title>Cassie Responsive Bootstrap 4 Dashboard and Admin Template</title>
+    <title>Sprout Seven</title>
 
     <!-- vendor css -->
     <link href="<?php echo base_url();?>/lib/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">

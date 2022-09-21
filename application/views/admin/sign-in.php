@@ -7,7 +7,7 @@
 
       <div class="col-md-5 signin-sidebar">
         <div class="signin-sidebar-body">
-          <a href="dashboard-one.html" class="sidebar-logo mg-b-40"><span>cassie</span></a>
+          <a href="dashboard-one.html" class="sidebar-logo mg-b-40"><span>Sprout Seven</span></a>
           <h4 class="signin-title">Welcome back!</h4>
           <h5 class="signin-subtitle">Please signin to continue.</h5>
 
