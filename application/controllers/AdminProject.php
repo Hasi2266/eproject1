@@ -51,18 +51,23 @@ Class AdminProject extends CI_Controller{
 		// print_r($item[0]->images);die;
 		$images = $projectservice->ProjectImages($project_id);
 	
-		foreach($images as $key => $value){
-			// print_r($value) ; 
-			// echo '<br/>';
-			foreach($value as $key => $value1){
-				// print_r($value1); 
-				
-				$ids_image = explode(',',$value1);
-				// print_r($ids_image);die;
+		if(!empty($images)){
+
+			foreach($images as $key => $value){
+				// print_r($value) ; 
+				// echo '<br/>';
+				foreach($value as $key => $value1){
+					// print_r($value1); 
+					
+					$ids_image = explode(',',$value1);
+					// print_r($ids_image);die;
+					
+				}
 				
 			}
-			
+
 		}
+		
 		// print_r($ids_image);die;
 		
 		if(($item[0]->project_status) == 1){
@@ -85,7 +90,9 @@ Class AdminProject extends CI_Controller{
 		$service = array();
 		$package = array();
 		
-		foreach($select_list as $key => $value){
+		if(!empty($select_list)){
+			
+			foreach($select_list as $key => $value){
 			
 			$item1 = $projectservice->serviceName1($value);
 			
@@ -96,7 +103,9 @@ Class AdminProject extends CI_Controller{
 				
 			}
 		}
+		}
 
+		if(!empty($package_list)){
 		foreach($package_list as $key => $value){
 
 			$item2 =  $projectservice->packagename($value);
@@ -104,7 +113,7 @@ Class AdminProject extends CI_Controller{
 				$package[] = $item3->name;
 			}
 		}
-
+	}
 		$data['service'] = $service;
 		$data['package'] = $package;
 		$data['images'] =  $ids_image;
