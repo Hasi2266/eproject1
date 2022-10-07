@@ -44351,3 +44351,7 @@ input:disabled {
 .drop-b{
   border-radius: 8px;
 }
+
+.btn-all :hover{
+  color : white !important;
+}

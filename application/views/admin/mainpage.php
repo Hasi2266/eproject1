@@ -7,6 +7,20 @@
                 <!-- <small class="sidebar-logo-headline">Responsive Dashboard Template</small> -->
             </div>
         </div>
+
+        <?php 
+        
+        
+	function __construct(){
+
+		
+        $this->load->model("admin/dashboard/DashboardService");
+		
+		
+	}
+        
+
+        ?>
         <!-- sidebar-header -->
 		<?php include 'include/nav-bar.php'?>
         <!-- sidebar-body -->
@@ -75,7 +89,7 @@
                 </div>
                                 
                 <?php 
-                    $this->load->model("admin/dashboard/DashboardService");
+                    
                     $dashboardservice = new DashboardService();
 
                         $items2 = $dashboardservice->getAdminInfo($this->session->userdata('ADMIN_ID'));

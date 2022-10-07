@@ -172,7 +172,7 @@
 <div class="content-body" style="margin-left:1.5rem;margin-right:1.5rem;margin-top:-4.7rem;">
 
 		<div class="row newbtnM" style="">
-			<a href="<?php echo base_url();?>index.php/ClientProject/cerateProject"><button type="submit" name="btnsubmit" class="btn btn-all  " style="border-radius:10px;">+ New Project</button></a>
+			<a href="<?php echo base_url();?>index.php/ClientProject/cerateProject"><button type="submit" name="btnsubmit" class="btn btn-all text-white  " style="border-radius:10px;">+ New Project</button></a>
   		</div>
 	
         <div class="card card-hover card-task-one dashCardHover" style="border-radius: 10px;">
