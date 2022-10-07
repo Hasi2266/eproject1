@@ -11,14 +11,7 @@
         <?php 
         
         
-	function __construct(){
 
-		
-        $this->load->model("admin/dashboard/DashboardService");
-		
-		
-	}
-        
 
         ?>
         <!-- sidebar-header -->
@@ -89,8 +82,7 @@
                 </div>
                                 
                 <?php 
-                    
-                    $dashboardservice = new DashboardService();
+	                    $this->load->model("Admin/dashboard/DashboardService");
 
                         $items2 = $dashboardservice->getAdminInfo($this->session->userdata('ADMIN_ID'));
                     
