@@ -83,7 +83,7 @@
                                 
                 <?php 
 	                    $this->load->model("Admin/dashboard/DashboardService");
-
+                        $dashboardservice = new DashboardService();
                         $items2 = $dashboardservice->getAdminInfo($this->session->userdata('ADMIN_ID'));
                     
                 ?>
