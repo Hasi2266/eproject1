@@ -12,10 +12,10 @@
         </div>
         <!-- content-header -->
 
-        <div class="pd-x-65 pd-b-15">
+        <div class="content-card-body pd-b-15">
 
             <div class="row">
-                <div class="px-3 " style="margin-left:63rem;">
+                <div class="px-3" style="margin-left:67rem;">
                     <a href="<?php echo base_url();?>index.php/AdminService/createService"><button type="button" class="btn btn-all text-white  py-2 "style="border-radius: 8px;">Add New Service</button></a>
                 </div>
                 <!-- <div class="">
@@ -41,7 +41,7 @@
 								</div>
        
 								<div class="card-body">
-                <table id="example1" class="table" style="border-radius:10px ;font-size:13px;">
+                                <table id="example1" class="table" style="border-radius:10px ;font-size:13px">
                     <thead>
                         <tr>
                             <!-- <th class="wd-9p">
@@ -50,13 +50,14 @@
                                     <label class="custom-control-label" for="customCheck1"></label>
                                 </div>
                             </th> -->
-                           
-                            <th class="wd-20p">Service Name </th>
-                            <th class="wd-12p">Team Name</th>
-                            <!-- <th class="wd-12p">Description</th> -->
-                            <th class="wd-12p">Currency</th>
-                            <th class="wd-12p">Price</th>
-							<th class="wd-12p">Actions</th>
+                           <th></th>
+                            <th  class="wd-20p"><span style="margin-left:-2.5rem;">Service Name <span></th>
+                            <th >Team Name</th>
+                            <!-- <th >Description</th> -->
+							<th >Currency</th>
+                            <th >Price</th>
+                            <th >Created Date</th>
+                            <th >Actions</th>
                            
                         </tr>
                     </thead>
@@ -86,14 +87,29 @@
                                 </div>
                             </td> -->
                             
-							<td><?php echo $item->service_name?></td>
+                            <td ></td>
+							<td><span style="margin-left : -2.5rem;"><?php echo $item->service_name?></span></td>
                             <td><?php echo $item->name?></td>
                             <!-- <td><?php echo $item->description?></td> -->
                             <td><?php echo $currency?></td>
                             <td><?php echo $item->price?></td>
+                            <td><?php echo $item->service_created_date?></td>
                            	<td>
-								<a href="<?php echo base_url();?>index.php/AdminService/editItem/<?php echo $item->service_id?>"><button type="submit" class="btn btn-submit py-1 px-2">Update</button></a>
-								<a href="<?php echo base_url();?>index.php/AdminService/deleteItem/<?php echo $item->service_id?>"><button type="submit" class="btn btn-submit py-1 px-2 mx-1" data-toggle="modal" data-animation="effect-just-me" >Delete</button></a>
+
+                               <div class="dropdown">
+                                
+                                    <button class="btn dropdown-toggle1" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-radius: 10px;margin-left:-1rem;">
+                                        <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                                    </button>
+                                    <div class="dropdown-menu drop-b tx-14" aria-labelledby="dropdownMenuButton">
+                                        
+                                    <a  class="dropdown-item" href="<?php echo base_url();?>index.php/AdminService/editItem/<?php echo $item->service_id?>"><i data-feather="edit" class="svg-16 mx-1 text-dark"></i><span>  Edit <span></a>
+                                    <a  class="dropdown-item" href="<?php echo base_url();?>index.php/AdminService/deleteItem/<?php echo $item->service_id?>" class=""><i data-feather="delete" class="svg-16 mx-1 text-dark"></i>Delete</a>
+            
+                                </div>
+                                </div>
+								<!-- <a href="<?php echo base_url();?>index.php/AdminService/editItem/<?php echo $item->service_id?>"><i data-feather="edit" class="svg-16 mx-1 text-dark"></i><span>  Edit <span></a>
+								<a href="<?php echo base_url();?>index.php/AdminService/deleteItem/<?php echo $item->service_id?>"><i data-feather="delete" class="svg-16 mx-2 text-dark"></i>Delete</a> -->
 								<!-- <a href="#modal6" class="btn btn-dark btn-block" data-toggle="modal" data-animation="effect-just-me">Just Me</a> -->
 							</td>
                         </tr>

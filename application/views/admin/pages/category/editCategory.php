@@ -12,6 +12,7 @@
         </div>
     </div>
     <!-- content-header -->
+    <div class=" content-card-body pd-b-15">
 	<div class="card card-hover card-projects  card-task-one dashCardHover content-card-body mt-4" style="border-radius: 10px;margin-bottom:2rem !important;padding-bottom:3rem; " >
         <!--btn-->
 				<div class="card-header bg-transparent pd-y-15 pd-l-15 pd-r-10" style="margin-bottom:-0.1rem;">
@@ -27,10 +28,10 @@
 
 								<!-- class=" category-form border " -->
 
-                    <form action="<?php echo base_url();?>index.php/AdminCategory/updateItem" method="post">
+                    <form class="all-form" action="<?php echo base_url();?>index.php/AdminCategory/updateItem" method="post">
 					<!-- <h5 id="section1" class="tx-semibold p-4">Add Team</h5> -->
 					
-					<div class="row row-sm row-md justify-content-around px-4">
+					<div class="row row-sm row-md  px-4">
 
 					
 					<?php foreach($items as $item){?>
@@ -47,8 +48,11 @@
                             <!-- <div class="col-md-12 mg-t-30 rounded mb-5">
                                 <button type="submit" class="btn btn-secondary py-2 px-4 service-input-box">Create</button>
                             </div> -->
-							<button type="submit" class="btn btn-submit py-1 px-2 mt-4" >Update</button>
-					<?php } ?>
+                            <div class="all-btns" > 
+                                <button type="submit" class="btn btn-all btn-submit btn-dark btn-new mt-4" >Update</button>
+                                <a href="<?php echo base_url();?>index.php/AdminCategory"><button type="button" class="btn btn-all btn-submit btn-dark btn-new mt-4 px-5" style="margin-left:0.6rem" >Back</button></a>
+                            </div>
+                                <?php } ?>
                         </div>
                     </form>
                     <!-- row -->
@@ -64,5 +68,6 @@
         <!-- component-section -->
         <!-- row -->
     </div>
+                    </div>
     <!-- content-body -->
 

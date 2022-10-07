@@ -635,7 +635,7 @@ $(document).ready(function(){
 									$('#message2').html("<h6>*Username Exit</h6>");
 									document.getElementById("btnSignup").disabled = true;
 
-									// document.getElementById("email1").setAttribute('required','');
+									// document.getElementById("email1").setAttribute('required',''); 
 									// alert('hoi');
 									
 								}
@@ -1326,13 +1326,16 @@ $(document).ready(function(){
 <script>
 $(document).ready(function(){
 	var i=1;
+	var b = 1;
 	$('#add').click(function(){
 	i++;
-	$('#dynamic_field').append('<tr id="row'+i+'"><td><select class="custom-select m-input" style="border-radius:10px;width:26rem;" name="service" id="category_'+i+'"><option selected>-- Choose Category --</option><?php foreach ($teams as $item){?><option value="<?php echo $item->team_id?>"><?php echo $item->name?></option><?php } ?></select></td><td><select class=" custom-select m-input px-5 mx-4" style="border-radius:10px;width:26rem;" id="service_'+i+'" name="service_id[]"><option selected>-- Choose Services --</option></select></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></td></tr>');
+	
+	$('#dynamic_field').append('<tr id="row'+i+'"><td><select class="custom-select m-input" style="border-radius:10px;width:26rem;" name="service" id="category_'+i+'"><option selected>-- Choose Team --</option><?php foreach ($teams as $item){?><option value="<?php echo $item->team_id?>"><?php echo $item->name?></option><?php } ?></select></td><td><select class=" custom-select m-input mx-4" style="border-radius:10px;width:26rem;" id="service_'+i+'" name="service_id[]"><option selected>-- Choose Services --</option></select></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove"><span class="fa fa-trash"></button></td></tr>');
 
 
 	$(document).ready(function() {
 			$('#category_'+i).on('change', function() {
+				b++;
             var category_id = $(this).val();
           //  alert(category);
 
@@ -1342,7 +1345,37 @@ $(document).ready(function(){
                 data: 'category_id=' + category_id,
                 success: function(html) {
                // alert(html);
-                    $('#service_'+i).html(html);
+
+						if(b == i){
+
+							alert('yes');
+							alert(b);
+							$('#service_'+b).html(html);
+
+
+						}
+
+						else{
+							alert('no');
+							if(i > b ){
+								
+								// alert(b);
+								// // alert(i);
+								// alert('yes');
+								
+								$('#service_'+b).html(html);
+								b = b + 1;
+							}
+							else{
+								
+								// alert(b);
+								b = b - 1;
+								alert(b);
+							
+								$('#service_'+b).html(html);
+							}
+						}
+                    // $('#service_'+i).html(html);
                     //  $('#subcat').html('<option value="">'+html+'</option>'); 
                 }
             });
@@ -1371,17 +1404,26 @@ $(document).ready(function(){
 
 	
 	var i=1;
+	var b = 1;
 	$('#add1').click(function(){
+
 	i++;
 	$('#dynamic_field1').append('<tr id="row'+i+'"><td><select class="custom-select m-input" style="border-radius:10px;width:26rem;" name="packages[]" id="team2_'+i+'">'+
-	'<option selected>-- Choose Category --</option><?php foreach ($teams as $item){?><option value="<?php echo $item->team_id?>"><?php echo $item->name?></option><?php } ?></select></td><td><select class=" custom-select m-input px-5 mx-4" style="border-radius:10px;width:26rem;" id="package_'+i+'" name="package_id[]"><option selected>-- Choose Services --</option></select>'+
-	'</td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></td></tr>');
+	'<option selected>-- Choose Team --</option><?php foreach ($teams as $item){?><option value="<?php echo $item->team_id?>"><?php echo $item->name?></option><?php } ?></select></td><td><select class="custom-select m-input mx-4" style="border-radius:10px;width:26rem;" id="package_'+i+'" name="package_id[]"><option  selected><span style="margin-left:-5rem !important;">-- Choose Packages --</span></option></select>'+
+	'</td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove"><span class="fa fa-trash"></button></td></tr>');
 
 
 	$(document).ready(function() {
 			$('#team2_'+i).on('change', function() {
+				b++;
+				// alert(b);
+				// alert(i);
+				// b++;
             var team_id = $(this).val();
-          //  alert(category);
+			// var packge_id =  $('#package_'+i).attr('id'));
+
+        //    alert(team_id);
+		//    alert(packge_id);
 
             $.ajax({
                 type: 'POST',
@@ -1389,10 +1431,44 @@ $(document).ready(function(){
                 data: 'team_id=' + team_id,
                 success: function(html) {
                // alert(html);
-                    $('#package_'+i).html(html);
+					if(b == i){
+
+						// alert('yes');
+						$('#package_'+i).html(html);
+						
+
+					}
+					
+					else{
+						// alert('no');
+						if(i > b ){
+							
+							// alert(b);
+							$('#package_'+b).html(html);
+							b = b + 1;
+						}
+						else{
+							b = b - 1;
+							// alert(b);
+							$('#package_'+b).html(html);
+						}
+						// // b = b + 1;
+						// alert(b);
+						
+					
+						
+						
+					}
+					// i = i - 1;
+                   
+
                     //  $('#subcat').html('<option value="">'+html+'</option>'); 
                 }
+				// b++;
+				
             });
+			
+			
 
         });
 			});
@@ -1774,7 +1850,6 @@ $("input#password1").on("focus keyup", function () {
 	reader.onload = function(e) {
 
 		img_object.attr("src", e.target.result);
-
 	};
 
 	
@@ -1785,3 +1860,148 @@ $("input#password1").on("focus keyup", function () {
 
 	});
 </script>
+
+<script>
+
+</script>
+<script>
+
+  
+
+	 $("input[type=checkbox]").change(function(){
+		var selected = [];
+		var chks = document.getElementsByTagName("INPUT");
+						let no = chks.length;
+						var total = 0;
+						for (var i = 0; i < chks.length; i++) {
+
+							
+							
+
+							if (chks[i].checked) {
+
+								
+
+								// alert(chks[i].value);
+								total += parseInt($('#amount_'+chks[i].value).val());
+
+								// alert(total);
+								// alert ($('#amount_'+chks[i].value).val());
+								// total += parseInt($('#amount_'+chks[i].value).val());
+								// alert(total);
+								
+
+								// $('.calc1').each(function(){
+								// 	if($(this).val() != '')
+								// 	{
+								// 		total += parseInt($(this).val());
+								// 	}
+								// });
+								// alert(total);
+								// document.getElementById("total1").value = total;
+								// var new_total = document.getElementById("sub_total").value;
+								// var balance = new_total - total;
+								// document.getElementById("balance1").value = balance;
+								
+								// var new_total = document.getElementById("sub_total").value;
+								// var balance = new_total - a;
+								// document.getElementById("balance1").value = balance;
+								
+								// 	// alert(chks[i].value);
+								// 	if(chks[i].value == 14){
+								// 		// alert('d');
+								// 	}
+								// 	selected.push(chks[i].value);
+							}
+							// else{
+							// 	var total = document.getElementById("sub_total").value;
+
+
+							// 	document.getElementById("balance1").value = total;
+							// }
+						}
+						var new_total = document.getElementById("sub_total").value;
+						var balance = new_total - total;
+						document.getElementById("balance1").value = balance;
+						
+						// alert(selected);
+
+	// 	var b = $("input[type=hidden]").val();
+	// alert(b); 
+		
+		var i =  document.getElementById(b);
+	// alert(i);
+	
+		var i = $('#data_id').val();0
+		// alert(i);
+		// var x = documnent.getElementByName("amount");
+		// alert(x);
+		var a  = $('#amount_'+i).val();
+		// alert(a);
+
+		var y =  $("#amount").val();
+	});
+	
+	$(document).ready(function() {
+		var chks = document.getElementsByTagName("INPUT");
+						let no = chks.length;
+						// alert(no);
+
+
+// document.getElementById("total1").value = total;
+
+// var chks=document.getElementsByName('chk'); 
+
+
+// for (var i = 0; i < chks.length; i++) {
+// 							if (chks[i].checked) {
+//                 $('.calc1').change(function(){
+
+                              
+//                         var total = 0;
+
+//                         $('.calc1').each(function(){
+//                             if($(this).val() != '')
+//                             {
+//                                 total += parseInt($(this).val());
+//                             }
+//                         });
+//                         document.getElementById("total1").value = total;
+//                         var new_total = document.getElementById("sub_total").value;
+//                         var balance = new_total - total;
+//                         document.getElementById("balance1").value = balance;
+//                         // $('#total').html(total);
+//                         });
+// 							}
+//               else
+// 			  {
+                
+// 				var new_total = document.getElementById("sub_total").value;
+//                 document.getElementById("balance1").value = new_total;
+//               }
+// 						}
+
+  // for(var i=0; i<ele.length; i++){  
+  //               if(ele[i].type=='checkbox')  
+  //                   ele[i].checked=true;  
+  //           }  
+
+
+
+
+
+		
+ 
+
+	});	
+
+//     $(document).ready(function(){
+
+
+// });
+	
+// $('tbody').append(html);
+
+
+</script>
+	

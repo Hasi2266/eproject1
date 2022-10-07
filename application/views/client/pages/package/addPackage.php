@@ -24,8 +24,8 @@
 			</ul>
 			</div>
 			<div class="col-md-3 mt-1 " style="align-items:right;justify-content:right;">
-				<a href="javascript: void(0)" data-toggle="modal" data-animation="effect-scale" class="text-white mx-3" id="my"><button id="btnCheck" style="border-radius: 8px;"  class="btn btn-submit text-white  py-2">New Project</button></a>
-				<a href=""  data-toggle="modal" data-animation="effect-scale" class="text-white" id="link2"><button id="btnCheck1" style="border-radius: 8px;"  class="btn btn-submit text-white  py-2">Add to project</button></a>
+				<a href="javascript: void(0)" data-toggle="modal" data-animation="effect-scale" class="text-white ml-3" id="my"><button id="btnCheck" style="border-radius: 8px;"  class="btn btn-submit text-white btn-all py-2">New Project</button></a>
+				<a href=""  data-toggle="modal" data-animation="effect-scale" class="text-white" id="link2"><button id="btnCheck1" style="border-radius: 8px;"  class="btn btn-submit ml-3 text-white btn-all py-2">Add to project</button></a>
 			</div>
 		</div>
         <div class="" style="margin-top:10px;" >

@@ -58,6 +58,7 @@ Class ServicesService extends CI_Model{
 		$this->db->select('*,name');
         $this->db->from('service');
 		$this->db->join('teams','teams.team_id = service.category_id','left',false);
+		$this->db->order_by("service.service_created_date", "desc");
         $query = $this->db->get();
 		return $query->result();
 	}
@@ -82,7 +83,7 @@ Class ServicesService extends CI_Model{
 			'currency' => $servicemodel->getCurrency(),
 			'price' => $servicemodel->getPrice(),
 			// 'img' => $servicemodel->getImg(),
-			'service_created_date' => $servicemodel->getService_id(),
+			// 'service_created_date' => $servicemodel->getService_id(),
 			'service_del_ind' => '1'
 
 		);

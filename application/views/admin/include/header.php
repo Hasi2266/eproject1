@@ -11,7 +11,7 @@
     <meta name="author" content="ThemePixels">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url();?>/assets/img/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url();?>/assets/img/Favicont.png">
 
     <title>Sprout Seven</title>
 

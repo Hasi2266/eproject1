@@ -59,5 +59,14 @@ Class DashboardService extends CI_Model{
 		
 	
 	}
+
+	function allProjects1(){
+			$this->db->select('*,user-login.company_name');
+			$this->db->from('project');
+			$this->db->join('user-login','user-login.client_id = project.client_id');
+			$this->db->order_by("project.project_created_date", "desc");
+			$query = $this->db->get();
+			return $query->result();
+	}
 }
 ?>

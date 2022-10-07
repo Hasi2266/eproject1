@@ -24,7 +24,11 @@ Class AdminService extends CI_Controller{
 		// echo $x->team_id;die;
 		// print_r($x);die;
 		// $data['items'] = $servicesService->allServices();
-		$data["items"] = $servicesService->getTeams();
+		// $data["teams"] = $clientservice->getTeams();
+		// $data["services"] = $clientservice->getServices();
+		// $data["items1"] = $clientservice->getFirstrow();
+
+		$data["teams"] = $servicesService->getTeams(); 
 		$data["items1"] = $servicesService->getFirstrow();
 		$data["services"] = $servicesService->getServices();
 

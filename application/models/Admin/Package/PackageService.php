@@ -36,7 +36,6 @@ Class PackageService extends CI_Model{
 	function allPackages(){
 		$this->db->select('*');
 		$this->db->from('package');
-		
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -58,9 +57,19 @@ Class PackageService extends CI_Model{
 	
 	function getPackages(){
 
+		$this->db->select('*,package.name');
+        $this->db->from('package');
+		$this->db->join('teams','teams.team_id = package.team','left',false);
+		$this->db->order_by("package.package_created_date", "desc");
+        $query = $this->db->get();
+		return $query->result();
+	}
+	function getPackages1(){
+
 		$this->db->select('*,package.name as package_name');
         $this->db->from('package');
 		$this->db->join('teams','teams.team_id = package.team','left',false);
+		$this->db->order_by("package.package_created_date", "desc");
         $query = $this->db->get();
 		return $query->result();
 	}
@@ -102,7 +111,7 @@ Class PackageService extends CI_Model{
 			'currency' => $packagemodel->getCurrency(),
 			'pduration' => $packagemodel->getDuration(),
 			'price' => $packagemodel->getPrice(),
-			'package_created_date' => $packagemodel->getCreated_date(),
+			// 'package_created_date' => $packagemodel->getCreated_date(),
 			'package_del_ind' => '1',
 
 		);

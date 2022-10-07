@@ -3,10 +3,10 @@
 
 <div class="sidebar">
   <div class="sidebar-header sidebar-color" style="border-radius: 0px 20px 0px 0px;">
-	<div>
-	  <a href="<?php echo base_url();?>index.php/ClientDashboard" class="sidebar-logo" ><span style="color:white;margin-top:20px">Sprout Seven</span></a>
-	  <!-- <small class="sidebar-logo-headline">Responsive Dashboard Template</small> -->
-	</div>
+  <div>
+                <a href="<?php echo base_url();?>index.php/AdminDashboard" class="sidebar-logo"><span style="color:white;margin-top:20px"><img src="<?php echo base_url();?>/assets/img/Favicont.png"style="width:30px;margin:-10px 10px 0 0"> Sprout Seven </span></a>
+                <!-- <small class="sidebar-logo-headline">Responsive Dashboard Template</small> -->
+            </div>
   </div>
   <!-- sidebar-header -->
 

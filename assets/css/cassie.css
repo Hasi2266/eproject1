@@ -1731,6 +1731,7 @@ fieldset:disabled a.btn {
 .btn-secondary, .ui-datepicker-buttonpane button {
   color: #fff;
   background-color: #637382;
+  border-radius: 8px;
   border-color: #637382; }
   .btn-secondary:hover, .ui-datepicker-buttonpane button:hover {
     color: #fff;
@@ -1793,7 +1794,7 @@ fieldset:disabled a.btn {
   .btn-info:not(:disabled):not(.disabled):active, .btn-info:not(:disabled):not(.disabled).active,
   .show > .btn-info.dropdown-toggle {
     color: #fff;
-    background-color: #117a8b;
+    background-color: #7900FF;
     border-color: #10707f; }
     .btn-info:not(:disabled):not(.disabled):active:focus, .btn-info:not(:disabled):not(.disabled).active:focus,
     .show > .btn-info.dropdown-toggle:focus {
@@ -3306,7 +3307,8 @@ input[type="button"].btn-block {
   padding: 1.25rem; }
 
 .card-title {
-  margin-bottom: 0.75rem; }
+  margin-bottom: 0.75rem; 
+text-align: center;}
 
 .card-subtitle {
   margin-top: -0.375rem;
@@ -7450,10 +7452,12 @@ a.badge-danger-light {
     .show > .btn-pink.dropdown-toggle:focus {
       box-shadow: 0 0 0 0.2rem rgba(235, 91, 157, 0.5); }
 
-.btn-brand-01 {
-  background-color: #5556fd;
-  border-color: transparent;
-  color: #fff; }
+      .btn-brand-01 {
+        background-color: black;
+        border-color: transparent;
+        color: #fff; 
+        margin-top: 3rem;
+      border-radius: 1rem;}
   .btn-brand-01:hover, .btn-brand-01:focus {
     background-color: #3c3dfd;
     border-color: transparent;
@@ -7655,7 +7659,9 @@ a.badge-danger-light {
     .dropdown-item {
       transition: none; } }
   .dropdown-item:hover, .dropdown-item:focus {
-    background-color: #e6e7ef; }
+    background-color: #e6e7ef; 
+    border-radius: 8px;
+  }
   .dropdown-item.active {
     background-color: #8392a5; }
 
@@ -9970,6 +9976,7 @@ table.dataTable {
     table.dataTable thead .sorting_asc::after,
     table.dataTable thead .sorting_desc::after {
       font-family: 'Ionicons';
+      display:none;
       font-size: 11px;
       position: absolute;
       line-height: 0;
@@ -11361,7 +11368,7 @@ body {
     color: #5556fd; }
   .sidebar-logo span {
     display: block;
-    font-size: 28px;
+    font-size: 20px;
     font-family: "Oswald", sans-serif;
     font-weight: 500;
     letter-spacing: -.5px;
@@ -11413,7 +11420,7 @@ body {
     .nav-sidebar .nav-item.show .nav-link {
       font-weight: 500; }
       .nav-sidebar .nav-item.show .nav-link svg {
-        color: #06072d;
+        color: white !important;
         fill: rgba(6, 7, 45, 0.12); }
       .nav-sidebar .nav-item.show .nav-link.active svg {
         color: #fff;
@@ -11424,7 +11431,8 @@ body {
       margin-top: 12px; }
   .nav-sidebar .nav-link {
     position: relative;
-    padding: 7px 8px;
+    padding: 8px 8px;
+    margin: 20px 12px 0 11px;
     color: #373857;
     display: flex;
     align-items: center;
@@ -11434,6 +11442,9 @@ body {
       .nav-sidebar .nav-link {
         transition: none; } }
     .nav-sidebar .nav-link:hover, .nav-sidebar .nav-link:focus {
+      border-radius: 10px;
+      width: 13rem;
+      margin-left: 1rem;
       background-color: rgba(85, 86, 253, 0.1); }
     .nav-sidebar .nav-link svg {
       width: 17px;
@@ -11444,13 +11455,14 @@ body {
       content: '';
       position: absolute;
       top: 50%;
-      right: 12px;
+      right: 10px;
       margin-top: -3px;
       border-top: 1px solid white ;
       border-right: 1px solid white;
       width: 6px;
       height: 6px;
-      transform: rotate(45deg); }
+      transform: rotate(45deg);
+      }
     .nav-sidebar .nav-link.active {
       background-color: #5556fd;
       color: rgba(255, 255, 255, 0.9); }
@@ -11466,6 +11478,9 @@ body {
     margin-bottom: 5px; }
   .nav-sidebar .nav-sub-link {
     padding: 6px 0 6px 34px;
+    margin: 10px 12px 0 11px;
+    width: 13rem;
+    border-radius: 10px;
     color: #575d78;
     font-size: 13px;
     display: block;
@@ -13009,24 +13024,61 @@ body {
       .signin-panel .svg-bg, .signup-panel .svg-bg {
         margin-right: 50%;
         transform: translateX(calc(50% + 200px)); } }
-
+        ::placeholder{
+          font-size: 15px;
+        }
+        .forgotline{
+          text-decoration:underline !important;
+        }
 .signin-sidebar {
   position: absolute;
   top: 0;
   left: 0;
   background-color: #fff;
-  border-right: 1px solid rgba(224, 225, 235, 0.85);
-  box-shadow: 0 4px 12px 0 rgba(131, 146, 165, 0.15), 2px 2px 5px 0 rgba(60, 70, 83, 0.04);
-  width: 100%;
-  height: 100vh;
+  
+  height: 80vh;
   overflow: hidden; }
-  @media (min-width: 576px) {
+  .signBImg{
+    margin: 1rem 0 1rem -20rem;
+    width: 69.3vw;
+height: 95vh;
+border-radius: 1rem;
+  }
+  @media (max-width: 576px) {
     .signin-sidebar {
-      width: 400px; } }
+      width: 100vw !important;
+      height: 90vh !important; 
+    }
+      .signBImg{
+        margin: 36rem 0 1rem 1rem !important;
+        width: 91vw;
+    height: 95vh;
+    border-radius: 1rem;
+      } 
+      .do{
+        color: #000 !important;
+        display: block !important;
+        z-index: 10 !important;
+      }
+     
+      .signin-panel, .signup-panel {
+  
+        width: 100vw;
+        height: 200vh !important;
+        background-color: white;
+        position: relative;
+        display: block !important;
+        align-items: center;
+        justify-content: flex-end;
+        overflow: hidden; }}
+.forgotline{
+  text-decoration:underline !important;
+}
 
 .signin-sidebar-body, .signup-sidebar-body {
   height: 100%;
   padding: 30px;
+  margin: 4rem 0 0rem 2rem;
   display: flex;
   flex-direction: column; }
   @media (min-width: 992px) {
@@ -13035,13 +13087,14 @@ body {
 
 .signin-title, .signup-title {
   font-weight: 400;
-  font-size: 26px;
+  font-size: 43px;
   letter-spacing: -.5px;
   color: #06072d;
   margin-bottom: 5px; }
 
 .signin-subtitle, .signup-subtitle {
-  font-size: 20px;
+  color: #06072d;
+  font-size: 15px;
   font-weight: 300;
   color: rgba(55, 56, 87, 0.6); }
 
@@ -14890,13 +14943,15 @@ body {
   display: flex;
   align-items: baseline;
   letter-spacing: -1px;
-  margin-bottom: 0; }
+  margin-bottom: 0; 
+}
   .card-task-one .card-value span {
     font-size: 13px;
     letter-spacing: normal;
     display: flex;
     align-items: baseline;
-    margin-left: 2px; }
+    margin-left: 2px;
+    text-align: center; }
   .card-task-one .card-value .icon {
     font-size: 15px;
     font-weight: bold;
@@ -43747,8 +43802,88 @@ a.bg-twitter:hover, a.bg-twitter:focus, button.bg-twitter:hover, button.bg-twitt
 			.btn-med{
 				width: 10rem !important;
 			}
+      .newbtnM{
+        margin-left:14rem !important;
+        margin-bottom:2rem;
+      }
+      .newbtnMAdmin{
+        margin-left:14rem !important;
+        margin-bottom:2rem;
+      }
+      .newbtnProject{
+        margin-left:16rem !important;
+        margin-bottom:1rem;
+      }
+      .tSvale1{
+        margin-left: 2.7rem !important;
+      }
+      .tSvale2{
+        margin-left: 2.8rem !important;
+      }
+      .tSvale3{
+        margin-left: 2.5rem !important;
+      }
+      .tSvale4{
+        margin-left: 3rem !important;
+      }
+      .tot{
+        margin-top: -3px !important;
+      }
+      .recentM{
+        margin-top: -25px !important;
+      }
+      .projectT{
+        margin-top:3px !important;
+      }
+      .due{
+        display: none !important;
+      }
+      .stM{
+        margin-left: -1rem !important;
+      }
+      .enddate{
+        margin-left: -1.9rem !important;
+      }
+      .catM{
+        margin-top: 1rem !important;
+        margin-left: -15rem !important;
+      }
+      .choF{
+        width: 5rem !important;
+      }
+      .choFf{
+        width: 5rem !important;
+      }
+      .attM{
+       
+        width: 15.5rem!important;
+      }
+      .attMm{
+        margin-left: -45rem !important;
+      }
+      .tMP{
+        margin-top: 1rem !important;
+      }
+      .cm{
+        margin-left: 1.7rem !important;
+      }
 		}
-	
+
+    .projectT{
+      margin-right:-15px;width:95rem;margin-top:-34px;margin-bottom:1rem;
+    }
+	.tSvale1{
+    margin-left: 6.4rem;
+  }
+  .tSvale2{
+    margin-left: 6.7rem;
+  }
+  .tSvale3{
+    margin-left: 6.7rem;
+  }
+  .tSvale4{
+    margin-left: 6.8rem;
+  }
 .middle {
   transition: .5s ease;
   opacity: 0;
@@ -43924,8 +44059,11 @@ calendar td a {
 }
 
 .nav-sidebar .nav-link.active{
-	background-color: #666666 !important;
-	
+	background-color:  #8758FF !important;
+  width: 13rem;
+	margin: 1rem 1rem 0 1rem !important;
+  border-radius: 10px;
+ 
 }
 
 .sidebar-body {
@@ -43991,9 +44129,14 @@ calendar td a {
 
 .btn-all{
 	border-radius: 8px !important;
-	background-color: #404040 !important;
+	background-color: #363d47 !important;
 	border-color: none !important;
 	color:white;
+  font-size: 13px;
+}
+                            
+.all-btns{
+  margin-bottom: -2.5rem;
 }
 .btn_remove{
 	border-radius: 8px !important;
@@ -44001,10 +44144,19 @@ calendar td a {
 
 .btn-submit{
 	border-radius: 8px !important;
-	background-color: #dc3545 !important;
-  color : white;
+	/* background-color:black !important; */
+  /* color : white; */
 }
-
+.signM{
+  margin-left: 0.8rem !important;
+  margin-right: 0.8rem !important;
+}
+.signdetailM{
+  margin-bottom: 1rem !important;
+}
+.oo{
+  border-radius: 0px 0px 20px 0px !important;
+}
 .cardBody{
 
 	 border-radius: 8px;
@@ -44123,5 +44275,79 @@ input[type="file"] {
 }
 
 .nav-icon-color{
-  color:purple !important;
+  color: white!important;
+}
+
+.uscircle{
+  background-color: #060708 !important;
+}
+
+
+.newbtnM{
+  margin-left:67rem;
+  margin-bottom:2rem;
+}
+.newbtnMAdmin{
+  margin-left:68rem;
+  margin-bottom:1rem;
+  margin-top: 2.5rem;
+}
+
+.invoice-card-title{
+  color:#000;
+}
+
+.invoice-card-title1{
+  margin-left:-80px;
+}
+
+.card-content-invoice{
+  line-height: 0.5rem;
+  margin-top: 28px;
+  font-size: 13px;
+}
+
+.invoice-card{
+  border-radius: 15px;
+}
+.invoice-card-value{
+  color:#aeb6be;
+}
+
+.card-content-invoice1{
+  font-size: 13px;
+  line-height: 1.5rem;
+}
+/* .calc1{
+  border: none;
+  
+} */
+input:disabled {
+
+  background-color: white;
+
+}
+
+.invoice-table{
+  font-size: 13px;
+}
+.thColor{
+  color:black;
+}
+
+.invoice-total{
+  margin-left: 50rem;
+  font-size: 13px;
+  
+}
+.invoice-total1{
+  margin-left: 37.5rem;
+}
+
+.all-form{
+  font-size: 13px;
+}
+
+.drop-b{
+  border-radius: 8px;
 }

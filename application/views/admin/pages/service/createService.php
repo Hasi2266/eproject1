@@ -19,10 +19,11 @@
             </div>
         </div>
         <!-- content-header -->
+        <div class=" content-card-body pd-b-15">
         <div class="card card-hover card-projects  card-task-one dashCardHover content-card-body mt-4" style="border-radius: 10px;margin-bottom:2rem !important;padding-bottom:3rem; " >
-        <!--btn-->
+       
 				<div class="card-header bg-transparent pd-y-15 pd-l-15 pd-r-10" style="margin-bottom:-0.1rem;">
-									<h6 class="card-title mg-b-0 px-1" style="margin-top:1px;margin-bottom:-6px">Update Category</h6>
+									<h6 class="card-title mg-b-0 px-1" style="margin-top:1px;margin-bottom:-6px">Add Service</h6>
 									<!-- <nav class="nav">
 									<a href="" class="link-gray-500"><i data-feather="help-circle" class="svg-16"></i></a>
 									<a href="" class="link-gray-500"><i data-feather="more-vertical" class="svg-16"></i></a>
@@ -33,30 +34,30 @@
 								<div class="card-body">
                         <!-- <h5 id="section1 " class="tx-semibold ">Input Box</h5>
                         <p class="mg-b-25 ">A basic form control with disabled and readonly mode.</p> -->
-					<form  class="" action="<?php echo base_url();?>index.php/AdminService/saveService" enctype="multipart/form-data" method="post">
+					<form  class="all-form" action="<?php echo base_url();?>index.php/AdminService/saveService" enctype="multipart/form-data" method="post">
                         <div class="row row-sm">
-							<div class="col-sm-4 mg-t-30">
-                                <input type="text" class="borderRa form-control  py-2 service-input-box" id="datepicker" placeholder="Date" name="date" style="border-radius:8px">
+							<div class="col-sm-5 mg-t-30">
+                                <input type="text" class="borderRa form-control  py-2 service-input-box" id="datepicker" placeholder="Date" name="date" style="border-radius:8px;width:34rem;">
                             </div>
                             <div class="col-sm-5 ml-auto mg-t-30  rounded " style="margin-right: 110px; ">
-								<input type="text" name="created_by" class=" borderRa form-control  py-2 service-input-box" placeholder="Created By " style="border-radius:8px">
+								<input type="text" name="created_by" class=" borderRa form-control  py-2 service-input-box" placeholder="Created By " style="border-radius:8px;width:35.5rem;">
                             </div>
                             <div class="col-sm-4 mg-t-30 ">
-                                <input type="text" name="name" class="borderRa form-control  py-2 service-input-box" placeholder="name " style="border-radius:8px">
+                                <input type="text" name="name" class="borderRa form-control  py-2 service-input-box" placeholder="name " style="border-radius:8px;width:34rem;">
                             </div>
-                            <div class="col-sm-5 ml-auto mg-t-30  rounded wd-md-50p" style="margin-right: 110px;border-radius:8px ">
-							<select class="form-control borderRa  service-input-box"  name="category">
+                            <div class="col-sm-5 ml-auto mg-t-30  rounded wd-md-50p" style="margin-right: 110px;border-radius:8px; ">
+							<select class="form-control borderRa  service-input-box"  name="category" style="width:35.5rem;">
 								<option value="" class="text-light">--Choose Team--</option>
 								<?php foreach($items as $item){?>
 									<option value="<?php echo $item->team_id?>"><?php echo $item->name?></option>
 								<?php	}?>
 							</select>
                             </div>
-                            <div class="col-sm-12 mg-t-30" style="padding-right: 120px; ">
+                            <div class="col-sm-12 mg-t-30" style="padding-right: 13px; ">
                                 <textarea class="form-control  borderRa py-2 service-input-box" rows="4" placeholder="Description " name="description" style="border-radius:8px"></textarea>
                             </div>
 							
-                            <div class="col-sm-6 mg-t-30 " style="padding-right: 120px;border-radius:8px ">
+                            <div class="col-sm-6 mg-t-30 " style="padding-right: 20px;border-radius:8px;width:34rem;">
 								<select class="form-control  borderRa service-input-box"  name="currency">
 									<option class="text-light">--Choose Currency--</option>
 									<option value="1" >LKR</option>
@@ -64,8 +65,8 @@
 								</select>  
                             </div>
 
-							<div class="col-sm-6 mg-t-30 ml-auto" style="padding-right: 120px; ">
-								<input type="text "class=" borderRa form-control  py-2 service-input-box" style="padding-right: 120px;border-radius:8px " placeholder="Price" name="price">
+							<div class="col-sm-6 mg-t-30 ml-auto" style="margin-left: -15px; ">
+								<input type="text "class=" borderRa form-control  py-2 service-input-box" style="padding-right: 0px;border-radius:8px " placeholder="Price" name="price">
                             </div>
 							
 							<div class="col-md-12 mg-t-30 rounded mb-5">
@@ -75,9 +76,10 @@
 								</div>
                             </div>
 
-							
-							<button type="submit" class="btn btn-submit py-1 px-2 mt-2 mx-4" style="item-align:center">Create</button>
-							
+                            <div class="all-btns" > 
+                                <button type="submit" class="btn btn-all btn-submit btn-dark btn-new mt-2">Create</button>
+                                <a href="<?php echo base_url();?>index.php/AdminService/allServices"><button type="button" class="btn btn-submit btn-all btn-dark btn-new mt-2 px-5" style="margin-left:0.5rem" >Back</button></a>
+                             </div>
                         </div>
                         <!-- row -->
                     </div>
@@ -92,6 +94,7 @@
             <!-- component-section -->
             <!-- row -->
         </div>
+                                </div>
         <!-- content-body -->
   
     <!-- content -->

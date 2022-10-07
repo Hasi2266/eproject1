@@ -19,7 +19,7 @@ Class CategoryService extends CI_Model{
 	function allCategories(){
 		$this->db->select('*');
 		$this->db->from('categories');
-		
+		$this->db->order_by("category_created_date", "desc");
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -37,7 +37,7 @@ Class CategoryService extends CI_Model{
 
 			'name' => $categorymodel->getName(),
 			'parent_category' => $categorymodel->getParent_category(),
-			'category_created_date' => $categorymodel->getCreated_date()
+			// 'category_created_date' => $categorymodel->getCreated_date()
 
 		);
 

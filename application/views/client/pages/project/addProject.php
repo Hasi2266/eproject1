@@ -14,10 +14,10 @@
         </div>
     </div><!-- content-header -->
 
-	<form action="<?php echo base_url();?>index.php/ClientProject/save" method="post" enctype="multipart/form-data">
-    <div class="pd-x-5 pd-b-15">
+	<form class="all-form" action="<?php echo base_url();?>index.php/ClientProject/save" method="post" enctype="multipart/form-data">
+    <div class="pd-x-5">
 		
-	<div class="card card-hover card-projects  card-task-one dashCardHover  mt-4" style="border-radius: 10px;margin-bottom:2rem !important;padding-bottom:3rem; " >
+	<div class="card card-hover card-projects  card-task-one dashCardHover  mt-4" style="border-radius: 10px;margin-bottom:2rem !important;padding-bottom:-2rem; " >
 				
 			<div class="card-header bg-transparent pd-y-15 pd-l-15 pd-r-10" style="margin-bottom:-0.1rem;">
 									<h6 class="card-title mg-b-0 px-1" style="margin-top:1px;margin-bottom:-6px">Create New Project</h6>
@@ -60,13 +60,13 @@
 							<div class="form-check">
 
 								<label class="form-check-label">
-									<input type="radio" class="form-check-input" name="due_date_type" value="To be decided" onclick="check1()"  >TO BE DECIDED
+									<input type="radio" style="margin-top:3px;" class="form-check-input" name="due_date_type" value="To be decided" onclick="check1()"  >To Be Decided
 								</label>
 							</div>
 							<div class="form-check">
-								<label class="form-check-label">
-									<input type="radio" class="form-check-input" name="due_date_type" onclick="check()"
-										value="Specific Date">SPECIFIC DATE
+								<label class="form-check-label" style="margin-top:5px;">
+									<input type="radio" style="margin-top:3px;" class="form-check-input" name="due_date_type" onclick="check()"
+										value="Specific Date">Specific Date
 								</label>
 							</div>
 							
@@ -80,23 +80,23 @@
 							<label for="exampleInputEmail1"><h6 class="card-title mg-b-1" style="margin-top:1px;">Type</h6></label>
 							<div class="form-check">
 								<label class="form-check-label">
-									<input type="radio" class="form-check-input" name="type"
-										value="Recurring Project">RECCURING PROJECT
+									<input type="radio" style="margin-top:3px;" class="form-check-input" name="type"
+										value="Recurring Project">Reccuring Project
 								</label>
 							</div>
 							<div class="form-check">
-								<label class="form-check-label">
-									<input type="radio" class="form-check-input" name="type" value="Not Sure">ONE TIME PROJECT
+								<label class="form-check-label" style="margin-top:5px;">
+									<input type="radio" style="margin-top:3px;" class="form-check-input" name="type" value="Not Sure">One Time Project
 								</label>
 							</div>
 							<div class="form-check">
-								<label class="form-check-label">
-									<input type="radio" class="form-check-input" name="type" value="On Going">ON GOING PROJECT
+								<label class="form-check-label" style="margin-top:5px;">
+									<input type="radio" style="margin-top:3px;" class="form-check-input" name="type" value="On Going"><span  >On Going Project</span>
 								</label>
 							</div>
 						</div>
 					</div>
-					<h6 class="card-title mg-b-1" style="margin-top:1px;">Category</h6>
+					<h6 class=" mg-b-1" style="margin-top:1px;">Category</h6>
 					
 					<div class="row mt-2 mb-5">
 						<?php foreach ($items as $item){?>
@@ -189,7 +189,7 @@
 																<select class="custom-select m-input mb-2"
 																		style="border-radius:10px ;width:26rem;"
 																		name="services" id="category">
-																		<option selected>-- Choose Category --</option>
+																		<option selected>-- Choose Team --</option>
 																		<?php foreach ($teams as $item){?>
 																		<option value="<?php echo $item->team_id?>">
 																			<?php echo $item->name?>
@@ -331,7 +331,7 @@
 																		style="border-radius:10px;width:26rem;" id="package"
 																		name="package_id[]">
 
-																		<option disabled selected style="margin-top:5rem">-- Choose Packages --</option>
+																			<option disabled selected style="margin-top:5rem">-- Choose Packages --</option>
 
 																	</select>
 																<?php } ?>
@@ -459,9 +459,9 @@
 			<!-- Submit -->
 
 			<div class="row" style="display:flex;align-items:left;justify-content:left" >
-				<button type="submit" class="btn  mt-5 mb-5 btn-submit ml-5" >Submit Project</button>
+				<button type="submit" class="btn btn-dark  mt-3 mb-5 btn-submit ml-5" >Submit Project</button>
 				<!-- <button type="button" class="btn btn-primary mt-5 mb-5 btn-submit mx-2">Save As Draft</button> -->
-				<a href="<?php echo base_url();?>index.php/ClientDashboard"><button type="button" class="btn  mx-3 mt-5 mb-5 btn-submit">Cancel Project</button></a>
+				<a href="<?php echo base_url();?>index.php/ClientDashboard"><button type="button" class="btn btn-dark mx-3 mt-3 mb-5 btn-submit">Cancel Project</button></a>
 			</div>
 
 			

@@ -11,10 +11,10 @@
         </div>
       </div><!-- content-header -->
      
-      <div class="pd-x-20 pd-b-15" >
+      <div class="pd-x-20" >
          
        
-			<div class="card card-hover card-projects card-task-one dashCardHover content-card-body mt-4" style="border-radius: 10px;margin-bottom:2rem !important;padding-bottom:3rem; " >
+			<div class="card card-hover card-projects card-task-one dashCardHover content-card-body mt-4" style="border-radius: 10px;margin-bottom:2rem !important;padding-bottom:1rem; " >
 			<?php  foreach($item as $items){ ?>
 			<div class="card-header bg-transparent pd-y-15 pd-l-15 " style="margin-bottom:-0.1rem;">
 
@@ -217,18 +217,18 @@
       
 
 													</div>
-													<div class="row" style="display:flex;align-items:center;justify-content:center">
+													<div class="row mx-1" style="display:flex;align-items:center;">
 
 													<?php 
 
 														if(($items->approve_proposal)== 1){
 ?>
-																<a href="<?php echo base_url();?>index.php/ClientProject/Proposal">	<button type="button" class="btn btn-primary mt-5 mb-4 btn-submit">Back to Proposals</button></a>
+																<a href="<?php echo base_url();?>index.php/ClientProject/Proposal">	<button type="button" class="btn btn-all mt-5 mb-4 btn-submit">Back to Proposals</button></a>
 													
 													<?php			}else {
 													?>
-													<a href="<?php echo base_url();?>index.php/ClientProject/giveApprove/<?php echo $items->project_id;?>"><button type="submit" class="btn btn-primary mt-5 mb-4 btn-submit" >Approve Project</button></a> 
-													<button type="button" class="btn btn-primary mt-5 mb-4 btn-submit mx-2">Cancel</button>
+														<a href="<?php echo base_url();?>index.php/ClientProject/giveApprove/<?php echo $items->project_id;?>"><button type="submit" class="btn btn-all  mt-3 mb-2 btn-submit" >Approve Project</button></a> 
+														<a href="<?php echo base_url();?>index.php/ClientProject/Proposal"><button type="button" class="btn btn-all mt-3 mb-2 btn-submit mx-3 ">Cancel</button>
 													
 													<?php } ?>
 

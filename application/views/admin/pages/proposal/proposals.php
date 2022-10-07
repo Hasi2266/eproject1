@@ -40,65 +40,144 @@
        
 								<div class="card-body">
        
-       <table id="example1" class="table mb-4">
+       <table id="example1" class="table mb-4" style="border-radius:10px ;font-size:13px">
         <thead>
-          <tr>
+          <tr >
             <!-- <th class="wd-9p"><div class="custom-control custom-checkbox" style="border-radius: 8px;">
               <input type="checkbox" class="custom-control-input" id="customCheck1" >
               <label class="custom-control-label" for="customCheck1"></label>
             </div></th> -->
-            
-            <th class="wd-12p">Company</th>
-            <th class="wd-20p">Project</th>
-            <th class="wd-10p">Team</th>
-            <th class="wd-12p">update</th>
-            <th class="wd-12p">status</th>
-            <th class="wd-12p">Created By</th>
-            <th class="wd-12p">Created date</th>
-            <th class="wd-12p">Approved By</th>
-            <th class="wd-12p">Approved date</th>
+            <th></td>
+            <th><span style="margin-left:-1.5rem;">Project</span></th>
+            <th>Update Date</th>
+            <th class="wd-13p">Status</th>
+            <!-- <th class="wd-14p">Invoice</th> -->
+            <th class="wd-15p">Progress</th>
+            <th  class="wd-13p">Due date</th>
+						<th class="wd-15p">Actions</th>
+
           </tr>
         </thead>
         <tbody>
-		<?php foreach($items as $item){ ?>
+				<?php foreach($items as $item){?>
+					<!-- data-url="" -->
+								<tr  style="cursor:pointer;">
+								
+								<?php 
+									if(($item->project_status) == 1){
+										$status = 'Project Submitted ';
+									}
+									else if(($item->project_status) == 5){
+										$status = 'Prooposal Submitted';
+									}
+									else if(($item->project_status) == 2){
+										$status = 'Project Approved';
+									}
+									else if(($item->project_status) == 3){
+										$status = 'In Progress ';
+									}	
+									else if(($item->project_status) == 4){
+										$status = 'Project Hold';
+									}
+									else{
+										$status = 'Project Completed';
+									}	
 
-			<?php 
-							if(($item->project_status) == 1){
-								$status = 'Submitted';
-							}
-							else if(($item->project_status) == 2){
-								$status = 'Confirmed ';
-							}
-							else if(($item->project_status) == 3){
-								$status = 'N/A';
-							}	
-							else if(($item->project_status) == 4){
-								$status = 'N/A ';
-							}
-							else{
-								$status = 'N/A';
-							}		
-		
-						?>
-          <tr >
-            <!-- <td><div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="customCheck1">
-              <label class="custom-control-label" for="customCheck1"></label>
-            </div></td> -->
-            <td><?php echo $item->company_name?></td>
-            <td><?php echo $item->name?></td>
-            <td>Software Engineer</td>
-						<td><?php echo $item->proposal_created_date?></td>
-						<td><span class="badge badge-pill badge-info"><?php echo $status?></span></td>
-            <td>Admin</td>
-            <td><?php echo $item->proposal_created_date?></td>
-            <td>Edinburgh</td>
-            <td>24 May 2022</td>
-          </tr>
+									if(($item->end_date)== 'Specific Date'){
+										$due_date = $item->date;
+									}
+									else{
+										$due_date = $item->end_date;
+									}
 
-          <?php } ?>
+								?>
+									<td>
+										<!-- <div class="custom-control custom-checkbox">
+											<input type="checkbox" class="custom-control-input" id="<?php echo $item->project_id ?>" value="<?php echo $item->project_id ?>">
+											<label class="custom-control-label" for="<?php echo $item->project_id ?>"></label>
+										</div> -->
+									</td>
+									<!-- <td><img src="../assets/img/favicon.png" alt="..." class="img-thumbnail" width="50"></td> -->
+									<!-- <td class="data"><?php echo $item->company_name?></td> -->
+									<td class="data" ><span style="margin-left:-1.5rem;"><?php echo $item->name?></span></td>
+									<td class="data"><?php echo $item->proposal_created_date?></td>
+									<td><span class="badge badge-pill badge-info"><?php echo $status?></span></td>
+									<!-- <td class="data"><?php echo $item->invoice_no?></td> -->
+									<td><div class="progress mt-2" style="height:0.45rem;border-radius:10px">
+											<div class="progress-bar bg-<?php if($item->project_progress >= 50){echo "green";}else{echo "danger";} ?> wd-<?php echo $item->project_progress?>p" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+										</div>		</td>
+									<td class="data">
+										
+											<?php echo $due_date?>
+											<!-- <nav class="nav">
+												<a href="#p" class="link-gray-500" style="text-align:right"><i data-feather="more-vertical" class="svg-16"></i></a>
+											</nav> -->
 
-        </tbody>
+											<!-- <div class="tab-pane fade" id="p" role="tabpanel" aria-labelledby="profile-tab5">
+		<p>swws</p>
+											</div> -->
+										
+										
+									</td>
+									<td>
+									<div class="dropdown">
+									<button class="btn dropdown-toggle1" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-radius: 10px;margin-left:-1rem;">
+                                        <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                                    </button>
+													<div class="dropdown-menu drop-b tx-14" aria-labelledby="dropdownMenuButton">
+														
+													<a class="dropdown-item" href="<?php echo base_url();?>index.php/AdminProject/viewProposal1/<?php echo $item->proposal_id?>">View Proposal</a>
+													<!-- <a class="dropdown-item" href="<?php echo base_url()?>index.php/AdminProject/addMilestone/<?php echo $item->id ?>">View Project</a> -->
+              
+              
+            
+										<!-- <a href="<?php echo base_url();?>index.php/AdminProject/editItem/<?php echo $item->project_id?>"><button type="submit" class="btn btn-dark btn-submit py-1 px-2">Add Progress</button></a> -->
+
+
+										<!-- <?php 
+										
+											if ((($item->add_proposal)== 1) && (($item->approve_project)== 1) && (($item->start_project) == 0) && (($item->end_project) == 0) && (($item->add_invoice) == 0) ){?>
+													
+													<a class="dropdown-item" href="<?php echo base_url();?>index.php/AdminProject/addInvoice/<?php echo $item->id?>">Add Invoice</a>
+													<a href="<?php echo base_url();?>index.php/AdminProject/addInvoice/<?php echo $item->project_id?>"><button type="submit" class="btn btn-dark btn-submit py-1 px-2">Add Invoice</button></a>
+
+											<?php }
+											else if($item->add_invoice == 1){?>
+
+													<a class="dropdown-item" href="<?php echo base_url();?>index.php/AdminInvoice/viewInvoice/<?php echo $item->id?>">View Invoice</a>
+													<a href="<?php echo base_url();?>index.php/AdminInvoice/viewInvoice/<?php echo $item->project_id?>"><button type="submit" class="btn btn-dark btn-submit py-1 px-2">View Invoice</button></a>
+											
+											<?php }
+											
+											?> -->
+										
+
+										</div>
+          </div>
+
+										
+										<!-- <a href="<?php echo base_url();?>index.php/AdminProject/deleteItem/<?php echo $item->project_id?>"><button type="submit" class="btn btn-submit py-1 px-2 mx-1" data-toggle="modal" data-animation="effect-just-me" >Delete</button></a> -->
+										<!-- <a href="#modal6" class="btn btn-dark btn-block" data-toggle="modal" data-animation="effect-just-me">Just Me</a> -->
+									</td>
+									
+									
+									<!-- <td>
+							<button class="save"> Save </button>
+							<button class="edit"> Edit </button>
+							<button class="delete"> Delete </button>
+						</td> -->
+
+								</tr>
+						</div>
+						
+					</div>
+					
+					<?php } ?>
+                       
+
+
+
+                    </tbody>
       </table>
 						</div>
       </div><!-- component-section -->

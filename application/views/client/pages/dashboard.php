@@ -171,52 +171,52 @@
   
 <div class="content-body" style="margin-left:1.5rem;margin-right:1.5rem;margin-top:-4.7rem;">
 
-<div class="row mb-3" style="margin-left:67rem; ">
-			<a href="<?php echo base_url();?>index.php/ClientProject/cerateProject"><button type="submit" name="btnsubmit" class="btn btn-danger btn-new" style="border-radius:10px;"><span style="font-size:15px !important;">+ Add Project</span></button></a>
+		<div class="row newbtnM" style="">
+			<a href="<?php echo base_url();?>index.php/ClientProject/cerateProject"><button type="submit" name="btnsubmit" class="btn btn-all  " style="border-radius:10px;">+ New Project</button></a>
   		</div>
 	
         <div class="card card-hover card-task-one dashCardHover" style="border-radius: 10px;">
           <div class="card-body">
             <div class="row">
-              <div class="col-sm-6 col-md-3">
+              <div class="col-sm-6 col-md-3 col-6">
                 <h6 class="card-title">Projects</h6>
                 <div class="d-flex align-items-center justify-content-between mg-b-10">
-                  <h1 class="card-value"><?php echo $noProjects?><span class="tx-success"></span></h1>
+                  <h1 class="card-value tSvale4" style=""><?php echo $noProjects?><span class="tx-success"></span></h1>
                   <div class="chart-wrapper">
                     <!-- <div id="flotChart1" class="flot-chart"></div> -->
                   </div>
                 </div>
-                <p class="card-desc">skills that require mastery of many details in an ever-changing environment. </p>
+                <!-- <p class="card-desc">skills that require mastery of many details in an ever-changing environment. </p> -->
               </div><!-- col -->
-              <div class="col-sm-6 col-md-3 mg-t-20 mg-sm-t-0">
+              <div class="col-sm-6 col-md-3 mg-t-20 mg-sm-t-0 col-6 tot">
                 <h6 class="card-title">Total Spend</h6>
                 <div class="d-flex align-items-center justify-content-between mg-b-10">
-                  <h1 class="card-value">0<span class="tx-success"></span></h1>
+                  <h1 class="card-value tSvale1" style="">0<span class="tx-success"></span></h1>
                   <div class="chart-wrapper">
                     <!-- <div id="flotChart2" class="flot-chart"></div> -->
                   </div>
                 </div>
-                <p class="card-desc">are represented as fairly standardized skills in a relatively constant environment.</p>
+                <!-- <p class="card-desc">are represented as fairly standardized skills in a relatively constant environment.</p> -->
               </div><!-- col -->
-              <div class="col-sm-6 col-md-3 mg-t-20 mg-md-t-0">
+              <div class="col-sm-6 col-md-3 mg-t-20 mg-md-t-0 col-6">
                 <h6 class="card-title">Invoices</h6>
                 <div class="d-flex align-items-center justify-content-between mg-b-10">
-                  <h1 class="card-value">0<span class="tx-color-03"></span></h1>
+                  <h1 class="card-value tSvale2" style="">0<span class="tx-color-03"></span></h1>
                   <div class="chart-wrapper">
                     <!-- <div id="flotChart3" class="flot-chart"></div> -->
                   </div>
                 </div>
-                <p class="card-desc">represents the total amount of time users interact with a specific dimension item.</p>
+                <!-- <p class="card-desc">represents the total amount of time users interact with a specific dimension item.</p> -->
               </div><!-- col -->
-              <div class="col-sm-6 col-md-3 mg-t-20 mg-md-t-0">
+              <div class="col-sm-6 col-md-3 mg-t-20 mg-md-t-0 col-6">
                 <h6 class="card-title">Proposals</h6>
                 <div class="d-flex align-items-center justify-content-between mg-b-10">
-                  <h1 class="card-value"><?php echo $noProposals?></h1>
+                  <h1 class="card-value tSvale3"style=""><?php echo $noProposals?></h1>
                   <div class="chart-wrapper">
                     <!-- <div id="flotChart4" class="flot-chart"></div> -->
                   </div>
                 </div>
-                <p class="card-desc">the total amount of time users interact with a specific dimension item.</p>
+                <!-- <p class="card-desc">the total amount of time users interact with a specific dimension item.</p> -->
               </div><!-- col -->
             </div><!-- row -->
           </div><!-- card-body -->
@@ -236,7 +236,7 @@
               <div id="scroll1" class="pos-relative mb-2" style="height: 310px;">
 
 
-              <ul  class="list-group list-group-flush mb-3"   >
+              <ul  class="list-group list-group-flush"  style="height: 317px;" >
 
 
 							
@@ -335,43 +335,7 @@
 									</div> -->
 								</div><!-- card-footer -->
             	</div>
-									<!-- <div class="list-group-header">	
-											<a href="" class="link-03 mg-l-auto"><i data-feather="more-horizontal" class="svg-16"></i></a>
-									</div>
-									<div class="d-flex align-items-center justify-content-between">
-												<div class="avatar-group">
-													<h5 class="tx-16 mg-b-3"><a href="" class="link-01"><?php echo $item->name?></a></h5>
-													<div class="media">
-
-                                    <div class="project-logo bg-green tx-white"><i data-feather="music"></i></div>
-
-                                    <div class="media-body mg-l-10 mg-sm-l-15">
-
-                                        <p class="tx-13 tx-color-04 mg-b-5">Spotify, Inc.</p>
-
-                                        <h5 class="tx-color-01 mg-b-0"><a href="" class="link-01"><?php echo $item->name?></a</h5>
-
-                                    </div>
-
-                                  
-
-                                </div>
-												</div>
-											<div class="bg-white progress blue"  data-value=<?php echo $item->project_progress?>  style="margin-right:-1px ;">
-											
-											
-											<span class="progress-left">
-													<span class="progress-bar "></span>
-											</span>
-											<span class="progress-right">
-														<span class="progress-bar"></span>
-											</span>
-
-											<div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center"  >
-												<div class="h4 font-weight-bold " ><?php echo $item->project_progress?><sup class="small" style="font-size:14px;">%</sup></div>
-											</div>
-										</div>
-									</div> -->
+									
                 </li>
 							<?php } } ?>
                
@@ -384,7 +348,7 @@
           
 
           <!-- Recent Projects -->
-          <div class="col-xl-7 mg-t-15 mg-sm-t-20 mg-xl-t-0">
+          <div class="col-xl-7 mg-t-15 mg-sm-t-20 mg-xl-t-0 recentM">
             <div class="card card-hover card-projects  dashCardHover" style="border-radius:10px;padding-left:0.3rem">
               <div class="card-header bg-transparent pd-y-15 pd-l-15 pd-r-10">
                 <h6 class="card-title mg-b-0">Project Summary</h6>
@@ -577,7 +541,7 @@
                     </div>
           </div><!-- col -->
 
-		  <div class="row row-sm" style="margin-right-15px;width:95rem;margin-top:-34px;margin-bottom:1rem;">
+		  <div class="row row-sm projectT"  style="">
 			<div class="col-xl-12 mg-t-15 mg-sm-t-20 mg-xl-t-0">
 
 			<div class="card card-hover card-projects card-task-one dashCardHover mb-2" style="border-radius: 10px; ">
@@ -604,11 +568,11 @@
 													<!-- <th class="wd-15p">logo</th> -->
 													<!-- <th class="wd-9p">Company</th> -->
 													<th class="wd-20p">Project</th>
-													<th class="wd-15p">Update Date</th>
+													<th class="wd-15p due">Update Date</th>
 													<th class="wd-15p">Status</th>
-													<th class="wd-12p">Progress</th>
-													<th class="wd-12p">invoice</th>
-													<th class="wd-15p">Due date</th>
+													<th class="wd-12p due">Progress</th>
+													<th class="wd-12p due">invoice</th>
+													<th class="wd-15p ">Due date</th>
 												</tr>
 											</thead>
 											<tbody>
@@ -652,20 +616,20 @@
 											<!-- <td><img src="<?php echo base_url();?>/assets/img/favicon.png" alt="..." class="img-thumbnail" width="50"></td> -->
 											<!-- <td><?php echo $item->company_name?></td> -->
 											<td><?php echo $item->name?></td>
-											<td><?php echo $item->update_date?></td>
+											<td class="due"><?php echo $item->update_date?></td>
 											
 							
 
-									<td><span class="badge badge-pill badge-info"><?php echo $status?></span></td>
+									<td ><span class="badge badge-pill badge-info"><?php echo $status?></span></td>
 										
 			
-									<td><div class="progress mt-2" style="height:0.65rem;border-radius:10px">
+									<td class="due"><div class="progress mt-2" style="height:0.45rem;border-radius:10px">
 											<div class="progress-bar bg-<?php if($item->project_progress >= 50){echo "green";}else{echo "danger";} ?> wd-<?php echo $item->project_progress?>p" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
 										</div>		</td>
 
 												<!-- <td><?php echo $item->project_progress?> %</td> -->
-												<td></td>
-												<td><?php echo $due_date?></td>
+												<td class="due"></td>
+												<td ><?php echo $due_date?></td>
 											</tr>
 					
 									<?php } ?>   

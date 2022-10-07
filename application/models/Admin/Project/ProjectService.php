@@ -127,9 +127,10 @@ function getService_id(){
 	}
 
 	function allProjects2(){
-		$this->db->select('*,user-login.company_name');
+		$this->db->select('*,project.project_id as id, project.update_date as update, user-login.company_name,invoice.invoice_no');
 		$this->db->from('project');
 		$this->db->join('user-login','user-login.client_id = project.client_id');
+		$this->db->join('invoice','invoice.project_id = project.project_id','left',false);
 		$this->db->order_by("project.project_created_date", "desc");
 		$query = $this->db->get();
 		return $query->result();
@@ -171,6 +172,7 @@ function getService_id(){
 		return $query->result();
 	}
 	
+	
 
 	function service($id){
 		$this->db->select('*');
@@ -188,10 +190,29 @@ function getService_id(){
 		return $query->result();
 	}
 
+	function ProposalImages($id){
+
+		$this->db->select('images');
+		$this->db->from('proposal');
+		$this->db->where('proposal.proposal_id='.$id);
+		$query = $this->db->get();
+		return $query->result();
+	}
+
 	function getProject($project_id){
 		$this->db->select('*');
 		$this->db->from('project');
 		$this->db->where('project_id='.$project_id);
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	function getProjectd($project_id){
+		$this->db->select('*,user-login.company_name,user-login.email,user-login.contact,proposal.milestone_total_price');
+		$this->db->from('project');
+		$this->db->join('user-login','user-login.client_id = project.client_id');
+		$this->db->join('proposal','proposal.project_id = project.project_id','left',false);
+		$this->db->where('project.project_id='.$project_id);
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -309,6 +330,7 @@ function getService_id(){
 		$this->db->from('proposal');
 		$this->db->join('user-login','user-login.client_id = proposal.client_id');
 		$this->db->join('project','project.project_id = proposal.project_id');
+		$this->db->order_by("proposal.proposal_created_date", "desc");
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -391,6 +413,15 @@ function getService_id(){
 	   	return $this->db->update('project',$data);
 	}
 
+	function viewProposal($id){
+
+		$this->db->select('*,project.name');
+		$this->db->from('proposal');
+		$this->db->where('proposal_id='.$id);
+		$this->db->join('project','project.project_id = proposal.project_id');
+		$query = $this->db->get();
+		return $query->result();
+	}
 	
 }
 ?>

@@ -50,9 +50,11 @@ Class AdminProject extends CI_Controller{
 
 		// print_r($item[0]->images);die;
 		$images = $projectservice->ProjectImages($project_id);
-	
-		if(!empty($images)){
+		// $images1 = $images[0]->images;
+		// print_r($images1);die;
 
+		if(!empty($images)){
+			// echo 5;die;
 			foreach($images as $key => $value){
 				// print_r($value) ; 
 				// echo '<br/>';
@@ -67,7 +69,7 @@ Class AdminProject extends CI_Controller{
 			}
 
 		}
-		
+		// die;
 		// print_r($ids_image);die;
 		
 		if(($item[0]->project_status) == 1){
@@ -276,8 +278,7 @@ Class AdminProject extends CI_Controller{
 		// $count = count($name);
 		$id = $this->input->post('project_id');
 		
-
-
+		// print_r($name);die;
 		for($i=0;$i<$count;$i++){
 			
 			
@@ -291,8 +292,9 @@ Class AdminProject extends CI_Controller{
 
 			// echo $col1;
 			
-			if(!empty($col1) && !empty($col2)  && !empty($col3)  && !empty($col4)  && !empty($col5)  && !empty($col6)  && !empty($col7)){
+			if(!empty($col1) || !empty($col2)  || !empty($col3)  || !empty($col4)  || !empty($col5)  || !empty($col6)  || !empty($col7)){
 
+				// echo 'hi';
 				$milestonemodel->setProject_id($this->input->post('project_id'));
 				$milestonemodel->setMilestone_name($col1);
 				$milestonemodel->setMilestone_weight($col2);
@@ -312,7 +314,7 @@ Class AdminProject extends CI_Controller{
 			// 	echo "s";
 			// }
 	
-			
+			// die;
 		
 			// echo $col1 . '<br/>';
 			// echo $col2 . '<br/>';
@@ -390,6 +392,42 @@ Class AdminProject extends CI_Controller{
 		$data["items"] = $projectservice->allProposals();
 	
 		$partial = array('content' => 'admin/pages/proposal/proposals');
+		$this->template->load('admin/mainpage',$partial,$data);
+	}
+
+	public function viewProposal1($id){
+
+		$data["title"] = "Admin Proposals";
+		$data["active"] = 2;
+
+		$projectservice = new ProjectService();
+		$data["items"] = $projectservice->viewProposal($id);
+
+		$items = $projectservice->viewProposal($id);
+		$data["milestones"] = $projectservice->getMilestone($items[0]->project_id);
+
+		$images = $projectservice->ProposalImages($id);
+	
+		if(!empty($images)){
+
+			foreach($images as $key => $value){
+				// print_r($value) ; 
+				// echo '<br/>';
+				foreach($value as $key => $value1){
+					// print_r($value1); 
+					
+					$ids_image = explode(',',$value1);
+					// print_r($ids_image);die;
+					
+				}
+				
+			}
+
+		}
+
+		$data["images"] = $ids_image;
+	
+		$partial = array('content' => 'admin/pages/proposal/viewProposal');
 		$this->template->load('admin/mainpage',$partial,$data);
 	}
 
@@ -536,6 +574,21 @@ Class AdminProject extends CI_Controller{
 		redirect('/AdminProject/');
 
 	}
+
+	public function addInvoice($project_id){
+
+		$projectservice = new ProjectService();
+		$projectmodel = new ProjectModel();
+		$data["active"] = 2;
+
+		$data["projects"] = $projectservice->getProjectd($project_id);
+
+		$partial = array('content' => 'admin/pages/invoice/createInvoice');
+		$this->template->load('admin/mainpage',$partial,$data);
+
+	}
+
+	
 }
 
 

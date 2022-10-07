@@ -19,8 +19,8 @@ Class AdminPackage extends CI_Controller{
 		$data ["active"] = 6;
 
 		$packageservice = new PackageService();
-		$data['packages'] = $packageservice->allPackages();
-		$data["items"] = $packageservice->allTeams();
+		// $data['packages'] = $packageservice->allPackages();
+		$data["teams"] = $packageservice->allTeams();
 		$data["packages"] = $packageservice->getPackages();
 		$data["items1"] = $packageservice->getFirstrow();
 		
@@ -40,7 +40,7 @@ Class AdminPackage extends CI_Controller{
 
 		$packageservice = new PackageService();
 	
-		$data["items"] = $packageservice->getPackages();
+		$data["items"] = $packageservice->getPackages1();
 
 		$partial = array('content' => 'admin/pages/package/allPackages');
 		$this->template->load('admin/mainpage',$partial,$data);

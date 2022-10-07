@@ -14,9 +14,9 @@
       <div class="pd-x-20 pd-b-15" >
       
         <div class="row">
-					<div class="px-3"style="margin-left:69rem;margin-top:0rem;" >
+					<div class="px-3 newbtnProject"style="margin-left:69.5rem;margin-top:0rem;" >
           <!-- btn-all -->
-            <a href="<?php echo base_url();?>index.php/ClientProject/cerateProject"><button type="button" class="btn btn-danger text-white  py-2 "style="border-radius: 8px;">New project</button></a>
+            <a href="<?php echo base_url();?>index.php/ClientProject/cerateProject"><button type="button" class="btn btn-all btn-dark text-white  py-2 btn-new"style="border-radius: 8px;">New project</button></a>
           </div>
             <!-- <div class="">
               <button type="button" class="btn btn-primary text-right  py-2"style="border-radius: 8px;">Add to project</button>
@@ -41,24 +41,33 @@
 								</div>
        <!-- <h3 class="text-dark  mb-4">Proposal</h3> -->
        <div class="card-body">
-        <table id="example1" class="table1 table table-hover" style="border-radius:10px ;font-size:13px;">
+        <table id="example1" class="table1 table" style="border-radius:10px ;font-size:13px;">
           <thead>
             <tr>
 			<!-- <th class="wd-9p"><div class="custom-control custom-checkbox" style="border-radius: 8px;">
                 <input type="checkbox" class="custom-control-input" id="customCheck1" >
                 <label class="custom-control-label" for="customCheck1"></label>
               </div></th> -->
-              <th class="wd-20p">Project</th>
-              <th class="wd-12p">Update Date</th>
-              <th class="wd-12p">Status</th>
-              <th class="wd-12p">Created By</th>
-              <th class="wd-12p">Created date</th>
-              <th class="wd-12p">Approved By</th>
-              <th class="wd-12p">Approved date</th>
+              <th></td>
+            <th><span style="margin-left:-1.5rem;">Project</span></th>
+            <th>Proposal Created Date</th>
+            <th class="wd-13p">Status</th>
+            <!-- <th class="wd-14p">Invoice</th> -->
+            <th class="wd-15p">Progress</th>
+            <th  class="wd-13p">Due date</th>
             </tr>
           </thead>
           <tbody>
-		  <?php foreach($proposals as $proposal){ ?>
+		  <?php foreach($proposals as $proposal){ 
+        
+        if(($proposal->end_date)== 'Specific Date'){
+          $due_date = $proposal->date;
+        }
+        else{
+          $due_date = $proposal->end_date;
+        }
+        
+        ?>
 
 				<tr data-url="<?php echo base_url()?>index.php/ClientProject/viewProposal/<?php echo $proposal->proposal_id ?>" style="cursor:pointer;">
 				
@@ -66,8 +75,8 @@
 					<input type="checkbox" class="custom-control-input" id="customCheck1">
 					<label class="custom-control-label" for="customCheck1"></label>
 				</div></td> -->
-				
-				<td><?php echo $proposal->name?></td>
+				<td></td>
+				<td><span style="margin-left:-1.5rem;"><?php echo $proposal->name?></span></td>
 				<td><?php echo $proposal->proposal_created_date?></td>
 				<?php 
 				
@@ -83,11 +92,12 @@
 							<td><span class="badge badge-pill badge-info" style="background-color:#36b8b;"><?php echo $status;?></span></td>
 								
 					
-					<td>Admin</td>
 					
-					<td><?php echo $proposal->proposal_created_date?></td>
-					<td></td>
-					<td></td>
+					<!-- <td class="due"><?php echo $proposal->proposal_created_date?></td> -->
+					<td><div class="progress mt-2" style="height:0.45rem;border-radius:10px">
+											<div class="progress-bar bg-<?php if($proposal->project_progress >= 50){echo "green";}else{echo "danger";} ?> wd-<?php echo $proposal->project_progress?>p" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+										</div>		</td>
+					<td class="due"><?php echo $due_date?></td>
 					
 					<!-- <td>24 May 2022</td> -->
 					

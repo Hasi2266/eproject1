@@ -55,7 +55,7 @@
 		
 		<script>
 			$(function () {
-    $('table.table1 tr').click(function () {
+    $('table.table1 tbody tr').click(function () {
         window.location.href = $(this).data('url');
     });
 })
@@ -105,125 +105,7 @@
 
         'use strict'
 
-        $.plot('#flotChart1', [{
-          data: df1,
-          color: '#38c4fa'
-        }], {
-          series: {
-            shadowSize: 0,
-            lines: {
-              show: true,
-              lineWidth: 1.5,
-              fill: true,
-              fillColor: { colors: [ { opacity: 0 }, { opacity: 0.5 } ] }
-            },
-            points: {
-              show: false,
-              radius: 2,
-              lineWidth: 1.5
-            }
-          },
-          grid: {
-            borderWidth: 0,
-            labelMargin: 0,
-          },
-          yaxis: { show: false },
-          xaxis: {
-            show: false,
-            min: 40,
-            max: 80
-          }
-        });
-
-        $.plot('#flotChart2', [{
-          data: df1,
-          color: '#22d273'
-        }], {
-          series: {
-            shadowSize: 0,
-            lines: {
-              show: true,
-              lineWidth: 1.5,
-              fill: true,
-              fillColor: { colors: [ { opacity: 0 }, { opacity: 0.5 } ] }
-            },
-            points: {
-              show: false,
-              radius: 2,
-              lineWidth: 1.5
-            }
-          },
-          grid: {
-            borderWidth: 0,
-            labelMargin: 0,
-          },
-          yaxis: { show: false },
-          xaxis: {
-            show: false,
-            min: 20,
-            max: 60
-          }
-        });
-
-        $.plot('#flotChart3', [{
-          data: df1,
-          color: '#e83e8c'
-        }], {
-          series: {
-            shadowSize: 0,
-            lines: {
-              show: true,
-              lineWidth: 1.5,
-              fill: true,
-              fillColor: { colors: [ { opacity: 0 }, { opacity: 0.5 } ] }
-            },
-            points: {
-              show: false,
-              radius: 2,
-              lineWidth: 1.5
-            }
-          },
-          grid: {
-            borderWidth: 0,
-            labelMargin: 0,
-          },
-          yaxis: { show: false },
-          xaxis: {
-            show: false,
-            min: 60,
-            max: 100
-          }
-        });
-
-        $.plot('#flotChart4', [{
-          data: df1,
-          color: '#fd7e14'
-        }], {
-          series: {
-            shadowSize: 0,
-            lines: {
-              show: true,
-              lineWidth: 1.5,
-              fill: true,
-              fillColor: { colors: [ { opacity: 0 }, { opacity: 0.5 } ] }
-            },
-            points: {
-              show: false,
-              radius: 2,
-              lineWidth: 1.5
-            }
-          },
-          grid: {
-            borderWidth: 0,
-            labelMargin: 0,
-          },
-          yaxis: { show: false },
-          xaxis: {
-            show: false,
-            min: 100,
-            max: 140
-          }
-        });
+       
 
         // card-calendar-one widget
         $('#datepicker1').datepicker({
@@ -240,6 +122,14 @@
           suppressScrollX: true
         });
         const scroll2 = new PerfectScrollbar('#scroll2', {
+          suppressScrollX: true
+        });
+
+		const scroll3 = new PerfectScrollbar('#scroll3', {
+      
+          suppressScrollX: true
+        });
+        const scroll10 = new PerfectScrollbar('#scroll10', {
           suppressScrollX: true
         });
 
@@ -288,17 +178,17 @@ $(document).ready(function(){
 			});
 
 			$(document).ready(function(){
-    $('.calc').change(function(){
-        var total = 0;
-        $('.calc').each(function(){
-            if($(this).val() != '')
-            {
-                total += parseInt($(this).val());
-            }
-        });
-				document.getElementById("total").value = total;
-        // $('#total').html(total);
-    });
+        $('.calc').change(function(){
+            var total = 0;
+            $('.calc').each(function(){
+                if($(this).val() != '')
+                {
+                    total += parseInt($(this).val());
+                }
+            });
+            document.getElementById("total").value = total;
+          // $('#total').html(total);
+      });
 });
 
 				$('tbody').append(html);
@@ -654,3 +544,111 @@ $('#row'+button_id+'').remove();
             $(this).parents('table').append('<tr><td class="data"></td><td class="data"></td><td class="data"></td><td><button class="save">Save</button><button class="edit">Edit</button> <button class="delete">Delete</button></td></tr>');
         });
     </script>
+
+<script>
+$(document).ready(function(){
+    $('.calc1').change(function(){
+        var total = 0;
+        $('.calc1').each(function(){
+            if($(this).val() != '')
+            {
+                total += parseInt($(this).val());
+            }
+        });
+				document.getElementById("total1").value = total;
+        // $('#total').html(total);
+    });
+});
+
+</script>
+
+<script>
+
+$(document).ready(function(){
+
+	// alert('hi');
+	var i=1;
+	
+	$('#invoice_add').click(function(){
+		
+	i++;
+	$('#dynamic_field3').append('<tr style="padding-left:1rem;" id="row'+i+'"><td >'+
+	'<input type="text" name="invoice_des[]" required class="form-control mr-2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Desciption" style="border-radius:10px;">'+
+	'</td><td><input type="text" name="date_value[]" class="form-control" placeholder="Choose date1" id="datepicker7_'+i+'"  style="border-radius:10px;">'+
+  '</td><td><input type="text" name="weight[]" class="form-control"  aria-describedby="emailHelp" placeholder="Weight" style="border-radius:10px">'+
+  '</td><td><input type="text" name="amount[]" required class="form-control calc1" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Amount" style="border:1px solid #d9dfe7 ;border-radius:10px">'+
+  '</td><td><label class="switch"> <input type="checkbox" name = "chk" id="ch1" > <span class="slider round"></span></label>'+
+	
+	
+	'</td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove1">X</button></td></tr>');
+
+	$(document).ready(function() {
+
+                
+		$('#datepicker7_'+i).datepicker({
+          showOtherMonths: true
+        });
+		$('#datepicker6_'+i).datepicker({
+          showOtherMonths: true
+        });
+			});
+
+
+  });	
+  
+
+	$(document).ready(function() {
+
+    // document.getElementById("total1").value = total;
+
+    // var chks=document.getElementsByName('chk'); 
+
+    for (var i = 0; i < chks.length; i++) {
+							if (chks[i].checked) {
+                $('.calc1').change(function(){
+
+                              
+                        var total = 0;
+
+                        $('.calc1').each(function(){
+                            if($(this).val() != '')
+                            {
+                                total += parseInt($(this).val());
+                            }
+                        });
+                        document.getElementById("total1").value = total;
+                        var new_total = document.getElementById("sub_total").value;
+                        var balance = new_total - total;
+                        document.getElementById("balance1").value = balance;
+                        // $('#total').html(total);
+                        });
+							}
+              else{
+                var new_total = document.getElementById("sub_total").value;
+                document.getElementById("balance1").value = new_total;
+              }
+						}
+    
+      // for(var i=0; i<ele.length; i++){  
+      //               if(ele[i].type=='checkbox')  
+      //                   ele[i].checked=true;  
+      //           }  
+
+
+  
+
+  
+			
+     
+    
+		});	
+    
+//     $(document).ready(function(){
+
+   
+// });
+		
+	$('tbody').append(html);
+
+});
+</script>

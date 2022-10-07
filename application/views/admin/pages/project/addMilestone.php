@@ -12,6 +12,7 @@
       </div><!-- content-header -->
 			<div class="" style="margin-left:1.5rem;margin-right:1.5rem;">
 			<?php foreach ($projects as $project){?>
+				
 		<form action="<?php echo base_url();?>index.php/AdminProject/saveMilestone/<?php echo $project->project_id ?>" method="post" enctype="multipart/form-data">
 			
 			<div class="card card-hover card-projects card-task-one dashCardHover content-card-body mt-4" style="border-radius: 10px;margin-bottom:2rem !important;padding-bottom:3rem; " >
@@ -349,7 +350,7 @@
 						<!-- <form action="" method="post" enctype="multipart/form-data" class="form-horizontal"> -->
 						
 						<div class="card-header bg-transparent pd-l-15 pd-r-0" style="margin-bottom:-0.1rem;">
-									<h6 class="card-title mg-b-0" style="margin-top:1px;margin-bottom:-6px;">Milestones</h6>
+									<h6 class="card-title mg-b-0" style="margin-top:1px;margin-bottom:-6px;">Attachment</h6>
 									<!-- <nav class="nav">
 									<a href="" class="link-gray-500"><i data-feather="help-circle" class="svg-16"></i></a>
 									<a href="" class="link-gray-500"><i data-feather="more-vertical" class="svg-16"></i></a>
@@ -361,13 +362,28 @@
 								<div class="entry1 input-group upload-input-group">
 								
 								<?php
+
+
+											if(empty($images)){?>
+
+												<img src="<?php echo base_url();?>/assets/img/no2.jpg" class="mt-5" style="height:12rem;width:14rem;margin-left:15rem" >
+											
+											<?php } else {
+
+
 													$i= 1;
-													foreach($images as $key => $value){?>
+													foreach($images as $key => $value){
+														
+														if(empty($value)){?>
+															<img src="<?php echo base_url();?>/assets/img/no2.jpg" class="mt-5" style="height:12rem;width:14rem;margin-left:15rem" >
+														<?php } else {
+														?>
+													
 													
 													<div class="card-deck mx-1">
 														<div class="card" style="width:15rem;height:15rem;margin-right:20px">
 															<a href="<?php echo base_url();?>/uploads/<?php echo $value;?>" download="<?php echo $project->name.'_'.$i;?>">
-																		<img class="card-img-top " src="<?php echo base_url();?>/uploads/<?php echo $value;?>" alt="Card image cap" style="width:15rem;height:15rem;">
+																		<img class="card-img-top " src="<?php echo base_url();?>/uploads/<?php echo $value;?>"  style="width:15rem;height:15rem;">
 															</a>
 														
 														</div>
@@ -378,7 +394,7 @@
 													
 														
 												<?php 	$i++; ?>
-												<?php }?>
+												<?php } } } ?>
 
 													</div>
 
@@ -387,7 +403,7 @@
 		   </div>
       <!-- Submit -->
 					
-	  <div class="row" style="display:flex;align-items:center;justify-content:center" >
+	  <div class="row" style="display:flex;align-items:left;justify-content:left;margin-left:2rem" >
 
 	  
 					
@@ -397,33 +413,33 @@
 						
 	  <?php if ((($project->add_proposal)== 1) && (($project->approve_project)== 1) && (($project->start_project) == 0) && (($project->end_project) == 0) ) { ?>
 
-<a href="<?php echo base_url();?>index.php/AdminProject/startProject/<?php echo $project->project_id?>"><button type ="button" class="btn btn-submit">Start Project</button></a>
-<a href="<?php echo base_url();?>index.php/AdminProject/"></a><button type="submit" class="btn btn-submit mx-2">Cancel</button>
+<a href="<?php echo base_url();?>index.php/AdminProject/startProject/<?php echo $project->project_id?>"><button type ="button" class="btn btn-all btn-submit">Start Project</button></a>
+<a href="<?php echo base_url();?>index.php/AdminProject/"></a><button type="submit" class="btn btn-all btn-submit mx-2">Cancel</button>
 
 <?php } else if((((($project->start_project) == 1) && ($project->hold_project) == 0) && ($project->end_project) == 0)) {  ?>
 
-<a href="<?php echo base_url();?>index.php/AdminProject/endProject/<?php echo $project->project_id?>"><button type ="button" class="btn btn-submit">End Project</button></a>
-<a href="<?php echo base_url();?>index.php/AdminProject/holdProject/<?php echo $project->project_id?>"><button type ="button" class="btn btn-submit mx-2">Hold Project</button></a>
+<a href="<?php echo base_url();?>index.php/AdminProject/endProject/<?php echo $project->project_id?>"><button type ="button" class="btn btn-all btn-submit">End Project</button></a>
+<a href="<?php echo base_url();?>index.php/AdminProject/holdProject/<?php echo $project->project_id?>"><button type ="button" class="btn btn-all btn-submit mx-2">Hold Project</button></a>
 <a href="<?php echo base_url();?>index.php/AdminProject/"></a><button type="submit" class="btn btn-submit">Cancel</button>
 
 <?php } else if (((($project->start_project) == 1) && ($project->hold_project) == 1)) { ?>
 
-<a href="<?php echo base_url();?>index.php/AdminProject/startAgainProject/<?php echo $project->project_id?>"><button type ="button" class="btn btn-submit">Start Again Project</button></a>
-<a href="<?php echo base_url();?>index.php/AdminProject/endProject/<?php echo $project->project_id?>"><button type ="button" class="btn btn-submit mx-2">End Project</button></a>
+<a href="<?php echo base_url();?>index.php/AdminProject/startAgainProject/<?php echo $project->project_id?>"><button type ="button" class="btn btn-all btn-submit">Start Again Project</button></a>
+<a href="<?php echo base_url();?>index.php/AdminProject/endProject/<?php echo $project->project_id?>"><button type ="button" class="btn btn-all btn-submit mx-2">End Project</button></a>
 
 <?php } else if ((($project->add_proposal) == 1) && (($project->approve_project)== 0))  { ?>
 
 <p class="">Approval Pending</p>
 <!-- <button type="submit" class="btn btn-primary">Submit Proposal</button> -->
-<a href="<?php echo base_url();?>index.php/AdminProject/"></a><button type="submit" class="btn btn-submit">Cancel</button>
+<a href="<?php echo base_url();?>index.php/AdminProject/"></a><button type="submit" class="btn btn-all btn-submit">Cancel</button>
 
 <?php } else if ((($project->start_project)== 0) && (($project->end_project) == 1)){?>
 
-<a href="<?php echo base_url();?>index.php/AdminProject/"><button type ="button" class="btn btn-submit">Back</button></a>
+<a href="<?php echo base_url();?>index.php/AdminProject/"><button type ="button" class="btn btn-all btn-submit">Back</button></a>
 
 <?php } else { ?>
-<button type="submit" class="btn btn-submit mt-4">Create Proposal</button>
-<a href="<?php echo base_url();?>index.php/AdminProject/"></a><button type="submit" class="btn btn-submit mt-4 mx-2">Cancel</button>
+<button type="submit" class="btn btn-submit mt-4 btn-all btn-dark btn-new">Create Proposal</button>
+<a href="<?php echo base_url();?>index.php/AdminProject/"><button type="button" class="btn btn-submit mt-4 mx-2 btn-all  p-2 btn-dark btn-new" >Cancel</button></a>
 </div>
 	  <?php } ?>
 </div>

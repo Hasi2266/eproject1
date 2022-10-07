@@ -12,11 +12,11 @@
         </div>
         <!-- content-header -->
 
-        <div class="pd-x-65 pd-b-15">
+        <div class=" content-card-body pd-b-15">
 
             <div class="row">
-                <div class="px-3 " style="margin-left:63rem;">
-                    <a href="<?php echo base_url();?>index.php/AdminService/createService"><button type="button" class="btn btn-all text-white  py-2 "style="border-radius: 8px;">Add New Service</button></a>
+                <div class="px-3 " style="margin-left:66.5rem;">
+                    <a href="<?php echo base_url();?>index.php/AdminPackage/addPackage"><button type="button" class="btn btn-all text-white  py-2 "style="border-radius: 8px;">Add New Package</button></a>
                 </div>
                 <!-- <div class="">
                     <button type="button" class="btn btn-primary text-right text-uppercase  py-2" style="border-radius: 8px;">Add to project</button>
@@ -32,7 +32,7 @@
 			<div class="card card-hover card-projects  card-task-one dashCardHover content-card-body mt-4" style="border-radius: 10px;margin-bottom:2rem !important;padding-bottom:3rem; " >
         <!--btn-->
 				<div class="card-header bg-transparent pd-y-15 pd-l-15 pd-r-10" style="margin-bottom:-0.1rem;">
-									<h6 class="card-title mg-b-0 px-1" style="margin-top:1px;margin-bottom:-6px">Services</h6>
+									<h6 class="card-title mg-b-0 px-1" style="margin-top:1px;margin-bottom:-6px">Packages</h6>
 									<!-- <nav class="nav">
 									<a href="" class="link-gray-500"><i data-feather="help-circle" class="svg-16"></i></a>
 									<a href="" class="link-gray-500"><i data-feather="more-vertical" class="svg-16"></i></a>
@@ -41,7 +41,7 @@
 								</div>
        
 								<div class="card-body">
-                <table id="example1" class="table" style="border-radius:10px ;font-size:13px;">
+								<table id="example1" class="table" style="border-radius:10px ;font-size:13px">
                     <thead>
                         <tr>
                             <!-- <th class="wd-9p">
@@ -50,15 +50,15 @@
                                     <label class="custom-control-label" for="customCheck1"></label>
                                 </div>
                             </th> -->
+                           <th></th>
+                            <th class="wd-20p"><span style="margin-left:-2rem;">Package Name <span></th>
+                            <th >Team Name</th>
+                            <th class="wd-20p" >Fileds</th>
+							<th class="wd-8p" >Currency</th>
+                            <th >Price</th>
+                            <th >Created Date</th>
+                            <th >Actions</th>
                            
-							<th class="wd-20p">Package Name </th>
-                            <th class="wd-8p">Team Name</th>
-							<th class="wd-20p">Fileds</th>
-                            <!-- <th class="wd-12p">Description</th> -->
-                            <th class="wd-12p">Currency</th>
-                            <th class="wd-12p">Price</th>
-							<th class="wd-12p">Duration</th>
-							<th class="wd-12p">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -95,17 +95,30 @@
 
                                 </div>
                             </td> -->
-                            
-							<td><?php echo $item->package_name?></td>
+                            <td></td>
+							<td><span style="margin-left:-2rem;"><?php echo $item->package_name?></span></td>
                             <td><?php echo $item->name?></td>
 							<td><?php echo $item->flieds?></td>
                             <!-- <td><?php echo $item->description?></td> -->
                             <td><?php echo $currency?></td>
                             <td><?php echo $item->price?></td>
-							<td><?php echo $pduration?></td>
+							<td><?php echo $item->package_created_date?></td>
                            	<td>
-								<a href="<?php echo base_url();?>index.php/AdminPackage/editItem/<?php echo $item->package_id?>"><button type="submit" class="btn btn-submit py-1 px-2">Update</button></a>
-								<a href="<?php echo base_url();?>index.php/AdminPackage/deleteItem/<?php echo $item->package_id?>"><button type="submit" class="btn btn-submit py-1 px-2 mx-1" data-toggle="modal" data-animation="effect-just-me" >Delete</button></a>
+
+							   <div class="dropdown">
+                                
+								<button class="btn dropdown-toggle1" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-radius: 10px;margin-left:-1rem;">
+									<i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+								</button>
+								<div class="dropdown-menu drop-b tx-14" aria-labelledby="dropdownMenuButton">
+									
+								<a  class="dropdown-item" href="<?php echo base_url();?>index.php/AdminPackage/editItem/<?php echo $item->package_id?>"><i data-feather="edit" class="svg-16 mx-1 text-dark"></i><span>  Edit <span></a>
+								<a  class="dropdown-item" href="<?php echo base_url();?>index.php/AdminPackage/deleteItem/<?php echo $item->package_id?>" class=""><i data-feather="delete" class="svg-16 mx-1 text-dark"></i>Delete</a>
+		
+							</div>
+							</div>
+								<!-- <a href="<?php echo base_url();?>index.php/AdminPackage/editItem/<?php echo $item->package_id?>"><button type="submit" class="btn btn-submit btn-dark btn-new  px-2">Update</button></a>
+								<a href="<?php echo base_url();?>index.php/AdminPackage/deleteItem/<?php echo $item->package_id?>"><button type="submit" class="btn btn-submit btn-new mx-1" data-toggle="modal" data-animation="effect-just-me" style="background-color:#8758FF;color:white;">Delete</button></a> -->
 								<!-- <a href="#modal6" class="btn btn-dark btn-block" data-toggle="modal" data-animation="effect-just-me">Just Me</a> -->
 							</td>
                         </tr>

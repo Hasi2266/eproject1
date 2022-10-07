@@ -12,6 +12,15 @@ Class ProjectService extends CI_Model{
 		return $query->result();
 	}
 
+	// function allProjects2(){
+	// 	$this->db->select('*,user-login.company_name');
+	// 	$this->db->from('project');
+	// 	$this->db->join('user-login','user-login.client_id = project.client_id');
+	// 	$this->db->order_by("project.project_created_date", "desc");
+	// 	$query = $this->db->get();
+	// 	return $query->result();
+	// }
+
 	function allTeams(){
 		$this->db->select('*');
 		$this->db->from('teams');
@@ -163,10 +172,9 @@ function getService_id(){
 	function allProjects2($id){
 		$this->db->select('*,service.service_name');
 		$this->db->from('project');
-		$this->db->order_by("project.project_created_date", "desc");
 		$this->db->join('service','service.service_id = project.services','left',false);
+		$this->db->order_by("project_created_date", "desc");
 		$this->db->where('project.client_id='.$id);
-		// $this->db->where('service.service_id='.$service_id);
 
 		$query = $this->db->get();
 		return $query->result();
@@ -246,6 +254,7 @@ function getService_id(){
 		$this->db->select('*,name');
 		$this->db->from('proposal');
 		$this->db->join('project','project.project_id = proposal.project_id','left',false);
+		$this->db->order_by("proposal_created_date", "desc");
 		$this->db->where('proposal.client_id='.$id);
 		$query = $this->db->get();
 		return $query->result();

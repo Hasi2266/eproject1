@@ -51,6 +51,7 @@ Class ClientDashboard extends CI_Controller{
 		
 
 		$data["items"] = $dashboardservice->allProjects($this->session->userdata('CLIENT_ID'));
+		
 		// print_r($data["items"]);die;
 		// print_r($items);die;
 

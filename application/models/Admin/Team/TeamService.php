@@ -19,6 +19,7 @@ Class TeamService extends CI_Model{
 	function allTeams(){
 		$this->db->select('*');
 		$this->db->from('teams');
+		$this->db->order_by("category_created_date", "desc");
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -37,7 +38,7 @@ Class TeamService extends CI_Model{
 
 			'name' => $teammodel->getName(),
 			'parent_category' => $teammodel->getParent_category(),
-			'category_created_date' => $teammodel->getCreated_date()
+			// 'category_created_date' => $teammodel->getCreated_date()
 
 		);
 
