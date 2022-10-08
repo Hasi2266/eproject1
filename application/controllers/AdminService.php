@@ -45,7 +45,7 @@ Class AdminService extends CI_Controller{
 
 		$data["items"] = $servicesService->getServices();
 
-		$partial = array('content' => 'admin/pages/service/allservices');
+		$partial = array('content' => 'admin/pages/service/allServices');
 		$this->template->load('admin/mainpage',$partial,$data);
 	}
 
