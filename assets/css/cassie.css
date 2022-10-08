@@ -11303,7 +11303,10 @@ body {
   background-attachment: fixed; }
   @media (min-width: 1281px) {
     body {
-      font-size: 14px; } }
+      font-size: 14px; 
+    }
+  
+  }
 
 @media (max-width: 991.98px) {
   .toggle-sidebar {
@@ -43796,14 +43799,19 @@ a.bg-twitter:hover, a.bg-twitter:focus, button.bg-twitter:hover, button.bg-twitt
 
 		@media (max-width: 576px){
 
+     
 			.project-dash{
 				width: 150rem !important;
 			}
+      
+      /* .dash-new-btn{
+        margin-left: 100rem !important;
+      } */
 			.btn-med{
 				width: 10rem !important;
 			}
       .newbtnM{
-        margin-left:14rem !important;
+        margin-left:50rem !important;
         margin-bottom:2rem;
       }
       .newbtnMAdmin{
@@ -43867,6 +43875,7 @@ a.bg-twitter:hover, a.bg-twitter:focus, button.bg-twitter:hover, button.bg-twitt
       .cm{
         margin-left: 1.7rem !important;
       }
+
 		}
 
     .projectT{

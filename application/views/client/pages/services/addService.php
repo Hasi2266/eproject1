@@ -88,7 +88,7 @@
 											</div>
 											<div class="modal-footer">
 												<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-												<button type="submit" class="btn btn-dark"  name="btn_addnewproj" value="addNew">Add</button></a>
+												<button type="submit" class="btn btn-dark"  name="btn_addnewproj" value="addNew" style="border-radius: 8px;">Add</button></a>
 											</div>
 										
 										</div>
@@ -129,7 +129,7 @@
 													</div>
 													<div class="modal-footer">
 														<button type="button" class="btn btn-secondary" data-dismiss="modal" id="btnClearService">Close</button>
-														<input type="submit" class="btn btn-dark" name="btn_addtoproj" value="AddTo" id="btnAddService" disabled></button></a>
+														<input type="submit" class="btn btn-dark" name="btn_addtoproj" value="AddTo" id="btnAddService" disabled style="border-radius: 8px;"></button></a>
 													</div>
 												
 										</div>

@@ -161,7 +161,7 @@ function getService_id(){
 		$this->db->from('project');
 		$this->db->join('service','service.service_id = project.services','left',false);
 		$this->db->where('project.client_id='.$id);
-		$this->db->where('project.approve_project=0');
+		$this->db->where('project.start_project=0');
 		$this->db->order_by("project.project_created_date", "desc");
 		// $this->db->where('service.service_id='.$service_id);
 

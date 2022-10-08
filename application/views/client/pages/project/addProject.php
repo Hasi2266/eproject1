@@ -60,7 +60,7 @@
 							<div class="form-check">
 
 								<label class="form-check-label">
-									<input type="radio" style="margin-top:3px;" class="form-check-input" name="due_date_type" value="To be decided" onclick="check1()"  >To Be Decided
+									<input type="radio" style="margin-top:3px;" class="form-check-input" name="due_date_type" value="To be decided" onclick="check1()"  >TO BE DECIDED
 								</label>
 							</div>
 							<div class="form-check">
