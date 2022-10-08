@@ -111,7 +111,7 @@
 
 												<!-- <td><?php echo $item->project_progress?> %</td> -->
 												<td class="due"></td>
-												<td ><?php echo $due_date?></td>
+												<td style="text-transform: uppercase;" ><?php echo $due_date?></td>
 											</tr>
 					
 									<?php } ?>   

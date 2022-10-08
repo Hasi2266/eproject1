@@ -248,7 +248,17 @@
 							else{
 
 							
-							foreach($items as $item){?>
+							foreach($items as $item){
+								
+								
+								if(($item->end_date)== 'Specific Date'){
+									$due_date = $item->date;
+								}
+								else{
+									$due_date = $item->end_date;
+								}
+								?>
+							
 
 								<?php 
 
@@ -296,7 +306,7 @@
 								<div class="card-header bg-transparent">
 								<div style="margin-top:-0.4rem;">
 									<h6 class="mg-b-5"><?php echo $item->name?></h6>
-									<span>Last updated: Yesterday 10:15am</span>
+									<span>Last updated: <?php echo $item->update_date?></span>
                 				</div>		
 									<div>
 									<!-- <div class="media">
@@ -327,7 +337,7 @@
 								</div>
 								<div class="card-footer bg-transparent">
 									<div class="badge bg-blue tx-white" style="border-radius:6px;padding-bottom:-5px;"><?php echo $item->type?></div>
-									<div class="project-date-end mx-2" style="border-radius:6px ;padding-top:5px">End: Aug 15, 2019</div>
+									<div class="project-date-end mx-2" style="border-radius:6px ;padding-top:5px">End Date : <?php echo $due_date?></div>
 									<!-- <div class="avatar-group">
 										<div class="avatar avatar-xxs"><img src="https://via.placeholder.com/300/637382/fff" class="rounded-circle" alt=""></div>
 										<div class="avatar avatar-xxs"><img src="https://via.placeholder.com/300/637382/fff" class="rounded-circle" alt=""></div>
@@ -394,7 +404,15 @@
 								
 								<div class="tab-pane fade" id="profile5" role="tabpanel" aria-labelledby="profile-tab5">
 									
-								<?php foreach($items as $item){ ?>
+								<?php foreach($items as $item){ 
+									
+									if(($item->end_date)== 'Specific Date'){
+										$due_date = $item->date;
+									}
+									else{
+										$due_date = $item->end_date;
+									}
+									?>
 
 									<?php if(($item->start_project) == 1){?>
 
@@ -421,7 +439,7 @@
 												</div><!-- media -->
 												<div style="margin-top:-14px;">
 												<div class="badge bg-blue tx-white" style="border-radius:6px;padding:6px">Start Date: <?php echo $item->project_created_date?></div>
-												<small class="project-deadline  mx-2 py-1" style="border-radius:6px">End Date: <?php echo $item->project_created_date?></small>
+												<small class="project-deadline  mx-2 py-1" style="border-radius:6px">End Date: <?php echo $due_date?></small>
 												</div>
 												
 											</li>
@@ -433,7 +451,15 @@
 								</div>
 								<div class="tab-pane fade" id="contact5" role="tabpanel" aria-labelledby="contact-tab5">
 								
-								<?php foreach($items as $item){ ?>
+								<?php foreach($items as $item){ 
+									
+									if(($item->end_date)== 'Specific Date'){
+										$due_date = $item->date;
+									}
+									else{
+										$due_date = $item->end_date;
+									}
+									?>
 
 									<?php if(($item->end_project) == 1){?>
 
@@ -460,7 +486,7 @@
 												</div><!-- media -->
 												<div style="margin-top:-14px;">
 												<div class="badge bg-blue tx-white" style="border-radius:6px;padding:6px">Start Date: <?php echo $item->project_created_date?></div>
-												<small class="project-deadline  mx-2 py-1" style="border-radius:6px">End Date: <?php echo $item->project_created_date?></small>
+												<small class="project-deadline  mx-2 py-1" style="border-radius:6px">End Date: <?php echo $due_date?></small>
 												</div>
 												
 											</li>
@@ -477,9 +503,18 @@
 
 									<?php foreach($items as $item){
 
+
+if(($item->end_date)== 'Specific Date'){
+	$due_date = $item->date;
+}
+else{
+	$due_date = $item->end_date;
+}
+
 										if(($item->project_status) == 1){
 											$status = 'Submitted';
 										}
+
 										
 										$date = $item->project_created_date;
 										$diff = abs(strtotime($date_now) - strtotime($date));
@@ -520,7 +555,7 @@
 												</div><!-- media -->
 												<div style="margin-top:-14px;">
 												<div class="badge bg-blue tx-white" style="border-radius:6px;padding:6px">Start Date: <?php echo $item->project_created_date?></div>
-												<small class="project-deadline  mx-2 py-1" style="border-radius:6px">End Date: <?php echo $item->project_created_date?></small>
+												<small class="project-deadline  mx-2 py-1" style="border-radius:6px">End Date: <?php echo $due_date?></small>
 												</div>
 												
 											</li>
@@ -629,7 +664,7 @@
 
 												<!-- <td><?php echo $item->project_progress?> %</td> -->
 												<td class="due"></td>
-												<td ><?php echo $due_date?></td>
+												<td style="text-transform: uppercase;"><?php echo $due_date?></td>
 											</tr>
 					
 									<?php } ?>   

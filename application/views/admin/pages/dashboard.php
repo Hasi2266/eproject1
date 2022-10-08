@@ -549,7 +549,7 @@ if(($months <= 1 && $days <= 29)){ ?>
 
 												<!-- <td><?php echo $item->project_progress?> %</td> -->
 												<td></td>
-												<td><?php echo $due_date?></td>
+												<td style="text-transform: uppercase;"><?php echo $due_date?></td>
 											</tr>
 					
 									<?php } ?> 

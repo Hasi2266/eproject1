@@ -115,7 +115,7 @@ input:checked + .slider:before {
                 <div class="row">
                     
                     <div class="col-md-6">
-                            <div class="card invoice-card shadow" style="height:7.5rem">
+                            <div class="card invoice-card " style="height:7.5rem">
                                
                                 <div class="card-body mx-1">
                                     <h5 class="invoice-card-title">Status - <?php echo $status?></h5>
@@ -130,7 +130,7 @@ input:checked + .slider:before {
                         </div>
                     </div>
                     <div class="col-md-6">
-                            <div class="card invoice-card shadow" style="height:7.5rem">
+                            <div class="card invoice-card " style="height:7.5rem">
                                
                                 <div class="card-body mx-1">
                                     <h5 class="invoice-card-title">Invoice</h5>
@@ -151,7 +151,7 @@ input:checked + .slider:before {
                 <div class="row " style="margin-top:38px;">
                     
                 <div class="col-md-6">
-                            <div class="card invoice-card shadow" style="height:15rem;">
+                            <div class="card invoice-card " style="height:15rem;">
                                
                                 <div class="card-body mx-1">
                                     <h5 class="invoice-card-title" style="margin-bottom:2px;">Delnix</h5>
@@ -172,7 +172,7 @@ input:checked + .slider:before {
                         </div>
                 </div>
                     <div class="col-md-6">
-                            <div class="card invoice-card shadow" style="height:15rem;"> 
+                            <div class="card invoice-card " style="height:15rem;"> 
                                
                                 <div class="card-body mx-1">
                                     <h6 class=" invoice-card-title" style="margin-bottom:2px;">Invoice To</h6>
@@ -198,7 +198,7 @@ input:checked + .slider:before {
                 </div>
                 </div>
                 <div class="col-md-6">
-                <div class="card invoice-card shadow  ml-3" style="width: 35rem;height:25rem">
+                <div class="card invoice-card   ml-3" style="width: 35rem;height:25rem">
                                
                                <div class="card-body mx-1">
                                    <h5 class=" invoice-card-title" style="margin-bottom:-2px;">Payment Details</h5>

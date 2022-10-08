@@ -171,7 +171,7 @@
 																<?php if($no == 2){ foreach($team_name as $key => $value){   ?>
 																	
 																	<select class="custom-select m-input mb-2"
-																		style="border-radius:10px ;width:26rem;background-color:yellow;"
+																		style="border-radius:10px ;width:26rem;background-color:#8758FF;color:white"
 																		name="services">
 																		<!-- <option selected>-- Choose Team --</option> -->
 																		
@@ -203,7 +203,7 @@
 																	
 																<?php if($no == 2){ foreach($service_name as $key => $value){ ?>
 																	<select class=" custom-select m-input  mx-4 mb-2"
-																		style="border-radius:10px;width:26rem;background-color:yellow;" 
+																		style="border-radius:10px;width:26rem;background-color:#8758FF;color:white" 
 																		name="service_id[]">
 
 																		
@@ -279,7 +279,7 @@
 																<?php if($no == 1){ foreach($team_name as $key => $value){   ?>
 																	
 																	<select class="custom-select m-input"
-																		style="border-radius:10px ;width:26rem;background-color:yellow;"
+																		style="border-radius:10px ;width:26rem;background-color:#8758FF;color:white"
 																		name="services">
 																		<!-- <option selected>-- Choose Team --</option> -->
 																		
@@ -313,7 +313,7 @@
 																<td>
 																<?php if($no == 1){ foreach($package_name as $key => $value){ ?>
 																	<select class=" custom-select m-input mx-4"
-																		style="border-radius:10px;width:26rem;background-color:yellow;" 
+																		style="border-radius:10px;width:26rem;background-color:#8758FF;color:white" 
 																		name="package_id[]">
 
 																		

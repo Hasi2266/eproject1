@@ -97,7 +97,7 @@
 					<td><div class="progress mt-2" style="height:0.45rem;border-radius:10px">
 											<div class="progress-bar bg-<?php if($proposal->project_progress >= 50){echo "green";}else{echo "danger";} ?> wd-<?php echo $proposal->project_progress?>p" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
 										</div>		</td>
-					<td class="due"><?php echo $due_date?></td>
+					<td class="due" style="text-transform: uppercase;"><?php echo $due_date?></td>
 					
 					<!-- <td>24 May 2022</td> -->
 					
