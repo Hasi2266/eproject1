@@ -413,33 +413,33 @@
 						
 	  <?php if ((($project->add_proposal)== 1) && (($project->approve_project)== 1) && (($project->start_project) == 0) && (($project->end_project) == 0) ) { ?>
 
-<a href="<?php echo base_url();?>index.php/AdminProject/startProject/<?php echo $project->project_id?>"><button type ="button" class="btn btn-all btn-submit">Start Project</button></a>
-<a href="<?php echo base_url();?>index.php/AdminProject/"></a><button type="submit" class="btn btn-all btn-submit mx-2">Cancel</button>
+<a href="<?php echo base_url();?>index.php/AdminProject/startProject/<?php echo $project->project_id?>"><button type ="button" class="btn btn-all text-white btn-submit">Start Project</button></a>
+<a href="<?php echo base_url();?>index.php/AdminProject/"></a><button type="submit" class="btn btn-all btn-submit text-white mx-2">Cancel</button>
 
 <?php } else if((((($project->start_project) == 1) && ($project->hold_project) == 0) && ($project->end_project) == 0)) {  ?>
 
-<a href="<?php echo base_url();?>index.php/AdminProject/endProject/<?php echo $project->project_id?>"><button type ="button" class="btn btn-all btn-submit">End Project</button></a>
-<a href="<?php echo base_url();?>index.php/AdminProject/holdProject/<?php echo $project->project_id?>"><button type ="button" class="btn btn-all btn-submit mx-2">Hold Project</button></a>
+<a href="<?php echo base_url();?>index.php/AdminProject/endProject/<?php echo $project->project_id?>"><button type ="button" class="btn btn-all text-white btn-submit">End Project</button></a>
+<a href="<?php echo base_url();?>index.php/AdminProject/holdProject/<?php echo $project->project_id?>"><button type ="button" class="btn btn-all text-white btn-submit mx-2">Hold Project</button></a>
 <a href="<?php echo base_url();?>index.php/AdminProject/"></a><button type="submit" class="btn  btn-all btn-submit">Cancel</button>
 
 <?php } else if (((($project->start_project) == 1) && ($project->hold_project) == 1)) { ?>
 
-<a href="<?php echo base_url();?>index.php/AdminProject/startAgainProject/<?php echo $project->project_id?>"><button type ="button" class="btn btn-all btn-submit">Start Again Project</button></a>
-<a href="<?php echo base_url();?>index.php/AdminProject/endProject/<?php echo $project->project_id?>"><button type ="button" class="btn btn-all btn-submit mx-2">End Project</button></a>
+<a href="<?php echo base_url();?>index.php/AdminProject/startAgainProject/<?php echo $project->project_id?>"><button type ="button" class="btn btn-all text-white btn-submit">Start Again Project</button></a>
+<a href="<?php echo base_url();?>index.php/AdminProject/endProject/<?php echo $project->project_id?>"><button type ="button" class="btn btn-all text-white btn-submit mx-2">End Project</button></a>
 
 <?php } else if ((($project->add_proposal) == 1) && (($project->approve_project)== 0))  { ?>
 
 <p class="">Approval Pending</p>
 <!-- <button type="submit" class="btn btn-primary">Submit Proposal</button> -->
-<a href="<?php echo base_url();?>index.php/AdminProject/"></a><button type="submit" class="btn btn-all btn-submit">Cancel</button>
+<a href="<?php echo base_url();?>index.php/AdminProject/"></a><button type="submit" class="btn btn-all btn-submit text-white">Cancel</button>
 
 <?php } else if ((($project->start_project)== 0) && (($project->end_project) == 1)){?>
 
-<a href="<?php echo base_url();?>index.php/AdminProject/"><button type ="button" class="btn btn-all btn-submit">Back</button></a>
+<a href="<?php echo base_url();?>index.php/AdminProject/"><button type ="button" class="btn btn-all btn-submit text-white">Back</button></a>
 
 <?php } else { ?>
 <button type="submit" class="btn btn-submit mt-4 btn-all btn-dark btn-new">Create Proposal</button>
-<a href="<?php echo base_url();?>index.php/AdminProject/"><button type="button" class="btn btn-submit mt-4 mx-2 btn-all  p-2 btn-dark btn-new" >Cancel</button></a>
+<a href="<?php echo base_url();?>index.php/AdminProject/"><button type="button" class="btn btn-submit mt-4 mx-2 btn-all  p-2 btn-dark btn-new text-white" >Cancel</button></a>
 </div>
 	  <?php } ?>
 </div>

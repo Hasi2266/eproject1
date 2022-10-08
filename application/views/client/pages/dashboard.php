@@ -576,7 +576,7 @@ else{
                     </div>
           </div><!-- col -->
 
-		  <div class="row row-sm projectT"  style="">
+		  <div class="row row-sm <?php if(!empty($items)){ echo "projectT"; }?>">
 			<div class="col-xl-12 mg-t-15 mg-sm-t-20 mg-xl-t-0">
 
 			<div class="card card-hover card-projects card-task-one dashCardHover mb-2" style="border-radius: 10px; ">

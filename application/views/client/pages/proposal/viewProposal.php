@@ -227,8 +227,8 @@
 													
 													<?php			}else {
 													?>
-														<a href="<?php echo base_url();?>index.php/ClientProject/giveApprove/<?php echo $items->project_id;?>"><button type="submit" class="btn btn-all  mt-3 mb-2 btn-submit" >Approve Project</button></a> 
-														<a href="<?php echo base_url();?>index.php/ClientProject/Proposal"><button type="button" class="btn btn-all mt-3 mb-2 btn-submit mx-3 ">Cancel</button>
+														<a href="<?php echo base_url();?>index.php/ClientProject/giveApprove/<?php echo $items->project_id;?>"><button type="submit" class="btn btn-all text-white  mt-3 mb-2 btn-submit" >Approve Project</button></a> 
+														<a href="<?php echo base_url();?>index.php/ClientProject/Proposal"><button type="button" class="btn btn-all mt-3 mb-2 btn-submit text-white mx-3 ">Cancel</button>
 													
 													<?php } ?>
 

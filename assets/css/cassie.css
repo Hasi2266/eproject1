@@ -43879,7 +43879,10 @@ a.bg-twitter:hover, a.bg-twitter:focus, button.bg-twitter:hover, button.bg-twitt
 		}
 
     .projectT{
-      margin-right:-15px;width:95rem;margin-top:-34px;margin-bottom:1rem;
+      margin-right:-15px;
+      width:95rem !important;
+      margin-top:-34px;
+      margin-bottom:1rem;
     }
 	.tSvale1{
     margin-left: 6.4rem;
@@ -44364,3 +44367,7 @@ input:disabled {
 .btn-all :hover{
   color : white !important;
 }
+
+/* .project-dash{
+
+} */
