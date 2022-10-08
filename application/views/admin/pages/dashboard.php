@@ -527,7 +527,7 @@ if(($months <= 1 && $days <= 29)){ ?>
 
 													?>
 									
-									<tr data-url="<?php echo base_url()?>index.php/ClientProject/updateProject/<?php echo $item->project_id ?>" style="cursor:pointer;">
+									<tr data-url="<?php echo base_url()?>index.php/AdminProject/addMilestone/<?php echo $item->project_id ?>" style="cursor:pointer;">
 											<!-- <td><div class="custom-control custom-checkbox">
 												<input type="checkbox" class="custom-control-input" id="<?php echo $item->project_id?>">
 												<label class="custom-control-label" for="<?php echo $item->project_id?>"></label>
