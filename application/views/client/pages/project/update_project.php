@@ -228,7 +228,7 @@
       <!-- Submit -->
 					 </div>
 					 <div class="row" style="display:flex;align-items:center;justify-content:center" >
-					 <a href="<?php echo base_url();?>index.php/ClientProject"><button type="submit" class="btn btn-submit btn-med text-center" style="border-radius:10px;margin-bottom:-50px;margin-top:-20px;">Back to Projects</button></a><!-- content-body -->
+					 <a href="<?php echo base_url();?>index.php/ClientProject"><button type="submit" class="btn btn-submit btn-all text-white btn-med text-center" style="border-radius:10px;margin-bottom:-50px;margin-top:-20px;">Back to Projects</button></a><!-- content-body -->
 					 </div>
 					
       </div>
