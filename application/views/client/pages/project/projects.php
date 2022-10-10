@@ -134,7 +134,7 @@
 													<?php } ?>
 													
 													
-													<a class="dropdown-item" href="<?php echo base_url()?>index.php/AdminProject/addMilestone/<?php echo $item->project_id ?>">View Project</a>
+													<a class="dropdown-item" href="<?php echo base_url()?>index.php/ClientProject/updateProject/<?php echo $item->project_id ?>">View Project</a>
 											
 												</div>
 												</div></td>
