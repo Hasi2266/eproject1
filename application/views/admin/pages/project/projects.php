@@ -50,7 +50,7 @@
 					
                         <tr>
 						
-                            <th class="wd-1p">
+                            <th>
                                 <!-- <div class="custom-control custom-checkbox" style="border-radius: 8px;">
                                     <input type="checkbox" class="custom-control-input" id="<?php echo $item->project_id ?>" value="<?php echo $item->project_id ?>">
                                     <label class="custom-control-label" for="<?php echo $item->project_id ?>"></label>
@@ -58,7 +58,7 @@
                             </th>
                             <!-- <th class="wd-12p">logo </th> -->
                             <!-- <th class="wd-9p">Company</th> -->
-                            <th ><span style="margin-left:-1.5rem;">Project</span></th>
+                            <th class="wd-20p" ><span style="margin-left:-1.5rem;">Project</span></th>
                             <th >Update Date</th>
                             <th class="wd-13p">Status</th>
                             <th class="wd-14p">Invoice</th>

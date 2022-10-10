@@ -962,6 +962,135 @@ $(document).ready(function(){
 	});
 </script>
 
+<script>
+	$(document).ready(function(){
+		
+		var i=1;
+
+		$("#btnClearService1").click(function() {
+			let color_select = $('select#service_id_'+i);
+			let team = $('select#teams_no_'+i);
+			color_select.val("");
+			team.val("");
+			team.css({ 'color': 'black', 'background-color': 'white' });
+			color_select.css({ 'color': 'black', 'background-color': 'white' });
+
+
+			$.ajax({
+
+				type:'POST',
+				url: '<?php echo base_url();?>index.php/ClientProject/getTeams',
+				// data: 'category_id=' + category_id,
+				success:function(html){
+
+					$('#teams_no_'+i).html(html);
+
+
+				}
+			});
+
+			
+			
+			var msg = "";
+			$('#errorService').html(msg);
+
+		});
+
+	});
+</script>
+
+<script>
+	$(document).ready(function(){
+		
+		var i=1;
+
+		$("#btnClearPackage1").click(function() {
+			let color_select1 = $('select#package_id_'+i);
+			let team1 = $('select#teams_no1_'+i);
+			color_select1.val("");
+			team1.val("");
+			team1.css({ 'color': 'black', 'background-color': 'white' });
+			color_select1.css({ 'color': 'black', 'background-color': 'white' });
+
+			$.ajax({
+
+				type:'POST',
+				url: '<?php echo base_url();?>index.php/ClientProject/getTeams',
+				// data: 'category_id=' + category_id,
+				success:function(html){
+
+					$('#teams_no1_'+i).html(html);
+
+
+				}
+			});
+
+			
+			
+			var msg = "";
+			$('#errorService').html(msg);
+
+		});
+
+	});
+</script>
+
+<script>
+	$(document).ready(function() {
+		var i=1;
+
+		$('#teams_no_'+i).on('change', function() {
+		
+		var category_id = $(this).val();
+		//    alert(category_id);
+
+		$.ajax({
+		type: 'POST',
+		url: '<?php echo base_url();?>index.php/ClientProject/selectServices',
+		data: 'category_id=' + category_id,
+		success: function(html) {
+		// alert(html);
+
+				
+					$('#service_id_'+i).html(html);
+
+			// $('#service_'+i).html(html);
+			//  $('#subcat').html('<option value="">'+html+'</option>'); 
+		}
+		});
+
+		});
+});
+</script>
+
+<script>
+	$(document).ready(function() {
+		var i=1;
+
+		$('#teams_no1_'+i).on('change', function() {
+		
+		var category_id = $(this).val();
+		//    alert(category_id);
+
+		$.ajax({
+		type: 'POST',
+		url: '<?php echo base_url();?>index.php/ClientProject/selectPackages',
+		data: 'category_id=' + category_id,
+		success: function(html) {
+		// alert(html);
+
+				
+					$('#package_id_'+i).html(html);
+
+			// $('#service_'+i).html(html);
+			//  $('#subcat').html('<option value="">'+html+'</option>'); 
+		}
+		});
+
+		});
+});
+</script>
+
 <!-- <script>
 $(document).ready(function(){
 	
@@ -1486,6 +1615,49 @@ $('#row'+button_id+'').remove();
 	});
 });
 
+
+</script>
+
+<script>
+
+	var i = 1;
+
+	$(document).on('click', '.btn_remove2', function(){
+		i++;
+
+		// alert(4);
+
+		var button_id = $(this).attr("id"); 
+		$('#package_id_'+i).remove();
+		$('#teams_no1_'+i).remove();
+
+		// var b = i +1;
+		$('#btn_remove1_'+i).remove();
+		// $('#btnClearService1').css({'margin-left' : '-10rem;'});
+		
+
+	});
+
+</script>
+<script>
+
+	var i = 1;
+
+	$(document).on('click', '.btn_remove3', function(){
+		i++;
+
+		// alert(4);
+
+		var button_id = $(this).attr("id"); 
+		$('#service_id_'+i).remove();
+		$('#teams_no_'+i).remove();
+
+		// var b = i +1;
+		$('#btn_remove1_'+i).remove();
+		// $('#btnClearService1').css({'margin-left' : '-10rem;'});
+		
+
+	});
 
 </script>
 

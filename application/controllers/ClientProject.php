@@ -84,6 +84,7 @@ Class ClientProject extends CI_Controller{
 		$item = $projectservice->getService($category_id);
 
 		echo "<option>-- Choose one --</option>";
+
 		foreach($item as $item1){
 
 			echo "<option value=".$item1->service_id.">".$item1->service_name."</option>";
@@ -384,14 +385,14 @@ Class ClientProject extends CI_Controller{
 		$x = $this->input->post('images1');
 		$c = $this->input->post('service_id');
 		// echo count($x);die;
-		// print_r($y);die;
+		// print_r($x);die;
 		$date_now = date("Y-m-d");
 		// print_r($c) ;die;
 
 		$projectservice =  new ProjectService();
 
 		$due_date = $this->input->post('due_date_type');
-		
+		// echo $due_date;die;
 		$count = count($_FILES['images']['name']);
 		// echo $count;die;
 
@@ -528,6 +529,130 @@ Class ClientProject extends CI_Controller{
 		redirect('/ClientProject/Proposal/');
 
 	}
+
+	public function editItem($id){
+
+		$data["active"] = 2;
+
+		$projectservice = new ProjectService();
+		$data["projects"] = $projectservice->getProject($id);
+		$data["items"] = $projectservice->allCategories();
+		$item = $projectservice->getProject($id);
+
+		$skills = $item[0]->required_skills;
+		$skill_list = explode(',',$skills);
+		$data['skills'] = $skill_list;
+
+		$images = $projectservice->ProjectImages1($id);
+		$ids_image = array();
+
+		$select_list = json_decode("[".$item[0]->services."]");
+		$package_list = json_decode("[".$item[0]->packages."]");
+		
+
+		if(!empty($select_list)){
+
+			foreach($select_list as $key => $value){
+				// print_r($select_list);die;
+
+				$item1 = $projectservice->serviceName1($value);
+				// print_r($select_list);die;
+				
+				$service[$value] = $item1[0]->service_name;
+				$team_name2[] = $item1[0]->name;
+				$service_id[] = $item1[0]->service_id;
+
+				// foreach($item1 as $key =>$item2){
+				// 	// echo $key;
+
+				// 	$service[$value] = $item2->service_name;
+				// 	// echo $service[$value];
+				// 	$team_name2[] = $item2->name;
+					
+					
+				// }
+				// print_r($service);
+				
+			}
+			// print_r($service_id);
+			
+			$data['service'] = $service;
+			$data["team_name2"] = $team_name2;
+			$data["service_id"] = $service_id;
+
+		}
+// die;
+		// print_r($service);die;
+
+		if(!empty($package_list)){
+
+			foreach($package_list as $key => $value){
+
+				$item2 =  $projectservice->packagename($value);
+				
+				foreach($item2 as $key => $item3){
+	
+					$package[$value] = $item3->pname;
+					$team_name1[$item3->team_id] = $item3->name;
+		
+				}
+			}
+			
+			$data['package'] = $package;
+			$data["team_name1"] = $team_name1;
+		
+		}
+
+		if(empty($images)){
+
+			// print_r($ids_image);
+			$ids_image;
+			// echo 4;die;
+		}
+		else{
+			foreach($images as $key => $value){
+			
+				// print_r($value) ; 
+				// echo '<br/>';
+				foreach($value as $key => $value1){
+					
+					$ids_image = explode(',',$value1);
+					// print_r($ids_image);die;
+					
+				}
+				
+			}
+		}
+
+		// print_r($ids_image);die;
+		// $data['service'] = $service;
+		// $data['package'] = $package;
+		// $data["no"] = 1;
+		$data['images'] =  $ids_image;
+		$data["teams"] = $projectservice->allTeams();
+
+		$partial = array('content' => 'client/pages/project/editProject');
+		$this->template->load('client/mainpage',$partial,$data);
+
+	}
+
+	public function getTeams(){
+
+		$projectservice = new ProjectService();
+
+		// $category_id = $this->input->post('category_id');
+
+		$teams = $projectservice->allTeams();
+
+		echo "<option>-- Choose one --</option>";
+		
+		foreach($teams as $item1){
+
+			echo "<option value=".$item1->team_id.">".$item1->name."</option>";
+		}
+		
+	}
+
 }
 
 

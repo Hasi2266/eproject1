@@ -90,7 +90,7 @@
                 <div class="dropdown dropdown-loggeduser">
                     <a href="" class="dropdown-link" data-toggle="dropdown">
                         <div class="avatar avatar-sm">
-                        <div class="rounded-circle " style="background-color: yellow;border-radius:50%;display: inline-block;height: 35px;width:35px;margin: auto;"><h6 class="text-uppercase" style="color:#343333;font-size:12px;text-align:center;margin: 10px auto;" ><?php echo substr($items2[0]->username,0,1). substr($items2[0]->username,0,1);?></h6></div>
+                        <div class="rounded-circle " style="background-color: #FDCE30;border-radius:50%;display: inline-block;height: 35px;width:35px;margin: auto;"><h6 class="text-uppercase" style="color:#343333;font-size:12px;text-align:center;margin: 10px auto;" ><?php echo substr($items2[0]->username,0,1). substr($items2[0]->username,0,1);?></h6></div>
                         </div>
                         <!-- avatar -->
                     </a>
@@ -98,7 +98,7 @@
                         <div class="dropdown-menu-header">
                             <div class="media align-items-center">
                                 <div class="avatar">
-                                <div class="rounded-circle" style="background-color: yellow;border-radius:50%;display: inline-block;height: 39px;width:39px;"><h6 class="text-uppercase" style="color:black;font-size:12px;text-align:center;margin: 12px auto;" ><?php echo substr($items2[0]->username,0,1). substr($items2[0]->username,0,1);?></h6></div>
+                                <div class="rounded-circle" style="background-color: #FDCE30;border-radius:50%;display: inline-block;height: 39px;width:39px;"><h6 class="text-uppercase" style="color:black;font-size:12px;text-align:center;margin: 12px auto;" ><?php echo substr($items2[0]->username,0,1). substr($items2[0]->username,0,1);?></h6></div>
                                 </div>
                                 <!-- avatar -->
                                 <div class="media-body mg-l-10">

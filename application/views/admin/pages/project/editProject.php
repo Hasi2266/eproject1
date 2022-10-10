@@ -243,7 +243,7 @@
 						<span class="badge badge-pill badge-dark py-2 " style="background-color:#36b8b;font-size:12px;margin-right:0.2rem;"><?php echo $value?></span>
 				<?php 	}?>
 		  <!-- <?php echo $project->packages?> -->
-         </div>
+         </div> 
         
 
       

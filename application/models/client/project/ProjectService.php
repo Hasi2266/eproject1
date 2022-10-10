@@ -24,7 +24,6 @@ Class ProjectService extends CI_Model{
 	function allTeams(){
 		$this->db->select('*');
 		$this->db->from('teams');
-		
 		$query = $this->db->get();
 		return $query->result();
 	}

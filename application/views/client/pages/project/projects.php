@@ -39,20 +39,28 @@
        
 								<div class="card-body">
 
-        <table id="example1" class="table1 table stM" style="border-radius:10px ;font-size:13px;">
+        <table id="example1" class=" table stM" style="border-radius:10px ;font-size:13px;">
           <thead>
             <tr>
               <!-- <th class="wd-12p"><div class="custom-control custom-checkbox" style="border-radius: 8px;">
                 <input type="checkbox" class="custom-control-input" id="customCheck" >
                 <label class="custom-control-label" for="customCheck1"></label>
               </div></th> -->
-			 <th></th>
-			  <th class="wd-20p"><span style="margin-left:-3rem;">Project</span></th>
-													<th class="wd-15p due">Update Date</th>
-													<th class="wd-15p">Status</th>
-													<th class="wd-12p due">Progress</th>
-													<th class="wd-12p due">invoice</th>
-													<th class="wd-15p ">Due date</th>
+			  <th>
+                                <!-- <div class="custom-control custom-checkbox" style="border-radius: 8px;">
+                                    <input type="checkbox" class="custom-control-input" id="<?php echo $item->project_id ?>" value="<?php echo $item->project_id ?>">
+                                    <label class="custom-control-label" for="<?php echo $item->project_id ?>"></label>
+                                </div> -->
+                            </th>
+                            <!-- <th class="wd-12p">logo </th> -->
+                            <!-- <th class="wd-9p">Company</th> -->
+                            <th class="wd-20p" ><span style="margin-left:-1.5rem;">Project</span></th>
+                            <th >Update Date</th>
+                            <th class="wd-13p">Status</th>
+                            <th class="wd-14p">Invoice</th>
+                            <th class="wd-15p">Progress</th>
+                            <th  class="wd-13p">Due date</th>
+							<th class="wd-15p">Action</th>
             </tr>
           </thead>
           <tbody>
@@ -97,22 +105,40 @@
 											<!-- <td><?php echo $item->company_name?></td> -->
 											<td></td>
 											
-											<td><span style="margin-left:-3rem;"><?php echo $item->name?></span></td>
+											<td><span style="margin-left:-1.5rem;"><?php echo $item->name?></span></td>
 											<td class="due"><?php echo $item->update_date?></td>
 											
 							
 
 									<td ><span class="badge badge-pill badge-info"><?php echo $status?></span></td>
-										
+										<td>#P000010</td>
 			
 									<td class="due"><div class="progress mt-2" style="height:0.45rem;border-radius:10px">
 											<div class="progress-bar bg-<?php if($item->project_progress >= 50){echo "green";}else{echo "danger";} ?> wd-<?php echo $item->project_progress?>p" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
 										</div>		</td>
 
 												<!-- <td><?php echo $item->project_progress?> %</td> -->
-												<td class="due"></td>
+												
 												<td style="text-transform: uppercase;" ><?php echo $due_date?></td>
-											</tr>
+											<td>	<div class="dropdown">
+													<button class="btn  dropdown-toggle1" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-radius: 10px;margin-left:-1rem;">
+														<i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+													</button>
+													<div class="dropdown-menu drop-b tx-14" aria-labelledby="dropdownMenuButton">
+														
+													<?php 
+														if ((($item->add_proposal)== 0) && (($item->approve_project)== 0) && (($item->start_project) == 0) && (($item->end_project) == 0) && (($item->add_invoice) == 0) ){?>
+
+															<a class="dropdown-item" href="<?php echo base_url();?>index.php/ClientProject/editItem/<?php echo $item->project_id?>">Edit Project</a>
+
+													<?php } ?>
+													
+													
+													<a class="dropdown-item" href="<?php echo base_url()?>index.php/AdminProject/addMilestone/<?php echo $item->project_id ?>">View Project</a>
+											
+												</div>
+												</div></td>
+												</tr>
 					
 									<?php } ?>   
 										
