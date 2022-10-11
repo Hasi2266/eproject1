@@ -12,11 +12,13 @@
           <h5 class="signin-subtitle">Please enter your details.</h5>
 
           <form action="<?php echo base_url();?>index.php/Client/userLogin" method="post">
-          <div class="signin-form">
-            <div class="form-group">
-              <!-- <label>Email address</label> -->
-              <input type="email" class="form-control" name = "email" placeholder="Enter your email address" value="">
-            </div>
+            <div class="signin-form">
+              <div class="form-group">
+                <!-- <label>Email address</label> -->
+                
+                <input type="email" class="form-control" name = "email" placeholder="Enter your email address" value="">
+
+              </div>
 
             <div class="form-group mg-t-15">
               <label class="d-flex justify-content-between">
