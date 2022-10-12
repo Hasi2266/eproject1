@@ -70,7 +70,7 @@
                                           <td><input type="text" name="end_date[]" class="form-control" placeholder="End date" id="datepicker7"  style="border-radius:10px;"></td>
                                           <td><input type="text" name="amount[]" class="form-control calc" id="milestone_amount" aria-describedby="emailHelp" placeholder="Amount" style="border-radius:10px"></td>
                                           
-                                          <td><button type="button" name="add" id="add3" class="btn btn-success"><i class="fa fa-plus"></button></td>
+                                          <td><button type="button" name="add" id="add3" class="btn btn-all text-white"><i class="fa fa-plus"></button></td>
                                         </tr>
                                       <tbody>
                                     </table>
@@ -82,7 +82,7 @@
                             </div>
                             <div class="d-flex flex-row-reverse">
                                   <div class="p-2" style="margin-left:140px;">
-                                  <input type="text" id="total" name="milestone_total">
+                                  <input type="text" id="total" name="milestone_total" class="form-control"  style="border-radius:10px">
                             </div>
                                   
                             <div class="p-2" >Total</div>
@@ -193,13 +193,13 @@
      
      
       <div class="d-flex flex-row mx-3">
-        <div class="p-2"><button type="submit" class="btn btn-all mt-2 px-4" style="border-radius:10px">Submit Proposal</button></div>
+        <div class="p-2"><button type="submit" class="btn btn-all text-white mt-2 px-4" style="border-radius:10px">Submit Proposal</button></div>
 				<!-- <div class="p-2 "><button type="submit" class="btn btn-primary mt-5 mb-5 px-4" style="border-radius:10px" formtarget="_blank">Save As Draft</button></div> -->
        
 				</div>
 
 			</form>
-			<div class="p-2 mx-5"><a href="<?php echo base_url();?>index.php/AdminProject"><button type="submit" class="btn btn-all  px-4" style="border-radius:10px; margin:-88px 0 0 130px ;">Cancel</button></div>
+			<div class="p-2 mx-5"><a href="<?php echo base_url();?>index.php/AdminProject"><button type="submit" class="btn btn-all text-white px-4" style="border-radius:10px; margin:-88px 0 0 130px ;">Cancel</button></div>
 			
 		</div>
   

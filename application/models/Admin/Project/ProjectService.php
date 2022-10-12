@@ -20,6 +20,15 @@ Class ProjectService extends CI_Model{
 		return $query->result();
 	}
 
+	function invoices($id){
+
+		$this->db->select('*');
+		$this->db->from('invoice');
+		$this->db->where('invoice.project_id='.$id);
+		$query = $this->db->get();
+		return $query->result();
+	}
+	
 	function getService($category_id){
 
 		$this->db->select('*');

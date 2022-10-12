@@ -172,6 +172,7 @@ function getService_id(){
 		$this->db->select('*,service.service_name');
 		$this->db->from('project');
 		$this->db->join('service','service.service_id = project.services','left',false);
+		// $this->db->join('invoice','invoice.project_id = project.project_id','left',false);
 		$this->db->order_by("project_created_date", "desc");
 		$this->db->where('project.client_id='.$id);
 
@@ -179,6 +180,14 @@ function getService_id(){
 		return $query->result();
 	}
 
+	function invoices($id){
+
+		$this->db->select('*');
+		$this->db->from('invoice');
+		$this->db->where('invoice.project_id='.$id);
+		$query = $this->db->get();
+		return $query->result();
+	}
 
 	function allProjects1($service_id){
 		$this->db->select('*,service.service_name');

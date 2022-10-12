@@ -22,7 +22,7 @@ Class AdminInvoice extends CI_Controller{
         $data["active"] = 7;
 
         $partial = array('content' => 'admin/pages/invoice/invoices');
-		$this->template->load('client/mainpage',$partial,$data);
+		$this->template->load('admin/mainpage',$partial,$data);
 	}
 
 	public function submitInvoice(){
@@ -123,7 +123,7 @@ Class AdminInvoice extends CI_Controller{
         $data["active"] = 7;
 
         $partial = array('content' => 'admin/pages/invoice/viewInvoice');
-		$this->template->load('client/mainpage',$partial,$data);
+		$this->template->load('admin/mainpage',$partial,$data);
     }
 }
 

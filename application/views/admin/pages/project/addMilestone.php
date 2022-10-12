@@ -144,7 +144,7 @@
 							</div>
 						</div>
 					</div>
-					<h6 class="card-title mg-b-1" style="margin-top:1px;">Category</h6>
+					<h6 class="mg-b-1" style="margin-top:1px;">Category</h6>
 					<div class="row mt-2 mb-5">
 						<?php foreach ($items as $item){?>
 
@@ -274,7 +274,7 @@
                               									<td><input type="text" name="start_date[]" class="form-control" placeholder="Start date" id="datepicker6"  style="border-radius:10px;"></td>
 																<td><input type="text" name="end_date[]" class="form-control" placeholder="End date" id="datepicker7"  style="border-radius:10px;"></td>
 																<td><input type="text" name="amount[]" class="form-control calc" id="milestone_amount" aria-describedby="emailHelp" placeholder="Amount" style="border-radius:10px"></td>
-																<td><button type="button" name="add" id="add3" class="btn btn-success"><i class="fa fa-plus"></button></td>
+																<td><button type="button" name="add" id="add3" class="btn btn-all text-white"><i class="fa fa-plus"></i> </button></td>
 															</tr>
 														<tbody>
 													</table>
@@ -324,9 +324,14 @@
               </div></td> -->
               <td><?php echo $item->milestone_name?></td>
               <td><?php echo $item->milestone_weight?></td>
-							<td><div class="progress" style="width:100px;">
+							<td>
+							<div class="progress mt-2" style="height:0.45rem;border-radius:10px">
+											<div class="progress-bar bg-<?php if($item->milestone_progress >= 50){echo "green";}else{echo "danger";} ?> wd-<?php echo $item->milestone_progress?>p" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+										</div>	
+							<!-- <div class="progress" style="width:100px;">
                 <div class="progress-bar" role="progressbar" style="width:<?php echo $item->milestone_progress?>px;" aria-valuenow="<?php echo $item->milestone_progress?>" aria-valuemin="0" aria-valuemax="100"><?php echo $item->milestone_progress?></div>
-              </div></td>
+              </div> -->
+			</td>
 							<td><?php echo $item->milestone_description?></td>
               <td><?php echo $item->start_date?></td>
               <td><?php echo $item->end_date?></td>
@@ -380,7 +385,7 @@
 														?>
 													
 													
-													<div class="card-deck mx-1">
+													<div class="card-deck">
 														<div class="card" style="width:15rem;height:15rem;margin-right:20px">
 															<a href="<?php echo base_url();?>/uploads/<?php echo $value;?>" download="<?php echo $project->name.'_'.$i;?>">
 																		<img class="card-img-top " src="<?php echo base_url();?>/uploads/<?php echo $value;?>"  style="width:15rem;height:15rem;">
@@ -429,7 +434,8 @@
 
 <?php } else if ((($project->add_proposal) == 1) && (($project->approve_project)== 0))  { ?>
 
-<p class="">Approval Pending</p>
+<span class="badge badge-pill badge-danger mx-2" style="font-size:13px;padding-bottom:-0.5rem !important;">Approval Pending</span>
+
 <!-- <button type="submit" class="btn btn-primary">Submit Proposal</button> -->
 <a href="<?php echo base_url();?>index.php/AdminProject/"></a><button type="submit" class="btn btn-all btn-submit text-white">Cancel</button>
 
@@ -439,7 +445,7 @@
 
 <?php } else { ?>
 <button type="submit" class="btn btn-submit mt-4 btn-all btn-dark btn-new">Create Proposal</button>
-<a href="<?php echo base_url();?>index.php/AdminProject/"><button type="button" class="btn btn-submit mt-4 mx-2 btn-all  p-2 btn-dark btn-new text-white" >Cancel</button></a>
+<a href="<?php echo base_url();?>index.php/AdminProject/"><button type="button" class="btn btn-submit mt-4 mx-3 btn-all  p-2 btn-dark btn-new text-white" >Cancel</button></a>
 </div>
 	  <?php } ?>
 </div>

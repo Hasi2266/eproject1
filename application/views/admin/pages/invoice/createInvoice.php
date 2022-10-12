@@ -335,7 +335,7 @@ input:checked + .slider:before {
 
 			<div class="text-end" style="margin-left: 54.5rem">
       <button type="submit" class="btn  mt-5 mb-5  ml-5 text-end text-white btn-all" style="background-color:#00a7e6" >Generate PDF</button>
-            <button type="submit" class="btn  mt-5 mb-5 ml-2 border btn-all" style="background-color:white">Submit Invoice</button>
+            <button type="submit" class="btn  mt-5 mb-5 ml-2 border text-white btn-all" style="background-color:white">Submit Invoice</button>
       </div>
 
    

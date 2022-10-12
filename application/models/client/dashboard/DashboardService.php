@@ -38,12 +38,20 @@ Class DashboardService extends CI_Model{
         $query = $this->db->get();
         return $query->num_rows();
 	}
+	function countInvoice($id){
+		$this->db->select('invoice_id');
+        $this->db->from('invoice');
+		$this->db->where('client_id='.$id);
+        $query = $this->db->get();
+        return $query->num_rows();
+	}
 
 	function allProjects($id){
 
-		$this->db->select('*,user-login.company_name');
+		$this->db->select('*,user-login.company_name,invoice.invoice_no');
 		$this->db->from('project');
 		$this->db->join('user-login','user-login.client_id = project.client_id');
+		$this->db->join('invoice','invoice.project_id = project.project_id','left',false);
 		$this->db->where('project.client_id='.$id);
 		$this->db->order_by("project.project_created_date", "desc");
 		$query = $this->db->get();

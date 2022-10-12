@@ -27,9 +27,24 @@ Class InvoiceService extends CI_Model{
 		);
 
 		
+		$this->updateAddInvoice($invoiceModel->getProject_id());
 		// $this->updateAddProposalStatus($proposalmodel->getProject_id());
 		return $this->db->insert('invoice',$data);
     }
+
+	function updateAddInvoice($id){
+		// echo $id;die;
+
+		$data = array(
+
+			'add_invoice' => '1',
+			
+		);
+	
+		$this->db->where('project_id='.$id);
+		return $this->db->update('project',$data);
+	}
+
 
     function saveInvoiceData($invoicedataModel){
         

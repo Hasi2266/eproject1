@@ -179,7 +179,8 @@
 
 																<?php 
 																
-																if(empty($project->services)){?>
+																
+																if(empty($service)){?>
 
 																	<select class="custom-select m-input"
 																		style="border-radius:10px ;width:26rem;"
@@ -215,7 +216,7 @@
 																<?php } }?>
                                                                     
                                                                 <br/>
-                                                                    <button type="button" name="add" id="add" class="btn btn-all mt-3 text-white"><i class="fa fa-plus" ></i></button>
+                                                                    <button type="button" name="add" id="add" class="btn btn-all mt-3 text-white" style="font-size:10px !important;"><i class="fa fa-plus" ></i> Add Service</button>
                                                                 </td>
 																<!-- <select class="custom-select m-input"
 																		style="border-radius:10px ;width:26rem;"
@@ -237,7 +238,7 @@
 																<?php 
 															 
 																
-																if(empty($project->services)){ ?>
+																if(empty($service)){ ?>
 
 																	<select class=" custom-select m-input px-5 mx-4"
 																		style="border-radius:10px;width:26rem;" id="service"
@@ -285,7 +286,7 @@
                                                                 <?php 
 															 
 																
-                                                                     if(!empty($project->services)){
+                                                                     if(!empty($service)){
                                                                         
                                                                         $i = 1;
                                                                         
@@ -308,18 +309,7 @@
                                                                      <?php } }?>
                                                                 </td>
                                                                            
-                                                                <!-- <?php 
-
-                                                                    if($i == 1) { ?>
-   
-                                                                        <button type="button" name="remove"  id="btnClearService1" class="btn btn-danger btn_remove btn-b" ><span class="fa fa-trash" ></button>
-
-                                                                        <?php  } else{ ?>
-                                                                            
-                                                                        <button type="button" name="remove"  id="<?php echo 'btn_remove_'.$i;?>" class="btn btn-danger btn_remove btn_remove2"><span class="fa fa-trash"></button>
-
-
-                                                                        <?php   } ?> -->
+                                                               
 																
 																
 															</tr>
@@ -373,7 +363,9 @@
 																
 
 																<?php 
-																if(empty($project->packages)){?>
+
+																
+																if(empty($package)){?>
 
 																	<select class="custom-select m-input"
 																		style="border-radius:10px ;width:26rem; mb-2"
@@ -412,19 +404,20 @@
 
 																<?php } }?>
 
-                                                                <br/>
-                                                                    <button type="button" name="add" id="add1"
-																		class="btn btn-all text-white mt-3"><i class="fa fa-plus"></i></button>
+                                                                
 																	<!--  -->
-
+																	<br/>
+                                                                    <button type="button" name="add" id="add1"
+																		class="btn btn-all text-white mt-3" style="font-size:10px !important;"><i class="fa fa-plus"></i> Add Package</button>
 																	</td>
+																	
 																<td>
 																
 																
 
 																<?php 
 																
-																if(empty($project->packages)){?>
+																if(empty($package)){?>
 
 																	<select class=" custom-select m-input px-5 mx-4"
 																		style="border-radius:10px;width:26rem;" id="package"
@@ -463,7 +456,7 @@
                                                                 <?php 
 															 
 																
-                                                                     if(!empty($project->package)){
+                                                                     if(!empty($package)){
                                                                         
                                                                         $i = 1;
                                                                         
@@ -537,9 +530,18 @@
 													$i= 1;
 													// print_r($images);die;
 
+													if(empty($images)){?>
+														 <span class="badge badge-pill badge-danger mx-2 pt-1  " style="font-size:13px;margin-bottom:50px;">There is no attachemet in this project</span>
+                                                            <!-- <input class="form-control" name="images[]" type="file" style="border-radius:10px;display:none;" multiple="" value="1">  -->
+															<input type="file" name="images[]" class="custom-file-input mt-5 mb-5" id="customFile"  multiple="" style="margin-left:-80px;">
+												<label class="custom-file-label" for="customFile" style="border-radius:10px;margin-top:45px;margin-bottom:50px;">Choose file</label>
+												<?php	} 
+
                                                     if (!empty($images)){
 
                                                         foreach($images as $key => $value){
+															
+															// echo $value;die;
 
                                                             if(empty($value)){
 
@@ -548,10 +550,12 @@
 
                                                             ?>
                                                            
-                                                            <span class="badge badge-pill badge-danger mx-2 pt-1 " style="font-size:13px;">There is no attachemet in this project</span>
-                                                            <input class="form-control" name="images[]" type="file" style="border-radius:10px;display:block;" multiple="" value="1"> 
-
-                                                   <?php  } 
+                                                            <span class="badge badge-pill badge-danger mx-2 pt-1  " style="font-size:13px;margin-bottom:50px;">There is no attachemet in this project</span>
+                                                            <!-- <input class="form-control" name="images[]" type="file" style="border-radius:10px;display:none;" multiple="" value="1">  -->
+															<input type="file" name="images[]" class="custom-file-input mt-5 mb-5" id="customFile"  multiple="" style="margin-left:-80px;">
+												<label class="custom-file-label" for="customFile" style="border-radius:10px;margin-top:45px;margin-bottom:50px;">Choose file</label>
+												
+                                                   <?php  } }}
                                                     
                                                         
                                                            
@@ -560,8 +564,13 @@
                                                        
 														
 												 
-													else{ 
+													if (!empty($images)){?>
 
+														<div class="row px-2">
+															
+														
+
+                                                    <?php foreach($images as $key => $value){
 														
 														
 													// foreach($images as $key => $value){ 
@@ -570,14 +579,19 @@
 														$href= "/uploads/$value";
 													?>
 													   
-													 
-													<div class="card-deck ">
-													
-														<div class="card" style="width:15rem;height:15rem;margin-right:20px">
+													   <div class="col-md-3 mt-3 mx-2">
+																
+																
+													<!-- <div class="card-deck bg-danger"> -->
+													<?php if(!empty($value)){ 
+														// echo $value;
+														?>
+														<div class="card" style="width:15rem;height:15rem;">
 															
 															<a href="<?php echo base_url();?><?php echo $href;?>" download="<?php echo $project->name.'_'.$i;?>">
-																		<img class="card-img-top " src="<?php echo base_url();?><?php echo $img;?>" alt="Card image cap" style="width:15rem;height:15rem;">
-
+																
+																		<img class="card-img-top  " src="<?php echo base_url();?><?php echo $img;?>" style="width:15rem;height:15rem;">
+																
 															</a>
 															
 														
@@ -587,14 +601,16 @@
 														<!-- <input type="file" id="upload" name="img" hidden>
 								<label class="label" for="upload"><i class="fas fa-edit"></i></label> -->
 													</div>
-													<input class="form-control" name="images[]" type="file" style="border-radius:10px;" multiple="" style="margin-bottom:500px;">
-													</div>
-													</div>	
+													<?php } ?>
+													<input class="form-control" name="images1[]" type="file" style="border-radius:10px;" multiple="" style="margin-bottom:500px;">
+													
+													<!-- </div>	 -->
 													
 													
 												<?php 	$i++; ?>
-												<?php }}} ?>										
-
+												</div>
+												<?php }}?>										
+												</div>
 									</div>
 
 									
@@ -625,8 +641,10 @@
 
 
 			<?php } ?> -->
+
+			
             </div>
-            <div class="row" style="display:flex;align-items:left;justify-content:left" >
+			<div class="row" style="display:flex;align-items:left;justify-content:left" >
 				<button type="submit" class="btn btn-dark  mt-3 mb-3 btn-submit ml-5" >Update Project</button>
 				<!-- <button type="button" class="btn btn-primary mt-5 mb-5 btn-submit mx-2">Save As Draft</button> -->
 				<a href="<?php echo base_url();?>index.php/ClientProject"><button type="button" class="btn btn-dark mx-3 mt-3 mb-3 btn-submit">Cancel Project</button></a>

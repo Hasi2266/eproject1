@@ -50,7 +50,7 @@
 
                     <!-- <h4 class="content-title content-title-xs px-3">Welcome to Dashboard</h4> -->
                     <div class=" newbtnMAdmin" >
-                        <button type="button" class="btn btn-dark btn-new" style="border-radius: 10px;"><span style="font-size:13px !important;">+ New Project</span></button>
+                        <button type="button" class="btn btn-dark btn-new btnN" style="border-radius: 10px;"><span style="font-size:13px !important;">+ New Project</span></button>
                     </div>
                 </div>
             </div>
@@ -64,7 +64,7 @@
                         <div class="col-sm-6 col-md-3 col-6">
                             <h6 class="card-title">Total spend</h6>
                             <div class="d-flex align-items-center justify-content-between mg-b-10">
-                                <h1 class="card-value tSvale4"> 932 <span class="tx-success"></h1>
+                                <h1 class="card-value tSvale4" > 0 <span class="tx-success"></h1>
                                 <div class="chart-wrapper">
                                     <!-- <div id="flotChart1" class="flot-chart"></div> -->
                                 </div>
@@ -75,7 +75,7 @@
                         <div class="col-sm-6 col-md-3 mg-t-20 mg-sm-t-0 tot">
                             <h6 class="card-title">Projects </h6>
                             <div class="d-flex align-items-center justify-content-between mg-b-10">
-                                <h1 class="card-value tSvale1">268 <span class="tx-success"></h1>
+                                <h1 class="card-value tSvale1" style="margin-left:120px;"><?php echo $noProjects?><span class="tx-success"></h1>
 								<!-- <i class="icon ion-android-arrow-up"></i>2.4%</span> -->
                                 <div class="chart-wrapper">
                                     <!-- <div id="flotChart2" class="flot-chart"></div> -->
@@ -87,7 +87,7 @@
                         <div class="col-sm-6 col-md-3 mg-t-20 mg-md-t-0">
                             <h6 class="card-title">Proposal</h6>
                             <div class="d-flex align-items-center justify-content-between mg-b-10">
-                                <h1 class="card-value tSvale2"> 746</h1>
+                                <h1 class="card-value tSvale2" style="margin-left:120px;"><?php echo $noProposals?></h1>
                                 <div class="chart-wrapper">
                                     <!-- <div id="flotChart3" class="flot-chart"></div> -->
                                 </div>
@@ -98,7 +98,7 @@
                         <div class="col-sm-6 col-md-3 mg-t-20 mg-md-t-0 col-6">
                             <h6 class="card-title">invoices</h6>
                             <div class="d-flex align-items-center justify-content-between mg-b-10">
-                                <h1 class="card-value tSvale3 "> 231</h1>
+                                <h1 class="card-value tSvale3 " style="margin-left:120px;"> <?php echo $noInvoices?></h1>
 								<!-- <span class="tx-color-03">hours</span> -->
                                 <div class="chart-wrapper">
                                     <!-- <div id="flotChart4" class="flot-chart"></div> -->
@@ -548,8 +548,8 @@ if(($months <= 1 && $days <= 29)){ ?>
 										</div>		</td>
 
 												<!-- <td><?php echo $item->project_progress?> %</td> -->
-												<td></td>
-												<td style="text-transform: uppercase;"><?php echo $due_date?></td>
+												<td><?php if(empty($invoices[0]->project_id)){ echo "" ;}else{ echo $invoices[0]->invoice_no ; }?></td>
+												<td style="text-transform: capitalize;"><?php echo $due_date?></td>
 											</tr>
 					
 									<?php } ?> 

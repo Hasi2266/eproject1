@@ -641,10 +641,12 @@ pre {
   margin-left: 91.66667%; }
 
 @media (min-width: 576px) {
+ 
   .col-sm {
     flex-basis: 0;
     flex-grow: 1;
     max-width: 100%; }
+   
   .col-sm-auto {
     flex: 0 0 auto;
     width: auto;
@@ -745,6 +747,9 @@ pre {
     flex-basis: 0;
     flex-grow: 1;
     max-width: 100%; }
+
+    
+
   .col-md-auto {
     flex: 0 0 auto;
     width: auto;
@@ -845,6 +850,9 @@ pre {
     flex-basis: 0;
     flex-grow: 1;
     max-width: 100%; }
+
+    
+
   .col-lg-auto {
     flex: 0 0 auto;
     width: auto;
@@ -941,10 +949,14 @@ pre {
     margin-left: 91.66667%; } }
 
 @media (min-width: 1200px) {
+
   .col-xl {
     flex-basis: 0;
     flex-grow: 1;
     max-width: 100%; }
+
+  
+
   .col-xl-auto {
     flex: 0 0 auto;
     width: auto;
@@ -11306,6 +11318,9 @@ body {
       font-size: 14px; 
     }
   
+    /* .btnN{
+      margin-left:-20rem ;
+    } */
   }
 
 @media (max-width: 991.98px) {
@@ -44353,7 +44368,7 @@ input:disabled {
   
 }
 .invoice-total1{
-  margin-left: 37.5rem;
+  margin-left: 38rem !important;
 }
 
 .all-form{

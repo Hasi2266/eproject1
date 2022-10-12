@@ -292,7 +292,7 @@ input:checked + .slider:before {
                     <th scope="col" class="thColor">Description</th>
                     <th scope="col" class="datecol thColor"  >Date</th>
                     <th scope="col" class="datecol thColor"  >Weight</th>
-                    <th scope="col" class="thColor" ><span style="margin-left:14rem;">Amount</span></th>
+                    <th scope="col" class="thColor" ><span style="margin-left:35rem;">Amount</span></th>
                     <th scope="col" class="thColor"></th>
                     <th scope="col" class="thColor">Status</th>
                   </tr>
@@ -318,7 +318,7 @@ input:checked + .slider:before {
                     <td style="margin-left: 1rem"><?php echo $items2->description?></td>
                     <td style="margin-left:-2rem;"><?php echo $items2->date?></td>
                     <td style="margin-left:-2rem;"><?php echo $items2->weight?></td>
-                    <td><input type="" disabled name="amount" value="<?php echo $items2->amount?>" id="amount_<?php echo $items2->id?>" class="calc1"  style="margin-left:14rem;border:none"></td>
+                    <td><input type="" disabled name="amount" value="<?php echo $items2->amount?>" id="amount_<?php echo $items2->id?>" class="calc1"  style="margin-left:35rem;border:none"></td>
                     <!-- <td id = "amount_<?php echo $items2->id?>"></td> -->
                     <td><label class="switch"> <input type="checkbox" <?php if($items2->status==2){echo "checked disabled";}?> name="chk[]" id="chk1_<?php echo $items2->id?>" value="<?php echo $items2->id?>"  class="chk"> <span class="slider round"></label></td>
                     <td><span class="badge badge-pill badge-danger" style="background-color:#36b8b;"><?php echo $status?></span></td>
@@ -339,15 +339,17 @@ input:checked + .slider:before {
                   <div class="d-flex justify-content">
                     <p>Balance Payment</p>
                     <input type="hidden"  id="sub_total" name="milestone_total" value="<?php echo $item->total_amount?>">
-                    <input type="hidden"  id="total1" name="milestone_total" >
+                    <input type="hidden"  id="total1" name="milestone_total">
 
                     <!-- <?php 
                     
                         $total = $project->milestone_total_price;
-
+                        // <?php echo $item->balance?>
                     
                     ?> -->
-                    <p class="" style="margin-left:4.5rem"><input type="text" id="balance1" disabled style="border:none;" name="balance" value="<?php echo $item->balance?>" > </p>
+                   
+
+                    <p class="" style="margin-left:4.5rem"><input type="text" id="balance1" style="border:none;" name="balance" value="<?php echo $item->balance?>"> </p>
                   </div>
 
               </div>
@@ -357,9 +359,10 @@ input:checked + .slider:before {
     </div>
        
 
-			<div class="text-end" style="margin-left: 54.5rem">
-      <button type="submit" class="btn  btn-all mt-5 mb-5  ml-5 text-end text-white" style="background-color:#00a7e6" >Generate PDF</button>
-            <button type="submit" class="btn  btn-all mt-5 mb-5 ml-2 border" style="background-color:white">Update Invoice</button>
+			<div class="text-end" style="margin-left: 61rem">
+            <!-- <button type="submit" class="btn  btn-all mt-5 mb-5  ml-5 text-end text-white" style="background-color:#00a7e6" >Generate PDF</button> -->
+            <button type="submit" class="btn  btn-all mt-5 mb-5 ml-2 border text-white" style="background-color:white">Update Invoice</button>
+            <a href="<?php echo base_url();?>index.php/ClientInvoice"><button type="button" class="btn btn-all text-white mb-5 mt-5 ml-2 border">Cancel</button></a>
       </div>
 
    

@@ -240,7 +240,7 @@
 																<td>
 																	
 																<?php if($no == 2){ foreach($service_name as $key => $value){ ?>
-																	<select class=" custom-select m-input px-5 mx-4 mb-2"
+																	<select class=" custom-select m-input px-5  mb-2"
 																		style="border-radius:10px;width:26rem;background-color:#17a2b8;color:white" 
 																		name="service_id[]">
 
@@ -260,7 +260,7 @@
 																
 																if(empty($project->services)){ ?>
 
-																	<select class=" custom-select m-input px-5 mx-4"
+																	<select class=" custom-select m-input px-5 "
 																		style="border-radius:10px;width:26rem;" id="service"
 																		name="service_id[]">
 																		
@@ -272,7 +272,7 @@
 																
 																foreach($service as $key => $value){ ?>
 																	
-																	<select class="custom-select m-input mx-4 mb-2"
+																	<select class="custom-select m-input mb-2"
 																		style="border-radius:10px ;width:26rem;background-color:#637382;color:white;"
 																		name="service_id[]">
 																		<!-- <option selected>-- Choose Team --</option> -->
@@ -402,7 +402,7 @@
 																<td>
 																
 																<?php if($no == 1){ foreach($package_name as $key => $value){ ?>
-																	<select class=" custom-select m-input px-5 mx-4 mb-2"
+																	<select class=" custom-select m-input px-5 mb-2"
 																		style="border-radius:10px;width:26rem;background-color:yellow;" 
 																		name="package_id[]">
 
@@ -422,7 +422,7 @@
 																
 																if(empty($project->packages)){?>
 
-																	<select class=" custom-select m-input px-5 mx-4"
+																	<select class=" custom-select m-input px-5"
 																		style="border-radius:10px;width:26rem;" id="package"
 																		name="package_id[]">
 
@@ -434,7 +434,7 @@
 																	<?php }else{	
 																foreach($package as $key => $value){   ?>
 																	
-																	<select class="custom-select m-input mx-4 mb-2"
+																	<select class="custom-select m-input mb-2"
 																		style="border-radius:10px ;width:26rem;background-color:pink;"
 																		name="package_id[]">
 																		<!-- <option selected>-- Choose Team --</option> -->
@@ -508,7 +508,7 @@
 														$href= "";
 													?>
 
-									<p>There is no attachemet in this project</p>
+										<span class="badge badge-pill badge-danger mx-2 pt-1  " style="font-size:13px;margin-bottom:50px;">There is no attachemet in this project</span>
 									<input class="form-control" name="images[]" type="file" style="border-radius:10px;" multiple="" value="1">
 
 													<?php }
@@ -581,7 +581,7 @@
 					</div>
 					
 													</div>
-													 <a ><button type ="submit" class="btn btn-submit mt-4 mx-4">Update Project</button></a>
+													 
 			<!-- Submit -->
 
 			
@@ -593,7 +593,10 @@
 				<button type="submit" class="btn btn-primary">Submit Proposal</button>
 
 
+
 			<?php } ?> -->
+			</div>
+			<a ><button type ="submit" class="btn btn-all text-white btn-submit mt-4 mx-4">Update Project</button></a>
 		</form>
 
     </div>

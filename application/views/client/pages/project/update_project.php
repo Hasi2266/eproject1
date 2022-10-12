@@ -199,9 +199,15 @@
               </div></td> -->
               <td><?php echo $item->milestone_name?></td>
               <td><?php echo $item->milestone_weight?></td>
-							<td><div class="progress" style="width:100px;">
+							<td>
+              <div class="progress mt-2" style="height:0.45rem;border-radius:10px">
+											<div class="progress-bar bg-<?php if($item->milestone_progress >= 50){echo "green";}else{echo "danger";} ?> wd-<?php echo $item->milestone_progress?>p" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+										</div>	
+              <!-- <div class="progress" style="width:100px;">
                 <div class="progress-bar" role="progressbar" style="width:<?php echo $item->milestone_progress?>px;" aria-valuenow="<?php echo $item->milestone_progress?>" aria-valuemin="0" aria-valuemax="100"><?php echo $item->milestone_progress?></div>
-              </div></td>
+              </div> -->
+            
+            </td>
 							<td><?php echo $item->milestone_description?></td>
               <td><?php echo $item->start_date?></td>
               <td><?php echo $item->end_date?></td>
@@ -227,8 +233,8 @@
 		
       <!-- Submit -->
 					 </div>
-					 <div class="row" style="display:flex;align-items:center;justify-content:center" >
-					 <a href="<?php echo base_url();?>index.php/ClientProject"><button type="submit" class="btn btn-submit btn-all text-white btn-med text-center" style="border-radius:10px;margin-bottom:-50px;margin-top:-20px;">Back to Projects</button></a><!-- content-body -->
+					 <div class="row" style="display:flex;align-items:center;" >
+					 <a href="<?php echo base_url();?>index.php/ClientProject"><button type="submit" class="btn btn-submit btn-all text-white btn-med text-center mx-3" style="border-radius:10px;margin-bottom:-50px;margin-top:-20px;">Back to Projects</button></a><!-- content-body -->
 					 </div>
 					
       </div>

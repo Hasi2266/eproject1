@@ -110,6 +110,9 @@ Class ClientInvoice extends CI_Controller{
 
 	public function confirmInvoice(){
 
+		$x = $this->input->post("balance");
+		// echo $x;die;
+
 		$date_now = date("Y-m-d");
 		
 		$invoiceModel = new InvoiceModel();

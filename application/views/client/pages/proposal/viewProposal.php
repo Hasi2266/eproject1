@@ -71,9 +71,14 @@
 								</div></td> -->
 								<td><?php echo $item->milestone_name?></td>
 								<td><?php echo $item->milestone_weight?></td>
-								<td><div class="progress">
+								<td>
+								<div class="progress mt-2" style="height:0.45rem;border-radius:10px">
+											<div class="progress-bar bg-<?php if($item->milestone_progress >= 50){echo "green";}else{echo "danger";} ?> wd-<?php echo $item->milestone_progress?>p" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+										</div>	
+								<!-- <div class="progress">
 									<div class="progress-bar" role="progressbar" style="width: <?php echo $item->milestone_progress?>%;" aria-valuenow="<?php echo $item->milestone_progress?>" aria-valuemin="0" aria-valuemax="100"><?php echo $item->milestone_progress?></div>
-								</div></td>
+								</div> -->
+							</td>
 								<td><?php echo $item->milestone_description?></td>
 								<td><?php echo $item->start_date?></td>
 								<td><?php echo $item->end_date?></td>
@@ -217,7 +222,7 @@
       
 
 													</div>
-													<div class="row mx-1" style="display:flex;align-items:center;">
+													<div class="row mx-4" style="display:flex;align-items:center;">
 
 													<?php 
 
@@ -227,8 +232,8 @@
 													
 													<?php			}else {
 													?>
-														<a href="<?php echo base_url();?>index.php/ClientProject/giveApprove/<?php echo $items->project_id;?>"><button type="submit" class="btn btn-all text-white  mt-3 mb-2 btn-submit" >Approve Project</button></a> 
-														<a href="<?php echo base_url();?>index.php/ClientProject/Proposal"><button type="button" class="btn btn-all mt-3 mb-2 btn-submit text-white mx-3 ">Cancel</button>
+														<a href="<?php echo base_url();?>index.php/ClientProject/giveApprove/<?php echo $items->project_id;?>"><button type="submit" class="btn btn-all text-white  mt-3 mb-4 btn-submit" >Approve Project</button></a> 
+														<a href="<?php echo base_url();?>index.php/ClientProject/Proposal"><button type="button" class="btn btn-all mt-3 mb-4 btn-submit text-white mx-3 ">Cancel</button>
 													
 													<?php } ?>
 

@@ -111,7 +111,7 @@
 							
 
 									<td ><span class="badge badge-pill badge-info"><?php echo $status?></span></td>
-										<td>#P000010</td>
+										<td><?php if(empty($invoices[0]->project_id)){ echo "" ;}else{ echo $invoices[0]->invoice_no ; }?></td>
 			
 									<td class="due"><div class="progress mt-2" style="height:0.45rem;border-radius:10px">
 											<div class="progress-bar bg-<?php if($item->project_progress >= 50){echo "green";}else{echo "danger";} ?> wd-<?php echo $item->project_progress?>p" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
@@ -119,7 +119,7 @@
 
 												<!-- <td><?php echo $item->project_progress?> %</td> -->
 												
-												<td style="text-transform: uppercase;" ><?php echo $due_date?></td>
+												<td style="text-transform: capitalize;" ><?php echo $due_date?></td>
 											<td>	<div class="dropdown">
 													<button class="btn  dropdown-toggle1" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-radius: 10px;margin-left:-1rem;">
 														<i class="fa fa-ellipsis-h" aria-hidden="true"></i>

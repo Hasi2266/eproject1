@@ -181,7 +181,7 @@
               <div class="col-sm-6 col-md-3 col-6">
                 <h6 class="card-title">Projects</h6>
                 <div class="d-flex align-items-center justify-content-between mg-b-10">
-                  <h1 class="card-value tSvale4" style=""><?php echo $noProjects?><span class="tx-success"></span></h1>
+                  <h1 class="card-value tSvale4" style="margin-left:120px;"><?php echo $noProjects?><span class="tx-success"></span></h1>
                   <div class="chart-wrapper">
                     <!-- <div id="flotChart1" class="flot-chart"></div> -->
                   </div>
@@ -191,7 +191,7 @@
               <div class="col-sm-6 col-md-3 mg-t-20 mg-sm-t-0 col-6 tot">
                 <h6 class="card-title">Total Spend</h6>
                 <div class="d-flex align-items-center justify-content-between mg-b-10">
-                  <h1 class="card-value tSvale1" style="">0<span class="tx-success"></span></h1>
+                  <h1 class="card-value tSvale1" style="margin-left:120px;">0<span class="tx-success"></span></h1>
                   <div class="chart-wrapper">
                     <!-- <div id="flotChart2" class="flot-chart"></div> -->
                   </div>
@@ -201,7 +201,7 @@
               <div class="col-sm-6 col-md-3 mg-t-20 mg-md-t-0 col-6">
                 <h6 class="card-title">Invoices</h6>
                 <div class="d-flex align-items-center justify-content-between mg-b-10">
-                  <h1 class="card-value tSvale2" style="">0<span class="tx-color-03"></span></h1>
+                  <h1 class="card-value tSvale2" style="margin-left:120px;"><?php echo $noInvoices?><span class="tx-color-03"></span></h1>
                   <div class="chart-wrapper">
                     <!-- <div id="flotChart3" class="flot-chart"></div> -->
                   </div>
@@ -211,7 +211,7 @@
               <div class="col-sm-6 col-md-3 mg-t-20 mg-md-t-0 col-6">
                 <h6 class="card-title">Proposals</h6>
                 <div class="d-flex align-items-center justify-content-between mg-b-10">
-                  <h1 class="card-value tSvale3"style=""><?php echo $noProposals?></h1>
+                  <h1 class="card-value tSvale3" style="margin-left:120px;"><?php echo $noProposals?></h1>
                   <div class="chart-wrapper">
                     <!-- <div id="flotChart4" class="flot-chart"></div> -->
                   </div>
@@ -663,8 +663,8 @@ else{
 										</div>		</td>
 
 												<!-- <td><?php echo $item->project_progress?> %</td> -->
-												<td class="due"></td>
-												<td style="text-transform: uppercase;"><?php echo $due_date?></td>
+												<td class="due"><?php echo $item->invoice_no?></td>
+												<td style="text-transform: capitalize;"><?php echo $due_date?></td>
 											</tr>
 					
 									<?php } ?>   

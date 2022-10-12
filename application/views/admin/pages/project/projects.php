@@ -117,7 +117,7 @@
 									<td><div class="progress mt-2" style="height:0.45rem;border-radius:10px">
 											<div class="progress-bar bg-<?php if($item->project_progress >= 50){echo "green";}else{echo "danger";} ?> wd-<?php echo $item->project_progress?>p" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
 										</div>		</td>
-									<td class="data" style="text-transform: uppercase;">
+									<td class="data" style="text-transform: capitalize;">
 										
 											<?php echo $due_date?>
 											<!-- <nav class="nav">

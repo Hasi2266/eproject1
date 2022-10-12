@@ -143,7 +143,7 @@
 							</div>
 						</div>
 					</div>
-					<h6 class="card-title mg-b-1" style="margin-top:1px;">Category</h6>
+					<h6 class="mg-b-1" style="margin-top:1px;">Category</h6>
 					<div class="row mt-2 mb-5">
 						<?php foreach ($items as $item){?>
 
@@ -257,9 +257,9 @@
 							name="progress" placeholder="Enter Name" style="border-radius:10px" value="<?php echo $project->project_progress ?>" >
 					</div>
 
-					<div class="all-btns"> 
-							<button type ="submit" class="btn btn-all btn-submit mt-4 mx-4 mb-3">Update Project</button>
-                                <a href="<?php echo base_url();?>index.php/AdminProject"><button type="button" class="btn btn-all btn-submit btn-dark btn-new mt-4 px-5 mb-3" style="margin-left:-0.6rem" >Back</button></a>
+					<div class="all-btns" > 
+							<button type ="submit" class="btn btn-all btn-submit mt-4 mx-4 text-white mb-3">Update Project</button>
+                                <a href="<?php echo base_url();?>index.php/AdminProject"><button type="button" class="btn btn-all btn-submit btn-dark text-white btn-new mt-4 px-5 mb-3" style="margin-left:-0.6rem" >Back</button></a>
                             </div>
 
       

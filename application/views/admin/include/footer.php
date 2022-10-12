@@ -165,7 +165,7 @@ $(document).ready(function(){
 	'</td><td><input type="text" name="end_date[]" class="form-control" id="datepicker7_'+i+'" aria-describedby="emailHelp" placeholder="End date" style="border-radius:10px">'+
 	'</td><td><input type="text" name="amount[]" class="form-control calc"  aria-describedby="emailHelp" placeholder="Amount" style="border-radius:10px">'+
 	
-	'</td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove1">X</button></td></tr>');
+	'</td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove"><span class="fa fa-trash"></button></td></tr>');
 
 
 	$(document).ready(function() {
@@ -199,7 +199,7 @@ $(document).ready(function(){
 				// $('tbody').append(html);
 
 		
-$(document).on('click', '.btn_remove1', function(){
+$(document).on('click', '.btn_remove', function(){
 var button_id = $(this).attr("id"); 
 $('#row'+button_id+'').remove();
 	});

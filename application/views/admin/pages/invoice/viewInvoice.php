@@ -2,8 +2,8 @@
   .switch {
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 34px;
+  width: 43px;
+  height: 20px;
 }
 
 .switch input { 
@@ -27,9 +27,9 @@
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
+  height: 12px;
+  width: 12px;
+  left: 3px;
   bottom: 4px;
   background-color: white;
   -webkit-transition: .4s;
@@ -37,7 +37,7 @@
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #8758FF;
 }
 
 input:focus + .slider {
@@ -73,13 +73,13 @@ input:checked + .slider:before {
         </div>
       </div><!-- content-header -->
 			<div class="" style="margin-left:1.5rem;margin-right:1.5rem;">
-     
+      <form action="<?php echo base_url();?>index.php/ClientInvoice/confirmInvoice" method="post" enctype="multipart/form-data">
 			<?php foreach ($items as $item){?>
 			
-        <input type="text" name="project_id" value="<?php echo $item->project_id ?>">
-        <input type="text" name="client_id" value="<?php echo $item->client_id ?>">
-        <input type="text" name="total_amount" value="<?php echo $item->total_amount ?>">
-        <input type="text" name="invoice_id" value="<?php echo $item->invoice_id ?>">
+        <input type="hidden" name="project_id" value="<?php echo $item->project_id ?>">
+        <input type="hidden" name="client_id" value="<?php echo $item->client_id ?>">
+        <input type="hidden" name="total_amount" value="<?php echo $item->total_amount ?>">
+        <input type="hidden" name="invoice_id" value="<?php echo $item->invoice_id ?>">
 
 								<div class="card-body" style="padding:none !important;">
 	 
@@ -118,13 +118,13 @@ input:checked + .slider:before {
                     <div class="col-md-6">
                             <div class="card invoice-card " style="height:7.5rem">
                                
-                                <div class="card-body mx-1">
-                                    <h5 class="card-title invoice-card-title">Status - <?php echo $status?></h5>
+                                <div class="card-body ">
+                                    <h5 class=" invoice-card-title">Status - <?php echo $status?></h5>
                                     
-                                    <!-- <div class="card-content-invoice">
-                                        <p class="card-text">Date: <span class="invoice-card-value"><?php echo $project->project_created_date?></span></p>
+                                    <div class="card-content-invoice">
+                                        <p class="card-text">Date: <span class="invoice-card-value"><?php echo $item->project_created_date?></span></p>
                                         <p class="card-text">Due Date: <span class="invoice-card-value"><?php echo $due_date?></span></p>
-                                    </div> -->
+                                    </div>
                                     
                                 </div>
                                 
@@ -133,13 +133,13 @@ input:checked + .slider:before {
                     <div class="col-md-6">
                             <div class="card invoice-card " style="height:7.5rem">
                                
-                                <div class="card-body mx-1">
-                                    <h5 class="card-title invoice-card-title">Invoice</h5>
+                                <div class="card-body">
+                                    <h5 class=" invoice-card-title">Invoice</h5>
                                     
-                                    <!-- <div class="card-content-invoice">
-                                        <p class="card-text">Date: <span class="invoice-card-value">Mar 08 2018</span></p>
-                                        <p class="card-text">Due Date: <span class="invoice-card-value">Mar 08 2018</span></p>
-                                    </div> -->
+                                    <div class="card-content-invoice">
+                                        <p class="card-text">Project Date: <span class="invoice-card-value"><?php echo $item->project_created_date?></span></p>
+                                        <p class="card-text">Invoice Date: <span class="invoice-card-value"><?php echo $due_date?></span></p>
+                                    </div>
                                     
                                 </div>
                                 
@@ -154,9 +154,9 @@ input:checked + .slider:before {
                 <div class="col-md-6">
                             <div class="card invoice-card " style="height:15rem;">
                                
-                                <div class="card-body mx-1">
-                                    <h5 class="card-title invoice-card-title" style="margin-bottom:-2px;">Delnix</h5>
-                                    <small class="invoice-card-value">www.delinx.com</small>
+                                <div class="card-body">
+                                    <h5 class="invoice-card-title" style="margin-bottom:2px;">Delnix</h5>
+                                    <small class="invoice-card-value" >www.delinx.com</small>
                                     <div class="card-content-invoice" style="margin-top:35px"> 
                                         <p class="card-text">2121 Wnifired Way</p>
                                         <p class="card-text">Loganspot, IN 46947</p>
@@ -176,11 +176,11 @@ input:checked + .slider:before {
                             <div class="card invoice-card " style="height:15rem;"> 
                                
                                 <div class="card-body mx-1">
-                                    <h6 class="card-title invoice-card-title" style="margin-bottom:-2px;">Invoice To</h6>
+                                    <h5 class=" invoice-card-title" style="margin-bottom:2px;">Invoice To</h5>
                                     <small class="invoice-card-value">Even W. Bowye</small>
                                     
                                     <div class="card-content-invoice mt-5">
-                                        <!-- <h5 class="card-title invoice-card-title "><?php echo $project->company_name?></h5> -->
+                                        <h5 class=" invoice-card-title "><?php echo $item->company_name?></h5>
                                        
                                     </div>
                                     <div class="card-content-invoice  mb-3">
@@ -202,7 +202,7 @@ input:checked + .slider:before {
                 <div class="card invoice-card   ml-3" style="width: 35rem;height:25rem">
                                
                                <div class="card-body mx-1">
-                                   <h5 class="card-title invoice-card-title" style="margin-bottom:-2px;">Payment Details</h5>
+                                   <h5 class=" invoice-card-title" style="margin-bottom:-2px;">Payment Details</h5>
                                    
                                   
                                    <div class="card-content-invoice1 mt-4 mb-3">
@@ -273,7 +273,7 @@ input:checked + .slider:before {
 		<div class=" mt-5 card card-projects shadow card-task-one dashCardHover border-0 px-4" style="border-radius:15px;margin-bottom:2rem !important;padding-bottom:-3rem;" >
 						<!-- <form action="" method="post" enctype="multipart/form-data" class="form-horizontal"> -->
 						<div class="card-header bg-transparent pd-y-15 pd-l-15 pd-r-10" style="margin-bottom:-0.1rem;">
-									<h6 class="card-title mg-b-0 px-1" style="margin-top:1px;margin-bottom:-6px"><?php echo $item->name ?> - <?php echo $item->total_amount ?></h6>
+									<h6 class="invoice-card-title mg-b-0 px-1 " style="margin-top:1px;margin-bottom:-6px;"><?php echo $item->name ?> - <?php echo $item->total_amount ?></h6>
 									<!-- <nav class="nav">
 									<a href="" class="link-gray-500"><i data-feather="help-circle" class="svg-16"></i></a>
 									<a href="" class="link-gray-500"><i data-feather="more-vertical" class="svg-16"></i></a>
@@ -285,16 +285,16 @@ input:checked + .slider:before {
 					
 
             <div class="table-responsive bg-white mb-5 mt-4"  style="border-none">
-              <table class="table  table3 mg-b-0" style="border-none" id="dynamic_field3">
+              <table class="table table3 mg-b-0 invoice-table"  id="dynamic_field3">
                 <thead>
                   <tr>
                     <th></th>
-                    <th scope="col" >Description</th>
-                    <th scope="col" class="datecol" >Date</th>
-                    <th scope="col" class="datecol" >Weight</th>
-                    <th scope="col">Amount</th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
+                    <th scope="col" class="thColor">Description</th>
+                    <th scope="col" class="datecol thColor"  >Date</th>
+                    <th scope="col" class="datecol thColor"  >Weight</th>
+                    <th scope="col" class="thColor" ><span style="margin-left:35rem;!important">Amount</span></th>
+                    <th scope="col" class="thColor"></th>
+                    <th scope="col" class="thColor">Status</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -318,9 +318,9 @@ input:checked + .slider:before {
                     <td style="margin-left: 1rem"><?php echo $items2->description?></td>
                     <td style="margin-left:-2rem;"><?php echo $items2->date?></td>
                     <td style="margin-left:-2rem;"><?php echo $items2->weight?></td>
-                    <td><input type="tet" name="amount" value="<?php echo $items2->amount?>" id="amount_<?php echo $items2->id?>" class="calc1" ></td>
+                    <td><input type=""  disabled name="amount" value="<?php echo $items2->amount?>" id="amount_<?php echo $items2->id?>" class="calc1"  style="margin-left:35rem;border:none"></td>
                     <!-- <td id = "amount_<?php echo $items2->id?>"></td> -->
-                    <td><label class="switch"> <input type="checkbox" <?php if($items2->status==2){echo "checked disabled";}else{ echo "disabled"; }?> name="chk[]" id="chk1_<?php echo $items2->id?>" value="<?php echo $items2->id?>"  class="chk"> <span class="slider round"></label></td>
+                    <td><label class="switch"> <input type="checkbox" <?php if($items2->status==2){echo "checked disabled";}?> name="chk[]" id="chk1_<?php echo $items2->id?>" value="<?php echo $items2->id?>"  class="chk"> <span class="slider round"></label></td>
                     <td><span class="badge badge-pill badge-danger" style="background-color:#36b8b;"><?php echo $status?></span></td>
                   </tr>
                 
@@ -329,26 +329,28 @@ input:checked + .slider:before {
                 </tbody>
               </table>
 
-              <div class="mt-5 text-end invoice-total" >
-              <div class="d-flex justify-content">
-                <p>Sub Total Amount</p>
-                <p style="margin-left:4.5rem"><?php echo $item->total_amount?></p>
-               </div>
+              <div class="mt-5 text-end invoice-total1">
+                  <div class="d-flex justify-content">
+                    <p>Sub Total Amount</p>
+                    <p style="margin-left:4.5rem"><?php echo $item->total_amount?></p>
+                  </div>
        
                 
-               <div class="d-flex justify-content">
-                <p>Balance Payment</p>
-                <input type="hidden"  id="sub_total" name="milestone_total" value="<?php echo $item->total_amount?>">
-                <input type="hidden"  id="total1" name="milestone_total" >
+                  <div class="d-flex justify-content">
+                    <p>Balance Payment</p>
+                    <input type="hidden"  id="sub_total" name="milestone_total" value="<?php echo $item->total_amount?>">
+                    <input type="hidden"  id="total1" name="milestone_total">
 
-                <!-- <?php 
-                
-                    $total = $project->milestone_total_price;
+                    <!-- <?php 
+                    
+                        $total = $project->milestone_total_price;
+                        // <?php echo $item->balance?>
+                    
+                    ?> -->
+                   
 
-                
-                ?> -->
-                <p class="" style="margin-left:4.5rem"><input type="text" id="balance1" name="balance" value="<?php echo $item->balance?>" style="border:none;"> </p>
-               </div>
+                    <p class="" style="margin-left:4.5rem"><input type="text" id="balance1" style="border:none;" name="balance" value="<?php echo $item->balance?>"> </p>
+                  </div>
 
               </div>
             </div><!-- table-responsive -->
@@ -357,10 +359,9 @@ input:checked + .slider:before {
     </div>
        
 
-			<div class="text-end" style="margin-left: 54.5rem">
-      <button type="submit" class="btn btn-all mt-5 mb-5  ml-5 text-end text-white" style="background-color:#00a7e6" >Generate PDF</button>
-            <a href="<?php echo base_url();?>index.php/AdminInvoice"><button type="button" class="btn btn-all mt-5 mb-5 ml-2 border" style="background-color:white">Back to Invoices</button></a>
-            <!-- <a href="<?php echo base_url();?>index.php/AdminProject"><button type="type" class="btn  mt-5 mb-5 ml-2 border" style="background-color:white">Back to Projects</button></a> -->
+			<div class="text-end" style="margin-left: 65rem">
+      <!-- <button type="submit" class="btn  btn-all mt-5 mb-5  ml-5 text-end text-white" style="background-color:#00a7e6" >Generate PDF</button> -->
+      <a href="<?php echo base_url();?>index.php/AdminInvoice"><button type="button" class="btn btn-all mt-5 text-white mb-5 ml-2 border" style="background-color:white">Back to Invoices</button></a>
       </div>
 
    
