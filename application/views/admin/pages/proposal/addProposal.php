@@ -82,7 +82,7 @@
                             </div>
                             <div class="d-flex flex-row-reverse">
                                   <div class="p-2" style="margin-left:140px;">
-                                  <input type="text" id="total" name="milestone_total" class="form-control"  style="border-radius:10px">
+                                  <input type="text" id="total" required name="milestone_total" class="form-control"  style="border-radius:10px">
                             </div>
                                   
                             <div class="p-2" >Total</div>

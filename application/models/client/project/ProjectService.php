@@ -407,7 +407,7 @@ function getService_id(){
 		$data = array(
 
 			'approve_project' => '1',
-			'project_status' => '2',
+			'project_status' => '3',
 			'update_date' => $projectmodel->getUpdate_date(),
 
 		);

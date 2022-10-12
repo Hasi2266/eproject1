@@ -76,22 +76,29 @@
 								
 								<?php 
 									if(($item->project_status) == 1){
+										$action = "Create Proposal";
 										$status = 'Project Submitted ';
 									}
-									else if(($item->project_status) == 5){
-										$status = 'Prooposal Submitted';
-									}
 									else if(($item->project_status) == 2){
-										$status = 'Project Approved';
+										
+										$status = 'Proposal Submitted';
+										$action = "Approval Pending";
 									}
 									else if(($item->project_status) == 3){
-										$status = 'In Progress ';
-									}	
+										$action = "Start Project";
+										$status = 'Project Approved';
+									}
 									else if(($item->project_status) == 4){
+										$status = 'Project Start';
+										$action = "In Progress Project";
+									}	
+									else if(($item->project_status) == 5){
 										$status = 'Project Hold';
+										$action = "Start Project";
 									}
 									else{
 										$status = 'Project Completed';
+										$action = "End Project";
 									}	
 
 									if(($item->end_date)== 'Specific Date'){
@@ -112,7 +119,7 @@
 									<!-- <td class="data"><?php echo $item->company_name?></td> -->
 									<td class="data" ><span style="margin-left:-1.5rem;"><?php echo $item->name?></span></td>
 									<td class="data"><?php echo $item->update?></td>
-									<td><span class="badge badge-pill badge-info"><?php echo $status?></span></td>
+									<td><span class="badge badge-pill badge-info" style="width:7rem;"><?php echo $status?></span></td>
 									<td class="data"><?php echo $item->invoice_no?></td>
 									<td><div class="progress mt-2" style="height:0.45rem;border-radius:10px">
 											<div class="progress-bar bg-<?php if($item->project_progress >= 50){echo "green";}else{echo "danger";} ?> wd-<?php echo $item->project_progress?>p" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
@@ -138,7 +145,7 @@
 													<div class="dropdown-menu drop-b tx-14" aria-labelledby="dropdownMenuButton">
 														
 													<a class="dropdown-item" href="<?php echo base_url();?>index.php/AdminProject/editItem/<?php echo $item->id?>">Add Progress</a>
-													<a class="dropdown-item" href="<?php echo base_url()?>index.php/AdminProject/addMilestone/<?php echo $item->id ?>">View Project</a>
+													<a class="dropdown-item" href="<?php echo base_url()?>index.php/AdminProject/addMilestone/<?php echo $item->id ?>"><?php echo $action ?> </a>
               
               
             

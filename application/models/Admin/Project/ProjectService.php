@@ -28,7 +28,7 @@ Class ProjectService extends CI_Model{
 		$query = $this->db->get();
 		return $query->result();
 	}
-	
+
 	function getService($category_id){
 
 		$this->db->select('*');
@@ -295,6 +295,7 @@ function getService_id(){
 		$date_now = date("Y-m-d");
 		$data = array(
 			'add_proposal' => '1',
+			'project_status' => '2',
 			'update_date' => $date_now,
 		);
 	
@@ -349,7 +350,7 @@ function getService_id(){
 		$data = array(
 
 			'start_project' => '1',
-			'project_status' => '3',
+			'project_status' => '4',
 			'update_date' => $projectmodel->getUpdate_date(),
 
 		);
@@ -364,7 +365,7 @@ function getService_id(){
 		$data = array(
 
 			'hold_project' => '1',
-			'project_status' => '4',
+			'project_status' => '5',
 			'update_date' => $projectmodel->getUpdate_date(),
 
 		);
@@ -380,7 +381,7 @@ function getService_id(){
 		$data = array(
 
 			'end_project' => '1',
-			'project_status' => '5',
+			'project_status' => '6',
 			'project_del_ind' => '2',
 			'start_project' => '0',
 			'update_date' => $projectmodel->getUpdate_date(),
@@ -397,7 +398,7 @@ function getService_id(){
 		$data = array(
 
 			'hold_project' => '0',
-			'project_status' => '3',
+			'project_status' => '4',
 			'update_date' => $projectmodel->getUpdate_date(),
 
 		);

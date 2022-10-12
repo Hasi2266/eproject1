@@ -617,22 +617,29 @@ else{
 
 										<?php 
 									if(($item->project_status) == 1){
+														
 										$status = 'Project Submitted ';
 									}
-									else if(($item->project_status) == 5){
-										$status = 'Prooposal Submitted';
-									}
 									else if(($item->project_status) == 2){
-										$status = 'Project Approved';
+										
+										$status = 'Proposal Submitted';
+										
 									}
 									else if(($item->project_status) == 3){
-										$status = 'In Progress ';
-									}	
+										$action = "Start Project";
+										
+									}
 									else if(($item->project_status) == 4){
+										$status = 'Project Start';
+										
+									}	
+									else if(($item->project_status) == 5){
 										$status = 'Project Hold';
+										
 									}
 									else{
 										$status = 'Project Completed';
+										
 									}	
 
 									if(($item->end_date)== 'Specific Date'){
@@ -655,7 +662,7 @@ else{
 											
 							
 
-									<td ><span class="badge badge-pill badge-info"><?php echo $status?></span></td>
+									<td ><span class="badge badge-pill badge-info" style="width:7rem;"><?php echo $status?></span></td>
 										
 			
 									<td class="due"><div class="progress mt-2" style="height:0.45rem;border-radius:10px">

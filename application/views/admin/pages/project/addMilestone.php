@@ -425,7 +425,7 @@
 
 <a href="<?php echo base_url();?>index.php/AdminProject/endProject/<?php echo $project->project_id?>"><button type ="button" class="btn btn-all text-white btn-submit">End Project</button></a>
 <a href="<?php echo base_url();?>index.php/AdminProject/holdProject/<?php echo $project->project_id?>"><button type ="button" class="btn btn-all text-white btn-submit mx-2">Hold Project</button></a>
-<a href="<?php echo base_url();?>index.php/AdminProject/"></a><button type="submit" class="btn  btn-all btn-submit">Cancel</button>
+<a href="<?php echo base_url();?>index.php/AdminProject/"></a><button type="submit" class="btn  btn-all text-white btn-submit">Cancel</button>
 
 <?php } else if (((($project->start_project) == 1) && ($project->hold_project) == 1)) { ?>
 
