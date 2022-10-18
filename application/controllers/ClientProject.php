@@ -372,6 +372,7 @@ Class ClientProject extends CI_Controller{
 			$data['images'] =  $ids_image;
 		}
 
+		
 		else{
 			foreach($images as $key => $value){
 				// print_r($value) ; 
