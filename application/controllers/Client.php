@@ -70,6 +70,9 @@ Class Client extends CI_Controller{
 		$clientmodel = new ClientModel();
 		$clientservice = new ClientService();
 
+		// $v = $this->input->post("company_name");
+		// echo $v;die;
+
 		$clientmodel->setFirstname($this->input->post('firstname'));
 		$clientmodel->setLastname($this->input->post('lastname'));
 		$clientmodel->setEmail($this->input->post('email'));

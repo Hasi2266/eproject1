@@ -383,7 +383,7 @@ function percentageToDegrees(percentage) {
 				}
 
 				if(country == 0) {
-					alert('d');
+					// alert('d');
 					document.getElementById("next5").disabled = true;
 					$('#Comsg').html("<h6>*Please Select Country</h6>");
 

@@ -23,7 +23,14 @@ Class ClientProject extends CI_Controller{
 		$data["items"] = $projectservice->allProjects2($this->session->userdata('CLIENT_ID'));
 		$item = $projectservice->allProjects2($this->session->userdata('CLIENT_ID'));
 
-		$data["invoices"] = $projectservice->invoices($item[0]->project_id);
+		if(empty($item)){
+			$data["invoices"] = "";
+		}
+		else{
+			$data["invoices"] = $projectservice->invoices($item[0]->project_id);
+		}
+		
+		
 		// $x = $projectservice->invoices($item[0]->project_id);
 		// print_r($x);die;
 		// $data["items1"] = $projectservice->allServices();
@@ -357,23 +364,31 @@ Class ClientProject extends CI_Controller{
 		$data["milestones"] = $projectservice->getMilestone($id[0]->project_id);
 
 		$images = $projectservice->ProjectImages($porposal_id);
-		// print_r($images);die;
+		$img = $images[0]->images;
+		// print_r($img);die;
+		$ids_image = array();
 
-		// if(empty($images)){
+		if(empty($img)){
+			$data['images'] =  $ids_image;
+		}
 
-		// }
-		foreach($images as $key => $value){
-			// print_r($value) ; 
-			// echo '<br/>';
-			foreach($value as $key => $value1){
-				// print_r($value1); 
-				
-				$ids_image = explode(',',$value1);
-				// print_r($ids_image);die;
+		else{
+			foreach($img as $key => $value){
+				// print_r($value) ; 
+				// echo '<br/>';
+				foreach($value as $key => $value1){
+					// print_r($value1); 
+					
+					$ids_image = explode(',',$value1);
+					// print_r($ids_image);die;
+					
+				}
 				
 			}
-			
 		}
+
+		// die;
+		// print_r($ids_image);die; 
 
 		if(($id[0]->duration_type) == 1){
 			$data["duration_type"] = "Month";

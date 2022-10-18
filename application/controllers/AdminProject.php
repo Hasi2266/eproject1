@@ -244,8 +244,14 @@ Class AdminProject extends CI_Controller{
 
 		$date_now = date("Y-m-d");
 		
+		
+		// $img1 = $this->input->post('images');
+		// $count = count($_FILES['images']['name']);
+		// echo $count;die;
+
 		$total = $this->input->post('milestone_total');
 		$y = $this->input->post('milestone_weight');
+
 		// print_r($y);die;
 		// echo $y;die;
 		// echo $total;die;
@@ -326,51 +332,61 @@ Class AdminProject extends CI_Controller{
 			// echo '<br/>';
 		
 		}
-		
-		
-		// print_r($milestonemodel);die;
-		// // die;
 
-		$count = count($_FILES['images']['name']);
-		$img = array();
-		// echo $id;die;
 		$proposalmodel->setClient_id($this->input->post('client_id'));
 		$proposalmodel->setProject_id($id);
 		$proposalmodel->setMilestone_total($total);
 		$proposalmodel->setDuration_no($this->input->post('duration_no'));
 		$proposalmodel->setDuration_type($this->input->post('duration_type'));
 		$proposalmodel->setCover_letter($this->input->post('cover_letter'));
-
-		for($i=0;$i<$count;$i++){
-			if ($_FILES['images']['size'] == 0 && $_FILES['images']['error'] == 4) {
-				$projectmodel->setImages($this->input->post('images['.$i.']'));
-				// $productsmodel->setProduct_image($this->input->post('p_image'));
-				// $postmodel->setbusiness_logo();
-			}
-			else {
-
-				// $filename = uniqid() . "-" . time(); // 5dab1961e93a7-1571494241
-				$filename = $this->input->post('client_id')."proposal_".$i;
-				// $filename = 
-				// echo $filename;die;
-				$extension = pathinfo($_FILES['images']['name'][$i], PATHINFO_EXTENSION); // jpg
-				$image = $filename . '.' . $extension; // 5dab1961e93a7_1571494241.jpg
-	
-				$target = "./uploads/" . basename($image);
-	
-				if (move_uploaded_file($_FILES['images']['tmp_name'][$i], $target)) {
-	
-					$data["message"] = "file uploaded,";
-				}
-				$img[$i] = $image;
-			}
-			
-		}
 		
-		$proposalmodel->setImages($img);
-		$proposalmodel->setCreated_date($date_now);
-		$projectmodel = new ProjectModel();
+		$count = count($_FILES['images']['name']);
+		$img = array();
+		// print_r($milestonemodel);die;
+		// // die;
 
+		if(empty(array_filter($_FILES['images']['name']))) {
+
+			$proposalmodel->setImages("");
+			// echo 5;
+		}
+		else{
+
+		// echo $id;die;
+		
+			for($i=0;$i<$count;$i++){
+
+				if ($_FILES['images']['size'] == 0 && $_FILES['images']['error'] == 4) {
+					$proposalmodel->setImages($this->input->post('images['.$i.']'));
+					// $productsmodel->setProduct_image($this->input->post('p_image'));
+					// $postmodel->setbusiness_logo();
+				}
+				else {
+
+					$filename = uniqid() . "-" . time(); // 5dab1961e93a7-1571494241
+					// $filename = $this->input->post('client_id')."proposal_".$i;
+					// $filename = 
+					// echo $filename;die;
+					$extension = pathinfo($_FILES['images']['name'][$i], PATHINFO_EXTENSION); // jpg
+					$image = $filename . '.' . $extension; // 5dab1961e93a7_1571494241.jpg
+		
+					$target = "./uploads/" . basename($image);
+		
+					if (move_uploaded_file($_FILES['images']['tmp_name'][$i], $target)) {
+		
+						$data["message"] = "file uploaded,";
+					}
+					$img[$i] = $image;
+				}
+				
+			}
+	
+			$proposalmodel->setImages($img);
+		}
+
+		$proposalmodel->setCreated_date($date_now);
+
+		$projectmodel = new ProjectModel();
 		$projectmodel->setProject_id($id);
 		// echo $id;die;
 		$projectmodel->setUpdate_date($date_now);

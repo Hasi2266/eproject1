@@ -47,6 +47,7 @@ Class ProjectService extends CI_Model{
 		$query = $this->db->get();
 		return $query->result();
 	}
+	
 
 	function createProject($projectmodel){
 
@@ -168,8 +169,9 @@ function getService_id(){
 		return $query->result();
 	}
 
+	
 	function allProjects2($id){
-		$this->db->select('*,service.service_name');
+		$this->db->select('*,project.project_id as pid,service.service_name');
 		$this->db->from('project');
 		$this->db->join('service','service.service_id = project.services','left',false);
 		// $this->db->join('invoice','invoice.project_id = project.project_id','left',false);
@@ -280,7 +282,7 @@ function getService_id(){
 
 	function ProjectImages($id){
 		
-		$this->db->select('images');
+		$this->db->select('*');
 		$this->db->from('proposal');
 		$this->db->where('proposal_id='.$id);
 		$query = $this->db->get();

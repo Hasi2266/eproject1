@@ -41,7 +41,7 @@
 								</div>
        <!-- <h3 class="text-dark  mb-4">Proposal</h3> -->
        <div class="card-body">
-        <table id="example1" class="table1 table" style="border-radius:10px ;font-size:13px;">
+        <table id="example1" class=" table" style="border-radius:10px ;font-size:13px;">
           <thead>
             <tr>
 			<!-- <th class="wd-9p"><div class="custom-control custom-checkbox" style="border-radius: 8px;">
@@ -55,6 +55,7 @@
             <!-- <th class="wd-14p">Invoice</th> -->
             <th class="wd-15p">Progress</th>
             <th  class="wd-13p">Due date</th>
+            <th class="wd-15p">Action</th>
             </tr>
           </thead>
           <tbody>
@@ -69,7 +70,7 @@
         
         ?>
 
-				<tr data-url="<?php echo base_url()?>index.php/ClientProject/viewProposal/<?php echo $proposal->proposal_id ?>" style="cursor:pointer;">
+				<tr style="cursor:pointer;">
 				
 				<!-- <td><div class="custom-control custom-checkbox">
 					<input type="checkbox" class="custom-control-input" id="customCheck1">
@@ -98,7 +99,19 @@
 											<div class="progress-bar bg-<?php if($proposal->project_progress >= 50){echo "green";}else{echo "danger";} ?> wd-<?php echo $proposal->project_progress?>p" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
 										</div>		</td>
 					<td class="due" style="text-transform: uppercase;"><?php echo $due_date?></td>
-					
+					<td>	<div class="dropdown">
+													<button class="btn  dropdown-toggle1" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-radius: 10px;margin-left:-1rem;">
+														<i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+													</button>
+													<div class="dropdown-menu drop-b tx-14" aria-labelledby="dropdownMenuButton">
+														
+													
+													
+													
+													<a class="dropdown-item" href="<?php echo base_url()?>index.php/ClientProject/viewProposal/<?php echo $proposal->proposal_id ?>">View Proposal</a>
+											
+												</div>
+												</div></td>
 					<!-- <td>24 May 2022</td> -->
 					
 				</tr>

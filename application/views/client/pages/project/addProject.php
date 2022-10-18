@@ -32,7 +32,7 @@
 				<div class="card-body">
 					<div class="form-group">
 						<label for="exampleInputEmail1"><h6 class="card-title mg-b-1" style="margin-top:1px;">Project Name</h6></label>
-						<input type="text" class="form-control"  id="exampleInputEmail1" aria-describedby="emailHelp"
+						<input type="text" class="form-control" required id="exampleInputEmail1" aria-describedby="emailHelp"
 							name="name" placeholder="Enter Name" style="border-radius:10px" <?php if($no==1 || $no==2){ ?>value="<?php echo $project_name?>" <?php }else{?>value=""<?php } ?>>
 
 					</div>

@@ -67,7 +67,7 @@
                     </div><!-- form-group -->
                   </section>
                  
-                  <button class="btn btn-primary nextBtn btn-lg pull-right mb-3" type="button" id="next1" >Next</button>
+                  <button class="btn btn-primary nextBtn btn-lg pull-right mb-3" type="button" id="next1">Next</button>
                 </div>
             </div>
             <div class="row setup-content " id="step-2">
@@ -79,7 +79,7 @@
                     <div class="row row-sm ">
                       <div class="col-md-6">
                         <label class="form-control-label">Company name : <span class="tx-danger">*</span></label>
-                        <input id="company" class="form-control text-border" name="company_name " placeholder="Enter Company name" type="text" required>
+                        <input id="company" class="form-control text-border" name="company_name" placeholder="Enter Company name" type="text" required>
 												<span id="Cmsg" style="color:red"> </span>
 											</div><!-- col -->
                       <div class="col-md-6 mg-t-20 mg-md-t-0">

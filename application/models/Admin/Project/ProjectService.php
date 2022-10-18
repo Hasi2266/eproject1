@@ -136,7 +136,7 @@ function getService_id(){
 	}
 
 	function allProjects2(){
-		$this->db->select('*,project.project_id as id, project.update_date as update, user-login.company_name,invoice.invoice_no');
+		$this->db->select('*,project.project_id as pid, project.update_date as update, user-login.company_name,invoice.invoice_no');
 		$this->db->from('project');
 		$this->db->join('user-login','user-login.client_id = project.client_id');
 		$this->db->join('invoice','invoice.project_id = project.project_id','left',false);

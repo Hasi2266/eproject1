@@ -523,7 +523,7 @@
 													?>
 													   
 													 
-													<div class="card-deck ">
+													<div class="card-deck">
 													
 														<div class="card" style="width:15rem;height:15rem;margin-right:20px">
 															

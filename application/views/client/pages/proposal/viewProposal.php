@@ -172,27 +172,36 @@
 								
 
 												<?php
-
-												if(empty($images)){
+														// if(empty($imgaes)){
+														// 	echo 'no';
+														// }
+														// die;
+												if(empty($imgaes)){
 													// echo 'hi';
 													$img = "";
 													$href= "";
 													?>
-													<p>There is no attachemet in this project</p>
+													<span class="badge badge-pill badge-danger mx-2 pt-1 " style="font-size:13px;margin-bottom:50px;margin-bottom:-2.5rem;">There is no attachemet in this project</span>
+													<input class="form-control" name="images[]" type="file" style="border-radius:10px;" multiple="" value="1">
+
 
 													<?php }
 													else{
 
 													$i= 1;
 													foreach($images as $key => $value){
-														// echo $value;
+														$img = "/uploads/$value";
+														$href= "/uploads/$value";
+
 														?>
 													
-														<div class="card-deck mx-1 mt-2 ">
+														<div class="card-deck">
 															<div class="card" style="width:15rem;height:15rem;margin-right:20px">
-																<a href="<?php echo base_url();?>/uploads/<?php echo $value;?>" download="<?php echo $items->proposal_id.'_'.$i;?>">
-																			<img class="card-img-top " src="<?php echo base_url();?>/uploads/<?php echo $value;?>" alt="Card image cap" style="width:15rem;height:15rem;border-radius:10px;">
+																<a href="<?php echo base_url();?>/uploads/<?php echo $href;?>" download="<?php echo $items->proposal_id.'_'.$i;?>">
+																			<img class="card-img-top " src="<?php echo base_url();?>/uploads/<?php echo $img;?>" alt="Card image cap" style="width:15rem;height:15rem;border-radius:10px;">
 																</a>
+
+
 															</div>
 														</div>
 													</div>		
@@ -222,17 +231,18 @@
       
 
 													</div>
-													<div class="row mx-4" style="display:flex;align-items:center;">
+													</div>
+													<div class="row mx-2" style="display:flex;align-items:center;">
 
 													<?php 
 
 														if(($items->approve_proposal)== 1){
 ?>
-																<a href="<?php echo base_url();?>index.php/ClientProject/Proposal">	<button type="button" class="btn btn-all mt-5 mb-4 btn-submit">Back to Proposals</button></a>
+																<a href="<?php echo base_url();?>index.php/ClientProject/Proposal">	<button type="button" class="btn btn-all text-white mt-3 mb-3 btn-submit">Back to Proposals</button></a>
 													
 													<?php			}else {
 													?>
-														<a href="<?php echo base_url();?>index.php/ClientProject/giveApprove/<?php echo $items->project_id;?>"><button type="submit" class="btn btn-all text-white  mt-3 mb-4 btn-submit" >Approve Project</button></a> 
+														<a href="<?php echo base_url();?>index.php/ClientProject/giveApprove/<?php echo $items->project_id;?>"><button type="submit" class="btn btn-all text-white  mt-3 mb-3 btn-submit" >Approve Project</button></a> 
 														<a href="<?php echo base_url();?>index.php/ClientProject/Proposal"><button type="button" class="btn btn-all mt-3 mb-4 btn-submit text-white mx-3 ">Cancel</button>
 													
 													<?php } ?>

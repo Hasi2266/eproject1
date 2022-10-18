@@ -68,31 +68,32 @@
 
 									<?php foreach($items as $item){?>
 
-										<?php 
+										<?php
+
 									if(($item->project_status) == 1){
-														
+										$action = "Create Proposal";
 										$status = 'Project Submitted ';
 									}
 									else if(($item->project_status) == 2){
 										
 										$status = 'Proposal Submitted';
-										
+										$action = "Approval Pending";
 									}
 									else if(($item->project_status) == 3){
 										$action = "Start Project";
-										
+										$status = 'Project Approved';
 									}
 									else if(($item->project_status) == 4){
 										$status = 'Project Start';
-										
+										$action = "In Progress Project";
 									}	
 									else if(($item->project_status) == 5){
 										$status = 'Project Hold';
-										
+										$action = "Start Project";
 									}
 									else{
 										$status = 'Project Completed';
-										
+										$action = "End Project";
 									}	
 
 									if(($item->end_date)== 'Specific Date'){

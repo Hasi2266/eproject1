@@ -48,7 +48,7 @@ Class DashboardService extends CI_Model{
 
 	function allProjects($id){
 
-		$this->db->select('*,user-login.company_name,invoice.invoice_no');
+		$this->db->select('*,project.project_id as pid,user-login.company_name,invoice.invoice_no');
 		$this->db->from('project');
 		$this->db->join('user-login','user-login.client_id = project.client_id');
 		$this->db->join('invoice','invoice.project_id = project.project_id','left',false);
