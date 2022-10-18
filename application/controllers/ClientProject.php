@@ -373,7 +373,7 @@ Class ClientProject extends CI_Controller{
 		}
 
 		else{
-			foreach($img as $key => $value){
+			foreach($images as $key => $value){
 				// print_r($value) ; 
 				// echo '<br/>';
 				foreach($value as $key => $value1){
