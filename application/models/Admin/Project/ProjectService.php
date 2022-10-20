@@ -144,6 +144,7 @@ function getService_id(){
 		$query = $this->db->get();
 		return $query->result();
 	}
+	
 
 
 	function allProjects1($service_id){
