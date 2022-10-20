@@ -144,8 +144,8 @@
 													</button>
 													<div class="dropdown-menu drop-b tx-14" aria-labelledby="dropdownMenuButton">
 														
-													<a class="dropdown-item" href="<?php echo base_url();?>index.php/AdminProject/editItem/<?php echo $item->project_id?>">Add Progress</a>
-													<a class="dropdown-item" href="<?php echo base_url()?>index.php/AdminProject/addMilestone/<?php echo $item->project_id ?>"><?php echo $action ?> </a>
+													<a class="dropdown-item" href="<?php echo base_url();?>index.php/AdminProject/editItem/<?php echo $item->pid?>">Add Progress</a>
+													<a class="dropdown-item" href="<?php echo base_url()?>index.php/AdminProject/addMilestone/<?php echo $item->pid ?>"><?php echo $action ?> </a>
               
               
             
@@ -156,13 +156,13 @@
 										
 											if ((($item->add_proposal)== 1) && (($item->approve_project)== 1) && (($item->start_project) == 0) && (($item->end_project) == 0) && (($item->add_invoice) == 0) ){?>
 													
-													<a class="dropdown-item" href="<?php echo base_url();?>index.php/AdminProject/addInvoice/<?php echo $item->project_id?>">Add Invoice</a>
+													<a class="dropdown-item" href="<?php echo base_url();?>index.php/AdminProject/addInvoice/<?php echo $item->pid?>">Add Invoice</a>
 													<!-- <a href="<?php echo base_url();?>index.php/AdminProject/addInvoice/<?php echo $item->project_id?>"><button type="submit" class="btn btn-dark btn-submit py-1 px-2">Add Invoice</button></a> -->
 
 											<?php }
 											else if($item->add_invoice == 1){?>
 
-													<a class="dropdown-item" href="<?php echo base_url();?>index.php/AdminInvoice/viewInvoice/<?php echo $item->project_id?>">View Invoice</a>
+													<a class="dropdown-item" href="<?php echo base_url();?>index.php/AdminInvoice/viewInvoice/<?php echo $item->pid?>">View Invoice</a>
 													<!-- <a href="<?php echo base_url();?>index.php/AdminInvoice/viewInvoice/<?php echo $item->project_id?>"><button type="submit" class="btn btn-dark btn-submit py-1 px-2">View Invoice</button></a> -->
 											
 											<?php }

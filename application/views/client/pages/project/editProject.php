@@ -531,6 +531,7 @@
 													// print_r($images);die;
 
 													if(empty($images)){?>
+
 														 <span class="badge badge-pill badge-danger mx-2 pt-1  " style="font-size:13px;margin-bottom:50px;">There is no attachemet in this project</span>
                                                             <!-- <input class="form-control" name="images[]" type="file" style="border-radius:10px;display:none;" multiple="" value="1">  -->
 															<input type="file" name="images[]" class="custom-file-input mt-5 mb-5" id="customFile"  multiple="" style="margin-left:-80px;">

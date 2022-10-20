@@ -372,7 +372,7 @@ Class ClientProject extends CI_Controller{
 			$data['images'] =  $ids_image;
 		}
 
-		
+
 		else{
 			foreach($images as $key => $value){
 				// print_r($value) ; 
@@ -416,7 +416,7 @@ Class ClientProject extends CI_Controller{
 		$v = $this->input->post('images');
 		$c = $this->input->post('service_id');
 		// echo $y ;die;
-		// print_r($v);die;
+		// print_r($x);die;
 		$date_now = date("Y-m-d");
 		// print_r($c) ;die;
 
