@@ -602,7 +602,8 @@ else{
 												</th> -->
 													<!-- <th class="wd-15p">logo</th> -->
 													<!-- <th class="wd-9p">Company</th> -->
-													<th class="wd-20p">Project</th>
+													<th></th>
+													<th class="wd-20p"><span style="margin-left:-3rem;">Project</span></th>
 													<th class="wd-15p due">Update Date</th>
 													<th class="wd-15p">Status</th>
 													<th class="wd-12p due">Progress</th>
@@ -658,7 +659,8 @@ else{
 											</div></td> -->
 											<!-- <td><img src="<?php echo base_url();?>/assets/img/favicon.png" alt="..." class="img-thumbnail" width="50"></td> -->
 											<!-- <td><?php echo $item->company_name?></td> -->
-											<td style="text-transform: capitalize;"><?php echo $item->name?></td>
+											<td></td>
+											<td style="text-transform: capitalize;"><span style="margin-left:-3rem;"><?php echo $item->name?></span></td>
 											<td class="due"><?php echo $item->update_date?></td>
 											
 							
