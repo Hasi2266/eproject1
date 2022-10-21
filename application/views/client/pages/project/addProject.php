@@ -96,15 +96,24 @@
 							</div>
 						</div>
 					</div>
+					
+					<!-- <select class="form-control select2">
+              <option label="Choose one"></option>
+              <option value="Firefox">Firefox</option>
+              <option value="Chrome">Chrome</option>
+              <option value="Safari">Safari</option>
+              <option value="Opera">Opera</option>
+              <option value="Internet Explorer">Internet Explorer</option>
+            </select> -->
 					<h6 class=" mg-b-1" style="margin-top:1px;">Category</h6>
 					
 					<div class="row mt-2 mb-5">
 						<?php foreach ($items as $item){?>
 
 						<div class="col-md-2">
-							<div class="form-check">
-
-								<input type="radio" class="form-check-input" name="category_id" 
+							<div class="form-check" style="margin-top:5px;">
+ 
+								<input type="radio" class="form-check-input" name="category_id"  style="margin-top:2px;"
 									value="<?php echo $item->name?>" ><?php echo $item->name?>
 
 							</div>
@@ -171,7 +180,7 @@
 																<?php if($no == 2){ foreach($team_name as $key => $value){   ?>
 																	
 																	<select class="custom-select m-input mb-2"
-																		style="border-radius:10px ;width:26rem;background-color:#8758FF;color:white"
+																		style="border-radius:10px ;width:26rem;background-color:#8758FF;color:white;font-size:13px;"
 																		name="services">
 																		<!-- <option selected>-- Choose Team --</option> -->
 																		
@@ -186,27 +195,33 @@
 
 																<?php } } if($no==3 || $select_non==2){?>
 
-																<select class="custom-select m-input mb-2"
-																		style="border-radius:10px ;width:26rem;"
+																<select class="custom-select  mb-2"
+																		style="border-radius:10px ;width:26rem;box-shadow:none !important;font-size:13px;"
 																		name="services" id="category">
+																		<div class="dropdown-menu drop-b tx-14" >
 																		<option selected>-- Choose Team --</option>
 																		<?php foreach ($teams as $item){?>
 																		<option value="<?php echo $item->team_id?>">
 																			<?php echo $item->name?>
 																		</option>
+
 																		<?php } ?>
+																		</div>
 																	</select>
 
 																<?php } ?>
+																<br/>
+                                                                    <button type="button" name="add" id="add" class="btn mt-2 text-dark" style="font-size:12px !important;margin-left:-10px;"><i class="fa fa-plus" ></i>&nbsp; Add Service</button>
 																</td>
 																<td>
 																	
 																<?php if($no == 2){ foreach($service_name as $key => $value){ ?>
-																	<select class=" custom-select m-input  mx-4 mb-2"
-																		style="border-radius:10px;width:26rem;background-color:#8758FF;color:white" 
+																	<select class=" custom-select m-input mx-4 mb-2" 
+																		style="border-radius:10px;width:26rem;background-color:#8758FF;color:white;font-size:13px;" 
 																		name="service_id[]">
 
 																		
+																						
 																						<option value="<?php echo $key?>">
 																							<?php echo $value?>
 																						</option>
@@ -218,18 +233,17 @@
 
 																<?php } } if($no==3 || $select_non==2){ ?>
 																
-																<select class=" custom-select m-input  mx-4"
-																		style="border-radius:10px;width:26rem;" id="service"
+																<select class="custom-select m-input  mx-4"
+																		style="border-radius:10px;width:26rem;font-size:13px;" id="service"
 																		name="service_id[]">
 
-																		<option  style="margin-left:-100px!important;" disabled  selected>-- Choose Services --</option>
+																		<option style="margin-left:-100px!important;" disabled selected>-- Choose Services --</option>
 
 																	</select>
 																
 																	<?php } ?>
 																</td>
-																<td><button type="button" name="add" id="add"
-																		class="btn  btn-all text-white"><i class="fa fa-plus"></button></td>
+																<td> <button type="button" name="remove"  id="btnClearService4" class="btn btn-dark btn_remove btn-b text-white" ><span class="fa fa-trash" ></button></td>
 															</tr>
 														<tbody>
 													</table>
@@ -279,7 +293,7 @@
 																<?php if($no == 1){ foreach($team_name as $key => $value){   ?>
 																	
 																	<select class="custom-select m-input"
-																		style="border-radius:10px ;width:26rem;background-color:#8758FF;color:white"
+																		style="border-radius:10px ;width:26rem;background-color:#8758FF;color:white;font-size:13px;"
 																		name="services">
 																		<!-- <option selected>-- Choose Team --</option> -->
 																		
@@ -288,14 +302,13 @@
 																					<?php echo $value?>
 																				</option>
 																		
-																	
 																	</select>
 																		
 
 																<?php } }if($no==3 || $select_non==1){?>
 
 																	<select class="custom-select m-input"
-																		style="border-radius:10px ;width:26rem;"
+																		style="border-radius:10px ;width:26rem;font-size:13px;"
 																		name="services" id="team2">
 																		<option selected>-- Choose Team --</option>
 																		
@@ -304,16 +317,20 @@
 																			<?php echo $item->name?>
 																		</option>
 																		<?php } ?>
+
 																	</select>
 
 																<?php } ?>
 
+																<br/>
+                                                                    <button type="button" name="add" id="add1"
+																		class="btn text-dark mt-2" style="font-size:12px !important;margin-left:-10px;"><i class="fa fa-plus"></i> &nbsp;Add Package</button>
 																
 																	</td>
 																<td>
 																<?php if($no == 1){ foreach($package_name as $key => $value){ ?>
 																	<select class=" custom-select m-input mx-4"
-																		style="border-radius:10px;width:26rem;background-color:#8758FF;color:white" 
+																		style="border-radius:10px;width:26rem;background-color:#8758FF;color:white;font-size:13px;" 
 																		name="package_id[]">
 
 																		
@@ -328,16 +345,17 @@
 
 																<?php } } if($no==3 || $select_non==1){ ?>
 																	<select class=" custom-select m-input mx-4"
-																		style="border-radius:10px;width:26rem;" id="package"
+																		style="border-radius:10px;width:26rem;font-size:13px;" id="package"
 																		name="package_id[]">
 
 																			<option disabled selected style="margin-top:5rem">-- Choose Packages --</option>
 
 																	</select>
 																<?php } ?>
+																
 																</td>
-																<td><button type="button" name="add" id="add1"
-																		class="btn  btn-all text-white"><i class="fa fa-plus"></button></td>
+																
+																<td> <button type="button" name="remove"  id="btnClearPackage4" class="btn btn-dark btn_remove btn-b text-white" ><span class="fa fa-trash" ></button></td>
 															</tr>
 														<tbody>
 													</table>

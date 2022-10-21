@@ -1334,7 +1334,7 @@ pre {
     background-color: #fff;
     border-color: #c4cdd6;
     outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(85, 86, 253, 0.25); }
+    box-shadow: 0 0 0 0.2rem rgba(9, 9, 215, 0.25); }
   .form-control::placeholder {
     color: #637382;
     opacity: 1; }
@@ -1344,7 +1344,7 @@ pre {
 
 select.form-control:focus::-ms-value {
   color: #454f5b;
-  background-color: #fff; }
+  background-color: rgb(208, 39, 39); }
 
 .form-control-file,
 .form-control-range {
@@ -1400,7 +1400,9 @@ select.form-control:focus::-ms-value {
   border-radius: 0; }
 
 select.form-control[size], select.form-control[multiple] {
-  height: auto; }
+  height: auto; 
+
+}
 
 textarea.form-control {
   height: auto; }
@@ -1588,10 +1590,12 @@ textarea.form-control {
 .was-validated .custom-select:invalid, .custom-select.is-invalid {
   border-color: #dc3545;
   padding-right: calc((1em + 0.874rem) * 3 / 4 + 1.75rem);
+
   background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23363d47' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 0.75rem center/8px 10px, url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23dc3545' viewBox='-2 -2 7 7'%3e%3cpath stroke='%23dc3545' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E") #fff no-repeat center right 1.75rem/calc(0.75em + 0.437rem) calc(0.75em + 0.437rem); }
   .was-validated .custom-select:invalid:focus, .custom-select.is-invalid:focus {
     border-color: #dc3545;
-    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25); }
+    /* box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);  */
+  }
   .was-validated .custom-select:invalid ~ .invalid-feedback,
   .was-validated .custom-select:invalid ~ .invalid-tooltip, .custom-select.is-invalid ~ .invalid-feedback,
   .custom-select.is-invalid ~ .invalid-tooltip {
@@ -1709,7 +1713,7 @@ textarea.form-control {
     text-decoration: none; }
   .btn:focus, .ui-datepicker-buttonpane button:focus, .sp-container button:focus, .btn.focus, .ui-datepicker-buttonpane button.focus, .sp-container button.focus {
     outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(85, 86, 253, 0.25); }
+    box-shadow: 0 0 0 0.2rem rgba(15, 160, 29, 0.25) }
   .btn.disabled, .ui-datepicker-buttonpane button.disabled, .sp-container button.disabled, .btn:disabled, .ui-datepicker-buttonpane button:disabled, .sp-container button:disabled {
     opacity: 0.65; }
 
@@ -2965,7 +2969,9 @@ input[type="button"].btn-block {
 .custom-control-label::before,
 .custom-file-label,
 .custom-select {
-  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; 
+
+}
   @media (prefers-reduced-motion: reduce) {
     .custom-control-label::before,
     .custom-file-label,
@@ -7136,7 +7142,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 /* ############### BOOTSTRAP OVERRIDES ############### */
 ::selection {
-  background-color: #5556fd;
+  background-color: #33ccff !important;
   color: #fff; }
 
 hr {
@@ -7649,7 +7655,13 @@ a.badge-danger-light {
   .custom-select:invalid {
     color: #919fac; }
   .custom-select option {
-    color: #373857; }
+    color: #373857;
+    box-shadow: none !important;
+    background-color: white !important;
+    
+    
+    
+   }
 
 .custom-file-label, .custom-file-label::after {
   display: flex;
@@ -11154,7 +11166,9 @@ textarea.parsley-success:focus {
 
 .select2-results__option {
   padding: 6px 10px;
-  font-size: inherit; }
+  font-size: inherit; 
+  /* background-color: red; */
+}
 
 .has-success .select2-container--default .select2-selection--single {
   border-color: #28a745; }
@@ -44241,12 +44255,14 @@ calendar td a {
 
 .select2-container--default .select2-selection--single
 {
+  
 	border-radius: 8px !important;
 }
 .select2-container--default .select2-selection--single .select2-selection__arrow b
 {
-	margin-left: 4px !important;
+	margin-left: 5px !important;
 	margin-right: 10px !important;
+  
 }
 
 .dataTables_wrapper .dataTables_info{

@@ -113,7 +113,7 @@
 											<!-- <td><?php echo $item->company_name?></td> -->
 											<td></td>
 											
-											<td><span style="margin-left:-1.5rem;"><?php echo $item->name?></span></td>
+											<td style="text-transform: capitalize;"><span style="margin-left:-1.5rem;"><?php echo $item->name?></span></td>
 											<td class="due"><?php echo $item->update_date?></td>
 											
 							

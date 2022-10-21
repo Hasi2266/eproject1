@@ -16,7 +16,7 @@
         <div class="row">
 					<div class="px-3 newbtnProject"style="margin-left:69.5rem;margin-top:0rem;" >
           <!-- btn-all -->
-            <a href="<?php echo base_url();?>index.php/ClientProject/cerateProject"><button type="button" class="btn btn-all btn-dark text-white  py-2 btn-new"style="border-radius: 8px;">New project</button></a>
+            <a href="<?php echo base_url();?>index.php/ClientProject/cerateProject"><button type="button" class="btn btn-all btn-dark text-white  py-2 btn-new"style="border-radius: 8px;">+ New Project</button></a>
           </div>
             <!-- <div class="">
               <button type="button" class="btn btn-primary text-right  py-2"style="border-radius: 8px;">Add to project</button>

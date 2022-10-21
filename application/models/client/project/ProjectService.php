@@ -291,7 +291,6 @@ function getService_id(){
 
 	function ProjectImages1($id){
 		
-		
 		$this->db->select('images');
 		$this->db->from('project');
 		$this->db->where('project_id='.$id);
@@ -371,6 +370,7 @@ function getService_id(){
 
 		}
 		
+		$date_now = date("Y-m-d");
 		// print_r($ids_image);die;
 		
 
@@ -392,6 +392,7 @@ function getService_id(){
 			'project_progress' => '0%',
 			// 'project_created_date' => $projectmodel->getCreated_date(),
 			'project_del_ind' => '1',
+			'update_date' => $date_now,
 
 		);
 		

@@ -201,7 +201,7 @@ Class ClientService extends CI_Controller{
 
 		$data["items"] = $projectservice->allCategories();
 		$data["teams"] = $projectservice->allTeams();
-		$images = $projectservice->ProjectImages($this->input->post("project_id"));
+		$images = $projectservice->ProjectImages2($this->input->post("project_id"));
 
 		// print_r($images);die;
 		foreach($checkes as $key => $value){
@@ -209,14 +209,14 @@ Class ClientService extends CI_Controller{
 
 			$item1 = $clientservice->getServiceName($value);
 
-			foreach($item1 as $key => $item3){
-				
-				$service_name[$value] = $item3->service_name;
+			// foreach($item1 as $key => $item3){
+				// echo $item3;die;
+				$service_name[$value] = $item1[0]->service_name;
 				
 				// print_r($package_name);die;
-				$team_name[$item3->team_id] = $item3->name;
+				$team_name[] = $item1[0]->name;
 				
-			}
+			// }
 			
 			// die;
 			
@@ -225,6 +225,12 @@ Class ClientService extends CI_Controller{
 
 		$select_list = json_decode("[".$item[0]->services."]");
 		$package_list = json_decode("[".$item[0]->packages."]");
+		
+		$service = array();
+		$team_name2 = array();
+
+		$package = array();
+		$team_name1 = array();
 		
 		$ids_image = array();
 		// print_r ($select_list);die;
@@ -258,13 +264,13 @@ Class ClientService extends CI_Controller{
 				// echo $value;die;
 				$item1 = $projectservice->serviceName1($value);
 				
-				foreach($item1 as $key =>$item2){
+				// foreach($item1 as $key =>$item2){
 	
-					$service[$value] = $item2->service_name;
-					$team_name2[] = $item2->name;
+					$service[$value] = $item1[0]->service_name;
+					$team_name2[] = $item1[0]->name;
 					
 					
-				}
+				// }
 				
 			}
 			
@@ -272,6 +278,10 @@ Class ClientService extends CI_Controller{
 			$data['service'] = $service;
 			$data["team_name2"] = $team_name2;
 
+		}
+		else{
+			$data['service'] = $service;
+			$data["team_name2"] = $team_name2;
 		}
 
 		
@@ -281,17 +291,21 @@ Class ClientService extends CI_Controller{
 
 				$item2 =  $projectservice->packagename($value);
 				
-				foreach($item2 as $key => $item3){
+				// foreach($item2 as $key => $item3){
 	
-					$package[$value] = $item3->pname;
-					$team_name1[$item3->team_id] = $item3->name;
+					$package[$value] = $item2[0]->pname;
+					$team_name1[] = $item2[0]->name;
 		
-				}
+				// }
 			}
 			
 			$data['package'] = $package;
 			$data["team_name1"] = $team_name1;
 		
+		}
+		else{
+			$data['package'] = $package;
+			$data["team_name1"] = $team_name1;
 		}
 		
 		
@@ -305,12 +319,12 @@ Class ClientService extends CI_Controller{
 		$data["team_name"] = $team_name;
 		// $data['service'] = $service;
 		// $data['package'] = $package;
-		$data['images'] =  $ids_image;
+		$data['images5'] =  $ids_image;
 		// $data["team_name1"] = $team_name1;
 		// $data["team_name2"] = $team_name2;
 		$data["service_name"] = $service_name;
 		
-		$partial = array('content' => 'client/pages/project/update');
+		$partial = array('content' => 'client/pages/project/update1');
 		$this->template->load('client/mainpage',$partial,$data);
 
 		// echo $name;die;

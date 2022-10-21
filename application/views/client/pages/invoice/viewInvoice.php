@@ -308,7 +308,7 @@ input:checked + .slider:before {
                       $status = "Paid";
                     }
                     else{
-                      $status = "Not Paid";
+                      $status = "Pending";
                     }
                     
                     ?>
@@ -321,7 +321,7 @@ input:checked + .slider:before {
                     <td><input type="" disabled name="amount" value="<?php echo $items2->amount?>" id="amount_<?php echo $items2->id?>" class="calc1"  style="margin-left:35rem;border:none"></td>
                     <!-- <td id = "amount_<?php echo $items2->id?>"></td> -->
                     <td><label class="switch"> <input type="checkbox" <?php if($items2->status==2){echo "checked disabled";}?> name="chk[]" id="chk1_<?php echo $items2->id?>" value="<?php echo $items2->id?>"  class="chk"> <span class="slider round"></label></td>
-                    <td><span class="badge badge-pill badge-danger" style="background-color:#36b8b;"><?php echo $status?></span></td>
+                    <td><span class="badge badge-pill <?php if($status=="Paid"){echo "badge-info";}else{ echo "badge-dark";}?> " style="background-color:#36b8b;"><?php echo $status?></span></td>
                   </tr>
                 
                   <?php  } ?>

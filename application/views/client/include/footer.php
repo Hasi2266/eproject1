@@ -14,6 +14,7 @@
     <script src="<?php echo base_url();?>/assets/js/cassie.js"></script>
     <script src="<?php echo base_url();?>/assets/js/flot.sampledata.js"></script>
 		<script src="<?php echo base_url();?>/lib/select2/js/select2.min.js"></script>
+
     <script src="<?php echo base_url();?>/lib/js-cookie/js.cookie.js"></script>
 		<script src="<?php echo base_url();?>/lib/parsleyjs/parsley.min.js"></script>
     <script src="<?php echo base_url();?>/lib/jquery-steps/build/jquery.steps.min.js"></script>
@@ -983,7 +984,50 @@ $(document).ready(function(){
 				// data: 'category_id=' + category_id,
 				success:function(html){
 
+					color_select.val("");
 					$('#teams_no_'+i).html(html);
+					$('#service_id_'+i).html("<option disabled selected>-- Choose Service --</option>");
+
+
+				}
+			});
+
+			
+			
+			var msg = "";
+			$('#errorService').html(msg);
+
+		});
+
+	});
+</script>
+<script>
+		$(document).ready(function(){
+		
+		var i=1;
+
+		$("#btnClearService4").click(function() {
+			let color_select = $('select#service');
+			let team = $('select#category');
+			color_select.val("");
+			team.val("");
+			team.css({ 'color': 'black', 'background-color': 'white' });
+			color_select.css({ 'color': 'black', 'background-color': 'white' });
+
+
+			$.ajax({
+
+				type:'POST',
+				url: '<?php echo base_url();?>index.php/ClientProject/getTeams',
+				// data: 'category_id=' + category_id,
+				success:function(html){
+
+					color_select.val("");
+					
+					$('#category').html(html);
+					$('#service').html("<option disabled selected>-- Choose Service --</option>");
+
+					
 
 
 				}
@@ -1004,8 +1048,43 @@ $(document).ready(function(){
 		
 		var i=1;
 
+		$("#btnClearPackage4").click(function() {
+			let color_select1 = $('select#package');
+			let team1 = $('select#team2');
+			color_select1.val("");
+			team1.val("");
+			team1.css({ 'color': 'black', 'background-color': 'white' });
+			color_select1.css({ 'color': 'black', 'background-color': 'white' });
+
+			$.ajax({
+
+				type:'POST',
+				url: '<?php echo base_url();?>index.php/ClientProject/getTeams',
+				// data: 'category_id=' + category_id,
+				success:function(html){
+
+					color_select1.val("");
+					$('#team2').html(html);
+					$('#package').html("<option disabled selected>-- Choose Package --</option>");
+
+
+				}
+			});
+			var msg = "";
+			$('#errorService').html(msg);
+
+		});
+
+	});
+</script>
+<script>
+	$(document).ready(function(){
+		
+		var i=1;
+
 		$("#btnClearPackage1").click(function() {
 			let color_select1 = $('select#package_id_'+i);
+			// alert(color_select1);
 			let team1 = $('select#teams_no1_'+i);
 			color_select1.val("");
 			team1.val("");
@@ -1019,14 +1098,13 @@ $(document).ready(function(){
 				// data: 'category_id=' + category_id,
 				success:function(html){
 
+					color_select1.val("");
 					$('#teams_no1_'+i).html(html);
+					$('#package_id_'+i).html("<option disabled selected>-- Choose Package --</option>");
 
 
 				}
 			});
-
-			
-			
 			var msg = "";
 			$('#errorService').html(msg);
 
@@ -1069,18 +1147,19 @@ $(document).ready(function(){
 
 		$('#teams_no1_'+i).on('change', function() {
 		
-		var category_id = $(this).val();
+		var team_id = $(this).val();
 		//    alert(category_id);
 
 		$.ajax({
 		type: 'POST',
 		url: '<?php echo base_url();?>index.php/ClientProject/selectPackages',
-		data: 'category_id=' + category_id,
+		data: 'team_id=' + team_id,
+		// alert(data);
 		success: function(html) {
-		// alert(html);
+		// alert(i);
 
 				
-					$('#package_id_'+i).html(html);
+				$('#package_id_'+i).html(html);
 
 			// $('#service_'+i).html(html);
 			//  $('#subcat').html('<option value="">'+html+'</option>'); 
@@ -1389,6 +1468,31 @@ $(document).ready(function(){
           suppressScrollX: true
         });
 
+		$('.select2').select2({
+          placeholder: 'Choose one',
+          searchInputPlaceholder: 'Search options'
+        });
+
+        // Disable search
+        $('.select2-no-search').select2({
+          minimumResultsForSearch: Infinity,
+          placeholder: 'Choose one'
+        });
+
+        // Clearable selection
+        $('.select2-clear').select2({
+          minimumResultsForSearch: Infinity,
+          placeholder: 'Choose one',
+          allowClear: true
+        });
+
+        // Limit selection
+        $('.select2-limit').select2({
+          minimumResultsForSearch: Infinity,
+          placeholder: 'Choose one',
+          maximumSelectionLength: 2
+        });
+
         // $('#example11').DataTable({
         //   language: {
         //     searchPlaceholder: 'Search...',
@@ -1462,7 +1566,7 @@ $(document).ready(function(){
 	
 	
 
-	$('#dynamic_field').append('<tr id="row'+i+'"><td><input type="hidden" id="data_id_'+b+'" value="'+b+'"></td><td><select class="custom-select m-input" style="border-radius:10px;width:26rem;margin-left:-30rem !important;" name="service" id="category_'+i+'"><option selected>-- Choose Team --</option><?php foreach ($teams as $item){?><option value="<?php echo $item->team_id?>"><?php echo $item->name?></option><?php } ?></select></td><td><select class=" custom-select m-input mx-4" style="border-radius:10px;width:26rem;margin-left:-32rem !important;" id="service_'+i+'" name="service_id[]"><option selected>-- Choose Services --</option></select></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove" style="margin-left:-4.5rem !important;"><span class="fa fa-trash"></button></td></tr>');
+	$('#dynamic_field').append('<tr id="row'+i+'"><td><input type="hidden" id="data_id_'+b+'" value="'+b+'"></td><td><select class="custom-select m-input" style="border-radius:10px;width:26rem;margin-left:-30rem !important;font-size:13px;" name="service" id="category_'+i+'"><option selected>-- Choose Team --</option><?php foreach ($teams as $item){?><option value="<?php echo $item->team_id?>"><?php echo $item->name?></option><?php } ?></select></td><td><select class="custom-select m-input" style="border-radius:10px;width:26rem;margin-left:-32rem !important;font-size:13px;" id="service_'+i+'" name="service_id[]"><option selected>-- Choose Services --</option></select></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-dark text-white btn_remove" style="margin-left:-4.5rem !important;font-size:13px;"><span class="fa fa-trash"></button></td></tr>');
 	var id = $('#data_id_'+b).val();
 
 	$(document).ready(function() {
@@ -1547,9 +1651,9 @@ $(document).ready(function(){
 	i++;
 	b++;
 
-	$('#dynamic_field1').append('<tr id="row'+i+'"><td><input type="hidden" id="data_id1_'+b+'" value="'+b+'"></td><td><select class="custom-select m-input" style="border-radius:10px;width:26rem;margin-left:-30rem !important;" name="packages[]" id="team2_'+i+'">'+
-	'<option selected>-- Choose Team --</option><?php foreach ($teams as $item){?><option value="<?php echo $item->team_id?>"><?php echo $item->name?></option><?php } ?></select></td><td><select class="custom-select m-input mx-4" style="border-radius:10px;width:26rem;margin-left:-32rem !important;" id="package_'+i+'" name="package_id[]"><option  selected><span style="margin-left:-5rem !important;">-- Choose Packages --</span></option></select>'+
-	'</td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove" style="margin-left:-4.5rem !important;"><span class="fa fa-trash"></button></td></tr>');
+	$('#dynamic_field1').append('<tr id="row'+i+'"><td><input type="hidden" id="data_id1_'+b+'" value="'+b+'"></td><td><select class="custom-select m-input" style="border-radius:10px;width:26rem;margin-left:-30rem !important;font-size:13px;" name="packages[]" id="team2_'+i+'">'+
+	'<option selected>-- Choose Team --</option><?php foreach ($teams as $item){?><option value="<?php echo $item->team_id?>"><?php echo $item->name?></option><?php } ?></select></td><td><select class="custom-select m-input mx-4" style="border-radius:10px;width:26rem;margin-left:-32rem !important;font-size:13px;" id="package_'+i+'" name="package_id[]"><option  selected><span style="margin-left:-5rem !important;">-- Choose Packages --</span></option></select>'+
+	'</td><td><button type="button" name="remove" id="'+i+'" class="btn btn-dark text-white btn_remove" style="margin-left:-4.5rem !important;font-size:13px;"><span class="fa fa-trash"></button></td></tr>');
 	var id = $('#data_id1_'+b).val();
 
 	$(document).ready(function() {
@@ -1625,7 +1729,7 @@ $('#row'+button_id+'').remove();
 
 </script>
 
-<script>
+<!-- <script>
 
 	var i = 1;
 
@@ -1635,6 +1739,7 @@ $('#row'+button_id+'').remove();
 		// alert(4);
 
 		var button_id = $(this).attr("id"); 
+		
 		$('#package_id_'+i).remove();
 		$('#teams_no1_'+i).remove();
 
@@ -1645,7 +1750,89 @@ $('#row'+button_id+'').remove();
 
 	});
 
+</script> -->
+<!-- <script>
+
+
+
+	$(document).ready(function(){
+		
+
+		var i = 2;
+
+		$('#btn_remove_'+i).click(function(){
+
+		i++;
+
+
+			alert(4);
+
+			var button_id = $('#btn_remove_'+b).val();
+			$('#service_id_'+button_id).remove();
+			$('#teams_no_'+button_id).remove();
+
+			// var b = i +1;
+			$('#btn_remove_'+button_id).remove();
+			// $('#btnClearService1').css({'margin-left' : '-10rem;'});
+	});
+
+	});
+
+
+</script> -->
+<script>
+
+	var i = 1;
+
+	$(document).on('click', '.btn_remove2', function(){
+		i++;
+
+		// alert(4);
+
+		var button_id = $('#btn_remove_'+i).val(); 
+		$('#service_id_'+button_id).remove();
+		$('#teams_no_'+button_id).remove();
+
+		// var b = i +1;
+		$('#btn_remove_'+button_id).remove();
+		// $('#btnClearService1').css({'margin-left' : '-10rem;'});
+		
+
+	});
+
 </script>
+<script>
+
+	var i = 1;
+
+	$(document).on('click', '.btn_remove22', function(){
+		
+
+		// alert(4);
+
+		// var b = $('#count').val(); 
+		// b++;
+		
+		// alert(b);
+
+		var button_id = $('#btn_remove22_'+i).val(); 
+
+		// var x = button_id - 1;
+		// alert(button_id);
+
+		$('#service_id1_'+button_id).remove();
+		$('#teams_no2_'+button_id).remove();
+
+		// var b = i +1;
+		$('#btn_remove22_'+button_id).remove();
+		// $('#btnClearService1').css({'margin-left' : '-10rem;'});
+
+		i++;
+
+	});
+
+</script>
+
 <script>
 
 	var i = 1;
@@ -1655,14 +1842,36 @@ $('#row'+button_id+'').remove();
 
 		// alert(4);
 
-		var button_id = $(this).attr("id"); 
-		$('#service_id_'+i).remove();
-		$('#teams_no_'+i).remove();
+		var button_id = $('#btn_remove1_'+i).val(); 
+		$('#package_id_'+button_id).remove();
+		$('#teams_no1_'+button_id).remove();
 
 		// var b = i +1;
-		$('#btn_remove1_'+i).remove();
+		$('#btn_remove1_'+button_id).remove();
 		// $('#btnClearService1').css({'margin-left' : '-10rem;'});
 		
+
+	});
+
+</script>
+<script>
+
+	var i = 1;
+
+	$(document).on('click', '.btn_remove33', function(){
+		
+
+		// alert(4);
+
+		var button_id = $('#btn_remove33_'+i).val(); 
+		$('#package_id33_'+button_id).remove();
+		$('#teams_no33_'+button_id).remove();
+
+		// var b = i +1;
+		$('#btn_remove33_'+button_id).remove();
+		// $('#btnClearService1').css({'margin-left' : '-10rem;'});
+		i++;
+
 
 	});
 

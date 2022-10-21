@@ -136,7 +136,7 @@
 			<div class="card-body px-3 mb-5">
 				<?php foreach($service as $key => $value){?>
 			
-					<span class="badge badge-pill badge-secondary py-2 " style="background-color:#36b8b;font-size:12px;margin-right:0.2rem;"><?php echo $value?></span>
+					<span class="badge badge-pill badge-secondary py-2 " style="background-color:#894ddb;font-size:12px;margin-right:0.2rem;"><?php echo $value?></span>
 		<?php 		} ?>
          </div>
       </div>
@@ -156,7 +156,7 @@
 								</div>
 								<div class="card-body px-3 mb-5">
 					<?php foreach($package as $key => $value){ ?>
-						<span class="badge badge-pill badge-dark py-2 " style="background-color:#36b8b;font-size:12px;margin-right:0.2rem;"><?php echo $value?></span>
+						<span class="badge badge-pill badge-dark py-2 " style="background-color:#894ddb;font-size:12px;margin-right:0.2rem;"><?php echo $value?></span>
 				<?php 	}?>
 		  <!-- <?php echo $project->packages?> -->
          </div>

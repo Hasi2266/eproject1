@@ -15,14 +15,14 @@
         </div>
     </div><!-- content-header -->
 	<?php foreach ($projects as $project){?>
-	<form class="all-form" action="<?php echo base_url();?>index.php/ClientProject/update/<?php echo $project->project_id ?>" method="post" enctype="multipart/form-data">
+	<form class= "all-form" action="<?php echo base_url();?>index.php/ClientProject/update/<?php echo $project->project_id ?>" method="post" enctype="multipart/form-data">
     
 	<div class="pd-x-5 pd-b-15">
 		
 	<div class="card card-hover card-projects  card-task-one dashCardHover  mt-4" style="border-radius: 10px;margin-bottom:2rem !important;padding-bottom:3rem; " >
 
 	<div class="card-header bg-transparent pd-y-15 pd-l-15 pd-r-10" style="margin-bottom:-0.1rem;">
-									<h6 class="card-title mg-b-0 px-1" style="margin-top:1px;margin-bottom:-6px">Update Project</h6>
+									<h6 class="card-title mg-b-0 px-1" style="margin-top:1px;margin-bottom:-6px">Create New Project</h6>
 									<!-- <nav class="nav">
 									<a href="" class="link-gray-500"><i data-feather="help-circle" class="svg-16"></i></a>
 									<a href="" class="link-gray-500"><i data-feather="more-vertical" class="svg-16"></i></a>
@@ -67,8 +67,8 @@
 								</label>
 							</div>
 							<div class="form-check">
-								<label class="form-check-label" style="margin-top:5px;">
-									<input type="radio"  class="form-check-input" style="margin-top:3px;" name="due_date_type"  <?php if(($project->end_date)=="Specific Date") {echo "checked";}?> onclick="check()"
+								<label class="form-check-label"  style="margin-top:5px;">
+									<input type="radio"  style="margin-top:3px;" class="form-check-input" name="due_date_type"  <?php if(($project->end_date)=="Specific Date") {echo "checked";}?> onclick="check()"
 										value="Specific Date"  id="sepcic_data">Specific Date
 								</label>
 								
@@ -84,30 +84,30 @@
 						<label for="exampleInputEmail1"><h6 class="card-title mg-b-1" style="margin-top:1px;">Type</h6></label>
 							<div class="form-check">
 								<label class="form-check-label">
-									<input type="radio"  style="margin-top:3px;" class="form-check-input" name="type" <?php if(($project->type)=='Recurring Project') {echo "checked";}?>
+									<input type="radio"  class="form-check-input" style="margin-top:3px;" name="type" <?php if(($project->type)=='Recurring Project') {echo "checked";}?>
 										value="Recurring Project">Recurring Project
 								</label>
 							</div>
 							<div class="form-check">
-								<label class="form-check-label" style="margin-top:5px;">
-									<input type="radio" style="margin-top:3x;"  class="form-check-input" name="type" value="Not Sure" <?php if(($project->type)=='Not Sure') {echo "checked";}?>>One time project
+								<label class="form-check-label"  style="margin-top:5px;">
+									<input type="radio"  class="form-check-input" style="margin-top:3px;" name="type" value="Not Sure" <?php if(($project->type)=='Not Sure') {echo "checked";}?>>One time project
 								</label>
 							</div>
 							<div class="form-check">
-								<label class="form-check-label" style="margin-top:5px;">
-									<input type="radio"  style="margin-top:3px;" class="form-check-input" name="type" value="On Going" <?php if(($project->type)=='On Going') {echo "checked";}?>>On Going project
+								<label class="form-check-label"  style="margin-top:5px;">
+									<input type="radio"  class="form-check-input" style="margin-top:3px;" name="type" value="On Going" <?php if(($project->type)=='On Going') {echo "checked";}?>>On Going project
 								</label>
 							</div>
 						</div>
 					</div>
-					<h6 class="mg-b-1" style="margin-top:1px;">Category</h6>
+					<h6 class=" mg-b-1" style="margin-top:1px;">Category</h6>
 					<div class="row mt-2 mb-5">
 						<?php foreach ($items as $item){?>
 
 						<div class="col-md-2">
-							<div class="form-check" style="margin-top:5px;">
+							<div class="form-check">
 
-								<input type="radio"  class="form-check-input" style="margin-top:2px;" name="category_id" <?php if(($project->category_id) == $item->name) {echo "checked";}?> value="<?php echo $item->name?>"><?php echo $item->name?>
+								<input type="radio"  class="form-check-input" name="category_id" <?php if(($project->category_id) == $item->name) {echo "checked";}?> value="<?php echo $item->name?>"><?php echo $item->name?>
 
 							</div>
 						</div>
@@ -168,40 +168,14 @@
 										<div class="entry input-group upload-input-group">
 											<form name="add_name" id="add_name">
 												<div class="table-responsive">
-													<table class="table table5 mt-3" id="dynamic_field">
-													<tbody style="border-color :none !important;">
-                                                            
+													<table class="table table5" id="dynamic_field">
+														<tbody style="border-color :none !important;">
 															<tr>
-                                                               
 																<td>
-																
-
-
+															
 																<?php 
-																
-																
-																if(empty($service)){
-																	
-																	// $i = 1;
-																	
-																	?>
-
-																	<select class="custom-select m-input ml-2 mb-2"
-																		style="border-radius:10px ;width:26rem;font-size:13px;"
-																		name="services" id="category">
-																		<option selected>-- Choose Team --</option>
-																		<?php foreach ($teams as $item){?>
-																		<option value="<?php echo $item->team_id?>">
-																			<?php echo $item->name?>
-																		</option>
-																		<?php } ?>
-																	</select>
-
-															<?php	}else{
-
-                                                                        $i = 1;
-
-																foreach($team_name2 as $key => $value){   ?>
+																	$i = 1;
+																	foreach($team_name as $key => $value){   ?>
 																	
 																	<select class="custom-select m-input mb-2 ml-2"
 																		style="border-radius:10px ;width:26rem;background-color:#8758FF;color:white;font-size:13px;"
@@ -215,62 +189,110 @@
 																		
 																	
 																	</select>
+																	<?php $i = $i + 1; ?>
 
-                                                                    <?php $i = $i + 1; ?>
+																<?php } ?>
 
-																<?php } }?>
-                                                                    
-                                                                <br/>
-                                                                    <button type="button" name="add" id="add" class="btn  mt-2 text-dark" style="font-size:12px !important;margin-left:-5px;"><i class="fa fa-plus" ></i>&nbsp; Add Service</button>
-                                                                </td>
-																<!-- <select class="custom-select m-input"
-																		style="border-radius:10px ;width:26rem;"
+
+																<!-- <?php 
+																
+																if(empty($service)){
+																	
+																	?>
+
+																	<select class="custom-select ml-2 m-input"
+																		style="border-radius:10px ;width:26rem;font-size:13px;"
 																		name="services" id="category">
-																		<option selected>-- Choose Category --</option>
+																		<option selected>-- Choose Team --</option>
 																		<?php foreach ($teams as $item){?>
 																		<option value="<?php echo $item->team_id?>">
 																			<?php echo $item->name?>
 																		</option>
 																		<?php } ?>
-																	</select> -->
+																	</select>
 
+																		
+															<?php } ?> -->
+															
+														<?php	if(!empty($service)){
+
+																	$i = 1;
+
+																foreach($team_name2 as $key => $value){   ?>
+																	
+																	<select class="custom-select m-input ml-2 mb-2"
+																		style="border-radius:10px ;width:26rem;background-color:#894ddb;color:white;font-size:13px;"
+																		name="services" id="<?php echo 'teams_no2_'.$i;?>">
+																		<!-- <option selected>-- Choose Team --</option> -->
+																		
+
+																				<option value="<?php echo $key?>">
+																					<?php echo $value?>
+																				</option>
+																		
+																	
+																	</select>
+
+																	<?php $i = $i + 1; ?>
+
+																<?php } }?>
+
+															
+
+																	<br/>
+                                                                    <button type="button" name="add" id="add" class="btn  mt-2 text-dark" style="font-size:12px !important;margin-left:-5px;"><i class="fa fa-plus" ></i>&nbsp; Add Service</button>
 																
-																
+																</td>
+
 																<td>
 																	
-																
-
 																<?php 
+
+																	$i = 1;
+																	
+																	foreach($service_name as $key => $value){ ?>
+																	<select class="custom-select m-input mb-2 mx-4"
+																		style="border-radius:10px;width:26rem;background-color:#8758FF;color:white;font-size:13px;" 
+																		name="service_id[]" id="<?php echo 'service_id_'.$i;?>">
+
+																						<option value="<?php echo $key?>">
+																							<?php echo $value?>
+																						</option>
+
+																		
+																		<!-- <option selected>-- Choose Packages --</option> -->
+																	</select>
+																	<?php $i = $i + 1; ?>
+
+
+																<?php }  ?>
+
+																<!-- <?php 
 															 
 																
-																if(empty($service)){  
-																	
-																	 ?>
+																if(empty($service)){ ?>
 
-																				
-																	<select class=" custom-select m-input px-5 mx-4"
+																	<select class=" custom-select m-input mx-4"
 																		style="border-radius:10px;width:26rem;font-size:13px;" id="service"
 																		name="service_id[]">
 																		
 																		<option selected disabled>Choose service</option>
 
 																	</select>
+
+																	<?php }?> -->
 																	
+																	<?php if(!empty($service)){
 
-																	<?php }else{
-
-                                                                            $i = 1;
+																	$i = 1;
+																
 																foreach($service as $key => $value){ ?>
-
-                                                                    
-                                                                  
-                                                                
-																	<select class="custom-select m-input mx-4 mb-2"
-																		style="border-radius:10px ;width:26rem;background-color:#8758FF;color:white;font-size:13px;"
-																		name="service_id[]" id="<?php echo 'service_id_'.$i;?>">
+																	
+																	<select class="custom-select m-input mb-2 mx-4"
+																		style="border-radius:10px ;width:26rem;background-color:#894ddb;color:white;font-size:13px;"
+																		name="service_id[]" id="<?php echo 'service_id1_'.$i;?>">
 																		<!-- <option selected>-- Choose Team --</option> -->
 																		
-                                                                       
 
 																				<option value="<?php echo $key?>">
 																					<?php echo $value?>
@@ -279,52 +301,85 @@
 																	
 																	</select>
 																		
-                                                                    <!-- <input type="text" value="<?php  echo $i;  ?>"> -->
-                                                               
-                                                                   
-                                                                  
-                                                                    
-                                                                    
-                                                            
-                                                                    <?php $i = $i + 1; ?>
+																	<?php $i = $i + 1; ?>
 
-
-																<?php }  }?>
+																<?php } }?>
 																
+																
+																
+																	
+																</td>
 																<td>
-                                                                <?php 
+
+																	 <?php 
 															 
 																
-                                                                     if(!empty($service)){
-                                                                        
-                                                                        $i = 1;
-                                                                        
-                                                                        foreach($service as $key => $value){
-                                                                            
-                                                                            if($i == 1) {?>
-                                                                                <button type="button" name="remove"  id="btnClearService1" class="btn btn-dark text-white btn_remove btn-b" ><span class="fa fa-trash"></button>
-                                                                          
-                                                                          <?php  }else{?>
-
-                                                                            <button type="button" name="remove"  id="<?php echo 'btn_remove_'.$i;?>" value="<?php echo $i;?>"class="btn btn-dark tex-white btn_remove btn_remove2 mt-2"><span class="fa fa-trash"></button>
-
-                                                                        <?php  }
-                                                                            
-                                                                            ?>
-
-                                                                              
-                                                                        
-                                                                                <?php $i = $i + 1; ?>
-                                                                     <?php } }
-																	 else{?>
-
-																		<button type="button" name="remove"  id="btnClearService4" class="btn btn-dark btn_remove btn-b text-white" ><span class="fa fa-trash" ></button>
-																<?php	 }?>
-                                                                </td>
-                                                                           
-                                                               
+															 
 																
+																$i = 1;
 																
+																foreach($service_name as $key => $value){
+																	
+																	if($i == 1) {?>
+
+																		<button type="button" name="remove"  id="btnClearService1" class="btn btn-dark text-white btn_remove btn-b" style="font-size:13px;"><span class="fa fa-trash"></button>
+																  
+																  <?php } else{?>
+
+
+																	<button type="button" name="remove"  style="font-size:13px;" id="<?php echo 'btn_remove_'.$i;?>" value="<?php echo $i;?>"class="btn btn-dark tex-white btn_remove btn_remove2 mt-2"><span class="fa fa-trash"></button>
+	
+																	
+																<?php  }
+																	
+																	?>
+
+																	  
+																
+																		<?php $i = $i + 1; ?>
+															 <?php } 
+															?>
+
+																			<?php    
+
+																			if(!empty($service) ){
+
+																				$count = 	count($service_name); ?>
+
+																				<input type="hidden" id="count" value="<?php echo $count ?>">
+
+																				<?php	
+																					$i = 1;
+																				foreach($service as $key => $value){?>
+
+																							<button type="button" name="remove"  style="font-size:13px;" id="<?php echo 'btn_remove22_'.$i;?>" value="<?php echo $i;?>" class="btn btn-dark tex-white btn_remove btn_remove22 mt-2"><span class="fa fa-trash"></button>
+
+																				
+																				<?php   $i++; }
+																				}
+
+																				?>
+
+																					<!-- <button type="button" name="remove"  id="btnClearService4" class="btn btn-dark btn_remove btn-b text-white mt-2" ><span class="fa fa-trash" ></button> -->
+																				
+
+																
+														<?php	 
+
+														  
+
+														 if((empty($service) && (empty($service_name)))){?>
+
+															<button type="button" name="remove"  id="btnClearService4" class="btn btn-dark btn_remove btn-b text-white" style="font-size:13px;"><span class="fa fa-trash" ></button>
+														
+														<?php }
+
+														 ?>
+
+															
+													
+													
+													</td>
 															</tr>
 														<tbody>
 													</table>
@@ -368,22 +423,36 @@
 										<div class="entry input-group upload-input-group">
 											<!-- <form name="add_name" id="add_name"> -->
 												<div class="table-responsive">
-													<table class="table table5 mt-3" id="dynamic_field1">
+													<table class="table table5" id="dynamic_field1">
 													<tbody style="border-color :none !important;">
 															<tr>
 																<td>
 																
-																
+																<!-- <?php if($no == 1){ foreach($team_name as $key => $value){   ?>
+																	
+																	<select class="custom-select m-input mb-2"
+																		style="border-radius:10px ;width:26rem;background-color:yellow;"
+																		name="services">
+																		<option selected>-- Choose Team --</option>
+																		
+
+																				<option value="<?php echo $key?>">
+																					<?php echo $value?>
+																				</option>
+																		
+																	
+																	</select>
+																		
+
+																<?php } }?> -->
 
 																<?php 
-
-																
 																if(empty($package)){?>
 
 																	<select class="custom-select m-input ml-2"
 																		style="border-radius:10px ;width:26rem;font-size:13px; mb-2"
 																		name="services" id="team2">
-																		<option selected>-- Choose Team --</option>
+																		<option disabled selected>-- Choose Team --</option>
 																		
 																		<?php foreach ($teams as $item){?>
 																		<option value="<?php echo $item->team_id?>">
@@ -392,14 +461,14 @@
 																		<?php } ?>
 																	</select>
 
-																	<?php	}else{
+																	<?php } else{
 																
-                                                                $i = 1;
+																$i = 1;
 
 																foreach($team_name1 as $key => $value){   ?>
 																	
-																	<select class="custom-select m-input mb-2 ml-2"
-																		style="border-radius:10px ;width:26rem;background-color:#8758FF;color:white;font-size:13px;"
+																	<select class="custom-select m-input ml-2 mb-2"
+																		style="border-radius:10px ;width:26rem;background-color:#894ddb;color:white;font-size:13px;"
 																		name="services" id="<?php echo 'teams_no1_'.$i;?>">
 																		<!-- <option selected>-- Choose Team --</option> -->
 																		
@@ -409,30 +478,44 @@
 																		
 												
 																	</select>
-
-                                                                    <?php $i = $i + 1; ?>
-
-																	
-
+																		
+																	<?php $i = $i + 1; ?>
 
 																<?php } }?>
 
-                                                                
 																	<!--  -->
+
 																	<br/>
                                                                     <button type="button" name="add" id="add1"
 																		class="btn text-dark mt-2" style="font-size:12px !important;margin-left:-5px;"><i class="fa fa-plus"></i> &nbsp;Add Package</button>
+																
+
 																	</td>
-																	
+
 																<td>
 																
-																
+																<!-- <?php if($no == 1){ foreach($package_name as $key => $value){ ?>
+																	<select class=" custom-select m-input px-5 mb-2"
+																		style="border-radius:10px;width:26rem;background-color:yellow;" 
+																		name="package_id[]">
+
+												
+																						<option value="<?php echo $key?>">
+																							<?php echo $value?>
+																						</option>
+
+																		
+																		<option selected>-- Choose Packages --</option>
+																	</select>
+																		
+
+																<?php } } ?> -->
 
 																<?php 
 																
 																if(empty($package)){?>
 
-																	<select class=" custom-select m-input mx-4"
+																	<select class=" custom-select m-input mx-4 mb-2"
 																		style="border-radius:10px;width:26rem;font-size:13px;" id="package"
 																		name="package_id[]">
 
@@ -441,14 +524,14 @@
 																		
 																	</select>
 
-																	<?php }else{	
+																	<?php }else{
 
-                                                                        $i = 1;
+																	$i = 1;
 
 																foreach($package as $key => $value){   ?>
 																	
-																	<select class="custom-select m-input mx-4 mb-2"
-																		style="border-radius:10px ;width:26rem;background-color:#8758FF;color:white;font-size:13px;"
+																	<select class="custom-select m-input mb-2 mx-4"
+																		style="border-radius:10px ;width:26rem;background-color:#894ddb;color:white;font-size:13px;"
 																		name="package_id[]" id="<?php echo 'package_id_'.$i;?>">
 																		<!-- <option selected>-- Choose Team --</option> -->
 																		
@@ -459,45 +542,50 @@
 																		
 																	
 																	</select>
-																		
-                                                                    <?php $i = $i + 1; ?>
+
+																	<?php $i = $i + 1; ?>
+
 
 																<?php }} ?>
+
 																	<!--  -->
 															
 																</td>
-                                                                <td>
-                                                                <?php 
-															 
+																<td>
+																	<?php 
+
+																		if(empty($package)){?>
+
+																			<button type="button" name="remove"  id="btnClearPackage4" style="font-size:13px;" class="btn btn-dark btn_remove btn-b text-white" ><span class="fa fa-trash" ></button>
+																		
+																		<?php }else{
+
+
+
+																			$i = 1;
+
+																			 foreach($package as $key => $value){
+
+																				if($i == 1) {?>
+																					<button type="button" name="remove"  id="btnClearPackage1" style="font-size:13px;" class="btn btn-dark text-white btn-b btn_remove"><span class="fa fa-trash"></button>
+																			  
+																			  <?php  }else{?>
 	
-                                                                     if(!empty($package)){
-                                                                        
-                                                                        $i = 1;
-                                                                        
-                                                                        foreach($package as $key => $value){
-                                                                            
+																				<button type="button" name="remove" style="font-size:13px;" id="<?php echo 'btn_remove1_'.$i;?>" class="btn btn-dark text-white btn_remove3 mt-2"><span class="fa fa-trash"></button>
+	
+																			
+																			<?php  }
+																				
+																				$i++;
 
-                                                                            
-                                                                            if($i == 1) {?>
-                                                                                <button type="button" name="remove"  id="btnClearPackage1" class="btn btn-dark text-white btn-b btn_remove"><span class="fa fa-trash"></button>
-                                                                          
-                                                                          <?php  }else{?>
-
-                                                                            <button type="button" name="remove"  id="<?php echo 'btn_remove1_'.$i;?>" class="btn btn-dark text-white btn_remove3 mt-2"><span class="fa fa-trash"></button>
-
-                                                                        <?php  }
-                                                                            
-                                                                            ?>
-
-                                                                              
-                                                                        
-                                                                                <?php $i = $i + 1; ?>
-                                                                     <?php } }else{?>
-																				<button type="button" name="remove"  id="btnClearPackage4" class="btn btn-dark btn_remove btn-b text-white" ><span class="fa fa-trash" ></button>
-																		<?php }?>
-                                                                </td>
-
-																<!-- <td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove"><span class="fa fa-trash"></button></td> -->
+																			 }
+																		}
+																	
+																	?>
+																<!-- <button type="button" name="add" id="add1"
+																		class="btn btn-all text-white"><i class="fa fa-plus"></button> -->
+																	
+																	</td>
 															</tr>
 														<tbody>
 													</table>
@@ -631,8 +719,7 @@
 												</div>
 												</div>
 									</div>
-
-									
+									<!-- <button class="btn btn-primary mt-2" style="border-radius:10px">Upload</button> -->
 
 								</div>
 
@@ -645,24 +732,28 @@
 						<!-- </form>Attachment -->
 					</div>
 					
-                   
 													</div>
 													 
 			<!-- Submit -->
 
 			
 			
-													
+			<!-- <?php if (($project->add_proposal)== 1) { ?>
 
+				<a href="<?php echo base_url();?>index.php/AdminProject"><button class="btn btn-primary">Save</button></a>
+			<?php } else { ?>
+				<button type="submit" class="btn btn-primary">Submit Proposal</button>
+
+
+
+			<?php } ?> -->
 			
-           
-			<div class="row" style="display:flex;align-items:left;justify-content:left" >
-				<button type="submit" class="btn btn-dark  mt-3 mb-3 btn-submit ml-5" >Update Project</button>
-				<!-- <button type="button" class="btn btn-primary mt-5 mb-5 btn-submit mx-2">Save As Draft</button> -->
-				<a href="<?php echo base_url();?>index.php/ClientProject"><button type="button" class="btn btn-dark mx-3 mt-3 mb-3 btn-submit">Cancel Project</button></a>
+			<div class="row mx-4">
+			<a ><button type ="submit" class="btn btn-all text-white btn-submit mt-4">Update Project</button></a>
+			<a href="<?php echo base_url();?>index.php/ClientService" ><button type ="button" class="btn btn-all text-white btn-submit mt-4 mx-3 ">Cancel</button></a>
 			</div>
+			
 		</form>
-        
 
     </div>
 	

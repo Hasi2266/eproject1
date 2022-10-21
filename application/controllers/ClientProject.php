@@ -95,7 +95,7 @@ Class ClientProject extends CI_Controller{
 
 		$item = $projectservice->getService($category_id);
 
-		echo "<option>-- Choose one --</option>";
+		echo "<option disabled selected>-- Choose one --</option>";
 
 		foreach($item as $item1){
 
@@ -111,8 +111,9 @@ Class ClientProject extends CI_Controller{
 		$team_id = $this->input->post('team_id');
 
 		$item = $projectservice->getPackage($team_id);
+		// print_r($item);die;
+		echo "<option disabled selected>-- Choose one --</option>";
 
-		echo "<option>-- Choose one --</option>";
 		foreach($item as $item1){
 
 			echo "<option value=".$item1->package_id.">".$item1->name."</option>";
@@ -125,8 +126,10 @@ Class ClientProject extends CI_Controller{
 		$projectmodel =  new ProjectModel();
 		$projectservice = new ProjectService();
 		$date_now = date("Y-m-d");
-// $x = ($this->input->post('due_date'));
-		
+// $x = ($this->input->post('images'));
+// 		echo $x;die;
+
+// echo count($x);die;
 		// if(empty($x)){
 		// 	echo 'hi';
 		// }
@@ -137,6 +140,10 @@ Class ClientProject extends CI_Controller{
 		$due_date = $this->input->post('due_date_type');
 		
 
+		// if(empty(array_filter($_FILES['images']['name']))){
+		// 	echo 1;
+		// }
+		// die;
 		$count = count($_FILES['images']['name']);
 		// echo $count;
 		// print_r($_FILES['images']['name']);
@@ -415,8 +422,10 @@ Class ClientProject extends CI_Controller{
 		$x = $this->input->post('images1');
 		$v = $this->input->post('images');
 		$c = $this->input->post('service_id');
-		// echo $y ;die;
+
+		// echo count($x) ;die;
 		// print_r($x);die;
+		
 		$date_now = date("Y-m-d");
 		// print_r($c) ;die;
 
@@ -424,11 +433,17 @@ Class ClientProject extends CI_Controller{
 
 		$due_date = $this->input->post('due_date_type');
 		// echo $due_date;die;
+
+		// if(empty($v)){
+
+		$count = count($_FILES['images']['name']);
+
+		// }
 		if(!empty($v)){
 			$count = count($_FILES['images']['name']);
 			// echo $count;
 		}
-		
+		// die;
 
 		// $u = $_FILES['images']['name'];
 		// print_r($u);die;
@@ -457,30 +472,61 @@ Class ClientProject extends CI_Controller{
 		$projectmodel->setServices($this->input->post('service_id'));
 		$projectmodel->setPackages($this->input->post('package_id'));
 
-		// if(empty(array_filter($_FILES['images']['name'])) && (count($x) > 0)){
 
-		// 	$projectmodel->setImages($x);
-		// 	print_r($x);
-		// }
-		// die;
-
-	if(!empty($v)){
-		if((empty(array_filter($_FILES['images']['name']))) && empty($x)) {
+		if(empty(array_filter($_FILES['images']['name'])) && (empty($x))) {
 			$projectmodel->setImages("");
 			// echo 5;
 		}
-		else if((empty(array_filter($_FILES['images']['name']))) && !empty($x)){
+
+		if(empty(array_filter($_FILES['images']['name'])) && (!empty($x))){
 			// echo 6;
 			$projectmodel->setImages($x);
 		}
+		
+		
+		if(!empty(array_filter($_FILES['images']['name'])) && (empty($x))){
 
-		else if((!empty(array_filter($_FILES['images']['name']))) && !empty($x)){
-			// echo 6;
+			// echo 7;
 			for($i=0;$i<$count;$i++){
 
 				if ($_FILES['images']['name'] == 0 && $_FILES['images']['error'] == 0) {
 					// echo 7;
-					$projectmodel->setImages(0);
+					$projectmodel->setImages("");
+					// $productsmodel->setProduct_image($this->input->post('p_image'));
+					// $postmodel->setbusiness_logo();
+				}
+
+				else {
+
+					// echo 8;
+					// $filename = $this->session->userdata('CLIENT_ID').$this->input->post('name').time();
+					$filename = uniqid() . "-" . time(); // 5dab1961e93a7-1571494241
+					// echo $filename;die;
+					$extension = pathinfo($_FILES['images']['name'][$i], PATHINFO_EXTENSION); // jpg
+					$image = $filename . '.' . $extension; // 5dab1961e93a7_1571494241.jpg
+		
+					$target = "./uploads/" . basename($image);
+		
+					if (move_uploaded_file($_FILES['images']['tmp_name'][$i], $target)) {
+		
+						$data["message"] = "file uploaded,";
+					}
+					$img[$i] = $image;
+				}
+				
+			}
+		}
+
+		if(!empty(array_filter($_FILES['images']['name'])) && (!empty($x))){
+
+
+			// echo "count is".$count;
+			
+			for($i=0;$i<$count;$i++){
+
+				if ($_FILES['images']['name'] == 0 && $_FILES['images']['error'] == 0) {
+					// echo 7;
+					$projectmodel->setImages("");
 					// $productsmodel->setProduct_image($this->input->post('p_image'));
 					// $postmodel->setbusiness_logo();
 				}
@@ -506,53 +552,9 @@ Class ClientProject extends CI_Controller{
 
 			$img  = array_merge($img,$x);
 			$projectmodel->setImages($img);
-			// print_r($img);die;
+
+
 		}
-
-		// else if((empty(array_filter($_FILES['images']['name']))) && empty($x)){
-
-		// }
-		else{
-
-			// echo 9;
-			for($i=0;$i<$count;$i++){
-
-				if ($_FILES['images']['name'] == 0 && $_FILES['images']['error'] == 0) {
-	
-					$projectmodel->setImages(0);
-					
-				}
-				else {
-	
-					// $filename = $this->session->userdata('CLIENT_ID').$this->input->post('name').time();
-					$filename = uniqid() . "-" . time(); // 5dab1961e93a7-1571494241
-					// echo $filename;die;
-					$extension = pathinfo($_FILES['images']['name'][$i], PATHINFO_EXTENSION); // jpg
-					$image = $filename . '.' . $extension; // 5dab1961e93a7_1571494241.jpg
-		
-					$target = "./uploads/" . basename($image);
-		
-					if (move_uploaded_file($_FILES['images']['tmp_name'][$i], $target)) {
-		
-						$data["message"] = "file uploaded,";
-					}
-					$img[$i] = $image;
-				}
-				
-			}
-			// print_r($img);die;
-			$projectmodel->setImages($img);
-		}
-	}
-	else{
-		$projectmodel->setImages($x);
-
-
-
-	}
-
-		// die;
-		$projectmodel->setCreated_date($date_now);
 		
 		$projectservice->updateProject($projectmodel);
 		
@@ -583,21 +585,29 @@ Class ClientProject extends CI_Controller{
 		$projectservice = new ProjectService();
 		$data["projects"] = $projectservice->getProject($id);
 		$data["items"] = $projectservice->allCategories();
+
 		$item = $projectservice->getProject($id);
 
 		$skills = $item[0]->required_skills;
 		$skill_list = explode(',',$skills);
 		$data['skills'] = $skill_list;
 
-		$images = $projectservice->ProjectImages1($id);
+		$images = $projectservice->ProjectImages2($id);
+
 
 		$ids_image = array();
 		$service = array();
 		$team_name2 = array();
 
+		$package = array();
+		$team_name1 = array();
+
 		$select_list = json_decode("[".$item[0]->services."]");
 		
 		$package_list = json_decode("[".$item[0]->packages."]");
+
+		// $images1 = json_decode("[".$images."]");
+
 		// print_r($images);die;
 
 		if(!empty($select_list)){
@@ -648,17 +658,20 @@ Class ClientProject extends CI_Controller{
 
 				$item2 =  $projectservice->packagename($value);
 				
-				foreach($item2 as $key => $item3){
+				// foreach($item2 as $key => $item3){
 	
-					$package[$value] = $item3->pname;
-					$team_name1[$item3->team_id] = $item3->name;
+					$package[$value] = $item2[0]->pname;
+					$team_name1[] = $item2[0]->name;
 		
-				}
+				// }
 			}
 			
 			$data['package'] = $package;
 			$data["team_name1"] = $team_name1;
 		
+		}else{
+			$data['package'] = $package;
+			$data["team_name1"] = $team_name1;
 		}
 
 		if(empty($images)){
@@ -670,23 +683,29 @@ Class ClientProject extends CI_Controller{
 		else{
 			foreach($images as $key => $value){
 			
-				// print_r($value) ; 
+				// echo ($value);die;
+				// print_r($value) ; die;
 				// echo '<br/>';
 				foreach($value as $key => $value1){
 					
 					$ids_image = explode(',',$value1);
-					// print_r($ids_image);die;
+					
 					
 				}
 				
 			}
+			// print_r($ids_image);die;
+			// if(empty($ids_image)){
+			// 	echo 1 ;
+			// }
 		}
+// die;
 
 		// print_r($ids_image);die;
 		// $data['service'] = $service;
 		// $data['package'] = $package;
 		// $data["no"] = 1;
-		$data['images'] =  $ids_image;
+		$data['images5'] =  $ids_image;
 		$data["teams"] = $projectservice->allTeams();
 
 		$partial = array('content' => 'client/pages/project/editProject');
