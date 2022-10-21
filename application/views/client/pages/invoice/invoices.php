@@ -14,8 +14,8 @@
       <div class="pd-x-20 pd-b-15" >
       
         <div class="row ">
-          <div class="px-3"style="margin-left:69rem;margin-top:0rem;" >
-            <a href="<?php echo base_url();?>index.php/ClientProject/cerateProject"><button type="button" class="btn btn-all text-white  py-2 "style="border-radius: 8px;">+ New Project</button></a>
+          <div class="px-3"style="margin-left:68.5rem;margin-top:0rem;" >
+            <a href="<?php echo base_url();?>index.php/ClientProject/cerateProject"><button type="button" class="btn btn-all text-white "style="border-radius: 8px;">+ New Project</button></a>
           </div>
             <!-- <div class="" style="msrgin-top:-1rem">
               <button type="button" class="btn btn-primary text-right py-2"style="border-radius: 8px;">Add to project</button>

@@ -47,11 +47,18 @@ Class ClientDashboard extends CI_Controller{
 		$data["noProposals"] = $dashboardservice->countProposal($this->session->userdata('CLIENT_ID'));
 		$data["noInvoices"] = $dashboardservice->countInvoice($this->session->userdata('CLIENT_ID'));
 		
-		$items = $dashboardservice->allProjects($this->session->userdata('CLIENT_ID'));
+		$data["items"] = $dashboardservice->allProjects2($this->session->userdata('CLIENT_ID'));
+		$items = $dashboardservice->allProjects2($this->session->userdata('CLIENT_ID'));
 		// print_r($items);die;
 		
+		if(empty($items)){
+			$data["invoices"] = "";
+		}
+		else{
+			$data["invoices"] = $dashboardservice->invoices($items[0]->project_id);
+		}
 
-		$data["items"] = $dashboardservice->allProjects($this->session->userdata('CLIENT_ID'));
+		
 		
 
 		// print_r($data["items"]);die;

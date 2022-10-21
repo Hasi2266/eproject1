@@ -14,9 +14,9 @@
       <div class="pd-x-20 pd-b-15" >
       
         <div class="row">
-					<div class="px-3 newbtnProject"style="margin-left:69.5rem;margin-top:0rem;" >
+					<div class="px-3 newbtnProject"style="margin-left:68.5rem;margin-top:0rem;" >
           <!-- btn-all -->
-            <a href="<?php echo base_url();?>index.php/ClientProject/cerateProject"><button type="button" class="btn btn-all btn-dark text-white  py-2 btn-new"style="border-radius: 8px;">+ New Project</button></a>
+            <a href="<?php echo base_url();?>index.php/ClientProject/cerateProject"><button type="button" class="btn btn-all btn-dark text-white   " style="border-radius: 8px;">+ New Project</button></a>
           </div>
             <!-- <div class="">
               <button type="button" class="btn btn-primary text-right  py-2"style="border-radius: 8px;">Add to project</button>
@@ -77,7 +77,7 @@
 					<label class="custom-control-label" for="customCheck1"></label>
 				</div></td> -->
 				<td></td>
-				<td><span style="margin-left:-1.5rem;"><?php echo $proposal->name?></span></td>
+				<td style="text-transform: capitalize;"><span style="margin-left:-1.5rem;"><?php echo $proposal->name?></span></td>
 				<td><?php echo $proposal->proposal_created_date?></td>
 				<?php 
 				
@@ -98,7 +98,7 @@
 					<td><div class="progress mt-2" style="height:0.45rem;border-radius:10px">
 											<div class="progress-bar bg-<?php if($proposal->project_progress >= 50){echo "green";}else{echo "danger";} ?> wd-<?php echo $proposal->project_progress?>p" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
 										</div>		</td>
-					<td class="due" style="text-transform: uppercase;"><?php echo $due_date?></td>
+					<td class="due" style="text-transform: capitalize;"><?php echo $due_date?></td>
 					<td>	<div class="dropdown">
 													<button class="btn  dropdown-toggle1" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-radius: 10px;margin-left:-1rem;">
 														<i class="fa fa-ellipsis-h" aria-hidden="true"></i>

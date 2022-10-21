@@ -490,7 +490,7 @@ Class ClientProject extends CI_Controller{
 			for($i=0;$i<$count;$i++){
 
 				if ($_FILES['images']['name'] == 0 && $_FILES['images']['error'] == 0) {
-					// echo 7;
+					// echo 74;
 					$projectmodel->setImages("");
 					// $productsmodel->setProduct_image($this->input->post('p_image'));
 					// $postmodel->setbusiness_logo();
@@ -504,17 +504,20 @@ Class ClientProject extends CI_Controller{
 					// echo $filename;die;
 					$extension = pathinfo($_FILES['images']['name'][$i], PATHINFO_EXTENSION); // jpg
 					$image = $filename . '.' . $extension; // 5dab1961e93a7_1571494241.jpg
-		
+					// echo $image;
 					$target = "./uploads/" . basename($image);
 		
 					if (move_uploaded_file($_FILES['images']['tmp_name'][$i], $target)) {
 		
 						$data["message"] = "file uploaded,";
 					}
+
 					$img[$i] = $image;
 				}
 				
 			}
+			// print_r($img);
+			$projectmodel->setImages($img);
 		}
 
 		if(!empty(array_filter($_FILES['images']['name'])) && (!empty($x))){
@@ -555,7 +558,7 @@ Class ClientProject extends CI_Controller{
 
 
 		}
-		
+		// die;
 		$projectservice->updateProject($projectmodel);
 		
 		redirect('/ClientProject/');
@@ -593,7 +596,6 @@ Class ClientProject extends CI_Controller{
 		$data['skills'] = $skill_list;
 
 		$images = $projectservice->ProjectImages2($id);
-
 
 		$ids_image = array();
 		$service = array();

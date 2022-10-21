@@ -658,7 +658,7 @@ else{
 											</div></td> -->
 											<!-- <td><img src="<?php echo base_url();?>/assets/img/favicon.png" alt="..." class="img-thumbnail" width="50"></td> -->
 											<!-- <td><?php echo $item->company_name?></td> -->
-											<td><?php echo $item->name?></td>
+											<td style="text-transform: capitalize;"><?php echo $item->name?></td>
 											<td class="due"><?php echo $item->update_date?></td>
 											
 							
@@ -671,7 +671,7 @@ else{
 										</div>		</td>
 
 												<!-- <td><?php echo $item->project_progress?> %</td> -->
-												<td class="due"><?php echo $item->invoice_no?></td>
+												<td><?php if(empty($invoices[0]->project_id)){ echo "" ;}else{ echo $invoices[0]->invoice_no; }?></td>
 												<td style="text-transform: capitalize;"><?php echo $due_date?></td>
 											</tr>
 					

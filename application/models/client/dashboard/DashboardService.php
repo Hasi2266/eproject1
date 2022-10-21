@@ -66,6 +66,32 @@ Class DashboardService extends CI_Model{
 			return $query->result();
 		
 	
+
 	}
+
+	function allProjects2($id){
+		$this->db->select('*,project.project_id as pid,service.service_name,user-login.company_name');
+		$this->db->from('project');
+		$this->db->join('service','service.service_id = project.services','left',false);
+		$this->db->join('user-login','user-login.client_id = project.client_id');
+		// $this->db->join('invoice','invoice.project_id = project.project_id','left',false);
+		$this->db->order_by("project.project_created_date", 'DESC');
+		$this->db->where('project.client_id='.$id);
+
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	function invoices($id){
+
+		$this->db->select('*');
+		$this->db->from('invoice');
+		$this->db->where('invoice.project_id='.$id);
+		$query = $this->db->get();
+		return $query->result();
+	}
+	
+	
+
 }
 ?>

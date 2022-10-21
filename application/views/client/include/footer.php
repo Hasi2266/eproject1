@@ -2311,6 +2311,7 @@ $("input#password1").on("focus keyup", function () {
 						var new_total = document.getElementById("sub_total").value;
 						var balance = new_total - total;
 						document.getElementById("balance1").value = balance;
+						document.getElementById("balance2").value = balance;
 						
 						// alert(selected);
 

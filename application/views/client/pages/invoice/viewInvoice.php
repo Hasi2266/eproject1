@@ -292,7 +292,7 @@ input:checked + .slider:before {
                     <th scope="col" class="thColor">Description</th>
                     <th scope="col" class="datecol thColor"  >Date</th>
                     <th scope="col" class="datecol thColor"  >Weight</th>
-                    <th scope="col" class="thColor" ><span style="margin-left:35rem;">Amount</span></th>
+                    <th scope="col" class="thColor" ><span style="margin-left:33.5rem;">Amount</span></th>
                     <th scope="col" class="thColor"></th>
                     <th scope="col" class="thColor">Status</th>
                   </tr>
@@ -318,7 +318,7 @@ input:checked + .slider:before {
                     <td style="margin-left: 1rem"><?php echo $items2->description?></td>
                     <td style="margin-left:-2rem;"><?php echo $items2->date?></td>
                     <td style="margin-left:-2rem;"><?php echo $items2->weight?></td>
-                    <td><input type="" disabled name="amount" value="<?php echo $items2->amount?>" id="amount_<?php echo $items2->id?>" class="calc1"  style="margin-left:35rem;border:none"></td>
+                    <td><input type="" disabled name="amount" value="<?php echo $items2->amount?>" id="amount_<?php echo $items2->id?>" class="calc1"  style="margin-left:33.5rem;border:none"></td>
                     <!-- <td id = "amount_<?php echo $items2->id?>"></td> -->
                     <td><label class="switch"> <input type="checkbox" <?php if($items2->status==2){echo "checked disabled";}?> name="chk[]" id="chk1_<?php echo $items2->id?>" value="<?php echo $items2->id?>"  class="chk"> <span class="slider round"></label></td>
                     <td><span class="badge badge-pill <?php if($status=="Paid"){echo "badge-info";}else{ echo "badge-dark";}?> " style="background-color:#36b8b;"><?php echo $status?></span></td>
@@ -348,8 +348,8 @@ input:checked + .slider:before {
                     
                     ?> -->
                    
-
-                    <p class="" style="margin-left:4.5rem"><input type="text" id="balance1" style="border:none;" name="balance" value="<?php echo $item->balance?>"> </p>
+                    <input type="hidden" id="balance2" style="border:none;" name="balance" value="<?php echo $item->balance?>">
+                    <p class="" style="margin-left:4.5rem"><input type="text" disabled id="balance1" style="border:none;" name="balance1" value="<?php echo $item->balance?>"> </p>
                   </div>
 
               </div>
