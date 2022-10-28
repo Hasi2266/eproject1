@@ -151,6 +151,8 @@ Class ClientPackage extends CI_Controller{
 	public function addNewProj(){
 
 		$packageservice = new PackageServices();
+		$projectservice = new ProjectService();
+		
 		$name = $this->input->post("name");
 		$data["active"] = 4;
 
@@ -170,16 +172,16 @@ Class ClientPackage extends CI_Controller{
 				// echo $value;die;
 				
 				// print_r($checkes1);
-				$item1 = $packageservice->getPackageName($value);
+				// $item1 = $packageservice->getPackageName($value);
 	
-				foreach($item1 as $key => $item3){
-					
-					$package_name[$value] = $item3->pname;
-					
-					// print_r($package_name);die;
-					$team_name[$item3->team_id] = $item3->name;
-					
-				}
+				$item1 = $projectservice->packagename($value);
+
+			// foreach($item1 a
+				
+				$package_name[$value] = $item1[0]->pname;
+				
+				// print_r($package_name);die;
+				$team_name[] = $item1[0]->name;
 				
 				
 			}
