@@ -177,11 +177,13 @@
 															<tr >
 																<td>
 																	
-																<?php if($no == 2){ foreach($team_name as $key => $value){   ?>
+																<?php if($no == 2){   $i = 1;
+																	
+																	foreach($team_name as $key => $value){   ?>
 																	
 																	<select class="custom-select m-input mb-2"
 																		style="border-radius:10px ;width:26rem;background-color:#8758FF;color:white;font-size:13px;"
-																		name="services">
+																		name="services" id="<?php echo 'teams_no_'.$i;?>">
 																		<!-- <option selected>-- Choose Team --</option> -->
 																		
 
@@ -191,7 +193,8 @@
 																		
 																	
 																	</select>
-																		
+
+																	<?php $i = $i + 1; ?>
 
 																<?php } } if($no==3 || $select_non==2){?>
 
@@ -211,14 +214,16 @@
 
 																<?php } ?>
 																<br/>
-                                                                    <button type="button" name="add" id="add" class="btn mt-2 text-dark" style="font-size:12px !important;margin-left:-10px;"><i class="fa fa-plus" ></i>&nbsp; Add Service</button>
+                                                                    <button type="button" name="add" id="add" class="btn mt-1 text-dark" style="font-size:12px !important;margin-left:-10px;"><i class="fa fa-plus" ></i>&nbsp; Add Service</button>
 																</td>
 																<td>
 																	
-																<?php if($no == 2){ foreach($service_name as $key => $value){ ?>
-																	<select class=" custom-select m-input mx-4 mb-2" 
+																<?php if($no == 2){
+																	  $i = 1;
+																	foreach($service_name as $key => $value){ ?>
+																	<select class=" custom-select m-input mx-3 mb-2" 
 																		style="border-radius:10px;width:26rem;background-color:#8758FF;color:white;font-size:13px;" 
-																		name="service_id[]">
+																		name="service_id[]" id="<?php echo 'service_id_'.$i;?>">
 
 																		
 																						
@@ -229,11 +234,11 @@
 																		
 																		<!-- <option selected>-- Choose Packages --</option> -->
 																	</select>
-																		
+																		<?php $i = $i + 1; ?>
 
 																<?php } } if($no==3 || $select_non==2){ ?>
 																
-																<select class="custom-select m-input  mx-4"
+																<select class="custom-select m-input  mx-3"
 																		style="border-radius:10px;width:26rem;font-size:13px;" id="service"
 																		name="service_id[]">
 
@@ -242,11 +247,44 @@
 																	</select>
 																
 																	<?php } ?>
+
 																</td>
-																<td> <button type="button" name="remove"  id="btnClearService4" class="btn btn-dark btn_remove btn-b text-white" ><span class="fa fa-trash" ></button></td>
+																<td>
+																<?php 
+															 
+																
+															 if(!empty($service_name)){
+																
+																$i = 1;
+																
+																foreach($service_name as $key => $value){
+																	
+																	if($i == 1) {?>
+																		<button type="button" name="remove"  id="btnClearService1" class="btn btn-dark text-white btn_remove btn-b" ><span class="fa fa-trash"></button>
+																  
+																  <?php  }else{?>
+
+																	<button type="button" name="remove"  id="<?php echo 'btn_remove_'.$i;?>" value="<?php echo $i;?>"class="btn btn-dark tex-white btn_remove btn_remove2 mt-2"><span class="fa fa-trash"></button>
+
+																<?php  }
+																	
+																	?>
+
+																					<?php $i = $i + 1; ?>
+                                                                     <?php } }
+																	 else{?>
+
+																		<button type="button" name="remove"  id="btnClearService4" class="btn btn-dark btn_remove btn-b text-white" ><span class="fa fa-trash" ></button>
+																<?php	 }?>
+																	
+
+																
+																
+																<!-- <button type="button" name="remove"  id="btnClearService4" class="btn btn-dark btn_remove btn-b text-white" ><span class="fa fa-trash" ></button></td> -->
 															</tr>
 														<tbody>
 													</table>
+													<button type="button" name="add" id="addS" class="btn text-dark" style="font-size:12px !important;margin-left:2px;display:none;margin-top:-20px;"><i class="fa fa-plus" ></i>&nbsp; Add Service</button>
 													<!-- <input type="submit" name="submit" id="submit" class="btn btn-info" value="Submit" /> -->
 												</div>
 											</form>
@@ -290,11 +328,13 @@
 														<tbody>
 															<tr>
 																<td>
-																<?php if($no == 1){ foreach($team_name as $key => $value){   ?>
+																<?php if($no == 1){ 
+																	 $i = 1;
+																	foreach($team_name as $key => $value){   ?>
 																	
 																	<select class="custom-select m-input"
 																		style="border-radius:10px ;width:26rem;background-color:#8758FF;color:white;font-size:13px;"
-																		name="services">
+																		name="services" id="<?php echo 'teams_no1_'.$i;?>">
 																		<!-- <option selected>-- Choose Team --</option> -->
 																		
 
@@ -303,7 +343,7 @@
 																				</option>
 																		
 																	</select>
-																		
+																	<?php $i = $i + 1; ?>
 
 																<?php } }if($no==3 || $select_non==1){?>
 
@@ -323,15 +363,17 @@
 																<?php } ?>
 
 																<br/>
-                                                                    <button type="button" name="add" id="add1"
-																		class="btn text-dark mt-2" style="font-size:12px !important;margin-left:-10px;"><i class="fa fa-plus"></i> &nbsp;Add Package</button>
+                                                                    <button type="button" name="add" id="add1" class="btn text-dark mt-2 add1" 
+																	style="font-size:12px !important;margin-left:-10px;"><i class="fa fa-plus"></i> &nbsp;Add Package</button>
 																
 																	</td>
 																<td>
-																<?php if($no == 1){ foreach($package_name as $key => $value){ ?>
-																	<select class=" custom-select m-input mx-4"
+																<?php if($no == 1){ 
+																	 $i = 1;
+																	foreach($package_name as $key => $value){ ?>
+																	<select class=" custom-select m-input mx-3"
 																		style="border-radius:10px;width:26rem;background-color:#8758FF;color:white;font-size:13px;" 
-																		name="package_id[]">
+																		name="package_id[]" id="<?php echo 'package_id_'.$i;?>">
 
 																		
 																						<option value="<?php echo $key?>">
@@ -342,9 +384,10 @@
 																		<!-- <option selected>-- Choose Packages --</option> -->
 																	</select>
 																		
+																	<?php $i = $i + 1; ?>
 
 																<?php } } if($no==3 || $select_non==1){ ?>
-																	<select class=" custom-select m-input mx-4"
+																	<select class=" custom-select m-input mx-3"
 																		style="border-radius:10px;width:26rem;font-size:13px;" id="package"
 																		name="package_id[]">
 
@@ -355,10 +398,46 @@
 																
 																</td>
 																
-																<td> <button type="button" name="remove"  id="btnClearPackage4" class="btn btn-dark btn_remove btn-b text-white" ><span class="fa fa-trash" ></button></td>
+
+																<td> 
+																<?php 
+															 
+																
+															 if(!empty($package_name)){
+																
+																$i = 1;
+																
+																foreach($package_name as $key => $value){
+																	
+																	if($i == 1) {?>
+																		<button type="button" name="remove"  id="btnClearPackage1" class="btn btn-dark text-white btn-b btn_remove"><span class="fa fa-trash"></button>
+																  
+																  <?php  }else{?>
+
+																	<button type="button" name="remove"  id="<?php echo 'btn_remove1_'.$i;?>" class="btn btn-dark text-white btn_remove3 mt-2"><span class="fa fa-trash"></button>
+
+																<?php  }
+																	
+																	?>
+
+																	  
+																
+																		<?php $i = $i + 1; ?>
+															 <?php } }
+															 else{?>
+
+																	<button type="button" name="remove"  id="btnClearPackage4" class="btn btn-dark btn_remove btn-b text-white" ><span class="fa fa-trash" ></button></td>
+														<?php	 }?>
+																
+																
+																<!-- <button type="button" name="remove"  id="btnClearPackage4" class="btn btn-dark btn_remove btn-b text-white" ><span class="fa fa-trash" ></button></td> -->
 															</tr>
+															
 														<tbody>
+															
 													</table>
+
+													<button type="button" name="add" id="addP" class="btn text-dark  add2" style="font-size:12px !important;margin-left:2px;display:none;margin-top:-20px;"><i class="fa fa-plus"></i> &nbsp;Add Package</button>
 													<!-- <input type="submit" name="submit" id="submit" class="btn btn-info" value="Submit" /> -->
 												</div>
 											<!-- </form> -->

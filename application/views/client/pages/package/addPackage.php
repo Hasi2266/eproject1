@@ -88,7 +88,7 @@
 											</div>
 											<div class="modal-footer">
 												<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-												<button type="submit" class="btn btn-dark"  name="btn_addnewproj" value="addNew" style="border-radius: 8px;" >Add</button></a>
+												<button type="submit" class="btn btn-dark"  name="btn_addnewproj" value="addNew" style="border-radius: 8px;" >Create</button></a>
 											</div>
 										
 										</div>
@@ -111,7 +111,7 @@
 														<label for="exampleInputEmail1">Project Name</label>
 														<!-- <input type="text" id="check2" value=""> -->
 														<span id = "check2" style="color:red"> </span>
-														<select class="custom-select m-input px-5" 
+														<select class="custom-select m-input" 
 																				style="border-radius:10px;width:26rem;"
 																				name="project_id" id="project_i">
 																				<option value = "">-- Select Project --</option>
@@ -128,7 +128,7 @@
 													</div>
 													<div class="modal-footer">
 														<button type="button" class="btn btn-secondary" data-dismiss="modal" id="btnClear">Close</button>
-														<input type="submit" class="btn btn-dark" name="btn_addtoproj" value="AddTo" id="btnAdd" disabled style="border-radius: 8px;"></button></a>
+														<button type="submit" class="btn btn-dark" name="btn_addtoproj" value="AddTo" id="btnAdd" disabled style="border-radius: 8px;">Add To Project</button></a>
 													</div>
 												
 										</div>

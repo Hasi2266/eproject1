@@ -37,7 +37,7 @@
 					<div class="form-group">
 					<label for="exampleInputEmail1"><h6 class="card-title mg-b-1" style="margin-top:1px;">Project Name</h6></label>
 						<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-							name="name" placeholder="Enter Name" style="border-radius:10px" value="<?php echo $project->name ?>" >
+							name="name" placeholder="Enter Name" style="border-radius:10px" readonly value="<?php echo $project->name ?>" >
 					</div>
 
 					<div class="form-group">
@@ -336,6 +336,7 @@
 															</tr>
 														<tbody>
 													</table>
+													<button type="button" name="add" id="addS" class="btn text-dark" style="font-size:12px !important;margin-left:2px;display:none;margin-top:-20px;"><i class="fa fa-plus" ></i>&nbsp; Add Service</button>
 													<!-- <input type="submit" name="submit" id="submit" class="btn btn-info" value="Submit" /> -->
 												</div>
 											</form>
@@ -567,6 +568,8 @@
 															</tr>
 														<tbody>
 													</table>
+													<button type="button" name="add" id="addP" class="btn text-dark mx-1 add2" style="font-size:12px !important;margin-left:2px;display:none;margin-top:-20px;"><i class="fa fa-plus"></i> &nbsp;Add Package</button>
+													
 													<!-- <input type="submit" name="submit" id="submit" class="btn btn-info" value="Submit" /> -->
 												</div>
 											<!-- </form> -->

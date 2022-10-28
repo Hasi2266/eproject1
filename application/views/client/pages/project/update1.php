@@ -36,7 +36,7 @@
 				
 					<div class="form-group">
 					<label for="exampleInputEmail1"><h6 class="card-title mg-b-1" style="margin-top:1px;">Project Name</h6></label>
-						<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+						<input type="text" class="form-control" readonly id="exampleInputEmail1" aria-describedby="emailHelp"
 							name="name" placeholder="Enter Name" style="border-radius:10px" value="<?php echo $project->name ?>" >
 					</div>
 
@@ -240,7 +240,7 @@
 															
 
 																	<br/>
-                                                                    <button type="button" name="add" id="add" class="btn  mt-2 text-dark" style="font-size:12px !important;margin-left:-5px;"><i class="fa fa-plus" ></i>&nbsp; Add Service</button>
+                                                                    <button type="button" name="add" id="add" class="btn  mt-1 text-dark" style="font-size:12px !important;margin-left:-5px;"><i class="fa fa-plus" ></i>&nbsp; Add Service</button>
 																
 																</td>
 
@@ -383,6 +383,7 @@
 															</tr>
 														<tbody>
 													</table>
+													<button type="button" name="add" id="addS" class="btn text-dark" style="font-size:12px !important;margin-left:2px;display:none;margin-top:-20px;"><i class="fa fa-plus" ></i>&nbsp; Add Service</button>
 													<!-- <input type="submit" name="submit" id="submit" class="btn btn-info" value="Submit" /> -->
 												</div>
 											</form>
@@ -588,7 +589,9 @@
 																	</td>
 															</tr>
 														<tbody>
+
 													</table>
+													<button type="button" name="add" id="addP" class="btn text-dark  add2" style="font-size:12px !important;margin-left:2px;display:none;margin-top:-20px;"><i class="fa fa-plus"></i> &nbsp;Add Package</button>
 													<!-- <input type="submit" name="submit" id="submit" class="btn btn-info" value="Submit" /> -->
 												</div>
 											<!-- </form> -->

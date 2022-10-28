@@ -148,14 +148,14 @@ Class ClientService extends CI_Controller{
 				
 				$item1 = $clientservice->getServiceName($value);
 				
-				foreach($item1 as $key => $item3){
+				// foreach($item1 as $key => $item3){
 					
-					$service_name[$value] = $item3->service_name;
+					$service_name[$value] = $item1[0]->service_name;
+				
+				// print_r($package_name);die;
+					$team_name[] = $item1[0]->name;
 					
-					// print_r($package_name);die;
-					$team_name[$item3->team_id] = $item3->name;
-					
-				}
+				// }
 				
 				// die;
 				

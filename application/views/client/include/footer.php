@@ -1566,8 +1566,96 @@ $(document).ready(function(){
 	
 	
 
-	$('#dynamic_field').append('<tr id="row'+i+'"><td><input type="hidden" id="data_id_'+b+'" value="'+b+'"></td><td><select class="custom-select m-input" style="border-radius:10px;width:26rem;margin-left:-30rem !important;font-size:13px;" name="service" id="category_'+i+'"><option selected>-- Choose Team --</option><?php foreach ($teams as $item){?><option value="<?php echo $item->team_id?>"><?php echo $item->name?></option><?php } ?></select></td><td><select class="custom-select m-input" style="border-radius:10px;width:26rem;margin-left:-32rem !important;font-size:13px;" id="service_'+i+'" name="service_id[]"><option selected>-- Choose Services --</option></select></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-dark text-white btn_remove" style="margin-left:-4.5rem !important;font-size:13px;"><span class="fa fa-trash"></button></td></tr>');
+	$('#dynamic_field').append('<tr id="row'+i+'"><td><input type="hidden" id="data_id_'+b+'" value="'+b+'"></td><td><select class="custom-select m-input" style="border-radius:10px;width:26rem;margin-left:-30.5rem !important;font-size:13px;" name="service" id="category_'+i+'"><option selected>-- Choose Team --</option><?php foreach ($teams as $item){?><option value="<?php echo $item->team_id?>"><?php echo $item->name?></option><?php } ?></select></td><td><select class="custom-select m-input" style="border-radius:10px;width:26rem;margin-left:-32rem !important;font-size:13px;" id="service_'+i+'" name="service_id[]"><option selected>-- Choose Services --</option></select></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-dark text-white btn_remove" style="margin-left:-4.5rem !important;font-size:13px;"><span class="fa fa-trash"></button></td></tr>');
 	var id = $('#data_id_'+b).val();
+	$('#add').hide();
+	$('#addS').show();
+
+	$(document).ready(function() {
+			$('#category_'+i).on('change', function() {
+				
+            var category_id = $(this).val();
+			
+           	// alert(id);
+
+            $.ajax({
+                type: 'POST',
+                url: '<?php echo base_url();?>index.php/ClientProject/selectServices',
+                data: 'category_id=' + category_id,
+                success: function(html) {
+               // alert(html);
+					// alert(i);
+					// alert(b);
+						// alert(id);
+					$('#service_'+id).html(html);
+						// if(b == i){
+
+						// 	alert('yes');
+						// 	b = b - 1;
+						// 	$('#service_'+b).html(html);
+							
+
+						// }
+
+						// else{
+						// 	// alert('no');
+						// 	if(i > b ){
+								
+						// 		// alert(b);
+						// 		// // alert(i);
+						// 		// alert('yes');
+						// 		alert('i wedi bt');
+						// 		b = b + 1;
+						// 		$('#service_'+b).html(html);
+						// 		// b = b + 1;
+						// 	}
+						// 	else{
+								
+						// 		alert('i adui bt');
+						// 		b = b - 1;
+						// 		alert(b);
+							
+						// 		$('#service_'+b).html(html);
+						// 	}
+						// }
+                    // $('#service_'+i).html(html);
+                    //  $('#subcat').html('<option value="">'+html+'</option>'); 
+                }
+            });
+
+        });
+			});
+				$('tbody').append(html);
+
+});
+
+
+				// $('tbody').append(html);
+
+		
+$(document).on('click', '.btn_remove', function(){
+var button_id = $(this).attr("id"); 
+$('#row'+button_id+'').remove();
+	});
+});
+
+
+</script>
+
+<script>
+$(document).ready(function(){
+	var i=1;
+	var b = 1;
+	$('#addS').click(function(){
+	i++;
+	b++;
+	
+	
+
+	$('#dynamic_field').append('<tr id="row'+i+'"><td><input type="hidden" id="data_id_'+b+'" value="'+b+'"></td><td><select class="custom-select m-input" style="border-radius:10px;width:26rem;margin-left:-30.5rem !important;font-size:13px;" name="service" id="category_'+i+'"><option selected>-- Choose Team --</option><?php foreach ($teams as $item){?><option value="<?php echo $item->team_id?>"><?php echo $item->name?></option><?php } ?></select></td><td><select class="custom-select m-input" style="border-radius:10px;width:26rem;margin-left:-32rem !important;font-size:13px;" id="service_'+i+'" name="service_id[]"><option selected>-- Choose Services --</option></select></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-dark text-white btn_remove" style="margin-left:-4.5rem !important;font-size:13px;"><span class="fa fa-trash"></button></td></tr>');
+	var id = $('#data_id_'+b).val();
+	$('#add').hide();
+	$('#addS').show();
 
 	$(document).ready(function() {
 			$('#category_'+i).on('change', function() {
@@ -1651,9 +1739,14 @@ $(document).ready(function(){
 	i++;
 	b++;
 
-	$('#dynamic_field1').append('<tr id="row'+i+'"><td><input type="hidden" id="data_id1_'+b+'" value="'+b+'"></td><td><select class="custom-select m-input" style="border-radius:10px;width:26rem;margin-left:-30rem !important;font-size:13px;" name="packages[]" id="team2_'+i+'">'+
+	$('#dynamic_field1').append('<tr id="row'+i+'"><td><input type="hidden" id="data_id1_'+b+'" value="'+b+'"></td><td><select class="custom-select m-input" style="border-radius:10px;width:26rem;margin-left:-30.5rem !important;font-size:13px;" name="packages[]" id="team2_'+i+'">'+
 	'<option selected>-- Choose Team --</option><?php foreach ($teams as $item){?><option value="<?php echo $item->team_id?>"><?php echo $item->name?></option><?php } ?></select></td><td><select class="custom-select m-input mx-4" style="border-radius:10px;width:26rem;margin-left:-32rem !important;font-size:13px;" id="package_'+i+'" name="package_id[]"><option  selected><span style="margin-left:-5rem !important;">-- Choose Packages --</span></option></select>'+
 	'</td><td><button type="button" name="remove" id="'+i+'" class="btn btn-dark text-white btn_remove" style="margin-left:-4.5rem !important;font-size:13px;"><span class="fa fa-trash"></button></td></tr>');
+	
+	$('#add1').hide();
+	$('#addP').show();
+	
+	
 	var id = $('#data_id1_'+b).val();
 
 	$(document).ready(function() {
@@ -1712,7 +1805,12 @@ $(document).ready(function(){
 
         });
 			});
+
+
 				$('tbody').append(html);
+				// $('button').append('<button>Add</button>');
+
+
 
 });
 
@@ -1727,6 +1825,103 @@ $('#row'+button_id+'').remove();
 });
 
 
+</script>
+
+<script>
+	$(document).ready(function(){
+
+	
+var i=1;
+var b = 1;
+$('#addP').click(function(){
+
+i++;
+b++;
+
+$('#dynamic_field1').append('<tr id="row'+i+'"><td><input type="hidden" id="data_id1_'+b+'" value="'+b+'"></td><td><select class="custom-select m-input" style="border-radius:10px;width:26rem;margin-left:-30.5rem !important;font-size:13px;" name="packages[]" id="team2_'+i+'">'+
+'<option selected>-- Choose Team --</option><?php foreach ($teams as $item){?><option value="<?php echo $item->team_id?>"><?php echo $item->name?></option><?php } ?></select></td><td><select class="custom-select m-input mx-4" style="border-radius:10px;width:26rem;margin-left:-32rem !important;font-size:13px;" id="package_'+i+'" name="package_id[]"><option  selected><span style="margin-left:-5rem !important;">-- Choose Packages --</span></option></select>'+
+'</td><td><button type="button" name="remove" id="'+i+'" class="btn btn-dark text-white btn_remove" style="margin-left:-4.5rem !important;font-size:13px;"><span class="fa fa-trash"></button></td></tr>');
+
+$('#add1').hide();
+$('#addP').show();
+
+
+var id = $('#data_id1_'+b).val();
+
+$(document).ready(function() {
+		$('#team2_'+i).on('change', function() {
+			
+			
+		var team_id = $(this).val();
+		
+
+		$.ajax({
+			type: 'POST',
+			url: '<?php echo base_url();?>index.php/ClientProject/selectPackages',
+			data: 'team_id=' + team_id,
+			success: function(html) {
+
+				$('#package_'+id).html(html);
+		   // alert(html);
+				// if(b == i){
+
+				// 	// alert('yes');
+				// 	$('#package_'+i).html(html);
+					
+
+				// }
+				
+				// else{
+				// 	// alert('no');
+				// 	if(i > b ){
+						
+				// 		// alert(b);
+				// 		$('#package_'+b).html(html);
+				// 		b = b + 1;
+				// 	}
+				// 	else{
+				// 		b = b - 1;
+				// 		// alert(b);
+				// 		$('#package_'+b).html(html);
+				// 	}
+				// 	// // b = b + 1;
+				// 	// alert(b);
+					
+				
+					
+					
+				// }
+				// i = i - 1;
+			   
+
+				//  $('#subcat').html('<option value="">'+html+'</option>'); 
+			}
+			// b++;
+			
+		});
+		
+		
+
+	});
+		});
+
+
+			$('tbody').append(html);
+			// $('button').append('<button>Add</button>');
+
+
+
+});
+
+
+			// $('tbody').append(html);
+
+	
+$(document).on('click', '.btn_remove1', function(){
+var button_id = $(this).attr("id"); 
+$('#row'+button_id+'').remove();
+});
+});
 </script>
 
 <!-- <script>

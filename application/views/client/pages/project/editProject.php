@@ -36,8 +36,8 @@
 				
 					<div class="form-group">
 					<label for="exampleInputEmail1"><h6 class="card-title mg-b-1" style="margin-top:1px;">Project Name</h6></label>
-						<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-							name="name" placeholder="Enter Name" style="border-radius:10px" value="<?php echo $project->name ?>" >
+						<input type="text" readonly class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+							name="name" placeholder="Enter Name"  style="border-radius:10px" value="<?php echo $project->name ?>" >
 					</div>
 
 					<div class="form-group">
@@ -248,11 +248,11 @@
 																	 ?>
 
 																				
-																	<select class=" custom-select m-input px-5 mx-4"
+																	<select class=" custom-select m-input  mx-4"
 																		style="border-radius:10px;width:26rem;font-size:13px;" id="service"
 																		name="service_id[]">
 																		
-																		<option selected disabled>Choose service</option>
+																		<option selected disabled>-- Choose service --</option>
 
 																	</select>
 																	
@@ -328,6 +328,7 @@
 															</tr>
 														<tbody>
 													</table>
+													<button type="button" name="add" id="addS" class="btn text-dark" style="font-size:12px !important;margin-left:2px;display:none;margin-top:-20px;"><i class="fa fa-plus" ></i>&nbsp; Add Service</button>
 													<!-- <input type="submit" name="submit" id="submit" class="btn btn-info" value="Submit" /> -->
 												</div>
 											</form>
@@ -381,7 +382,7 @@
 																if(empty($package)){?>
 
 																	<select class="custom-select m-input ml-2"
-																		style="border-radius:10px ;width:26rem;font-size:13px; mb-2"
+																		style="border-radius:10px ;width:26rem;font-size:13px;"
 																		name="services" id="team2">
 																		<option selected>-- Choose Team --</option>
 																		
@@ -421,7 +422,7 @@
 																	<!--  -->
 																	<br/>
                                                                     <button type="button" name="add" id="add1"
-																		class="btn text-dark mt-2" style="font-size:12px !important;margin-left:-5px;"><i class="fa fa-plus"></i> &nbsp;Add Package</button>
+																		class="btn text-dark mt-2" style="font-size:12px !important;margin-left:-10px;"><i class="fa fa-plus"></i> &nbsp;Add Package</button>
 																	</td>
 																	
 																<td>
@@ -447,7 +448,7 @@
 
 																foreach($package as $key => $value){   ?>
 																	
-																	<select class="custom-select m-input mx-4 mb-2"
+																	<select class="custom-select m-input mx-x mb-2"
 																		style="border-radius:10px ;width:26rem;background-color:#8758FF;color:white;font-size:13px;"
 																		name="package_id[]" id="<?php echo 'package_id_'.$i;?>">
 																		<!-- <option selected>-- Choose Team --</option> -->
@@ -493,7 +494,7 @@
                                                                         
                                                                                 <?php $i = $i + 1; ?>
                                                                      <?php } }else{?>
-																				<button type="button" name="remove"  id="btnClearPackage4" class="btn btn-dark btn_remove btn-b text-white" ><span class="fa fa-trash" ></button>
+																				<button type="button" name="remove"  id="btnClearPackage4" class="btn btn-dark btn_remove btn-b text-white"  ><span class="fa fa-trash" ></button>
 																		<?php }?>
                                                                 </td>
 
@@ -501,6 +502,7 @@
 															</tr>
 														<tbody>
 													</table>
+													<button type="button" name="add" id="addP" class="btn text-dark mx-1 add2" style="font-size:12px !important;margin-left:2px;display:none;margin-top:-20px;"><i class="fa fa-plus"></i> &nbsp;Add Package</button>
 													<!-- <input type="submit" name="submit" id="submit" class="btn btn-info" value="Submit" /> -->
 												</div>
 											<!-- </form> -->

@@ -110,7 +110,7 @@
 														
 														<label for="exampleInputEmail1">Project Name</label>
 														<span id = "check4" style="color:red"> </span>
-														<select class=" custom-select m-input px-5"
+														<select class=" custom-select m-input"
 																				style="border-radius:10px;width:26rem;" 
 																				name="project_id" id="service_i">
 																				<option selected>-- Select Project --</option>
@@ -129,7 +129,8 @@
 													</div>
 													<div class="modal-footer">
 														<button type="button" class="btn btn-secondary" data-dismiss="modal" id="btnClearService">Close</button>
-														<input type="submit" class="btn btn-dark" name="btn_addtoproj" value="AddTo" id="btnAddService" disabled style="border-radius: 8px;"></button></a>
+														
+														<button type="submit" class="btn btn-dark" name="btn_addtoproj" value="AddTo" id="btnAddService" disabled style="border-radius: 8px;">Add To Project</button></a>
 													</div>
 												
 										</div>
